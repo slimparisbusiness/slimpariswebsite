@@ -3,151 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SlimParis | Body Sculpting & Wellness</title>
+    <title>About Us | Slim Paris</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="AboutUs.css">
 </head>
 <body>
 
-    <header>
-        <!-- header logo + about + founder + values + services -->
-        <nav>
-            
-            <a href="AboutUs.html">
-                <img src="slimparislogo.png" alt="SlimParis Logo" class="logo-img">
-            </a>
-            
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#founder">Founder</a></li>
-                <li><a href="#values">Values</a></li>
-                <li><a href="#services">Services</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="slimparislogo.png" alt="SlimParis">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
+            <li class="dropdown">
+                <a href="Services.html" class="nav-link">Services <i class="fas fa-chevron-down arrow-icon"></i></a>
+                <div class="dropdown-content">
+                    <a href="#">Traditional Treatments</a>
+                    <a href="#">Modern Technology</a>
+                </div>
+            </li>
+            <li><a href="Testimonial.html" class="nav-link">Testimonial</a></li>
+            <li><a href="Contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" id="search-box" placeholder="Type and hit Enter...">
+            <div class="nav-search-icon" onclick="toggleSearch()"><i class="fas fa-search"></i></div>
+        </div>
+    </nav>
 
     <section class="hero">
-        <p class="hero-tagline">TRADITIONAL & MODERN | PUSAT KECANTIKAN</p>
-        <h1>Achieve Your Ideal Body Shape</h1>
-        <p class="hero-sub">BODY SCULPTING</p>
-        <a href="#about" class="btn">Discover More</a>
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('hero1.png');"></div>
+            <div class="slide" style="background-image: url('hero2.png');"></div>
+            <div class="slide" style="background-image: url('hero3.png');"></div>
+            <div class="slide" style="background-image: url('hero4.png');"></div>
+        </div>
+        <div class="hero-content">
+            <a href="#about" class="btn">KNOW MORE ABOUT SLIM PARIS</a>
+        </div>
     </section>
 
-    
-    <section id="about">
-        <h2 class="section-title">Parisian Elegance Meets Modern Transformation</h2>
-        
+    <div class="awards-bar">
+        <div class="scroll-track">
+            <div class="award-content">
+                <span class="award-item">SCULPT YOUR BODY CONFIDENCE</span><span class="award-separator">|</span>
+                <span class="award-item">SLIM PARIS</span><span class="award-separator">|</span>
+                <span class="award-item">SCULPT YOUR BODY CONFIDENCE</span><span class="award-separator">|</span>
+                <span class="award-item">SLIM PARIS</span><span class="award-separator">|</span>
+            </div>
+            <div class="award-content">
+                <span class="award-item">SCULPT YOUR BODY CONFIDENCE</span><span class="award-separator">|</span>
+                <span class="award-item">SLIM PARIS</span><span class="award-separator">|</span>
+                <span class="award-item">SCULPT YOUR BODY CONFIDENCE</span><span class="award-separator">|</span>
+                <span class="award-item">SLIM PARIS</span><span class="award-separator">|</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT SLIM PARIS -->
+    <section id="about" class="reveal">
         <div class="about-grid">
+            <div class="about-image-container">
+                <img src="SP_Signboard2.png" alt="Slim Paris Signboard" class="about-img">
+            </div>
             <div class="about-text">
-                [cite_start]<p>Slim Paris is Malaysia's premier destination for body sculpting, offering a unique sanctuary where timeless Parisian elegance meets cutting-edge body transformation[cite: 6].</p>
+                <p>Slim Paris is Malaysia’s premier body sculpting sanctuary, blending timeless Parisian elegance with the harmony of <strong>Traditional Realignment</strong> and <strong>Modern, non-invasive technology</strong>.</p>
                 <br>
-                [cite_start]<p>We distinguish ourselves by harmonizing <strong>Traditional Realignment Techniques</strong> with <strong>Modern Technological Innovations</strong> to deliver non-invasive, safe, and effective results without the pain[cite: 7].</p>
+                <p>Guided by our <strong>'Figure First, Scale Second'</strong> philosophy, we go beyond simple weight loss to correct posture and sculpt graceful curves without pain.</p>
                 <br>
-                [cite_start]<p>More than just a slimming centre, Slim Paris is a haven for self-love and empowerment, dedicated to helping every woman rediscover her confidence and embrace a lifestyle of beauty and freedom[cite: 9].</p>
-            </div>
-            <div class="about-card">
-                <h3>Our Philosophy</h3>
-                <p class="highlight-text">"Figure First, Scale Second"</p>
-                [cite_start]<p>We move beyond simple weight loss to focus on sculpting graceful body lines, correcting posture, and enhancing natural curves[cite: 8].</p>
+                <p>More than a slimming center, we are a haven for empowerment, dedicated to helping every woman rediscover her confidence and embrace a lifestyle of beauty and freedom.</p>
             </div>
         </div>
     </section>
 
-    <section id="founder" class="founder">
-        <p class="section-subtitle">THE FOUNDER</p>
-        <div class="founder-container">
-            <div class="founder-img-placeholder">
-                <img src="" alt="Dr. Sttanny Phong" style="display:none;"> 
-                <span>Photo</span>
+    <!-- DR. STTANNY PHONG -->
+    <section id="founder" class="founder reveal">
+        <div class="founder-layout">
+            <div class="founder-img-side tilt-left">
+                <img src="SP1.png" alt="Dr Sttanny Model">
             </div>
-            <h2>Dr. Sttanny Phong</h2>
-            <blockquote>
-                [cite_start]"Confidence should embark from a holistic view, beginning with your mindset and not solely from a number on a scale." [cite: 13]
-            </blockquote>
-            [cite_start]<p>Guided by this principle, she embarked on a mission to redefine body sculpting, blending a combination of traditional and modern services[cite: 14].</p>
-            <br>
-            [cite_start]<p>We aim to provide you with results, that you would witness a remarkable change in the mirror—a testament to our commitment[cite: 16].</p>
+
+            <div class="founder-center-info">
+                <p class="section-subtitle">THE FOUNDER</p>
+                <h2 class="signature-font">Dr. Sttanny Phong</h2>
+                
+                <blockquote class="founder-quote">
+                    "Confidence should embark from a holistic view, beginning with your mindset and not solely from a number on a scale."
+                </blockquote>
+                
+                <div class="founder-bio-text">
+                    <p>With this guiding principle, Dr. Sttanny embarked on a mission to redefine body sculpting, blending a combination of traditional and modern services.</p>
+                    <br>
+                    <p>Dr. Sttanny’s unwavering confidence stems from the transformative power of our services. We aim to provide you with results, that you would witness a remarkable change in the mirror—a testament to our commitment.</p>
+                </div>
+            </div>
+
+            <div class="founder-img-side tilt-right">
+                <img src="SP2.png" alt="Dr Sttanny Award">
+            </div>
         </div>
     </section>
 
-    <section>
+    <section class="reveal">
         <div class="mv-container">
             <div class="mv-box">
-                <h3>Our Mission</h3>
-                <p class="mv-title">Empowering Women Through Transformation</p>
-                [cite_start]<p>Helping millions of women rediscover their own confidence through state of the art services[cite: 19].</p>
+                <i class="fas fa-quote-left quote-icon icon-top"></i>
+                <h3 class="mv-label">Our Mission</h3>
+                <h2 class="mv-heading">Empowering Women<br>Through Transformation</h2>
+                <p class="mv-desc">
+                    To provide professional & personalized tailored body sculpting for millions of women through state of art technology. Empowering millions of women to showcase their own true selves.
+                </p>
+                <i class="fas fa-quote-right quote-icon icon-bottom"></i>
             </div>
+
             <div class="mv-box">
-                <h3>Our Vision</h3>
-                <p class="mv-title">Leading The Future of Women's Wellness</p>
-                [cite_start]<p>To help women attain their holistic goals[cite: 22].</p>
+                <i class="fas fa-quote-left quote-icon icon-top"></i>
+                <h3 class="mv-label">Our Vision</h3>
+                <h2 class="mv-heading">Leading The Future of<br>Women’s Wellness</h2>
+                <p class="mv-desc">
+                    To be the leader in the field of women’s body sculpting, inspiring millions of women to attain their own beauty confidence & ideal body figure.
+                </p>
+                <i class="fas fa-quote-right quote-icon icon-bottom"></i>
             </div>
         </div>
     </section>
 
-    <section id="values" class="values">
+    <div class="section-divider">
+        <span class="line"></span>
+        <span class="icon-divider"><i class="fas fa-gem"></i></span>
+        <span class="line"></span>
+    </div>
+
+    <!-- OUR CORE VALUES -->
+    <section id="values" class="values reveal">
         <h2 class="section-title">Our Core Values</h2>
+        <p class="section-subtitle" style="margin-bottom: 3rem;">The principles that guide everything we do at Slim Paris</p>
         <div class="values-grid">
-            <div class="value-card">
-                <h4>EXCELLENCE</h4>
-                [cite_start]<p>Ensuring the highest standards of care in every treatment[cite: 25].</p>
+            <div class="value-card"><div class="icon">💎</div><h4>EXCELLENCE</h4><p>Ensuring the highest standards of care in every treatment</p></div>
+            <div class="value-card"><div class="icon">🤝</div><h4>INTEGRITY</h4><p>Guided by honesty and transparency in all we do</p></div>
+            <div class="value-card"><div class="icon">✨</div><h4>COMPASSION</h4><p>Supporting your personal journey with empathy and care</p></div>
+            <div class="value-card"><div class="icon">💡</div><h4>INNOVATION</h4><p>Leveraging advanced technology for precise sculpting</p></div>
+            <div class="value-card"><div class="icon">🦋</div><h4>EMPOWERMENT</h4><p>Inspiring confidence to celebrate your true beauty</p></div>
+            <div class="value-card"><div class="icon">🎯</div><h4>RESULTS</h4><p>Delivering visible, transformative results that exceed expectations</p></div>
+        </div>
+    </section>
+
+    <div class="section-divider">
+        <span class="line"></span>
+        <span class="icon-divider"><i class="fas fa-gem"></i></span>
+        <span class="line"></span>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services" class="reveal">
+            <h2 class="section-title">Our Signature Services</h2>
+            <p class="section-subtitle" style="margin-bottom: 3rem;">Tailored treatments designed to help you to achieve your ideal body confidence</p>
+            
+            <div class="services-grid">
+                
+                <a href="Services.html" class="service-card traditional-card">
+                    <div class="card-content">
+                        <div class="service-icon">
+                            <i class="fas fa-spa"></i> </div>
+                        <h3>Traditional<br>Realignment</h3>
+                        <p>Ancient techniques to correct posture and sculpt natural curves.</p>
+                        <span class="link-text">Discover More <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="Services.html" class="service-card modern-card">
+                    <div class="card-content">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i> </div>
+                        <h3>Modern<br>Technology</h3>
+                        <p>State-of-the-art non-invasive technology for precise fat reduction.</p>
+                        <span class="link-text">Discover More <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+        </div>
+    </section>
+
+    <!-- MEDIA FEATURES -->
+  <section id="media" class="reveal burgundy-section">
+        <h2 class="section-title" style="color: #ffffff !important;">Media Talk</h2>
+        <p class="section-subtitle" style="color: #ffffff !important; margin-bottom: 4rem;">Spotlight on Dr. Sttanny Phong & Slim Paris</p>
+        
+        <div class="media-container">
+            
+            <div class="media-row">
+                <div class="media-video-wrapper">
+                    <div class="media-video">
+                        <iframe src="https://www.youtube.com/embed/-NAI5XkstDw" title="CITYPlus Interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                
+                <div class="media-text">
+                    <span class="media-date">Featured on CITYPlus</span>
+                    <h3>Redefining The Ideal Body</h3>
+                    <p>
+                        Founder of Slim Paris – Dr. Sttanny was invited to CITYPlus to share a new trend for women on the pursuit of a "perfect ideal body". 
+                    </p>
+                    <p>
+                        A whole new perspective of slimming as one goes beyond just numbers on the scale, refining body posture to bring out an individual's true self-confidence. ❤️
+                    </p>
+                </div>
             </div>
-            <div class="value-card">
-                <h4>INTEGRITY</h4>
-                [cite_start]<p>Guided by honesty and transparency in all we do[cite: 27].</p>
-            </div>
-            <div class="value-card">
-                <h4>COMPASSION</h4>
-                [cite_start]<p>Supporting your personal journey with empathy and care[cite: 29].</p>
-            </div>
-            <div class="value-card">
-                <h4>INNOVATION</h4>
-                [cite_start]<p>Leveraging advanced technology for precise sculpting[cite: 31].</p>
-            </div>
-            <div class="value-card">
-                <h4>EMPOWERMENT</h4>
-                [cite_start]<p>Inspiring confidence to celebrate your true beauty[cite: 33].</p>
-            </div>
-            <div class="value-card">
-                <h4>RESULTS</h4>
-                [cite_start]<p>Delivering visible, transformative results that exceed expectations[cite: 35].</p>
+
+            <div class="media-row reverse-layout">
+                <div class="media-video-wrapper">
+                    <div class="media-video">
+                        <iframe src="https://www.youtube.com/embed/VikzZ303l3E" title="Shanghai Talk of Fame" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="media-text">
+                    <span class="media-date">Featured on Shanghai Talk of Fame</span>
+                    <h3>Company Culture & Mission</h3>
+                    <p>
+                        Founder of Slim Paris – Dr. Sttanny was invited to participate in the 11th Season of ShangHai Celebrity Interview to share the company culture and missions of Slim Paris. ❤️
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="services">
-        <h2 class="section-title">Our Signature Services</h2>
-        <p class="section-subtitle" style="margin-bottom: 2rem;">Tailored treatments designed to help you achieve your ideal body confidence</p>
-        
-        <div class="services-grid">
-            <div class="service-item" style="background-color: #bfa07a;">
-                <div class="service-overlay">
-                    Traditional Realignment Techniques
-                </div>
-            </div>
-            <div class="service-item" style="background-color: #333;">
-                <div class="service-overlay">
-                    Modern Innovation Technology
-                </div>
-            </div>
-        </div>
-        
-        <div style="margin-top: 4rem; text-align: center;">
-            <h3 style="font-size: 2rem; margin-bottom: 1rem;">Media Talk</h3>
-            <p style="margin-bottom: 1rem;">About company talk</p>
-            <div style="background: #000; width: 100%; max-width: 700px; height: 400px; margin: 0 auto; display:flex; align-items:center; justify-content:center; color:white; border-radius: 8px;">
-                [YouTube Link Placeholder]
-            </div>
-        </div>
-    </section>
-
+    <!-- FOOTER -->
     <footer>
-        <img src="slimparislogo.png" alt="SlimParis" style="max-height: 40px; margin-bottom: 1rem; filter: brightness(0) invert(1);">
-        <p>TRADITIONAL & MODERN | PUSAT KECANTIKAN</p>
-        <p>&copy; 2026 Slim Paris. All Rights Reserved.</p>
+        <div class="footer-container">
+            <div class="footer-col logo-col"><h3 class="footer-heading">Contact Us</h3><img src="slimparislogo.png" alt="SlimParis" class="footer-logo"></div>
+            <div class="footer-col">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Traditional Treatments</a></li>
+                    <li><a href="#">Modern Treatments</a></li>
+                    <li><a href="#">Location</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-heading">Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Booking</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col social-col"><h3 class="footer-heading">Social Media</h3><div class="social-links">
+                <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="social-item"><i class="fab fa-instagram icon-insta"></i> <span>Instagram</span></a>
+                <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="social-item"><i class="fab fa-facebook icon-fb"></i> <span>Facebook</span></a>
+                <a href="#" class="social-item"><span class="icon-xhs">小</span> <span>XHS</span></a>
+                <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-item"><i class="fab fa-tiktok icon-tiktok"></i> <span>TikTok</span></a>
+            </div></div>
+        </div>
+        <div class="footer-bottom"><p>SPG WELLNESS CODE SDN. BHD. 20231101012 (1504501X)</p><p style="margin-top: 5px; font-weight: bold;">&copy; 2026 Slim Paris. All right reserved.</p></div>
     </footer>
 
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function toggleSearch() { const sb = document.getElementById('search-box'); sb.style.display = sb.style.display==='block'?'none':'block'; if(sb.style.display==='block') sb.focus(); }
+        document.getElementById('search-box').addEventListener('keypress', function (e) { if (e.key === 'Enter') { e.preventDefault(); if (window.find && e.target.value.length > 0) { if (!window.find(e.target.value)) alert("Text not found."); }}});
+        function toggleMenu() { document.querySelector('.nav-menu').classList.toggle('active'); }
+        let currentSlide = 0; const slides = document.querySelectorAll('.slide');
+        function nextSlide() { if(slides.length>0){ slides[currentSlide].classList.remove('active'); currentSlide = (currentSlide + 1) % slides.length; slides[currentSlide].classList.add('active'); }}
+        setInterval(nextSlide, 5000);
+        window.addEventListener('scroll', reveal);
+        function reveal() { var reveals = document.querySelectorAll('.reveal'); for (var i = 0; i < reveals.length; i++) { if (reveals[i].getBoundingClientRect().top < window.innerHeight - 150) reveals[i].classList.add('active'); else reveals[i].classList.remove('active'); } }
+    </script>
 </body>
 </html>
