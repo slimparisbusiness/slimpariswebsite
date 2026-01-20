@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage | Slim Paris</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Great+Vibes&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Homepage.css">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="Homepage.html" class="nav-logo">
+            <img src="images/slimparislogo.png" alt="SlimParis">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <ul class="nav-menu">
+            <li><a href="Homepage.html" class="nav-link active">Home</a></li>
+            <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
+            <li class="dropdown">
+                <a href="Services.html" class="nav-link">Services <i class="fas fa-chevron-down arrow-icon"></i></a>
+                <div class="dropdown-content">
+                    <a href="#">Traditional Treatments</a>
+                    <a href="#">Modern Technology</a>
+                </div>
+            </li>
+            <li><a href="Testimonial.html" class="nav-link">Testimonial</a></li>
+            <li><a href="Contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" id="search-box" placeholder="Type and hit Enter...">
+            <div class="nav-search-icon" onclick="toggleSearch()"><i class="fas fa-search"></i></div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('images/hero1.png');"></div>
+            <div class="slide" style="background-image: url('images/hero2.png');"></div>
+            <div class="slide" style="background-image: url('images/hero3.png');"></div>
+            <div class="slide" style="background-image: url('images/hero4.png');"></div>
+        </div>
+        <div class="hero-content">
+            <a href="AboutUs.html" class="btn">KNOW MORE ABOUT SLIM PARIS</a>
+        </div>
+    </section>
+
+    <section class="cta-strip">
+        <h3 class="cta-text">"MORE THAN JUST A PLACE FOR SLIMMING"</h3>
+        <a href="https://wa.me/60102353737" target="_blank" class="btn-white">Book Appointment Now</a>
+    </section>
+
+    <!-- CHINESE + ENGLISH  -->
+    <section class="intro-text-section">
+        <div class="intro-top">
+            
+            <div class="chinese-side">
+                <div class="vertical-text">全马首创</div>
+                <div class="vertical-text">中西结合</div>
+                <div class="vertical-text">塑造完美体态</div>
+            </div>
+            
+            <div class="intro-content">
+                <span class="badge-gold">MALAYSIA NO. 1</span>
+                
+                <h2 class="editorial-title">
+                    Traditional & Modern<br>
+                    <span class="highlight-script">Professional Body Sculpting</span>
+                </h2>
+
+                <div class="quote-box">
+                    <h3 class="quote-text">"Sculpt Your Body Confidence"</h3>
+                </div>
+                
+                <div class="intro-desc">
+                    <p>
+                        <strong style="color:var(--burgundy);">Slim Paris</strong> specializes in <strong>Body-Shaping Beauty and Confidence Empowerment.</strong>
+                    </p>
+                    <p>
+                        We have the expertise in understanding each individual's unique body concerns.
+                    </p>
+                    <p>
+                        Through the perfect blend of <strong>Traditional Techniques & Modern Innovation</strong>, 
+                        we deliver the best service — all focused on achieving visible transformations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 lISTS -->
+    <section class="intro-cards-section">
+        <div class="intro-bottom">
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span><i class="fas fa-caret-right"></i> Low Risk, High Impact Results</span>
+                    <i class="fas fa-chevron-down icon-rotate"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>We curate effective, proven treatments that require minimal effort but deliver maximum visible improvement without invasive surgery</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span><i class="fas fa-caret-right"></i> Trusted Expertise You Can Feel</span>
+                    <i class="fas fa-chevron-down icon-rotate"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>Our founder and team bring decades of knowledge in beauty, body sculpting, and client servicing - ensuing every treatment is backed by real experience and professionalism</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span><i class="fas fa-caret-right"></i> Comprehensive Beauty Solutions</span>
+                    <i class="fas fa-chevron-down icon-rotate"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>From body sculpting to advanced skin rejuvenation, we offer a full suite of treatments tailored to different concerns, giving clients everything they need under one roof</p>
+                </div>
+            </div>
+
+             <div class="accordion-item">
+                <button class="accordion-header">
+                    <span><i class="fas fa-caret-right"></i> Advanced Treatment Innovation</span>
+                    <i class="fas fa-chevron-down icon-rotate"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>Our treatments are designed using the latest technology and research, ensuring safety, efficiency, and consistent results</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span><i class="fas fa-caret-right"></i> Recognized Excellence</span>
+                    <i class="fas fa-chevron-down icon-rotate"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>Slim Paris has been acknowledged for quality, service, and results - a testament to our commitment to helping clients look and feel their best</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="more-info-container">
+            <a href="https://wa.me/60102353737" target="_blank" class="btn-white-contact">
+                Want to know more? Click here to contact us
+            </a>
+    </div>
+
+    <!-- ABOUT SLIM PARIS -->
+    <section class="brand-manifesto-section">
+        <div class="manifesto-container">
+            
+            <div class="manifesto-header">
+                <span class="badge-gold">ABOUT SLIM PARIS</span>
+                <h2 class="manifesto-title">"Figure First, Scale Second"</h2>
+                <div class="gold-divider"></div>
+            </div>
+
+            <div class="manifesto-body">
+                <p>
+                    Step into <strong class="brand-name">Slim Paris</strong> — inspired by the timeless elegance of the Parisian lifestyle and the inherent femininity within every woman.
+                </p>
+                <p>
+                    <strong class="brand-name">Slim Paris</strong> is a <strong>haven for sculpting body confidence</strong> — where traditional techniques meet modern innovation.
+                </p>
+                <p>
+                    We are dedicated to eliminating weight anxieties by helping women achieve <strong>graceful body shapes and confident posture.</strong>
+                </p>
+                <p>
+                    Our mission is to <strong>inspire women</strong> to achieve a healthy, beautiful body figure while rediscovering a positive lifestyle that truly belongs to them.
+                </p>
+                
+                <p class="manifesto-closing">
+                    "More than just a place for slimming — it’s embracing a lifestyle that cultivates your confidence."
+                </p>
+
+                <div class="signature-deco">Slim Paris</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE BREAK RED SECTION -->
+    <section class="motivation-banner">
+        <div class="banner-content">
+            <h2 class="banner-text">
+                YOUR BODY, YOUR FREEDOM, <span class="gold-text">YOUR CONFIDENCE</span>
+            </h2>
+            <div class="banner-script">"The Scale Doesn't Define You"</div>
+        </div>
+    </section>
+
+    <!-- WHAT WE DO SECTION -->
+    <section class="what-we-do-section">
+        
+        <div class="watermark-bg">Purpose</div>
+
+        <div class="content-container">
+            <div class="section-header">
+                <span class="badge-gold">WHAT WE DO</span>
+                <h2 class="section-title">Your Confidence, <span class="italic-burgundy">Our Purpose</span></h2>
+            </div>
+
+            <div class="magazine-columns">
+                <div class="col-left">
+                    <p class="drop-cap">S</p>
+                    <p>
+                        <strong style="color:var(--burgundy);">Slim Paris</strong> is devoted to empowering women's body confidence through a harmonious blend of traditional techniques and modern innovation.
+                    </p>
+                    <p>
+                        Since our establishment, we have grown into a <strong>trusted destination</strong> for women seeking visible results, genuine transformation, and a renewed relationship with their bodies.
+                    </p>
+                </div>
+
+                <div class="col-right">
+                    <p>
+                        With years of body-shaping expertise, <strong>Slim Paris</strong> delivers personalized, non-invasive solutions tailored to sculpt elegant body lines and enhance natural beauty — inspiring long-term confidence that lasts.
+                    </p>
+                    <p>
+                        Today, we stand as <strong>Malaysia’s leading specialist</strong> in women’s body sculpting, inspiring millions of women to achieve their body confidence and timeless beauty elegance.
+                    </p>
+                </div>
+            </div>
+
+            <div class="commitment-box">
+                <i class="fas fa-star star-icon"></i>
+                <i class="fas fa-star star-icon"></i>
+                <i class="fas fa-star star-icon"></i>
+                <p>
+                    Our commitment is to deliver treatments that prioritize <strong>safety, comfort, and effectiveness</strong> — helping women achieve realistic, sustainable results without stress or pressure only at <span style="color:var(--primary-red); font-weight:700;">Slim Paris</span>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TREATMENT SHOWCASE SECTION -->
+    <section class="treatment-showcase-section">
+        
+        <div class="showcase-header">
+            <h2 class="showcase-title">Why Choose <span style="color:var(--burgundy);">Slim Paris?</span></h2>
+            <p class="showcase-subtitle">A fusion of comfort, safety, and visible transformation.</p>
+        </div>
+
+        <div class="showcase-grid">
+            
+            <div class="showcase-card">
+                <div class="img-holder">
+                    <img src="images/hero1.png" alt="Traditional Technique"> 
+                </div>
+                <h3 class="card-title">Traditional Realignment</h3>
+                <h4 class="card-question">Is it Painful?</h4>
+                <p class="card-answer">
+                    <span class="highlight-red">No pain at all.</span> Our traditional techniques are designed to be gentle, relaxing, and therapeutic.
+                </p>
+            </div>
+
+            <div class="showcase-card">
+                <div class="img-holder">
+                    <img src="images/hero2.png" alt="Modern Technology">
+                </div>
+                <h3 class="card-title">Modern Technology</h3>
+                <h4 class="card-question">Is it Safe?</h4>
+                <p class="card-answer">
+                    <span class="highlight-red">100% Non-Invasive.</span> All treatments are performed by professional beauticians using FDA-approved technology.
+                </p>
+            </div>
+
+            <div class="showcase-card">
+                <div class="img-holder">
+                    <img src="images/hero3.png" alt="Visible Results">
+                </div>
+                <h3 class="card-title">Visible Transformation</h3>
+                <h4 class="card-question">Is it Effective?</h4>
+                <p class="card-answer">
+                    <span class="highlight-red">Yes.</span> We customize every plan to target your specific concerns for results you can see and feel.
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <div class="more-info-container">
+            <a href="https://wa.me/60102353737" target="_blank" class="btn-white-contact">
+                Want to know more? Click here to contact us
+            </a>
+    </div>
+
+    <!-- BANNER TOP -->
+    <section class="reasons-banner-top">
+        <div class="banner-text-wide">
+            "CONTINUOUS <span class="text-white-bold">CARE</span>, LASTING <span class="text-white-bold">CONFIDENCE</span>"
+        </div>
+    </section>
+
+    <!-- 9 GIRDS -->
+    <section class="reasons-grid-section">
+        <div class="reasons-container">
+            
+            <div class="reasons-header">
+                <span class="badge-gold">WHY CHOOSE US</span>
+                <h2 class="reasons-title">
+                    9 Reasons to Begin Your Transformation with <span style="color:var(--primary-red);">Slim Paris</span>
+                </h2>
+            </div>
+
+            <div class="reasons-grid">
+                
+                <div class="reason-card">
+                    <div class="icon-circle"><i class="ph ph-person"></i></div>
+                    <h3 class="reason-title">Master of Body Sculpting</h3>
+                    <p class="reason-desc">With years of honed expertise, our specialists treat body contouring as an art form—delivering precision, passion, and perfection in every session.</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="icon-circle"><i class="ph ph-ruler"></i></div>
+                    <h3 class="reason-title">Tailored Solutions</h3>
+                    <p class="reason-desc">Your body is one-of-a-kind. We tailor personalized plans to fulfill your desired goals and shape.</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="icon-circle"><i class="ph ph-feather"></i></div>
+                    <h3 class="reason-title">Non-Invasive</h3>
+                    <p class="reason-desc">Beauty should never be painful. We follow sustainable principles using gentle, non-invasive methods.</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="icon-circle"><i class="ph ph-sparkle"></i></div>
+                    <h3 class="reason-title">Traditional + Modern</h3>
+                    <p class="reason-desc">A unique blend of innovation and traditional expertise enhances effectiveness for lasting results.</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="icon-circle"><i class="ph ph-house-line"></i></div>
+                    <h3 class="reason-title">Soothing Atmosphere</h3>
+                    <p class="reason-desc">A haven where every woman is heard, seen, and embraced — a space of comfort and peace.</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="icon-circle"><i class="ph ph-hand-heart"></i></div>
+                    <h3 class="reason-title">Excellence After Care</h3>
+                    <p class="reason-desc">Attentive care and continuous guidance after every treatment, ensuring you feel fully supported.</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="icon-circle"><i class="ph ph-star"></i></div>
+                    <h3 class="reason-title">5-Star Experience</h3>
+                    <p class="reason-desc">A trusted name consistently receiving 5-star ratings for our expertise and comfort-focused treatments.</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="icon-circle"><i class="ph ph-plant"></i></div>
+                    <h3 class="reason-title">Zero Pressure</h3>
+                    <p class="reason-desc">Begin at your own pace. No upfront costs, no hidden charges, just personalized treatments.</p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="icon-circle"><i class="ph ph-heart"></i></div>
+                    <h3 class="reason-title">Self-Love</h3>
+                    <p class="reason-desc">Investing in yourself not just to look better, but to feel confident, aligned, and empowered.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER BOTTOM -->
+     <section class="reasons-banner-bottom">
+        <div class="banner-text-wide">
+            "WE'RE WITH YOU <span class="text-white-bold">EVERY STEP</span>"
+        </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section class="partners-section">
+        <div class="partners-container">
+            
+            <div class="partners-header">
+                <span class="badge-gold" >OUR PARTNERSHIPS BRANDS</span>
+                <h2 class="partners-title">
+                    "STRATEGIC BUSINESS CONNECTIONS FOR SUCCESS"
+                </h2>
+                <p class="partners-desc">
+                    We are building business connections to expand experience, knowledge, expertise, and exposure.
+                </p>
+            </div>
+
+            <div class="slider-area">
+                <div class="slide-track">
+                    
+                    <div class="partner-slide"><img src="images/partner1.png" alt="Partner 1"></div>
+                    <div class="partner-slide"><img src="images/partner2.png" alt="Partner 2"></div>
+                    <div class="partner-slide"><img src="images/partner3.png" alt="Partner 3"></div>
+                    <div class="partner-slide"><img src="images/partner4.png" alt="Partner 4"></div>
+
+                    <div class="partner-slide"><img src="images/partner1.png" alt="Partner 1"></div>
+                    <div class="partner-slide"><img src="images/partner2.png" alt="Partner 2"></div>
+                    <div class="partner-slide"><img src="images/partner3.png" alt="Partner 3"></div>
+                    <div class="partner-slide"><img src="images/partner4.png" alt="Partner 4"></div>
+
+                    <div class="partner-slide"><img src="images/partner1.png" alt="Partner 1"></div>
+                    <div class="partner-slide"><img src="images/partner2.png" alt="Partner 2"></div>
+                    <div class="partner-slide"><img src="images/partner3.png" alt="Partner 3"></div>
+                    <div class="partner-slide"><img src="images/partner4.png" alt="Partner 4"></div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- AWARDS -->
+    <section class="awards-section-deco">
+        
+        <div class="watermark-awards">HONORS</div>
+
+        <div class="awards-container-deco">
+            
+            <div class="awards-header-deco">
+                <span class="badge-gold">HALL OF FAME</span>
+                <h2 class="awards-title-deco">"OUR ACHIEVEMENTS & GLOBAL RECOGNITION"</h2>
+                <div class="gold-divider-short"></div>
+            </div>
+
+            <div class="awards-grid-deco">
+                
+                <div class="awards-col-left">
+                    
+                    <div class="award-card-deco">
+                        <div class="img-frame">
+                            <img src="images/award1.png" alt="Shanghai Talk of Fame">
+                        </div>
+                        <h3 class="award-name-deco">SHANGHAI TALK OF FAME</h3>
+                    </div>
+
+                    <div class="award-card-deco">
+                        <div class="img-frame">
+                             <img src="images/award3.png" alt="Outstanding Professional Award">
+                        </div>
+                        <h3 class="award-name-deco">OUTSTANDING PROFESSIONAL<br>SERVICE AWARD (2025)</h3>
+                    </div>
+                </div>
+
+                <div class="awards-col-right">
+                    
+                    <div class="award-card-deco margin-top-stagger">
+                        <div class="img-frame">
+                             <img src="images/award2.png" alt="Shanghai Honourable Award">
+                        </div>
+                        <h3 class="award-name-deco">SHANGHAI HONOURABLE<br>WOMEN ENTREPRENEUR (2025)</h3>
+                    </div>
+
+                    <div class="award-card-deco">
+                        <div class="img-frame">
+                             <img src="images/award4.png" alt="Outstanding Performance Award">
+                        </div>
+                        <h3 class="award-name-deco">OUTSTANDING PERFORMANCE<br>AWARD (2024)</h3>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BEAUTY BANNER TOP -->
+    <section class="global-red-banner">
+        <h2 class="banner-text-wide">
+            "WHERE <span class="text-white-bold">BEAUTY</span> MEETS <span class="text-white-bold">CONFIDENCE</span>"
+        </h2>
+    </section>
+
+    <!-- SIGNATURE TREATMENTS -->
+    <section class="signature-intro-section">
+        <div class="signature-container">
+            <span class="badge-gold">OUR SIGNATURE TREATMENTS</span>
+            <h2 class="signature-title">"A Curated Path to Timeless Beauty"</h2>
+            <p class="signature-desc">
+                Carefully crafted for each body area, delivering personalized solutions that address individual concern with precision, comfort, and elegance.
+            </p>
+        </div>
+    </section>
+
+    <!-- BEAUTY BANNER -->
+    <section class="global-red-banner">
+        <h2 class="banner-text-wide">
+            "YOUR <span class="text-white-bold">BEAUTY LIFESTYLE</span>, YOUR <span class="text-white-bold">CONFIDENCE</span>" 
+        </h2>
+    </section>
+
+    <!-- FIRST TRIAL -->
+    <section class="first-trial-section">
+        <div class="trial-container">
+            
+            <h2 class="trial-title">
+                Get Your <span class="italic-red">First Trial</span> Offer Now !
+            </h2>
+
+            <p class="trial-text">
+                If you are a <strong>First-Time Guest</strong> at <strong style="color:var(--primary-red);">Slim Paris</strong>, you can enjoy this offer.
+            </p>
+
+            <p class="trial-text">
+                Just contact us now via <a href="https://wa.me/60102353737" target="_blank" class="link-underlined">WhatsApp.</a>
+            </p>
+
+            <p class="trial-text-small">
+                This offer <strong style="color:var(--primary-red);">ONLY Available</strong>, when you make an <strong>Online Booking</strong> with us now!
+            </p>
+
+            <a href="https://wa.me/60102353737" target="_blank" class="btn-wide-brown">Book Appointment now</a>
+
+        </div>
+    </section>
+
+     <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col logo-col"><h3 class="footer-heading">Contact Us</h3><img src="images/slimparislogo.png" alt="SlimParis" class="footer-logo"></div>
+            <div class="footer-col">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Traditional Treatments</a></li>
+                    <li><a href="#">Modern Treatments</a></li>
+                    <li><a href="#">Location</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-heading">Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Booking</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col social-col"><h3 class="footer-heading">Social Media</h3><div class="social-links">
+                <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="social-item"><i class="fab fa-instagram icon-insta"></i> <span>Instagram</span></a>
+                <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="social-item"><i class="fab fa-facebook icon-fb"></i> <span>Facebook</span></a>
+                <a href="#" class="social-item"><span class="icon-xhs">小</span> <span>XHS</span></a>
+                <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-item"><i class="fab fa-tiktok icon-tiktok"></i> <span>TikTok</span></a>
+            </div></div>
+        </div>
+        <div class="footer-bottom"><p>SPG WELLNESS CODE SDN. BHD. 20231101012 (1504501X)</p><p style="margin-top: 5px; font-weight: bold;">&copy; 2026 Slim Paris. All right reserved.</p></div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        }
+
+        // Accordion Logic
+        const accordions = document.querySelectorAll('.accordion-header');
+        accordions.forEach(acc => {
+            acc.addEventListener('click', function() {
+                // Close others
+                accordions.forEach(item => {
+                    if (item !== this) {
+                        item.classList.remove('active');
+                        item.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+                // Toggle current
+                this.classList.toggle('active');
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

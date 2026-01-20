@@ -1,0 +1,1276 @@
+/* =========================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================= */
+:root {
+    --bg-cream: #FFF8F0;
+    --accent-gold: #D4A373;
+    --primary-red: #D34836;
+    --text-dark: #333;
+    --text-light: #555;
+    --burgundy: #560319;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    background-color: var(--bg-cream); 
+    font-family: 'Lato', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden; 
+}
+
+h1, h2, h3, h4 { 
+    color: var(--primary-red); 
+    font-family: 'Playfair Display', serif; 
+    font-weight: 700; 
+}
+
+/* =========================================
+   1.1 CUSTOM FONTS
+   ========================================= */
+@font-face {
+    font-family: 'FlyFlower';
+    src: url('fonts/FeiHuaSongTi-2.ttf'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* =========================================
+   2. GLOBAL ANIMATIONS
+   ========================================= */
+.reveal { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: all 1s ease; 
+}
+
+.reveal.active { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+@keyframes zoomEffect { 
+    0% { transform: scale(1); } 
+    100% { transform: scale(1.1); } 
+}
+
+@keyframes fadeInUp { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+@keyframes iconPulse { 
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); color: var(--primary-red); background: #fff0f0; box-shadow: 0 0 15px rgba(211, 72, 54, 0.2); }
+    100% { transform: scale(1); }
+}
+
+/* =========================================
+   3. HERO SECTION (Main Slider)
+   ========================================= */
+.hero { 
+    position: relative;
+    height: 100vh; /* Forces full screen height */
+    width: 100%;
+    overflow: hidden;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    text-align: center; 
+    padding: 0 1rem; 
+}
+
+.hero-slider { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 1; 
+}
+
+/* NOTE: This '.slide' class is ONLY for the Hero now */
+.slide { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-size: cover; 
+    background-position: center; 
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out; 
+    transform: scale(1.1); 
+    animation: zoomEffect 20s infinite alternate; 
+}
+    
+.slide::after { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)); 
+}
+
+.slide.active { 
+    opacity: 1; 
+}
+
+.hero-content { 
+    position: relative; 
+    z-index: 2; 
+    animation: fadeInUp 1.5s ease-out; 
+}
+
+.btn { 
+    padding: 15px 40px; 
+    background-color: var(--primary-red); 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 50px; 
+    display: inline-block; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 15px rgba(211, 72, 54, 0.4); 
+    font-weight: bold; 
+    letter-spacing: 1px; 
+}
+
+.btn:hover { 
+    background-color: white; 
+    color: var(--primary-red); 
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+}
+
+/* =========================================
+   4. RED CTA STRIP 
+   ========================================= */
+.cta-strip {
+    background: linear-gradient(135deg, var(--burgundy) 0%, var(--primary-red) 100%);
+    padding: 35px 20px;
+    text-align: center; 
+    color: white; 
+    position: relative;
+    box-shadow: 0 10px 40px rgba(86, 3, 25, 0.3);
+}
+
+.cta-text {
+    font-family: 'Playfair Display', serif; 
+    font-style: italic;
+    font-size: 2rem; 
+    margin-bottom: 20px; 
+    color: white !important;
+}
+
+.btn-white {
+    background-color: white; 
+    color: var(--burgundy);
+    padding: 12px 40px; 
+    text-decoration: none; 
+    font-weight: 700;
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    display: inline-block;
+    border: 1px solid white; 
+    transition: all 0.3s ease;
+}
+
+.btn-white:hover {
+    background-color: transparent; 
+    color: white; 
+    border-color: var(--accent-gold);
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   5. EDITORIAL TEXT SECTION
+   ========================================= */
+.intro-text-section {
+    padding: 100px 10% 60px 10%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.intro-top {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.chinese-side {
+    display: flex;
+    gap: 5px;
+    padding-top: 15px;
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+.vertical-text {
+    font-family: 'FlyFlower', serif;
+    font-size: 2rem;
+    color: var(--burgundy);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-weight: 700;
+    letter-spacing: 30px;
+    border-right: 1px solid rgba(212, 163, 115, 0.3);
+    padding-right: 2px;
+}
+
+.intro-content { 
+    flex-grow: 1; 
+    padding-top: 10px;
+}
+
+.badge-gold {
+    display: inline-block; 
+    font-size: 1.1rem; 
+    font-weight: 800;
+    letter-spacing: 3px; 
+    color: var(--accent-gold); 
+    text-transform: uppercase;
+    margin-bottom: 20px; 
+    border-bottom: 2px solid var(--accent-gold);
+}
+
+.editorial-title {
+    font-family: 'Playfair Display', serif; 
+    font-size: 3.2rem;
+    color: var(--text-dark); 
+    line-height: 1.1; 
+    margin-bottom: 25px;
+}
+
+.highlight-script {
+    font-family: 'Great Vibes', cursive; 
+    font-size: 4.5rem;
+    color: var(--primary-red); 
+    display: block; 
+    margin-top: 5px; 
+    line-height: 1.2;
+}
+
+.quote-box {
+    margin: 35px 0; 
+    border-left: 4px solid var(--primary-red); 
+    padding-left: 20px;
+}
+
+.quote-text {
+    font-family: 'Playfair Display', serif; 
+    font-size: 2rem;
+    color: var(--burgundy); 
+    font-style: italic; 
+    margin: 0;
+}
+
+.intro-desc p {
+    font-size: 1.1rem; 
+    color: var(--text-light); 
+    line-height: 1.8;
+    margin-bottom: 20px; 
+    max-width: 800px;
+}
+
+/* =========================================
+   6. ACCORDION CARDS SECTION
+   ========================================= */
+.intro-cards-section {
+    padding: 0 10% 80px 10%;
+    background-color: var(--bg-cream);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 30px;       
+}  
+
+.intro-bottom {
+    width: 100%; 
+    max-width: 1000px;
+    margin-top: 50px;
+}
+
+.accordion-item {
+    background: white; 
+    border-radius: 15px; 
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05); 
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.accordion-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 35px #e25947;
+}
+
+.accordion-header {
+    width: 100%; 
+    background: white; 
+    border: none; 
+    text-align: left;
+    padding: 25px 35px; 
+    font-size: 1.3rem; 
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; 
+    color: var(--text-dark); 
+    cursor: pointer;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.accordion-header.active { 
+    color: var(--primary-red); 
+}
+
+.icon-rotate {
+    background: var(--bg-cream);
+    width: 35px; 
+    height: 35px; 
+    line-height: 35px;
+    text-align: center; 
+    border-radius: 50%; 
+    transition: transform 0.4s ease;
+}
+
+.accordion-header.active .icon-rotate {
+    transform: rotate(180deg); 
+    background: var(--primary-red); 
+    color: white;
+}
+
+.accordion-content {
+    max-height: 0; 
+    overflow: hidden; 
+    transition: max-height 0.4s ease-out;
+    padding: 0 35px;
+}
+
+.accordion-content p { 
+    padding-bottom: 30px; 
+    color: var(--text-light); 
+}
+
+.more-info-container {
+    width: 100%;
+    text-align: center;
+    margin-top: -60px;
+    margin-bottom: 30px;
+}
+
+.btn-white-contact {
+    display: inline-block;
+    background-color: white;
+    color: var(--burgundy); 
+    padding: 15px 40px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    border-radius: 50px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+    border: 1px solid rgba(212, 163, 115, 0.3); 
+    transition: all 0.3s ease;
+}
+
+.btn-white-contact:hover {
+    background-color: var(--primary-red);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(211, 72, 54, 0.3); 
+    border-color: var(--primary-red);
+}
+
+/* =========================================
+   7. BRAND MANIFESTO SECTION
+   ========================================= */
+.brand-manifesto-section {
+    padding: 100px 10%;
+    background-color: white; 
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.manifesto-container {
+    max-width: 800px;
+}
+
+.manifesto-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--burgundy);
+    margin: 20px 0 30px 0;
+    line-height: 1.2;
+}
+
+.gold-divider {
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-gold);
+    margin: 0 auto 50px auto; 
+}
+
+.manifesto-body p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.15rem;
+    color: var(--text-light);
+    line-height: 1.9;
+    margin-bottom: 25px; 
+}
+
+.brand-name {
+    color: var(--primary-red);
+    font-weight: 700;
+}
+
+.manifesto-closing {
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.5rem !important;
+    color: var(--text-dark) !important;
+    font-style: italic;
+    margin-top: 40px;
+    padding: 0 20px;
+    border-left: 3px solid var(--accent-gold); 
+}
+
+.signature-deco {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    color: rgba(211, 72, 54, 0.05); 
+    z-index: -1;
+    position: relative;
+}
+
+/* =========================================
+   8. BANNER (THE DIVIDER)
+   ========================================= */
+.motivation-banner {
+    background: linear-gradient(135deg, var(--burgundy) 0%, var(--primary-red) 100%);
+    padding: 30px 5%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-top: -150px;
+}
+
+.banner-content {
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+.banner-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: white;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.gold-text {
+    color: var(--accent-gold); 
+    font-style: italic;
+}
+
+.banner-script {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 400;
+    transform: rotate(-2deg); 
+}
+
+/* =========================================
+   10. WHAT WE DO (MAGAZINE LAYOUT)
+   ========================================= */
+.what-we-do-section {
+    padding: 100px 10%;
+    background-color: white; 
+    position: relative; 
+    overflow: hidden;
+}
+
+.watermark-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    font-family: 'Great Vibes', cursive;
+    font-size: 15rem; 
+    color: var(--primary-red);
+    opacity: 0.1; 
+    z-index: 0;
+    pointer-events: none; 
+    white-space: nowrap;
+}
+
+.content-container {
+    position: relative;
+    z-index: 1; 
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--text-dark);
+    margin-top: 15px;
+}
+
+.italic-burgundy {
+    font-style: italic;
+    color: var(--burgundy);
+}
+
+.magazine-columns {
+    display: flex;
+    gap: 60px; 
+    margin-bottom: 50px;
+    text-align: justify; 
+}
+
+.col-left, .col-right {
+    flex: 1; 
+}
+
+.magazine-columns p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.drop-cap {
+    float: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    line-height: 0.8;
+    color: var(--primary-red);
+    padding-right: 10px;
+    padding-top: 5px;
+    font-weight: 700;
+}
+
+.commitment-box {
+    background-color: var(--bg-cream);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px dashed var(--accent-gold); 
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.star-icon {
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.commitment-box p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--burgundy);
+    line-height: 1.6;
+}
+
+/* =========================================
+   11. TREATMENT SHOWCASE
+   ========================================= */
+.treatment-showcase-section {
+    padding: 80px 10%;
+    background-color: var(--bg-cream); 
+}
+
+.showcase-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.showcase-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: var(--primary-red);
+    margin-bottom: 10px;
+}
+
+.showcase-subtitle {
+    font-family: 'Lato', sans-serif;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+}
+
+.showcase-card {
+    background: white;
+    padding: 0 0 30px 0; 
+    border-radius: 15px; 
+    overflow: hidden; 
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    transition: transform 0.3s ease;
+}
+
+.showcase-card:hover {
+    transform: translateY(-10px); 
+}
+
+.img-holder {
+    width: 100%;
+    height: 250px; 
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+}
+
+.showcase-card:hover .img-holder img {
+    transform: scale(1.1); 
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--burgundy);
+    margin-bottom: 10px;
+}
+
+.card-question {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.card-answer {
+    padding: 0 25px; 
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.highlight-red {
+    color: var(--primary-red);
+    font-weight: 700;
+}
+
+/* =========================================
+   12 & 13. REASONS GRID & BANNERS
+   ========================================= */
+.reasons-banner-top, .reasons-banner-bottom {
+    background: linear-gradient(90deg, var(--burgundy) 0%, var(--primary-red) 100%);
+    padding: 30px 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.banner-text-wide {
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.6rem; 
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700; 
+    line-height: 1.4;
+}
+
+.text-white-bold {
+    color: white;
+    font-weight: 700;
+    font-style: italic; 
+    text-underline-offset: 5px;
+}
+
+.reasons-grid-section {
+    background-color: var(--bg-cream);
+    padding: 80px 5%;
+}
+
+.reasons-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.reasons-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: var(--burgundy);
+    margin-top: 15px;
+    line-height: 1.3;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reason-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px; 
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.02); 
+}
+
+.reason-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(211, 72, 54, 0.657); 
+}
+
+.icon-circle {
+    width: 80px; 
+    height: 80px;
+    background-color: white; 
+    border: 1px solid rgba(212, 163, 115, 0.5); 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 25px auto;
+    font-size: 2.5rem; 
+    color: var(--burgundy); 
+    transition: all 0.3s ease;
+}
+
+.reason-card:hover .icon-circle {
+    background-color: var(--burgundy); 
+    color: white; 
+    border-color: var(--burgundy);
+    transform: scale(1.1); 
+}
+
+.reason-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.reason-desc {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* =========================================
+   14. PARTNERSHIPS SLIDER (RENAMED TO .partner-slide)
+   ========================================= */
+.partners-section {
+    padding: 80px 0;
+    background-color: white;
+    overflow: hidden; 
+}
+
+.partners-container { 
+    text-align: center; 
+}
+
+.partners-header {
+    padding: 0 5%;
+    margin-bottom: 50px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.partners-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--primary-red);
+    margin-top: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.partners-desc {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-top: 15px;
+}
+
+/* --- THE SLIDER AREA --- */
+.slider-area {
+    height: 150px; 
+    margin: auto; 
+    overflow: hidden; 
+    position: relative; 
+    width: 100%;
+    background: transparent; 
+}
+
+.slider-area::before, .slider-area::after {
+    background: linear-gradient(to right, white 0%, rgba(255,255,255,0) 100%);
+    content: "";
+    height: 150px;
+    position: absolute;
+    width: 100px;
+    z-index: 2;
+}
+
+.slider-area::before { left: 0; top: 0; }
+.slider-area::after { right: 0; top: 0; transform: rotate(180deg); }
+
+/* --- TRACK --- */
+.slide-track {
+    display: flex;
+    width: 3500px; 
+    animation: scrollDesktop 20s linear infinite; 
+}
+
+.slide-track:hover { 
+    animation-play-state: paused; 
+}
+
+/* --- THE SLIDE BOX (Renamed from .slide to .partner-slide) --- */
+.partner-slide {
+    height: 100px;
+    width: 250px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px; 
+}
+
+.partner-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    opacity: 1; 
+    transition: all 0.3s ease;
+}
+
+.partner-slide img:hover { 
+    transform: scale(1.1); 
+}
+
+/* =========================================
+   15. AWARDS SECTION (NEW DECO DESIGN)
+   ========================================= */
+.awards-section-deco {
+    padding: 120px 10%;
+    background-color: var(--bg-cream);
+    position: relative; /* Needed for watermark */
+    overflow: hidden;
+}
+
+/* Giant Watermark Background */
+.watermark-awards {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    font-family: 'Great Vibes', cursive;
+    font-size: 18rem;
+    color: var(--primary-red);
+    opacity: 0.1; /* Very faint */
+    z-index: 0;
+    pointer-events: none;
+}
+
+.awards-container-deco {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+.awards-header-deco {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.awards-title-deco {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--primary-red);
+    margin-top: 20px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.gold-divider-short {
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-gold);
+    margin: 25px auto 0 auto;
+}
+
+/* --- THE ASYMMETRICAL GRID --- */
+.awards-grid-deco {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px; /* Gap between the two main columns */
+}
+
+.awards-col-left, .awards-col-right {
+    flex: 1; /* Both columns take equal width */
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Gap between awards vertically */
+}
+
+/* This is the magic sauce for the staggered look */
+.margin-top-stagger {
+    margin-top: 100px; /* Pushes the right column down */
+}
+
+/* --- THE LUXURY CARD DESIGN --- */
+.award-card-deco {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.award-card-deco:hover {
+    transform: translateY(-10px); /* Floating effect on hover */
+}
+
+/* The White Frame around the image */
+.img-frame {
+    background: white;
+    padding: 25px; /* Thickness of the white frame */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Soft luxury shadow */
+    border: 1px solid rgba(212, 163, 115, 0.2); /* Subtle Gold Border */
+    border-radius: 4px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Optional: A second thin gold line offset for extra luxury feel */
+.img-frame::after {
+    content: '';
+    position: absolute;
+    top: -10px; left: -10px;
+    width: 100%; height: 100%;
+    border: 1px solid rgba(212, 163, 115, 0.3); /* Gold offset border */
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.award-card-deco:hover .img-frame::after {
+    top: -15px; left: -15px; /* Expands slightly on hover */
+    border-color: var(--accent-gold);
+}
+
+.img-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.award-name-deco {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--burgundy); /* Darker red for sophistication */
+    line-height: 1.5;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1024px) {
+    /* On Tablets, reduce the stagger so it fits better */
+    .margin-top-stagger { margin-top: 50px; }
+    .watermark-awards { font-size: 12rem; top: 20%; }
+}
+
+@media (max-width: 768px) {
+    /* On Mobile, stack everything vertically */
+    .awards-grid-deco { flex-direction: column; gap: 50px; }
+    /* Remove the stagger on mobile so it's a neat straight list */
+    .margin-top-stagger { margin-top: 0; }
+    
+    .awards-title-deco { font-size: 2.2rem; }
+    .img-frame { padding: 15px; } /* Thinner frame on mobile */
+    .img-frame::after { display: none; } /* Hide the offset border on mobile for simplicity */
+}
+
+/* =========================================
+   16 & 18. UNIFIED RED BANNERS (CONSISTENCY FIX)
+   ========================================= */
+/* This class replaces all previous specific banner classes to ensure they look identical */
+.global-red-banner {
+    background: linear-gradient(90deg, var(--burgundy) 0%, var(--primary-red) 100%);
+    padding: 35px 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Typography for the banners */
+.banner-text-wide {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+    color: white !important;
+}
+
+.text-white-bold {
+    color: white;
+    font-weight: 700;
+}
+
+.link-icon-white {
+    font-size: 1.4rem;
+    margin-left: 15px;
+    color: white;
+    opacity: 0.8;
+}
+
+/* =========================================
+   17. SIGNATURE INTRO (White Section)
+   ========================================= */
+.signature-intro-section {
+    padding: 80px 10%;
+    background-color: white;
+    text-align: center;
+}
+
+.signature-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.badge-red {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--primary-red); /* Red text like the image */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-red);
+}
+
+.signature-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: var(--primary-red); /* Matches the reddish-brown from image */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.signature-desc {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.15rem;
+    color: black; /* Bold black text like the image */
+    font-weight: 700; 
+    line-height: 1.6;
+}
+
+/* =========================================
+   19. FIRST TRIAL CTA (The Big Final Offer)
+   ========================================= */
+.first-trial-section {
+    padding: 100px 10%;
+    background-color: white;
+    text-align: center;
+}
+
+.trial-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.trial-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    color: black; 
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.italic-red {
+    color: var(--primary-red);
+    font-style: italic;
+}
+
+.trial-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.link-underlined {
+    color: black;
+    text-decoration: underline;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.trial-text-small {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+/* The Big Brown Button */
+.btn-wide-brown {
+    display: block;
+    width: 100%;
+    max-width: 100%; /* Full width */
+    background-color: #C05038; /* The specific brownish-red from your image */
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 18px 0;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.btn-wide-brown:hover {
+    background-color: var(--burgundy); /* Darker on hover */
+    transform: translateY(-2px);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .global-red-banner { padding: 30px 15px; flex-direction: column; }
+    .banner-text-wide { font-size: 1.2rem; }
+    .signature-title { font-size: 2rem; }
+    .trial-title { font-size: 2.2rem; }
+    .btn-wide-brown { font-size: 1rem; padding: 15px 0; }
+}
+
+/* =========================================
+   +++ MOBILE & TABLET RESPONSIVE (CONSOLIDATED) +++
+   ========================================= */
+
+/* Tablet (iPad) */
+@media (max-width: 1024px) {
+    .editorial-title { font-size: 2.8rem; }
+    .highlight-script { font-size: 3.5rem; }
+    .chinese-side { display: none; } 
+    .reasons-grid { grid-template-columns: repeat(2, 1fr); }
+    .showcase-grid { grid-template-columns: repeat(2, 1fr); } 
+}
+
+/* Mobile (Phones) */
+@media (max-width: 768px) {
+    /* Menu */
+    .hamburger { display: block; color: var(--text-dark); }
+    .nav-menu {
+        display: none; flex-direction: column; position: absolute;
+        top: 90px; left: 0; width: 100%; background: white;
+        padding: 20px; box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    }
+    .nav-menu.active { display: flex; }
+    .search-container { display: none; } 
+
+    /* Typography */
+    .intro-top { flex-direction: column; gap: 30px; }
+    .editorial-title { font-size: 2.8rem; }
+    .highlight-script { font-size: 3.5rem; }
+    .cta-text { font-size: 1.5rem; }
+    .cta-strip { padding: 40px 15px; }
+    .btn-white { padding: 12px 25px; font-size: 0.8rem; }
+    
+    /* Layout */
+    .intro-bottom { margin-top: 20px; }
+    .accordion-header { font-size: 1.1rem; padding: 20px; }
+    .intro-text-section { padding: 60px 5%; }
+    .intro-cards-section { padding: 0 5% 60px 5%; }
+
+    .motivation-banner { padding: 60px 20px; }
+    .banner-text { font-size: 1.8rem; }
+    .banner-script { font-size: 2.5rem; }
+
+    .magazine-columns { flex-direction: column; gap: 20px; } 
+    .watermark-bg { font-size: 8rem; } 
+    .section-title { font-size: 2.2rem; }
+
+    .showcase-grid { grid-template-columns: 1fr; }
+    .showcase-title { font-size: 2.2rem; }
+
+    .reasons-grid { grid-template-columns: 1fr; } 
+    .reasons-title { font-size: 2rem; }
+    .banner-text-wide { font-size: 1rem; }
+
+    /* Partner Slider on Mobile */
+    .partners-title { font-size: 1.5rem; }
+    .slider-area { height: 100px; }
+    
+    .partner-slide { 
+        width: 150px; 
+        padding: 0 15px; 
+    } 
+    
+    .slide-track { 
+        width: calc(150px * 12); 
+        animation: scrollMobile 10s linear infinite; 
+    }
+}
+
+/* =========================================
+   +++ SLIDER KEYFRAMES +++
+   ========================================= */
+
+/* Desktop Animation */
+@keyframes scrollDesktop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 4)); } 
+}
+
+/* Mobile Animation */
+@keyframes scrollMobile {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-150px * 4)); } 
+}
+

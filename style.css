@@ -52,6 +52,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); }
 
 .nav-link:hover { color: var(--primary-color); }
 
+.nav-link.active {
+    color: var(--primary-red);
+    font-weight: 700; /* Optional: Makes the active link bold */
+}
+
 .arrow-icon { font-size: 0.8rem; margin-left: 5px; color: #333; }
 
 /* --- NEW SEARCH CONTAINER --- */
