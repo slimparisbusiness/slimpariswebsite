@@ -15,7 +15,6 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
-    <!-- NAVIGATION -->
     <nav class="navbar">
         <a href="Homepage.html" class="nav-logo">
             <img src="images/slimparislogo.png" alt="SlimParis">
@@ -26,13 +25,23 @@
             <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
             <li class="dropdown">
                 <a href="Services.html" class="nav-link">Services <i class="fas fa-chevron-down arrow-icon"></i></a>
-                <div class="dropdown-content">
-                    <a href="#">Traditional Treatments</a>
-                    <a href="#">Modern Technology</a>
+                
+                <div class="dropdown-content services-grid">
+                    <a href="NecklineSculpting.html">Neck Line Sculpting</a>
+                    <a href="ThinBack.html">Thin Back</a>
+                    <a href="FeminineCareRejuvenation.html">Feminine Care Rejuvenation</a>
+                    <a href="HipContouringTreatment.html">Hip Contouring Treatment</a>
+                    <a href="ByeByeBelly.html">Bye Bye Belly</a>
+                    <a href="PeachButt.html">Peach Butt</a>
+                    <a href="SLineBody.html">S-Line Body Contouring</a>
+                    <a href="CoreWaist.html">Core & Waist Contouring Treatment</a>
+                    <a href="HunchBack.html">Rounded Shoulder Hunch Back</a>
+                    <a href="LegSculpting.html">Leg Sculpting</a>
                 </div>
             </li>
             <li><a href="Testimonial.html" class="nav-link">Testimonial</a></li>
-            <li><a href="Contact.html" class="nav-link">Contact Us</a></li>
+            <li><a href="ContactUs.html" class="nav-link">Contact Us</a></li>
+            <li><a href="Blog.html" class="nav-link">Blog</a></li>
         </ul>
         <div class="search-container">
             <input type="text" id="search-box" placeholder="Type and hit Enter...">
@@ -42,14 +51,29 @@
 
     <section class="hero">
         <div class="hero-slider">
-            <div class="slide active" style="background-image: url('images/hero1.png');"></div>
-            <div class="slide" style="background-image: url('images/hero2.png');"></div>
+            
+            <div class="slide active" style="background-image: url('images/hero1.png');">
+                <a href="Promotion.html" class="full-slide-link" title="View Promotion"></a> 
+            </div>
+
+            <div class="slide" style="background-image: url('images/hero2.png');">
+                <div class="slide-content-wrapper">
+                    <a href="Services.html" class="btn-text-style">FIND OUT MORE</a>
+                </div>
+            </div>
+
             <div class="slide" style="background-image: url('images/hero3.png');"></div>
+
             <div class="slide" style="background-image: url('images/hero4.png');"></div>
+        
         </div>
-        <div class="hero-content">
-            <a href="AboutUs.html" class="btn">KNOW MORE ABOUT SLIM PARIS</a>
-        </div>
+
+        <button class="slider-arrow prev" onclick="moveSlide(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-arrow next" onclick="moveSlide(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
     </section>
 
     <section class="cta-strip">
@@ -57,14 +81,13 @@
         <a href="https://wa.me/60102353737" target="_blank" class="btn-white">Book Appointment Now</a>
     </section>
 
-    <!-- CHINESE + ENGLISH  -->
-    <section class="intro-text-section">
+    <section class="intro-text-section reveal">
         <div class="intro-top">
             
             <div class="chinese-side">
                 <div class="vertical-text">全马首创</div>
-                <div class="vertical-text">中西结合</div>
-                <div class="vertical-text">塑造完美体态</div>
+                <div class="vertical-text">中西结合体态调整</div>
+                <div class="vertical-text">塑造完美身形曲线</div>
             </div>
             
             <div class="intro-content">
@@ -95,8 +118,7 @@
         </div>
     </section>
 
-    <!-- 5 lISTS -->
-    <section class="intro-cards-section">
+    <section class="intro-cards-section reveal">
         <div class="intro-bottom">
             <div class="accordion-item">
                 <button class="accordion-header">
@@ -149,47 +171,45 @@
             </div>
         </div>
     </section>
-    <div class="more-info-container">
+    
+    <div class="more-info-container reveal">
             <a href="https://wa.me/60102353737" target="_blank" class="btn-white-contact">
                 Want to know more? Click here to contact us
             </a>
     </div>
 
-    <!-- ABOUT SLIM PARIS -->
-    <section class="brand-manifesto-section">
-        <div class="manifesto-container">
+    <section class="brand-manifesto-section reveal">
+        <div class="manifesto-luxury-wrapper">
             
-            <div class="manifesto-header">
-                <span class="badge-gold">ABOUT SLIM PARIS</span>
-                <h2 class="manifesto-title">"Figure First, Scale Second"</h2>
-                <div class="gold-divider"></div>
+            <div class="manifesto-image-bg">
+                <img src="images/hero3.png" alt="Slim Paris Aesthetics"> 
             </div>
 
-            <div class="manifesto-body">
-                <p>
-                    Step into <strong class="brand-name">Slim Paris</strong> — inspired by the timeless elegance of the Parisian lifestyle and the inherent femininity within every woman.
-                </p>
-                <p>
-                    <strong class="brand-name">Slim Paris</strong> is a <strong>haven for sculpting body confidence</strong> — where traditional techniques meet modern innovation.
-                </p>
-                <p>
-                    We are dedicated to eliminating weight anxieties by helping women achieve <strong>graceful body shapes and confident posture.</strong>
-                </p>
-                <p>
-                    Our mission is to <strong>inspire women</strong> to achieve a healthy, beautiful body figure while rediscovering a positive lifestyle that truly belongs to them.
-                </p>
-                
-                <p class="manifesto-closing">
-                    "More than just a place for slimming — it’s embracing a lifestyle that cultivates your confidence."
-                </p>
+            <div class="manifesto-text-card">
+                <div class="card-content">
+                    <span class="badge-gold">ABOUT SLIM PARIS</span>
+                    <h2 class="manifesto-title-card">"Figure First, Scale Second"</h2>
+                    
+                    <p>
+                        Step into <strong style="color:var(--primary-red);">Slim Paris</strong> — inspired by the timeless elegance of the Parisian lifestyle. We are a haven for sculpting body confidence where traditional techniques meet modern innovation.
+                    </p>
+                    
+                    <p>
+                        We are dedicated to eliminating weight anxieties by helping women achieve <strong>graceful body shapes and confident posture.</strong>
+                    </p>
 
-                <div class="signature-deco">Slim Paris</div>
+                    <p class="manifesto-highlight">
+                        "More than just a place for slimming — it’s embracing a lifestyle that cultivates your confidence."
+                    </p>
+
+                    <div class="signature-card">Slim Paris</div>
+                </div>
             </div>
-        </div>
+
+         </div>
     </section>
 
-    <!-- QUOTE BREAK RED SECTION -->
-    <section class="motivation-banner">
+    <section class="motivation-banner reveal">
         <div class="banner-content">
             <h2 class="banner-text">
                 YOUR BODY, YOUR FREEDOM, <span class="gold-text">YOUR CONFIDENCE</span>
@@ -198,8 +218,7 @@
         </div>
     </section>
 
-    <!-- WHAT WE DO SECTION -->
-    <section class="what-we-do-section">
+    <section class="what-we-do-section reveal">
         
         <div class="watermark-bg">Purpose</div>
 
@@ -241,8 +260,7 @@
         </div>
     </section>
 
-    <!-- TREATMENT SHOWCASE SECTION -->
-    <section class="treatment-showcase-section">
+    <section class="treatment-showcase-section reveal">
         
         <div class="showcase-header">
             <h2 class="showcase-title">Why Choose <span style="color:var(--burgundy);">Slim Paris?</span></h2>
@@ -253,7 +271,9 @@
             
             <div class="showcase-card">
                 <div class="img-holder">
-                    <img src="images/hero1.png" alt="Traditional Technique"> 
+                    <a href="Traditional.html">
+                        <img src="images/hero1.png" alt="Traditional Technique"> 
+                    </a>
                 </div>
                 <h3 class="card-title">Traditional Realignment</h3>
                 <h4 class="card-question">Is it Painful?</h4>
@@ -264,7 +284,9 @@
 
             <div class="showcase-card">
                 <div class="img-holder">
-                    <img src="images/hero2.png" alt="Modern Technology">
+                    <a href="Modern.html">
+                        <img src="images/hero2.png" alt="Modern Technology">
+                    </a>
                 </div>
                 <h3 class="card-title">Modern Technology</h3>
                 <h4 class="card-question">Is it Safe?</h4>
@@ -286,21 +308,20 @@
 
         </div>
     </section>
-    <div class="more-info-container">
+    
+    <div class="more-info-container reveal">
             <a href="https://wa.me/60102353737" target="_blank" class="btn-white-contact">
                 Want to know more? Click here to contact us
             </a>
     </div>
 
-    <!-- BANNER TOP -->
-    <section class="reasons-banner-top">
+    <section class="reasons-banner-top reveal">
         <div class="banner-text-wide">
             "CONTINUOUS <span class="text-white-bold">CARE</span>, LASTING <span class="text-white-bold">CONFIDENCE</span>"
         </div>
     </section>
 
-    <!-- 9 GIRDS -->
-    <section class="reasons-grid-section">
+    <section class="reasons-grid-section reveal">
         <div class="reasons-container">
             
             <div class="reasons-header">
@@ -370,15 +391,13 @@
         </div>
     </section>
 
-    <!-- BANNER BOTTOM -->
-     <section class="reasons-banner-bottom">
+    <section class="reasons-banner-bottom reveal">
         <div class="banner-text-wide">
             "WE'RE WITH YOU <span class="text-white-bold">EVERY STEP</span>"
         </div>
     </section>
 
-    <!-- PARTNERS -->
-    <section class="partners-section">
+    <section class="partners-section reveal">
         <div class="partners-container">
             
             <div class="partners-header">
@@ -415,8 +434,7 @@
         </div>
     </section>
 
-    <!-- AWARDS -->
-    <section class="awards-section-deco">
+    <section class="awards-section-deco reveal">
         
         <div class="watermark-awards">HONORS</div>
 
@@ -469,15 +487,13 @@
         </div>
     </section>
 
-    <!-- BEAUTY BANNER TOP -->
-    <section class="global-red-banner">
+    <section class="global-red-banner reveal">
         <h2 class="banner-text-wide">
             "WHERE <span class="text-white-bold">BEAUTY</span> MEETS <span class="text-white-bold">CONFIDENCE</span>"
         </h2>
     </section>
 
-    <!-- SIGNATURE TREATMENTS -->
-    <section class="signature-intro-section">
+    <section class="signature-intro-section reveal">
         <div class="signature-container">
             <span class="badge-gold">OUR SIGNATURE TREATMENTS</span>
             <h2 class="signature-title">"A Curated Path to Timeless Beauty"</h2>
@@ -487,15 +503,13 @@
         </div>
     </section>
 
-    <!-- BEAUTY BANNER -->
-    <section class="global-red-banner">
+    <section class="global-red-banner reveal">
         <h2 class="banner-text-wide">
             "YOUR <span class="text-white-bold">BEAUTY LIFESTYLE</span>, YOUR <span class="text-white-bold">CONFIDENCE</span>" 
         </h2>
     </section>
 
-    <!-- FIRST TRIAL -->
-    <section class="first-trial-section">
+    <section class="first-trial-section reveal">
         <div class="trial-container">
             
             <h2 class="trial-title">
@@ -519,15 +533,13 @@
         </div>
     </section>
 
-     <!-- FOOTER -->
-    <footer>
+     <footer>
         <div class="footer-container">
             <div class="footer-col logo-col"><h3 class="footer-heading">Contact Us</h3><img src="images/slimparislogo.png" alt="SlimParis" class="footer-logo"></div>
             <div class="footer-col">
                 <h3 class="footer-heading">Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="AboutUs.html">About Us</a></li>
-                    <li><a href="#">Services</a></li>
                     <li><a href="#">Traditional Treatments</a></li>
                     <li><a href="#">Modern Treatments</a></li>
                     <li><a href="#">Location</a></li>
@@ -551,14 +563,129 @@
         <div class="footer-bottom"><p>SPG WELLNESS CODE SDN. BHD. 20231101012 (1504501X)</p><p style="margin-top: 5px; font-weight: bold;">&copy; 2026 Slim Paris. All right reserved.</p></div>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <div class="sticky-social-menu">
+        <div class="social-list">
+            <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-bubble tiktok" title="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+
+            <a href="#" class="social-bubble xhs" title="Xiaohongshu">
+                <span style="font-weight:bold; font-size:14px;">小</span>
+            </a>
+
+            <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="social-bubble fb" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="social-bubble insta" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+            <a href="https://wa.me/60102353737" target="_blank" class="social-bubble whatsapp" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+        <div class="social-trigger">
+            <i class="fas fa-comment-dots"></i>
+            <span class="pulse-ring"></span>
+        </div>
+    </div>
+
     <script>
-        // Toggle Mobile Menu
+        // ============================================
+        // 1. SEARCH FUNCTIONALITY (Exactly like About Us)
+        // ============================================
+        function toggleSearch() {
+            const sb = document.getElementById('search-box');
+            sb.style.display = sb.style.display === 'block' ? 'none' : 'block';
+            if (sb.style.display === 'block') sb.focus();
+        }
+
+        document.getElementById('search-box').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                if (window.find && e.target.value.length > 0) {
+                    if (!window.find(e.target.value)) {
+                        alert("Text not found.");
+                    }
+                }
+            }
+        });
+
+        // ============================================
+        // 2. MOBILE MENU (Exactly like About Us)
+        // ============================================
         function toggleMenu() {
             document.querySelector('.nav-menu').classList.toggle('active');
         }
 
-        // Accordion Logic
+        // ============================================
+        // SLIDER WITH PAUSE ON HOVER
+        // ============================================
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const heroSection = document.querySelector('.hero'); // Target the hero area
+        
+        // Start the automatic sliding
+        let slideInterval = setInterval(autoSlide, 1500); 
+
+        function showSlide(index) {
+            if (index >= slides.length) currentSlide = 0;
+            else if (index < 0) currentSlide = slides.length - 1;
+            else currentSlide = index;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide].classList.add('active');
+        }
+
+        function autoSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        // --- NEW: PAUSE ON HOVER LOGIC ---
+        // When mouse enters the hero section, stop the timer
+        heroSection.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        // When mouse leaves the hero section, restart the timer
+        heroSection.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(autoSlide, 2000);
+        });
+
+        // Manual Arrow Controls
+        function moveSlide(direction) {
+            showSlide(currentSlide + direction);
+            // Reset timer after manual click
+            clearInterval(slideInterval);
+            slideInterval = setInterval(autoSlide, 3000);
+        }
+
+        // ============================================
+        // 4. SCROLL REVEAL (Exactly like About Us)
+        // ============================================
+        // This makes elements fade in when you scroll down
+        window.addEventListener('scroll', reveal);
+
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                } else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+
+        // ============================================
+        // 5. ACCORDION (Homepage Exclusive)
+        // ============================================
         const accordions = document.querySelectorAll('.accordion-header');
         accordions.forEach(acc => {
             acc.addEventListener('click', function() {

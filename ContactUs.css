@@ -1,0 +1,213 @@
+/* =========================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================= */
+:root {
+    --bg-cream: #FFF8F0;
+    --accent-gold: #D4A373;
+    --primary-red: #D34836;
+    --text-dark: #333;
+    --text-light: #555;
+    --burgundy: #560319;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    background-color: var(--bg-cream); 
+    font-family: 'Lato', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden; 
+}
+
+h1, h2, h3, h4 { 
+    color: var(--primary-red); 
+    font-family: 'Playfair Display', serif; 
+    font-weight: 700; 
+}
+
+/* =========================================
+   2. GLOBAL ANIMATIONS
+   ========================================= */
+.reveal { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: all 1s ease; 
+}
+
+.reveal.active { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+@keyframes zoomEffect { 
+    0% { transform: scale(1); } 
+    100% { transform: scale(1.1); } 
+}
+
+@keyframes fadeInUp { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+@keyframes iconPulse { 
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); color: var(--primary-red); background: #fff0f0; box-shadow: 0 0 15px rgba(211, 72, 54, 0.2); }
+    100% { transform: scale(1); }
+}
+
+/* =========================================
+   3. CONTACT PAGE HERO
+   ========================================= */
+.contact-hero {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background: url('images/hero1.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px; /* Offset for fixed navbar */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    letter-spacing: 5px;
+    color: var(--primary-red);
+    text-transform: uppercase;
+}
+
+/* =========================================
+   4. RED CTA STRIP 
+   ========================================= */
+.cta-strip {
+    background: linear-gradient(135deg, var(--burgundy) 0%, var(--primary-red) 100%);
+    padding: 35px 20px;
+    text-align: center; 
+    color: white; 
+    position: relative;
+    box-shadow: 0 10px 40px rgba(86, 3, 25, 0.3);
+}
+
+.cta-text {
+    font-family: 'Playfair Display', serif; 
+    font-style: italic;
+    font-size: 2rem; 
+    margin-bottom: 20px; 
+    color: white !important;
+}
+
+.btn-white {
+    background-color: white; 
+    color: var(--burgundy);
+    padding: 12px 40px; 
+    text-decoration: none; 
+    font-weight: 700;
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    display: inline-block;
+    border: 1px solid white; 
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-white:hover {
+    background-color: transparent; 
+    color: white; 
+    border-color: var(--accent-gold);
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   5. ENQUIRY SECTION
+   ========================================= */
+.enquiry-section {
+    padding: 80px 10% 50px;
+    background-color: var(--bg-cream);
+}
+
+.enquiry-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Left is slightly smaller than the form */
+    gap: 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* Left Side Styling */
+.contact-method {
+    margin-bottom: 30px;
+}
+
+.method-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.method-link {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-red);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.method-link:hover {
+    color: var(--burgundy);
+}
+
+/* Social Icons in Enquiry */
+.social-row {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.social-row a {
+    font-size: 1.5rem;
+    color: var(--primary-red);
+    transition: transform 0.3s ease;
+}
+
+.social-row a:hover {
+    transform: scale(1.2);
+}
+
+.xhs-icon {
+    background-color: var(--primary-red);
+    color: white !important;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.9rem !important;
+    font-weight: bold;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 992px) {
+    .enquiry-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+    .social-row {
+        justify-content: center;
+    }
+}

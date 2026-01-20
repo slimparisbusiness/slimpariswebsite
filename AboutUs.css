@@ -150,7 +150,7 @@ section { padding: 6rem 5%; }
 /* =========================================
    10. SERVICES SECTION (LUXURY CARDS)
    ========================================= */
-.services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; }
+.services-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; }
 .service-card { position: relative; height: 450px; border-radius: 30px; overflow: hidden; text-decoration: none; transition: all 0.4s ease; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 .card-content { color: white; z-index: 2; transform: translateY(20px); transition: transform 0.4s ease; }
 .service-icon { font-size: 4rem; margin-bottom: 1.5rem; opacity: 0.8; }

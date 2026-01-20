@@ -54,15 +54,15 @@ h1, h2, h3, h4 {
     transform: translateY(0); 
 }
 
-@keyframes zoomEffect { 
+/* @keyframes zoomEffect { 
     0% { transform: scale(1); } 
-    100% { transform: scale(1.1); } 
+    100% { transform: scale(1.9); } 
 }
 
 @keyframes fadeInUp { 
     from { opacity: 0; transform: translateY(20px); } 
     to { opacity: 1; transform: translateY(0); } 
-}
+} */
 
 @keyframes iconPulse { 
     0% { transform: scale(1); }
@@ -73,80 +73,104 @@ h1, h2, h3, h4 {
 /* =========================================
    3. HERO SECTION (Main Slider)
    ========================================= */
-.hero { 
-    position: relative;
-    height: 100vh; /* Forces full screen height */
-    width: 100%;
-    overflow: hidden;
+
+/* 1. Make the Hero Smaller (Banner Style) */
+.hero {
+    position: relative; 
+    height: 600px; /* Reduced from 85vh to 600px */
+    overflow: hidden; 
     display: flex; 
-    justify-content: center;
+    justify-content: center; 
     align-items: center; 
     text-align: center; 
-    padding: 0 1rem; 
+    padding: 0;
 }
 
-.hero-slider { 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    z-index: 1; 
-}
-
-/* NOTE: This '.slide' class is ONLY for the Hero now */
-.slide { 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
+.slide {
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
     background-size: cover; 
-    background-position: center; 
+    background-position: center;
     opacity: 0; 
-    transition: opacity 1.5s ease-in-out; 
-    transform: scale(1.1); 
-    animation: zoomEffect 20s infinite alternate; 
-}
-    
-.slide::after { 
-    content: ''; 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)); 
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.slide.active { 
+.slide.active {
     opacity: 1; 
+    z-index: 1;
 }
 
-.hero-content { 
-    position: relative; 
-    z-index: 2; 
-    animation: fadeInUp 1.5s ease-out; 
+/* 2. Style the Left/Right Arrows */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+    color: var(--text-dark);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 100; /* Sit on top of everything */
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.btn { 
-    padding: 15px 40px; 
-    background-color: var(--primary-red); 
-    color: white; 
-    text-decoration: none; 
-    border-radius: 50px; 
-    display: inline-block; 
-    transition: all 0.3s ease; 
-    box-shadow: 0 4px 15px rgba(211, 72, 54, 0.4); 
-    font-weight: bold; 
-    letter-spacing: 1px; 
+.slider-arrow:hover {
+    background-color: var(--primary-red);
+    color: white;
 }
 
-.btn:hover { 
-    background-color: white; 
-    color: var(--primary-red); 
-    transform: translateY(-3px); 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* 3. Mobile Adjustment for Arrows */
+@media (max-width: 768px) {
+    .hero { height: 400px; } /* Even smaller on phone */
+    .slider-arrow { width: 40px; height: 40px; font-size: 1rem; }
+}
+
+/* 4. Full Slide Link (For Slide 1) */
+.full-slide-link {
+    display: block;
+    width: 100%; height: 100%;
+    z-index: 10;
+}
+
+/* --- MINIMALIST TEXT BUTTON STYLE --- */
+.btn-text-style {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.8rem;       /* Large heading-style text */
+    font-weight: 700;        /* Bold weight for emphasis */
+    color: var(--burgundy);  /* Your brand dark red/purple */
+    text-transform: uppercase;
+    text-decoration: none;   /* Remove default link underline */
+    
+    /* The Thick Underline */
+    border-bottom: 3px solid var(--burgundy); 
+    padding-bottom: 4px;     /* Gap between text and underline */
+    
+    transition: all 0.3s ease;
+    display: inline-block;
+    
+    /* Optional: Semi-transparent backdrop for readability on images */
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    padding: 15px 45px;
+}
+
+.btn-text-style:hover {
+    color: var(--primary-red);      /* Brighter red on hover */
+    border-bottom-color: var(--primary-red);
+    letter-spacing: 2px;            /* Slight expansion effect */
 }
 
 /* =========================================
@@ -394,64 +418,116 @@ h1, h2, h3, h4 {
 }
 
 /* =========================================
-   7. BRAND MANIFESTO SECTION
+   7. BRAND MANIFESTO (MODERN OVERLAY)
    ========================================= */
 .brand-manifesto-section {
-    padding: 100px 10%;
-    background-color: white; 
+    padding: 100px 5%; /* Wider layout */
+    padding-bottom: 150px;
+    background-color: white;
     display: flex;
     justify-content: center;
-    text-align: center;
 }
 
-.manifesto-container {
-    max-width: 800px;
+.manifesto-luxury-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center; /* Vertically center the text card */
+    min-height: 600px;
 }
 
-.manifesto-title {
+/* --- THE IMAGE (Background Layer) --- */
+.manifesto-image-bg {
+    width: 55%; /* Image takes up left 55% */
+    height: 600px;
+    position: relative;
+    z-index: 1;
+}
+
+.manifesto-image-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1); /* Deep luxury shadow */
+}
+
+/* --- THE TEXT CARD (Floating Layer) --- */
+.manifesto-text-card {
+    width: 55%; /* Text takes up right 55% */
+    background: white;
+    padding: 60px;
+    position: absolute; /* Allows it to overlap */
+    right: 0; /* Stick to the right side */
+    z-index: 2; /* Sit ON TOP of the image */
+    box-shadow: -10px 10px 40px rgba(0,0,0,0.08); /* Shadow lifting it off the page */
+    border-radius: 5px;
+    margin-left: -100px; /* This pulls it left to OVERLAP the image */
+}
+
+/* Typography inside the card */
+.manifesto-title-card {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: var(--burgundy);
-    margin: 20px 0 30px 0;
     line-height: 1.2;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
-.gold-divider {
-    width: 80px;
-    height: 3px;
-    background-color: var(--accent-gold);
-    margin: 0 auto 50px auto; 
-}
-
-.manifesto-body p {
+.card-content p {
     font-family: 'Lato', sans-serif;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--text-light);
-    line-height: 1.9;
-    margin-bottom: 25px; 
+    line-height: 1.8;
+    margin-bottom: 20px;
 }
 
-.brand-name {
-    color: var(--primary-red);
-    font-weight: 700;
-}
-
-.manifesto-closing {
-    font-family: 'Playfair Display', serif; 
-    font-size: 1.5rem !important;
+.manifesto-highlight {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.3rem !important;
     color: var(--text-dark) !important;
     font-style: italic;
-    margin-top: 40px;
-    padding: 0 20px;
-    border-left: 3px solid var(--accent-gold); 
+    margin-top: 30px;
+    padding-left: 20px;
+    border-left: 4px solid var(--accent-gold);
 }
 
-.signature-deco {
+.signature-card {
     font-family: 'Great Vibes', cursive;
     font-size: 5rem;
-    color: rgba(211, 72, 54, 0.05); 
-    z-index: -1;
-    position: relative;
+    color: rgba(211, 72, 54, 0.08); 
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    z-index: -1; /* Behind the text */
+}
+
+/* --- MOBILE RESPONSIVE (Stack them) --- */
+@media (max-width: 1024px) {
+    .brand-manifesto-section { padding: 60px 5%; }
+    
+    .manifesto-luxury-wrapper {
+        flex-direction: column; /* Stack vertically */
+        height: auto;
+    }
+
+    .manifesto-image-bg {
+        width: 100%;
+        height: 400px;
+        margin-bottom: -50px; /* Pull text up to overlap slightly */
+    }
+
+    .manifesto-text-card {
+        width: 90%; /* Almost full width */
+        position: relative; /* No longer absolute */
+        right: auto;
+        margin-left: 0;
+        padding: 40px;
+    }
+    
+    .manifesto-title-card { font-size: 2.2rem; }
 }
 
 /* =========================================
@@ -463,7 +539,8 @@ h1, h2, h3, h4 {
     text-align: center;
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    margin-top: -150px;
+    margin-top: 0px;
+    /* margin-bottom: 50px; */
 }
 
 .banner-content {
@@ -1274,3 +1351,19 @@ h1, h2, h3, h4 {
     100% { transform: translateX(calc(-150px * 4)); } 
 }
 
+/* =========================================
+   FULL SLIDE LINK (For the clickable picture)
+   ========================================= */
+.full-slide-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer; /* Shows the hand icon so users know to click */
+    z-index: 10; /* Ensures it sits on top */
+}
+
+/* Ensure the button slide still centers content correctly */
+.slide-content-wrapper {
+    z-index: 20; /* Button sits higher than background */
+    position: relative;
+}

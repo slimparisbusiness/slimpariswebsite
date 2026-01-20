@@ -1,0 +1,61 @@
+/* =========================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================= */
+:root {
+    --bg-cream: #FFF8F0;
+    --accent-gold: #D4A373;
+    --primary-red: #D34836;
+    --text-dark: #333;
+    --text-light: #555;
+    --burgundy: #560319;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    background-color: var(--bg-cream); 
+    font-family: 'Lato', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden; 
+}
+
+h1, h2, h3, h4 { 
+    color: var(--primary-red); 
+    font-family: 'Playfair Display', serif; 
+    font-weight: 700; 
+}
+
+/* =========================================
+   2. GLOBAL ANIMATIONS
+   ========================================= */
+.reveal { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: all 1s ease; 
+}
+
+.reveal.active { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+@keyframes zoomEffect { 
+    0% { transform: scale(1); } 
+    100% { transform: scale(1.1); } 
+}
+
+@keyframes fadeInUp { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+@keyframes iconPulse { 
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); color: var(--primary-red); background: #fff0f0; box-shadow: 0 0 15px rgba(211, 72, 54, 0.2); }
+    100% { transform: scale(1); }
+}
