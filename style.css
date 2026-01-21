@@ -122,7 +122,17 @@ a img {
 /* =========================================
    3. SERVICES DROPDOWN (2 COLUMNS & CENTERED)
    ========================================= */
-.dropdown { position: relative; }
+.dropdown {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+    position: relative;
+}
+
+.arrow-trigger {
+    cursor: pointer;
+    padding: 10px; /* Make the touch target bigger for fingers */
+}
 
 /* This is the box that appears */
 .services-grid {
@@ -411,3 +421,43 @@ footer {
     .social-trigger { width: 55px; height: 55px; font-size: 1.6rem; }
     .social-bubble { width: 45px; height: 45px; font-size: 1.2rem; }
 }
+
+/* =========================================
+   MOBILE MENU FIX (FINAL)
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* 1. DISABLE HOVER OPENING ON MOBILE */
+    /* This stops the "First Tap = Hover" problem */
+    .dropdown:hover .services-grid {
+        display: none; 
+    }
+
+    /* 2. ONLY OPEN WHEN CLASS IS ADDED VIA ARROW CLICK */
+    .dropdown.show-menu .services-grid {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        margin-top: 10px;
+        background-color: #f9f9f9;
+        box-shadow: none;
+    }
+
+    /* 3. ARROW STYLING */
+    .dropdown {
+        flex-wrap: wrap; /* Allows menu to drop to new line */
+        justify-content: center;
+    }
+    
+    .arrow-trigger {
+        display: inline-flex;
+        padding: 10px 20px; /* Big target for finger */
+        border-left: 1px solid #eee; /* Visual separator */
+        margin-left: 10px;
+    }
+}
+

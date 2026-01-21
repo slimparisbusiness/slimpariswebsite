@@ -1,0 +1,655 @@
+/* ==========================================================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================================================== */
+:root {
+    --bg-cream: #FFF8F0;
+    --accent-gold: #D4A373;
+    --primary-red: #D34836;
+    --text-dark: #333;
+    --text-light: #555;
+    --burgundy: #560319;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    background-color: var(--bg-cream); 
+    font-family: 'Lato', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden; 
+}
+
+h1, h2, h3, h4 { 
+    color: var(--primary-red); 
+    font-family: 'Playfair Display', serif; 
+    font-weight: 700; 
+}
+
+/* --- MOBILE NAVIGATION STYLES --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px; /* Adjust based on navbar height */
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    .nav-menu.active {
+        left: 0; /* Slide in menu */
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+}
+
+/* ==========================================================================
+   2. HERO SECTION
+   ========================================================================== */
+.page-hero {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-title-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.page-title {
+    color: white !important;
+    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.script-font {
+    font-family: 'Great Vibes', cursive;
+    color: #D34836;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+/* ==========================================================================
+   3. MAIN LAYOUT
+   ========================================================================== */
+.service-detail-container {
+    display: flex;
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 0 5%;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* ==========================================================================
+   4. LEFT SIDEBAR (With Line Icons)
+   ========================================================================== */
+.service-sidebar {
+    flex: 0 0 280px;
+    position: sticky;
+    top: 120px;
+    border: 1px solid #f0f0f0;
+    padding: 25px 0;
+    background: white;
+    border-radius: 15px;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.sidebar-title {
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #D34836;
+    margin-bottom: 25px;
+}
+
+.service-list { list-style: none; padding: 0 15px; }
+.service-list li { margin-bottom: 5px; }
+
+.service-list li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #555;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border-bottom: none;
+}
+
+.nav-icon {
+    width: 30px;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #D4A373;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-list li a:hover {
+    background-color: #FFF8F0;
+    color: #D34836;
+    transform: translateX(5px);
+}
+
+.service-list li a:hover .nav-icon {
+    color: #D34836;
+    transform: scale(1.1);
+}
+
+.service-list li a.active {
+    background-color: #FFC0CB;
+    color: #560319;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(255, 192, 203, 0.4);
+}
+
+.service-list li a.active .nav-icon { color: #560319; }
+
+/* ==========================================================================
+   5. RIGHT CONTENT & CAROUSEL
+   ========================================================================== */
+.service-content-stage { 
+    flex: 1;
+    min-width: 0;
+    width: 0;
+    overflow: hidden;
+ }
+
+.service-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #D34836;
+    margin-bottom: 20px;
+}
+
+.service-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 40px;
+    background: #FFF8F0;
+    padding: 20px;
+    border-left: 4px solid #D34836;
+}
+
+/* ==========================================================================
+   WATER CAROUSEL (Final Style)
+   ========================================================================== */
+.water-carousel {
+    position: relative;
+    height: 350px; /* Adjust height here */
+    width: 100%;
+    margin: 0 auto 50px auto; 
+    overflow: hidden; /* Hides images waiting off-screen */
+    border-radius: 12px;
+}
+
+.carousel-track-container {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- BUTTONS --- */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7); /* See-through white */
+    color: #D34836;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.carousel-button:hover {
+    background: #D34836;
+    color: white;
+}
+
+.btn-left { left: 20px; }
+.btn-right { right: 20px; }
+
+
+/* ==========================================================================
+   6. MODERN DROPDOWNS (Accordion)
+   ========================================================================== */
+.service-dropdowns {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dropdown-item {
+    background: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.dropdown-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border-color: rgba(212, 163, 115, 0.3);
+}
+
+.dropdown-btn {
+    width: 100%;
+    padding: 20px 25px;
+    background: white;
+    border: none;
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-btn i {
+    width: 32px;
+    height: 32px;
+    background: #FFF8F0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #D34836;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content {
+    display: block;            /* Use block, but hide with opacity/visibility */
+    position: absolute;
+    
+    /* PART 1: CENTER IT PERMANENTLY */
+    /* Move these lines here so it is ALWAYS centered, even when invisible */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* PART 2: THE ANIMATION */
+    /* Only animate the fading, NOT the moving */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Do NOT use 'transition: all' */
+    
+    /* Other styles (background, width, etc.) */
+    background-color: white;
+    width: 600px; /* Adjust as needed */
+    z-index: 100;
+}
+
+.dropdown-content-inner {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-top: 15px;
+}
+
+.content-icon {
+    font-size: 2rem;
+    color: #D34836;
+    background: #FFF8F0;
+    width: 50px; height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.dropdown-content p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    padding-top: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ACTIVE STATE */
+.dropdown-item.active {
+    border-color: #D34836;
+    box-shadow: 0 10px 25px rgba(211, 72, 54, 0.1);
+}
+.dropdown-item.active { display: block; }
+.dropdown-item.active .dropdown-btn { color: #D34836; }
+.dropdown-item.active .dropdown-btn i {
+    transform: rotate(180deg);
+    background: #D34836;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   NEW RESULTS LAYOUT (Before & After Grid)
+   ========================================================================== */
+.results-wrapper {
+    background: #fff;
+    border-radius: 20px;
+    padding: 50px;
+    margin-bottom: 80px;
+    box-shadow: 0 20px 40px rgba(212, 163, 115, 0.1); /* Soft Gold Shadow */
+    border: 1px solid #FFF8F0;
+    text-align: center; /* Center everything */
+}
+
+/* 1. Header Area */
+.results-header h3 {
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.results-header h3 span {
+    font-family: 'Great Vibes', cursive;
+    color: #D34836;
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.results-header p {
+    max-width: 700px;
+    margin: 0 auto 40px auto; /* Centers text block */
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* 2. Before/After Grid */
+.before-after-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.result-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    height: 350px; /* Fixed height for uniformity */
+}
+
+.result-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.result-card:hover img {
+    transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+/* Labels (The little tags on top) */
+.label-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 2;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.label-badge.before {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #666;
+}
+
+.label-badge.after {
+    background-color: #D34836;
+    color: white;
+}
+
+/* 3. Note Box */
+.results-note {
+    background: #FFF8F0;
+    padding: 20px;
+    border-radius: 12px;
+    display: inline-flex; /* Shrinks box to fit text */
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    max-width: 800px;
+    border-left: 4px solid #D34836;
+}
+
+.results-note i {
+    font-size: 1.5rem;
+    color: #D34836;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .results-wrapper {
+        padding: 30px 20px;
+    }
+
+    .before-after-grid {
+        grid-template-columns: 1fr; /* Stack vertically on phone */
+        gap: 20px;
+    }
+
+    .result-card {
+        height: 250px; /* Smaller height on mobile */
+    }
+    
+    .results-header h3 { font-size: 2.2rem; }
+    .results-header h3 span { font-size: 2.5rem; }
+}
+
+/* ==========================================================================
+   MOBILE FIX (Fixes the blank space issue)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .service-detail-container { 
+        flex-direction: column; 
+    }
+    
+    .service-sidebar { 
+        width: 100%; 
+        position: relative; 
+        top: 0; 
+        margin-bottom: 30px; /* Adds space between navigation and content */
+    }
+
+    /* THIS IS THE KEY FIX BELOW */
+    .service-content-stage {
+        width: 100% !important;  /* Force it back to full width */
+        min-width: auto;         /* Reset the restriction */
+        overflow: visible;       /* Let content breathe */
+    }
+    
+    /* Adjust results section for mobile stacking */
+    .results-section { 
+        flex-direction: column; 
+        gap: 30px; 
+        padding: 25px; 
+    }
+    
+    .results-img { 
+        max-width: 100%; 
+    }
+}
+
+/* ==========================================================================
+   CUTE BUTTON DESIGN
+   ========================================================================== */
+.cta-container { 
+    text-align: center; 
+    margin-top: 60px; 
+    padding-bottom: 20px;
+}
+
+.btn-book-now {
+    display: inline-flex; /* Keeps icon & text centered */
+    align-items: center;
+    justify-content: center;
+    gap: 12px; /* Space between icon and text */
+    
+    /* Cute Gradient */
+    background: linear-gradient(135deg, #D34836 0%, #ff6b5b 100%);
+    color: white;
+    
+    /* Size & Shape */
+    padding: 20px 50px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    
+    /* The "Cute" Factor: Full rounded corners */
+    border-radius: 50px; 
+    
+    /* Soft, dreamy shadow */
+    box-shadow: 0 10px 30px rgba(211, 72, 54, 0.3);
+    
+    /* White border makes it look like a sticker */
+    border: 3px solid #fff; 
+    
+    /* Bouncy Animation Setting */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover Effect: It bounces up! */
+.btn-book-now:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(211, 72, 54, 0.4);
+    background: linear-gradient(135deg, #ff6b5b 0%, #D34836 100%);
+}
+
+/* Icon adjustment */
+.btn-book-now i {
+    font-size: 1.6rem;
+}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+    .btn-book-now {
+        width: 90%; /* Fit screen nicely on phone */
+        padding: 18px 20px;
+        font-size: 1.1rem;
+    }
+}
+
+/* --- 1. Top Nav "Red Line" & Active State --- */
+.nav-menu .nav-link.active {
+    color: #D32F2F; /* Makes the text "Services" Red */
+    position: relative; /* Needed to position the line */
+}
+
+/* This creates the Red Line above the text */
+.nav-menu .nav-link.active::before {
+    content: "";
+    position: absolute;
+    top: -30px;      /* Adjust this number to move the line higher or lower */
+    left: 0;
+    width: 100%;     /* Spans the full width of the text */
+    height: 4px;     /* Thickness of the red line */
+    background-color: #D32F2F; 
+}
+
+/* --- 2. Dropdown "Highlight Name" --- */
+/* This targets the specific link inside the dropdown */
+.dropdown-content a.active {
+    color: #D32F2F !important;  /* Turns text Red */
+    font-weight: bold;          /* Makes text Bold */
+    background-color: #ffebeb;  /* Adds a faint pink background (Optional) */
+}

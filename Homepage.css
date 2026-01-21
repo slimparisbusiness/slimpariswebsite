@@ -1282,14 +1282,10 @@ h1, h2, h3, h4 {
 /* Mobile (Phones) */
 @media (max-width: 768px) {
     /* Menu */
-    .hamburger { display: block; color: var(--text-dark); }
-    .nav-menu {
-        display: none; flex-direction: column; position: absolute;
-        top: 90px; left: 0; width: 100%; background: white;
-        padding: 20px; box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-    }
-    .nav-menu.active { display: flex; }
-    .search-container { display: none; } 
+    /* .hamburger { display: block; color: var(--text-dark); }
+    .nav-menu { position: absolute; top: 100%; left: 0; width: 100%; background-color: white; flex-direction: column; align-items: center; padding: 2rem 0; gap: 1.5rem; opacity: 0; transform: translateY(-20px); pointer-events: none; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 3px solid var(--primary-red); }
+    .nav-menu.active { opacity: 1; transform: translateY(0); pointer-events: all; }
+    .search-container { display: none; }  */
 
     /* Typography */
     .intro-top { flex-direction: column; gap: 30px; }

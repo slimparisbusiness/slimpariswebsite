@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peach Butt | Slim Paris</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="style.css">        
+    <link rel="stylesheet" href="ServiceDetail.css"> 
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="Homepage.html" class="nav-logo">
+            <img src="images/slimparislogo.png" alt="SlimParis">
+        </a>
+        
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        
+        <ul class="nav-menu">
+            <li><a href="Homepage.html" class="nav-link">Home</a></li>
+            <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
+            <li class="dropdown">
+                <a href="Services.html" class="nav-link active">Services</a>
+                
+                <span class="arrow-trigger" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </span>
+
+                <div class="dropdown-content services-grid">
+                    <a href="NecklineSculpting.html">Neck Line Sculpting</a>
+                    <a href="ThinBack.html">Thin Back</a>
+                    <a href="FeminineCareRejuvenation.html" >Feminine Care Rejuvenation</a>
+                    <a href="HipContouringTreatment.html">Hip Contouring Treatment</a>
+                    <a href="ByeByeBelly.html">Bye Bye Belly</a>
+                    <a href="PeachButt.html" class="active">Peach Butt</a>
+                    <a href="SLineBody.html">S-Line Body Contouring</a>
+                    <a href="CoreWaist.html">Core & Waist Contouring Treatment</a>
+                    <a href="HunchBack.html">Rounded Shoulder Hunch Back</a>
+                    <a href="LegSculpting.html">Leg Sculpting</a>
+                </div>
+            </li>
+            <li><a href="Testimonial.html" class="nav-link">Testimonial</a></li>
+            <li><a href="ContactUs.html" class="nav-link">Contact Us</a></li>
+            <li><a href="Blog.html" class="nav-link">Blog</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" id="search-box" placeholder="Type and hit Enter...">
+            <div class="nav-search-icon" onclick="toggleSearch()"><i class="fas fa-search"></i></div>
+        </div>
+    </nav>
+
+    <section class="page-hero" style="background-image: url('images/testing.png');">
+        <div class="hero-overlay"></div> 
+        <div class="hero-title-container">
+            <h1 class="page-title">Peach Butt<span class="script-font">Sculpting</span></h1>
+        </div>
+    </section>
+
+    <!-- LEFT COLUMN  -->
+    <div class="service-detail-container reveal">
+        <aside class="service-sidebar">
+            <div class="sidebar-title">Navigation</div>
+            <ul class="service-list">
+                <li><a href="NecklineSculpting.html"><i class="ph ph-sparkle nav-icon"></i>Neck Line Sculpting</a></li>
+                <li><a href="ThinBack.html"><i class="ph ph-butterfly nav-icon"></i>Thin Back</a></li>
+                <li><a href="FeminineCareRejuvenation.html" ><i class="ph ph-flower-lotus nav-icon"></i>Feminine Care</a></li>
+                <li><a href="HipContouringTreatment.html"><i class="ph ph-hourglass nav-icon"></i>Hip Contouring</a></li>
+                <li><a href="ByeByeBelly.html"><i class="ph ph-leaf nav-icon"></i>Bye Bye Belly</a></li>
+                <li><a href="PeachButt.html" class="active"><i class="ph ph-heart nav-icon"></i>Peach Butt</a></li>
+                <li><a href="SLineBody.html"><i class="ph ph-wave-sine nav-icon"></i>S-Line Body</a></li>
+                <li><a href="CoreWaist.html"><i class="ph ph-arrows-in-line-horizontal nav-icon"></i>Core & Waist</a></li>
+                <li><a href="HunchBack.html"><i class="ph ph-align-center-horizontal nav-icon"></i>Hunch Back</a></li>
+                <li><a href="LegSculpting.html"><i class="ph ph-high-heel nav-icon"></i>Leg Sculpting</a></li>
+            </ul>
+        </aside>
+
+        <!-- WHAT IS THE TREATEMENT -->
+        <main class="service-content-stage">
+            <div class="service-intro">
+                <h2>What is this treatment?</h2>
+                <p>
+                    <strong>Neck Line Sculpting</strong> is a non-invasive firming and sculpting treatment designed to refine the neck and jawline area. 
+                    It helps reduce the appearance of sagging skin, fine lines, and double chin while improving skin elasticity for a more defined, youthful neckline.
+                </p>
+            </div>
+
+            <!-- IMAGE SLIDER -->
+            <div class="water-carousel">
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <img src="images/testing.png" alt="Treatment Process 1">
+                        </li>
+                        <li class="carousel-slide">
+                            <img src="images/hero1.png" alt="Treatment Process 2">
+                        </li>
+                        </ul>
+                </div>
+
+                <button class="carousel-button btn-left">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-button btn-right">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- DROPDOWN -->
+            <div class="service-dropdowns">
+                <div class="dropdown-item">
+                    <button class="dropdown-btn">Which body areas does it target? <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-content-inner">
+                            <div class="content-icon"><i class="fas fa-bullseye"></i></div>
+                            <p>This treatment focuses on the neck, under-chin (double chin), and jawline area to create a sharper, more defined profile.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-item">
+                    <button class="dropdown-btn">How many sessions are needed? <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-content-inner">
+                            <div class="content-icon"><i class="fas fa-hourglass-half"></i></div>
+                            <p>Visible results can often be seen after just one session. However, for lasting and optimal results, a full course of treatments is recommended.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-item">
+                    <button class="dropdown-btn">Is it painful? <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-content-inner">
+                            <div class="content-icon"><i class="fas fa-feather"></i></div>
+                            <p>No, the treatment is generally comfortable and non-invasive. Many clients find it relaxing, similar to a deep tissue massage.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-item">
+                    <button class="dropdown-btn">Any downtime? <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-content-inner">
+                            <div class="content-icon"><i class="fas fa-clock"></i></div>
+                            <p>There is typically no downtime. You can return to your daily activities immediately. Mild redness may occur but fades quickly.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-item">
+                    <button class="dropdown-btn">Who is this treatment suitable for? <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-content-inner">
+                            <div class="content-icon"><i class="fas fa-user-check"></i></div>
+                            <p>It is ideal for anyone wanting to improve neck definition, reduce a double chin, or relieve neck tension without surgery.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-item">
+                    <button class="dropdown-btn">Is it safe? <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-content-inner">
+                            <div class="content-icon"><i class="fas fa-shield-alt"></i></div>
+                            <p>Yes, it is a 100% safe procedure when performed by our trained professionals using FDA-approved technology.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REAL RESULTS -->
+            <div class="results-wrapper">
+                <div class="results-header">
+                    <h3>Real <span class="script-font">Results</span></h3>
+                    <p>A clearer and more defined neck line immediately after treatment. The neck-shoulder angle appears more visible, making the neck look longer and more contoured.</p>
+                </div>
+
+                <div class="before-after-grid">
+                    <div class="result-card">
+                        <span class="label-badge before">BEFORE</span>
+                        <img src="images/testing.png" alt="Before Treatment">
+                    </div>
+
+                    <div class="result-card">
+                        <span class="label-badge after">AFTER</span>
+                        <img src="images/hero1.png" alt="After Treatment">
+                    </div>
+                </div>
+
+                <div class="results-note">
+                    <i class="fas fa-info-circle"></i> 
+                    <span><strong>Note:</strong> The temporary redness is a normal response to increased blood circulation. It indicates the treatment is actively stimulating the area.</span>
+                </div>
+            </div>
+    </div>
+
+            <div class="cta-container">
+                <a href="https://wa.me/60102353737" target="_blank" class="btn-book-now">
+                    <i class="fab fa-whatsapp"></i> Book Appointment Now
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col logo-col"><h3 class="footer-heading">Contact Us</h3><img src="images/slimparislogo.png" alt="SlimParis" class="footer-logo"></div>
+            <div class="footer-col">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Traditional.html">Traditional Treatments</a></li>
+                    <li><a href="Modern.html">Modern Treatments</a></li>
+                    <li><a href="ContactUs.html">Location</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-heading">Support</h3>
+                <ul class="footer-links">
+                    <li><a href="ContactUs.html">Booking</a></li>
+                    <li><a href="Testimonial.html">Testimonial</a></li>
+                    <li><a href="FAQ.html">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col social-col"><h3 class="footer-heading">Social Media</h3><div class="social-links">
+                <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="social-item"><i class="fab fa-instagram icon-insta"></i> <span>Instagram</span></a>
+                <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="social-item"><i class="fab fa-facebook icon-fb"></i> <span>Facebook</span></a>
+                <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099?xhsshare=CopyLink&appuid=62f739c0000000001f016ec3&apptime=1707273346" class="social-item"><span class="icon-xhs">小</span> <span>XHS</span></a>
+                <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-item"><i class="fab fa-tiktok icon-tiktok"></i> <span>TikTok</span></a>
+            </div></div>
+        </div>
+        <div class="footer-bottom"><p>SPG WELLNESS CODE SDN. BHD. 20231101012 (1504501X)</p><p style="margin-top: 5px; font-weight: bold;">&copy; 2026 Slim Paris. All right reserved.</p></div>
+    </footer>
+
+    <div class="sticky-social-menu">
+        <div class="social-list">
+            <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-bubble tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099?xhsshare=CopyLink&appuid=62f739c0000000001f016ec3&apptime=1707273346" class="social-bubble xhs" title="Xiaohongshu"><span style="font-weight:bold; font-size:14px;">小</span></a>
+            <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="social-bubble fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="social-bubble insta" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/60102353737" target="_blank" class="social-bubble whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="social-trigger">
+            <i class="fas fa-comment-dots"></i>
+            <span class="pulse-ring"></span>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function toggleMobileMenu(element) {
+        // Prevent the click from bubbling up
+        event.stopPropagation();
+        
+        // Find the parent <li> and toggle the class
+        const parentLi = element.closest('.dropdown');
+        parentLi.classList.toggle('show-menu');
+    }
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- CAROUSEL LOGIC ---
+            const track = document.querySelector('.carousel-track');
+            if (track) {
+                const slides = Array.from(track.children);
+                const nextButton = document.querySelector('.btn-right');
+                const prevButton = document.querySelector('.btn-left');
+                let currentIndex = 0;
+
+                // 1. SETUP: Position slides side-by-side using Percentages
+                slides.forEach((slide, index) => {
+                    slide.style.left = (index * 100) + '%';
+                });
+
+                // 2. CHECK: If 1 slide, hide buttons
+                if (slides.length <= 1) {
+                    if (nextButton) nextButton.style.display = 'none';
+                    if (prevButton) prevButton.style.display = 'none';
+                }
+
+                // Move Slide Function
+                const moveToSlide = (targetIndex) => {
+                    track.style.transform = 'translateX(-' + (targetIndex * 100) + '%)';
+                    currentIndex = targetIndex;
+                }
+
+                // NEXT Button
+                if (nextButton) {
+                    nextButton.addEventListener('click', () => {
+                        let nextIndex = currentIndex + 1;
+                        if (nextIndex >= slides.length) {
+                            nextIndex = 0; // Loop back to start
+                        }
+                        moveToSlide(nextIndex);
+                        resetTimer();
+                    });
+                }
+
+                // PREV Button
+                if (prevButton) {
+                    prevButton.addEventListener('click', () => {
+                        let prevIndex = currentIndex - 1;
+                        if (prevIndex < 0) {
+                            prevIndex = slides.length - 1; // Loop to end
+                        }
+                        moveToSlide(prevIndex);
+                        resetTimer();
+                    });
+                }
+
+                // AUTO PLAY
+                let slideInterval;
+                const startSlideShow = () => {
+                    if (slides.length > 1) {
+                        slideInterval = setInterval(() => {
+                            let nextIndex = currentIndex + 1;
+                            if (nextIndex >= slides.length) {
+                                nextIndex = 0;
+                            }
+                            moveToSlide(nextIndex);
+                        }, 3000);
+                    }
+                }
+
+                const resetTimer = () => {
+                    clearInterval(slideInterval);
+                    startSlideShow();
+                }
+
+                startSlideShow();
+            }
+
+            // --- DROPDOWN LOGIC ---
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+            dropdownItems.forEach(item => {
+                const btn = item.querySelector('.dropdown-btn');
+                btn.addEventListener('click', () => {
+                    dropdownItems.forEach(otherItem => {
+                        if (otherItem !== item) otherItem.classList.remove('active');
+                    });
+                    item.classList.toggle('active');
+                });
+            });
+
+            // --- SEARCH BAR LOGIC ---
+            // Checking if elements exist first to prevent errors
+            const navSearchIcon = document.querySelector('.nav-search-icon');
+            if (navSearchIcon) {
+                navSearchIcon.addEventListener('click', toggleSearch);
+            }
+
+            function toggleSearch() { 
+                const sb = document.getElementById('search-box'); 
+                if (sb) {
+                    sb.style.display = sb.style.display === 'block' ? 'none' : 'block'; 
+                    if (sb.style.display === 'block') sb.focus(); 
+                }
+            }
+            
+            const searchBox = document.getElementById('search-box');
+            if (searchBox) {
+                searchBox.addEventListener('keypress', function (e) { 
+                    if (e.key === 'Enter') { 
+                        e.preventDefault(); 
+                        if (window.find && e.target.value.length > 0) { 
+                            if (!window.find(e.target.value)) alert("Text not found."); 
+                        }
+                    }
+                });
+            }
+
+            // --- MENU TOGGLE ---
+            window.toggleMenu = function() {
+                const navMenu = document.querySelector('.nav-menu');
+                if (navMenu) {
+                    navMenu.classList.toggle('active');
+                }
+            }
+            
+            // --- SCROLL REVEAL ---
+            window.addEventListener('scroll', reveal);
+            function reveal() {
+                var reveals = document.querySelectorAll('.reveal');
+                for (var i = 0; i < reveals.length; i++) {
+                    if (reveals[i].getBoundingClientRect().top < window.innerHeight - 150) {
+                        reveals[i].classList.add('active');
+                    }
+                }
+            }
+            reveal();
+        });
+    </script>
+</body>
+</html>

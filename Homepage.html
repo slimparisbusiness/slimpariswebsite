@@ -15,6 +15,8 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
+
+    <!-- NAVIGATION -->
     <nav class="navbar">
         <a href="Homepage.html" class="nav-logo">
             <img src="images/slimparislogo.png" alt="SlimParis">
@@ -24,8 +26,12 @@
             <li><a href="Homepage.html" class="nav-link active">Home</a></li>
             <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
             <li class="dropdown">
-                <a href="Services.html" class="nav-link">Services <i class="fas fa-chevron-down arrow-icon"></i></a>
+                <a href="Services.html" class="nav-link">Services</a>
                 
+                <span class="arrow-trigger" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </span>
+
                 <div class="dropdown-content services-grid">
                     <a href="NecklineSculpting.html">Neck Line Sculpting</a>
                     <a href="ThinBack.html">Thin Back</a>
@@ -49,6 +55,7 @@
         </div>
     </nav>
 
+    <!-- SLIDER -->
     <section class="hero">
         <div class="hero-slider">
             
@@ -81,7 +88,8 @@
         <a href="https://wa.me/60102353737" target="_blank" class="btn-white">Book Appointment Now</a>
     </section>
 
-    <section class="intro-text-section reveal">
+    <!-- MALAYSIA NO1 -->
+    <section class="intro-text-section">
         <div class="intro-top">
             
             <div class="chinese-side">
@@ -706,6 +714,17 @@
                 }
             });
         });
+
+    function toggleMobileMenu(element) {
+        // This finds the menu next to the arrow and toggles it
+        const menu = element.parentElement.querySelector('.services-grid');
+        
+        if (menu.style.display === 'grid') {
+            menu.style.display = 'none';
+        } else {
+            menu.style.display = 'grid';
+        }
+    }
     </script>
 </body>
 </html>

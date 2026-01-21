@@ -23,7 +23,12 @@
             <li><a href="Homepage.html" class="nav-link">Home</a></li>
             <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
             <li class="dropdown">
-                <a href="Services.html" class="nav-link">Services <i class="fas fa-chevron-down arrow-icon"></i></a>
+                <a href="Services.html" class="nav-link">Services</a>
+                
+                <span class="arrow-trigger" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </span>
+
                 <div class="dropdown-content services-grid">
                     <a href="NecklineSculpting.html">Neck Line Sculpting</a>
                     <a href="ThinBack.html">Thin Back</a>
@@ -256,6 +261,15 @@
     <script async src="https://tally.so/widgets/embed.js"></script>
 
     <script>
+        function toggleMobileMenu(element) {
+        // Prevent the click from bubbling up
+        event.stopPropagation();
+        
+        // Find the parent <li> and toggle the class
+        const parentLi = element.closest('.dropdown');
+        parentLi.classList.toggle('show-menu');
+    }
+
         function toggleSearch() {
             const sb = document.getElementById('search-box');
             sb.style.display = sb.style.display === 'block' ? 'none' : 'block';

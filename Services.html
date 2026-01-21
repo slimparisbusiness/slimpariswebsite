@@ -23,7 +23,12 @@
             <li><a href="Homepage.html" class="nav-link">Home</a></li>
             <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
             <li class="dropdown">
-                <a href="Services.html" class="nav-link active">Services <i class="fas fa-chevron-down arrow-icon"></i></a>
+                <a href="Services.html" class="nav-link active">Services</a>
+                
+                <span class="arrow-trigger" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </span>
+
                 <div class="dropdown-content services-grid">
                     <a href="NecklineSculpting.html">Neck Line Sculpting</a>
                     <a href="ThinBack.html">Thin Back</a>
@@ -47,6 +52,312 @@
         </div>
     </nav>
     </section>
+
+    <!-- HERO SECTION -->
+    <section class="page-hero reveal">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-title-container">
+            <span class="badge-gold">SLIM PARIS</span>
+            <h1 class="page-title">OUR <span class="italic-red">SERVICES</span></h1>
+            <div class="title-divider"></div>
+            <p class="hero-subtitle">Discover the perfect blend of Traditional Expertise & Modern Innovation.</p>
+        </div>
+    </section>
+
+    <!-- TRADITIONAL TREATMENT -->
+    <section id="traditional"class="traditional-luxury-section reveal">
+        <div class="container treatment-flex-row">
+            <div class="boomerang-showcase">
+                <div class="luxury-video-grid">
+                    <div class="video-item tall"><video autoplay loop muted playsinline><source src="videos/trad1.mp4" type="video/mp4"></video></div>
+                    <div class="video-item"><video autoplay loop muted playsinline><source src="videos/trad2.mp4" type="video/mp4"></video></div>
+                    <div class="video-item"><video autoplay loop muted playsinline><source src="videos/trad3.mp4" type="video/mp4"></video></div>
+                </div>
+            </div>
+
+            <div class="treatment-content-wrap">
+                <div class="vertical-label">THE ART OF BARE-HANDS</div>
+                <div class="text-content">
+                    <span class="badge-gold">TRADITIONAL TECHNIQUE</span>
+                    <h2 class="editorial-title">Traditional <span class="highlight-script">Treatments</span></h2>
+                    <p class="emphasized-text">In <strong>Slim Paris</strong>, traditional treatments uses <strong>bare-hands</strong> to do delicate bone realignment maneuvers.</p>
+                    <p>This technique helps restore proper body posture, enhance balance, strength & stability improvement too. It helps <strong>Rounded Shoulder & Forwarded Head Posture</strong> improvement.</p>
+                    
+                    <div class="effects-box">
+                        <h4>What are the effects?</h4>
+                        <ul>
+                            <li>Improve body posture by addressing issues such as hip dips, anterior pelvic tilt & neck tilt.</li>
+                            <li>The entire process of traditional treatment is <strong>painless</strong>.</li>
+                            <li>Essential to <strong>practice proper sitting & standing postures</strong> to maintain results.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODERN TREATMENT -->
+    <section id="modern" class="modern-clinical-section reveal">
+        <div class="container treatment-flex-row">
+            <div class="treatment-content-wrap">
+                <div class="vertical-label">MODERN INNOVATION</div>
+                <div class="text-content">
+                    <span class="badge-gold">STATE-OF-THE-ART MACHINERY</span>
+                    <h2 class="editorial-title">Modern <span class="highlight-script">Treatments</span></h2>
+                    <p class="emphasized-text">In <strong>Slim Paris</strong>, modern treatments revolve around using <strong>state-of-the-art machinery</strong>.</p>
+                    <p>Using these latest machine innovations that can effectively reduce stubborn fat, burning up to <strong>8 cm</strong> of fat beneath the skin. It is <strong>non-invasive</strong> with <strong>minimal discomfort</strong> too.</p>
+                    
+                    <div class="effects-box clinical">
+                        <h4>What are the effects?</h4>
+                        <ul>
+                            <li>Reduce up to 8 cm of fat, decrease cellulite and tighten skin too.</li>
+                            <li>One treatment session equals to <strong>3 hours of constant cardio exercise!</strong></li>
+                            <li>The treatments are <strong>relaxing & painless</strong> that you may fall asleep.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="boomerang-showcase">
+                <div class="luxury-video-grid">
+                    <div class="video-item tall"><video autoplay loop muted playsinline><source src="videos/mod1.mp4" type="video/mp4"></video></div>
+                    <div class="video-item"><video autoplay loop muted playsinline><source src="videos/mod2.mp4" type="video/mp4"></video></div>
+                    <div class="video-item"><video autoplay loop muted playsinline><source src="videos/mod3.mp4" type="video/mp4"></video></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="services-divider-container reveal">
+        <div class="divider-line"></div>
+            <div class="divider-badge">
+                <span class="badge-text">EXPLORE OUR SIGNATURE</span>
+                <h2 class="divider-heading">Body <span class="highlight-script">Sculpting</span></h2>
+            </div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- 12 SERVICES -->
+    <section class="services-grid-section reveal">
+        <div class="services-container">
+            
+            <div class="service-card">
+                <div class="card-image">
+                    <img src="images/service1.png" alt="Neckline Sculpting">
+                    <div class="card-overlay">
+                        <a href="NecklineSculpting.html" class="btn-pill-small">Know More</a>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>Neckline Sculpting</h3>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="card-image">
+                    <img src="images/service1.png" alt="Thin Back">
+                    <div class="card-overlay">
+                        <a href="ThinBack.html" class="btn-pill-small">Know More</a>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>Thin Back</h3>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="card-image">
+                    <img src="images/service1.png" alt="Feminine Care">
+                    <div class="card-overlay">
+                        <a href="FeminineCareRejuvenation.html" class="btn-pill-small">Know More</a>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>Feminine Care Rejuvenation</h3>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="card-image">
+                    <img src="images/service1.png" alt="Hip Contouring">
+                    <div class="card-overlay">
+                        <a href="HipContouringTreatment.html" class="btn-pill-small">Know More</a>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>Hip Contouring Treatment</h3>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="card-image">
+                    <img src="images/service1.png" alt="Bye Bye Belly">
+                    <div class="card-overlay">
+                        <a href="ByeByeBelly.html" class="btn-pill-small">Know More</a>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>Bye Bye Belly</h3>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="card-image">
+                    <img src="images/service1.png" alt="Peach Butt">
+                    <div class="card-overlay">
+                        <a href="PeachButt.html" class="btn-pill-small">Know More</a>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>Peach Butt</h3>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="card-image">
+                    <img src="images/service1.png" alt="S-Line Body">
+                    <div class="card-overlay">
+                        <a href="SLineBody.html" class="btn-pill-small">Know More</a>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>S-Line Body</h3>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="card-image">
+                    <img src="images/service1.png" alt="Core Waist">
+                    <div class="card-overlay">
+                        <a href="CoreWaist.html" class="btn-pill-small">Know More</a>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>Core & Waist</h3>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="card-image">
+                    <img src="images/service1.png" alt="Hunch Back">
+                    <div class="card-overlay">
+                        <a href="HunchBack.html" class="btn-pill-small">Know More</a>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>Hunch Back</h3>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="card-image">
+                    <img src="images/service1.png" alt="Leg Sculpting">
+                    <div class="card-overlay">
+                        <a href="LegSculpting.html" class="btn-pill-small">Know More</a>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>Leg Sculpting</h3>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="card-image">
+                    <img src="images/service1.png" alt="Face">
+                    <div class="card-overlay">
+                        <a href="Face.html" class="btn-pill-small">Know More</a>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>Face</h3>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="card-image">
+                    <img src="images/service1.png" alt="Whitening Treatment">
+                    <div class="card-overlay">
+                        <a href="WhiteningTreatment.html" class="btn-pill-small">Know More</a>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3>Whitening Treatment</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="treatment-nav-visual reveal">
+        <div class="nav-visual-container">
+            
+            <a href="#traditional" class="nav-card traditional-card">
+                <div class="nav-bg-image" style="background-image: url('images/hero2.png');"></div> <div class="nav-overlay"></div>
+                <div class="nav-content">
+                    <span class="nav-subtitle">THE ART OF BARE-HANDS</span>
+                    <h2 class="nav-title">Traditional</h2>
+                    <span class="nav-arrow"><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="#modern" class="nav-card modern-card">
+                <div class="nav-bg-image" style="background-image: url('images/hero4.png');"></div> <div class="nav-overlay"></div>
+                <div class="nav-content">
+                    <span class="nav-subtitle">STATE-OF-THE-ART TECHNOLOGY</span>
+                    <h2 class="nav-title">Modern</h2>
+                    <span class="nav-arrow"><i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- BANNER -->
+    <section class="benefits-banner reveal">
+        <div class="benefits-container">
+            
+            <div class="benefit-item">
+                <i class="fas fa-leaf benefit-icon"></i>
+                <span class="benefit-text">No Side Effects</span>
+            </div>
+
+            <div class="benefit-divider"></div>
+
+            <div class="benefit-item">
+                <i class="fas fa-hand-sparkles benefit-icon"></i>
+                <span class="benefit-text">No Injection</span>
+            </div>
+
+            <div class="benefit-divider"></div>
+
+            <div class="benefit-item">
+                <i class="fas fa-clock benefit-icon"></i>
+                <span class="benefit-text">No Downtime</span>
+            </div>
+
+            <div class="benefit-divider"></div>
+
+            <div class="benefit-item">
+                <i class="fas fa-utensils benefit-icon"></i> <span class="benefit-text">No Diet Needed</span>
+            </div>
+
+            <div class="benefit-divider"></div>
+
+            <div class="benefit-item">
+                <i class="fas fa-bolt benefit-icon"></i>
+                <span class="benefit-text">Immediate Results</span>
+            </div>
+
+            <div class="benefit-divider"></div>
+
+            <div class="benefit-item">
+                <i class="fas fa-user-md benefit-icon"></i>
+                <span class="benefit-text">Trusted Pros</span>
+            </div>
+
+        </div>
+    </section>
+
+
 
 
 
@@ -90,8 +401,8 @@
         <div class="footer-bottom"><p>SPG WELLNESS CODE SDN. BHD. 20231101012 (1504501X)</p><p style="margin-top: 5px; font-weight: bold;">&copy; 2026 Slim Paris. All right reserved.</p></div>
     </footer>
 
-        <!-- SOCIAL MEDIA ICON -->
-        <div class="sticky-social-menu">
+    <!-- SOCIAL MEDIA ICON -->
+    <div class="sticky-social-menu">
         <div class="social-list">
             <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-bubble tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
             <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099?xhsshare=CopyLink&appuid=62f739c0000000001f016ec3&apptime=1707273346" class="social-bubble xhs" title="Xiaohongshu"><span style="font-weight:bold; font-size:14px;">小</span></a>
@@ -105,7 +416,17 @@
         </div>
     </div>
 
+    <!-- JAVASCRIPT -->
     <script>
+        function toggleMobileMenu(element) {
+        // Prevent the click from bubbling up
+        event.stopPropagation();
+        
+        // Find the parent <li> and toggle the class
+        const parentLi = element.closest('.dropdown');
+        parentLi.classList.toggle('show-menu');
+    }
+    
         function toggleSearch() {
             const sb = document.getElementById('search-box');
             sb.style.display = sb.style.display === 'block' ? 'none' : 'block';
@@ -141,13 +462,23 @@
             }
         }
 
-        function toggleSearch() { const sb = document.getElementById('search-box'); sb.style.display = sb.style.display==='block'?'none':'block'; if(sb.style.display==='block') sb.focus(); }
-        document.getElementById('search-box').addEventListener('keypress', function (e) { if (e.key === 'Enter') { e.preventDefault(); if (window.find && e.target.value.length > 0) { if (!window.find(e.target.value)) alert("Text not found."); }}});
+        reveal(); // To reveal elements on page load if already in view
+
+        function 
+        toggleSearch() { 
+        const sb = document.getElementById('search-box'); 
+        sb.style.display = sb.style.display==='block'?'none':'block'; if(sb.style.display==='block') sb.focus(); }
+        document.getElementById('search-box').addEventListener('keypress', 
+        
+        function (e) { if (e.key === 'Enter') { e.preventDefault(); if (window.find && e.target.value.length > 0) { if (!window.find(e.target.value)) alert("Text not found."); }}});
+        
         function toggleMenu() { document.querySelector('.nav-menu').classList.toggle('active'); }
         let currentSlide = 0; const slides = document.querySelectorAll('.slide');
+
         function nextSlide() { if(slides.length>0){ slides[currentSlide].classList.remove('active'); currentSlide = (currentSlide + 1) % slides.length; slides[currentSlide].classList.add('active'); }}
         setInterval(nextSlide, 5000);
         window.addEventListener('scroll', reveal);
+
         function reveal() { var reveals = document.querySelectorAll('.reveal'); for (var i = 0; i < reveals.length; i++) { if (reveals[i].getBoundingClientRect().top < window.innerHeight - 150) reveals[i].classList.add('active'); else reveals[i].classList.remove('active'); } }
     </script>
 </body>
