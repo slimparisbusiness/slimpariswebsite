@@ -1,61 +1,138 @@
 /* =========================================
-   1. GLOBAL VARIABLES & RESET
+   Blog.css - NETFLIX & PINTEREST STYLE
    ========================================= */
-:root {
-    --bg-cream: #FFF8F0;
-    --accent-gold: #D4A373;
-    --primary-red: #D34836;
-    --text-dark: #333;
-    --text-light: #555;
-    --burgundy: #560319;
+
+/* --- HEADER --- */
+.blog-header {
+    text-align: center;
+    padding: 120px 20px 50px;
+    background-color: var(--bg-cream);
+}
+.blog-header .subtitle { font-family: 'Lato', sans-serif; letter-spacing: 2px; text-transform: uppercase; color: #666; font-size: 0.9rem; }
+.blog-header .page-title { font-size: 3.5rem; color: #333; margin: 10px 0; }
+.blog-header .desc { max-width: 600px; margin: 0 auto; color: #555; }
+.script-font { font-family: 'Great Vibes', cursive; color: #D34836; font-weight: 400; margin-left: 10px; }
+.highlight { color: #D34836; }
+
+/* --- SECTION 1: NETFLIX SLIDER --- */
+.netflix-section {
+    padding: 50px 5%;
+    background: white;
+    border-bottom: 1px solid #fff0f0;
 }
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+.section-top {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 30px;
+}
+.section-title { font-size: 2rem; color: #333; font-family: 'Playfair Display', serif; }
+
+.scroll-arrows { display: flex; gap: 10px; }
+.scroll-arrows .arrow-btn {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid #eee; background: white; cursor: pointer;
+    color: #333; transition: 0.3s; display: flex; align-items: center; justify-content: center;
+}
+.scroll-arrows .arrow-btn:hover { background: #D34836; color: white; border-color: #D34836; }
+
+.netflix-scroller {
+    display: flex; gap: 25px;
+    overflow-x: auto; 
+    padding: 10px 5px 30px 5px; /* Padding bottom for shadow */
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: none; 
+}
+.netflix-scroller::-webkit-scrollbar { display: none; }
+
+.netflix-card {
+    min-width: 300px; 
+    border-radius: 20px; overflow: hidden;
+    background: white;
+    text-decoration: none; color: inherit;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    scroll-snap-align: start;
+    border: 1px solid white;
+    position: relative;
 }
 
-body { 
-    background-color: var(--bg-cream); 
-    font-family: 'Lato', sans-serif;
-    color: var(--text-dark);
-    line-height: 1.6;
-    overflow-x: hidden; 
+.netflix-img { height: 200px; overflow: hidden; }
+.netflix-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+
+.netflix-info { padding: 20px; }
+.tag { font-size: 0.7rem; text-transform: uppercase; color: #D34836; font-weight: 700; letter-spacing: 1px; background: #FFF0F0; padding: 5px 10px; border-radius: 20px; }
+.netflix-info h3 { font-size: 1.2rem; margin-top: 15px; font-family: 'Playfair Display', serif; line-height: 1.3; }
+
+/* Netflix Hover */
+.netflix-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(211, 72, 54, 0.15); border-color: #ffebeb; }
+.netflix-card:hover .netflix-img img { transform: scale(1.1); }
+
+/* --- SECTION 2: PINTEREST GRID --- */
+.pinterest-section {
+    padding: 80px 5%;
+    background-color: var(--bg-cream);
+}
+.pinterest-header { text-align: center; margin-bottom: 50px; }
+
+.pinterest-grid {
+    column-count: 3; 
+    column-gap: 25px;
+    max-width: 1200px; margin: 0 auto;
 }
 
-h1, h2, h3, h4 { 
-    color: var(--primary-red); 
-    font-family: 'Playfair Display', serif; 
-    font-weight: 700; 
+.pin-card {
+    display: inline-block; /* Essential for Masonry */
+    width: 100%;
+    margin-bottom: 25px; 
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none; color: inherit;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
 }
 
-/* =========================================
-   2. GLOBAL ANIMATIONS
-   ========================================= */
-.reveal { 
-    opacity: 0; 
-    transform: translateY(30px); 
-    transition: all 1s ease; 
+.pin-card img { width: 100%; display: block; object-fit: cover; }
+
+.pin-content { padding: 30px; }
+.pin-cat { font-size: 0.75rem; color: #999; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px; }
+.pin-content h4 { font-size: 1.4rem; margin-bottom: 10px; font-family: 'Playfair Display', serif; color: #333; line-height: 1.3; }
+.pin-content p { font-size: 0.95rem; color: #666; line-height: 1.6; margin-bottom: 20px; }
+
+.read-more {
+    font-size: 0.9rem; font-weight: 700; color: #D34836;
+    display: flex; align-items: center; gap: 8px;
+    transition: 0.3s;
 }
 
-.reveal.active { 
-    opacity: 1; 
-    transform: translateY(0); 
-}
+/* Pinterest Hover */
+.pin-card:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(211, 72, 54, 0.15); }
+.pin-card:hover .read-more { gap: 15px; } /* Arrow moves */
 
-@keyframes zoomEffect { 
-    0% { transform: scale(1); } 
-    100% { transform: scale(1.1); } 
+/* --- CTA SECTION --- */
+.blog-cta {
+    text-align: center;
+    padding: 80px 20px;
+    background: white;
 }
-
-@keyframes fadeInUp { 
-    from { opacity: 0; transform: translateY(20px); } 
-    to { opacity: 1; transform: translateY(0); } 
+.blog-cta h2 { font-size: 2.5rem; margin-bottom: 30px; font-family: 'Playfair Display', serif; }
+.btn-book-now {
+    display: inline-block; background: #D34836; color: white;
+    padding: 15px 40px; border-radius: 50px; text-decoration: none;
+    font-weight: 700; transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(211, 72, 54, 0.3);
 }
+.btn-book-now:hover { background: #b03525; transform: translateY(-3px); }
 
-@keyframes iconPulse { 
-    0% { transform: scale(1); }
-    50% { transform: scale(1.15); color: var(--primary-red); background: #fff0f0; box-shadow: 0 0 15px rgba(211, 72, 54, 0.2); }
-    100% { transform: scale(1); }
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .pinterest-grid { column-count: 2; }
+}
+@media (max-width: 768px) {
+    .pinterest-grid { column-count: 1; }
+    .netflix-card { min-width: 260px; }
+    .section-title { font-size: 1.8rem; }
+    .blog-header { padding-top: 100px; }
+    .blog-header .page-title { font-size: 2.5rem; }
 }

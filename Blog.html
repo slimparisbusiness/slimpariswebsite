@@ -3,34 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Slim Paris</title>
+    <title>The Journal | Slim Paris</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="Blog.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Blog.css">
 </head>
 <body>
-    <!-- NAVIGATION -->
+
     <nav class="navbar">
         <a href="Homepage.html" class="nav-logo">
             <img src="images/slimparislogo.png" alt="SlimParis">
         </a>
         <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-
         <ul class="nav-menu">
             <li><a href="Homepage.html" class="nav-link">Home</a></li>
             <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
-            <!-- SERVICES -->
+            
             <li class="dropdown">
                 <a href="Services.html" class="nav-link">Services</a>
-                
-                <span class="arrow-trigger" onclick="toggleMobileMenu(this)">
+                <span class="arrow-trigger">
                     <i class="fas fa-chevron-down arrow-icon"></i>
                 </span>
-
                 <div class="dropdown-content services-grid">
                     <a href="NecklineSculpting.html">Neck Line Sculpting</a>
                     <a href="ThinBack.html">Thin Back</a>
@@ -46,29 +42,161 @@
                     <a href="Whitening.html">Whitening Treatment</a>
                 </div>
             </li>
-            
-            <li><a href="Testimonial.html" class="nav-link">Testimonial</a></li>
+
+            <li><a href="Testimonial.html">Testimonial</a></li>
             <li><a href="ContactUs.html" class="nav-link">Contact Us</a></li>
-            <li><a href="Blog.html" class="nav-link active">Blog</a></li>
+            <li><a href="Blog.html" class="nav-link">Blog</a></li>
         </ul>
         <div class="search-container">
             <input type="text" id="search-box" placeholder="Type and hit Enter...">
             <div class="nav-search-icon" onclick="toggleSearch()"><i class="fas fa-search"></i></div>
         </div>
     </nav>
+
+    <section class="blog-header reveal">
+        <p class="subtitle">Welcome to</p>
+        <h1 class="page-title">The Slim Paris <span class="script-font">Journal</span></h1>
+        <p class="desc">Expert advice on body sculpting, wellness myths, and the elegant Parisian lifestyle.</p>
     </section>
 
-<!-- content -->
+    <section class="netflix-section reveal">
+        <div class="section-top">
+            <h2 class="section-title">Trending <span class="highlight">Now</span></h2>
+            <div class="scroll-arrows">
+                <button class="arrow-btn left" onclick="scrollNetflix('left')"><i class="fas fa-chevron-left"></i></button>
+                <button class="arrow-btn right" onclick="scrollNetflix('right')"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <!-- NETFLIX SCROLLER -->
+        <div class="netflix-scroller" id="netflixScroller">
+    
+            <a href="https://www.youtube.com/watch?v=VikzZ303l3E" target="_blank" class="netflix-card">
+                <div class="netflix-img"><img src="images/SP2.png" alt="CITYPlus Interview"></div> 
+                <div class="netflix-info">
+                    <span class="tag">Media Talk</span>
+                    <h3>Redefining The Ideal Body: Curve Beauty vs. Scale Numbers</h3>
+                </div>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=-NAI5XkstDw" target="_blank" class="netflix-card">
+                <div class="netflix-img"><img src="images/SP1.png" alt="Dr. Sttanny Journey"></div> 
+                <div class="netflix-info">
+                    <span class="tag">Founder Story</span>
+                    <h3>20 Years in the Making: How a Car Accident Inspired Slim Paris</h3>
+                </div>
+            </a>
+
+            <a href="ByeByeBelly.html" class="netflix-card">
+                <div class="netflix-img"><img src="images/testing.png" alt="Mummy Tummy"></div> 
+                <div class="netflix-info">
+                    <span class="tag">Problem Solver</span>
+                    <h3>Mummy Tummy: Why Mothers Shouldn't Just 'Eat Less' to Bounce Back</h3>
+                </div>
+            </a>
+
+            <a href="NecklineSculpting.html" class="netflix-card">
+                <div class="netflix-img"><img src="images/testing.png" alt="Tech Neck"></div> 
+                <div class="netflix-info">
+                    <span class="tag">Problem Solver</span>
+                    <h3>The Hunchback Cure: Improving Presence and气场 (Aura)</h3>
+                </div>
+            </a>
+
+            <a href="NecklineSculpting.html" class="netflix-card">
+                <div class="netflix-img"><img src="images/testing.png" alt="Tech Neck"></div> 
+                <div class="netflix-info">
+                    <span class="tag">DUPLICATION</span>
+                    <h3>DUP DUP DUP</h3>
+                </div>
+            </a>
+
+            <a href="NecklineSculpting.html" class="netflix-card">
+                <div class="netflix-img"><img src="images/testing.png" alt="Tech Neck"></div> 
+                <div class="netflix-info">
+                    <span class="tag">DUPLICATION</span>
+                    <h3>DUP DUP DUP</h3>
+                </div>
+            </a>
+
+            <a href="NecklineSculpting.html" class="netflix-card">
+                <div class="netflix-img"><img src="images/testing.png" alt="Tech Neck"></div> 
+                <div class="netflix-info">
+                    <span class="tag">DUPLICATION</span>
+                    <h3>DUP DUP DUP</h3>
+                </div>
+            </a>
+            
+        </div>
+
+    </section>
+
+    <section class="pinterest-section reveal">
+        <div class="pinterest-header">
+            <h2 class="section-title">Explore <span class="script-font">The Collection</span></h2>
+        </div>
+        
+        <div class="pinterest-grid">
+            
+            <a href="#" class="pin-card">
+                <img src="images/hero1.png" alt="Parisian Diet">
+                <div class="pin-content">
+                    <span class="pin-cat">Lifestyle</span>
+                    <h4>小红书</h4>
+                    <p>How French women maintain their figure while enjoying croissants.</p>
+                    <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="#" class="pin-card">
+                <img src="images/hero1.png" alt="Cellulite">
+                <div class="pin-content">
+                    <span class="pin-cat">Myth Busting</span>
+                    <h4>The Truth About Cellulite</h4>
+                    <p>It’s not fat, it’s fascia. Here is why that matters for your treatment.</p>
+                    <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="#" class="pin-card">
+                <img src="images/hero1.png" alt="Water Retention">
+                <div class="pin-content">
+                    <span class="pin-cat">Health</span>
+                    <h4>Bloating vs. Fat</h4>
+                    <p>How to tell the difference and drain water retention fast.</p>
+                    <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="#" class="pin-card">
+                <img src="images/hero1.png" alt="Wedding Prep">
+                <div class="pin-content">
+                    <span class="pin-cat">Events</span>
+                    <h4>The Bride-To-Be Guide</h4>
+                    <p>The 3-month timeline for perfect wedding day arms and back.</p>
+                    <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="#" class="pin-card">
+                <img src="images/hero1.png" alt="Sleep">
+                <div class="pin-content">
+                    <span class="pin-cat">Wellness</span>
+                    <h4>Sleep & Slimming</h4>
+                    <p>Why insomnia is stalling your weight loss progress.</p>
+                    <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+    
+    <section class="blog-cta reveal">
+        <h2>Ready to start your own story?</h2>
+        <a href="ContactUs.html" class="btn-book-now">Book Appointment Now</a>
+    </section>
 
 
-
-
-
-
-
-
-
-    <!-- FOOTER -->
     <footer>
         <div class="footer-container">
             <div class="footer-col logo-col"><h3 class="footer-heading">Contact Us</h3><img src="images/slimparislogo.png" alt="SlimParis" class="footer-logo"></div>
@@ -93,82 +221,116 @@
             <div class="footer-col social-col"><h3 class="footer-heading">Social Media</h3><div class="social-links">
                 <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="social-item"><i class="fab fa-instagram icon-insta"></i> <span>Instagram</span></a>
                 <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="social-item"><i class="fab fa-facebook icon-fb"></i> <span>Facebook</span></a>
-                <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099?xhsshare=CopyLink&appuid=62f739c0000000001f016ec3&apptime=1707273346" class="social-item"><span class="icon-xhs">小</span> <span>XHS</span></a>
+                <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099" class="social-item"><span class="icon-xhs">小</span> <span>XHS</span></a>
                 <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-item"><i class="fab fa-tiktok icon-tiktok"></i> <span>TikTok</span></a>
             </div></div>
         </div>
         <div class="footer-bottom"><p>SPG WELLNESS CODE SDN. BHD. 20231101012 (1504501X)</p><p style="margin-top: 5px; font-weight: bold;">&copy; 2026 Slim Paris. All right reserved.</p></div>
     </footer>
 
-        <!-- SOCIAL MEDIA ICON -->
-        <div class="sticky-social-menu">
+    <div class="sticky-social-menu">
         <div class="social-list">
-            <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-bubble tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099?xhsshare=CopyLink&appuid=62f739c0000000001f016ec3&apptime=1707273346" class="social-bubble xhs" title="Xiaohongshu"><span style="font-weight:bold; font-size:14px;">小红书</span></a>
-            <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="social-bubble fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="social-bubble insta" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/60102353737" target="_blank" class="social-bubble whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+             <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-bubble tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+             <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099?xhsshare=CopyLink&appuid=62f739c0000000001f016ec3&apptime=1707273346" class="social-bubble xhs" title="Xiaohongshu"><span style="font-weight:bold; font-size:14px;">小红书</span></a>
+             <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="social-bubble fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+             <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="social-bubble insta" title="Instagram"><i class="fab fa-instagram"></i></a>
+             <a href="https://wa.me/60102353737" target="_blank" class="social-bubble whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <div class="social-trigger">
-            <i class="fas fa-comment-dots"></i>
-            <span class="pulse-ring"></span>
-        </div>
+        <div class="social-trigger"><i class="fas fa-comment-dots"></i><span class="pulse-ring"></span></div>
     </div>
 
     <script>
-        
-        function toggleSearch() {
-            const sb = document.getElementById('search-box');
-            sb.style.display = sb.style.display === 'block' ? 'none' : 'block';
-            if (sb.style.display === 'block') sb.focus();
-        }
-        
-        document.getElementById('search-box').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                if (window.find && e.target.value.length > 0) {
-                    if (!window.find(e.target.value)) alert("Text not found.");
+        document.addEventListener("DOMContentLoaded", function() {
+
+            // --- 1. NETFLIX SCROLL LOGIC (Blog Specific) ---
+            // This allows the left/right arrows to scroll the Trending section
+            window.scrollNetflix = function(direction) {
+                const container = document.getElementById('netflixScroller');
+                if (container) {
+                    const scrollAmount = 320; // Width of card + gap
+                    if (direction === 'left') {
+                        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                    } else {
+                        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                    }
+                }
+            };
+
+            // --- 2. MOBILE SERVICES DROPDOWN (Link + Arrow Logic) ---
+            const dropdownItem = document.querySelector('.dropdown');
+            if (dropdownItem) {
+                const dropdownLink = dropdownItem.querySelector('a'); // The word "Services"
+                const arrowTrigger = dropdownItem.querySelector('.arrow-trigger'); // The Button
+
+                function toggleDropdown(e) {
+                    // Only activate on mobile screens (768px or less)
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault(); 
+                        e.stopPropagation();
+                        // Toggle both classes to be safe
+                        dropdownItem.classList.toggle('active'); 
+                        dropdownItem.classList.toggle('show-menu'); 
+                    }
+                }
+
+                // Apply to both the Text Link and the Arrow Button
+                if(dropdownLink) dropdownLink.addEventListener('click', toggleDropdown);
+                if(arrowTrigger) arrowTrigger.addEventListener('click', toggleDropdown);
+            }
+
+            // --- 3. HAMBURGER MENU (Main Mobile Menu) ---
+            window.toggleMenu = function() { // Expose to global scope for onclick="toggleMenu()"
+                const navMenu = document.querySelector('.nav-menu');
+                if(navMenu) navMenu.classList.toggle('active');
+            }
+
+            // --- 4. SEARCH BOX TOGGLE ---
+            window.toggleSearch = function() {
+                const sb = document.getElementById('search-box');
+                if(sb) {
+                    sb.style.display = sb.style.display === 'block' ? 'none' : 'block';
+                    if(sb.style.display === 'block') sb.focus();
+                }
+            }
+            
+            // Search "Enter" Key Logic
+            const searchBox = document.getElementById('search-box');
+            if(searchBox) {
+                searchBox.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (window.find && e.target.value.length > 0) {
+                            if (!window.find(e.target.value)) alert("Text not found.");
+                        }
+                    }
+                });
+            }
+
+            // --- 5. SCROLL REVEAL ANIMATION ---
+            function reveal() {
+                var reveals = document.querySelectorAll('.reveal');
+                for (var i = 0; i < reveals.length; i++) {
+                    var windowHeight = window.innerHeight;
+                    var elementTop = reveals[i].getBoundingClientRect().top;
+                    var elementVisible = 150;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveals[i].classList.add('active');
+                    }
+                }
+            }
+            window.addEventListener('scroll', reveal);
+            reveal(); // Trigger once on load
+            
+            // --- 6. NAVIGATION ACTIVE LINK HIGHLIGHTER ---
+            // Automatically highlights "Blog" in red when on this page
+            const currentLocation = location.href;
+            const menuItem = document.querySelectorAll('.nav-link');
+            for (let i = 0; i < menuItem.length; i++) {
+                if (menuItem[i].href === currentLocation) {
+                    menuItem[i].classList.add('active');
                 }
             }
         });
-
-        function toggleMenu() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-        }
-        
-        // Add scroll reveal for animations on new pages
-        window.addEventListener('scroll', reveal);
-        function reveal() {
-            var reveals = document.querySelectorAll('.reveal');
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add('active');
-                } else {
-                    reveals[i].classList.remove('active');
-                }
-            }
-        }
-
-        // JAVASCRIPT FOR SLIDER
-        function toggleMobileMenu(element) {
-        // Prevent the click from bubbling up
-        event.stopPropagation();
-        
-        // Find the parent <li> and toggle the class
-        const parentLi = element.closest('.dropdown');
-        parentLi.classList.toggle('show-menu');
-    }
-        function toggleSearch() { const sb = document.getElementById('search-box'); sb.style.display = sb.style.display==='block'?'none':'block'; if(sb.style.display==='block') sb.focus(); }
-        document.getElementById('search-box').addEventListener('keypress', function (e) { if (e.key === 'Enter') { e.preventDefault(); if (window.find && e.target.value.length > 0) { if (!window.find(e.target.value)) alert("Text not found."); }}});
-        function toggleMenu() { document.querySelector('.nav-menu').classList.toggle('active'); }
-        let currentSlide = 0; const slides = document.querySelectorAll('.slide');
-        function nextSlide() { if(slides.length>0){ slides[currentSlide].classList.remove('active'); currentSlide = (currentSlide + 1) % slides.length; slides[currentSlide].classList.add('active'); }}
-        setInterval(nextSlide, 5000);
-        window.addEventListener('scroll', reveal);
-        function reveal() { var reveals = document.querySelectorAll('.reveal'); for (var i = 0; i < reveals.length; i++) { if (reveals[i].getBoundingClientRect().top < window.innerHeight - 150) reveals[i].classList.add('active'); else reveals[i].classList.remove('active'); } }
     </script>
 </body>
 </html>

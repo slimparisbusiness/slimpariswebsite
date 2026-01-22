@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Slim Paris</title>
+    <title>Success Stories | Slim Paris</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="Testimonial.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Testimonial.css">
 </head>
 <body>
-    <!-- NAVIGATION -->
+
     <nav class="navbar">
         <a href="Homepage.html" class="nav-logo">
             <img src="images/slimparislogo.png" alt="SlimParis">
@@ -22,13 +21,12 @@
         <ul class="nav-menu">
             <li><a href="Homepage.html" class="nav-link">Home</a></li>
             <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
+            
             <li class="dropdown">
                 <a href="Services.html" class="nav-link">Services</a>
-                
-                <span class="arrow-trigger" onclick="toggleMobileMenu(this)">
+                <span class="arrow-trigger">
                     <i class="fas fa-chevron-down arrow-icon"></i>
                 </span>
-
                 <div class="dropdown-content services-grid">
                     <a href="NecklineSculpting.html">Neck Line Sculpting</a>
                     <a href="ThinBack.html">Thin Back</a>
@@ -44,6 +42,7 @@
                     <a href="Whitening.html">Whitening Treatment</a>
                 </div>
             </li>
+
             <li><a href="Testimonial.html" class="nav-link active">Testimonial</a></li>
             <li><a href="ContactUs.html" class="nav-link">Contact Us</a></li>
             <li><a href="Blog.html" class="nav-link">Blog</a></li>
@@ -53,20 +52,295 @@
             <div class="nav-search-icon" onclick="toggleSearch()"><i class="fas fa-search"></i></div>
         </div>
     </nav>
+
+    <section class="testimonial-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <h1 class="page-title">Stories of <span class="script-font">Transformation</span></h1>
+            <p>Real women. Real results. Read how Slim Paris has helped thousands rediscover their confidence.</p>
+        </div>
+    </section>
+
+    <div class="stats-bar reveal">
+        <div class="stat-item">
+            <span class="stat-number">2,000+</span>
+            <span class="stat-label">Happy Clients</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Success Rate</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-number">4.9</span>
+            <span class="stat-label">Average Rating</span>
+        </div>
+    </div>
+
+    <section class="reviews-section reveal">
+        <h2 class="section-heading">Client <span class="script-font">Love Notes</span></h2>
+        <p class="section-subtitle">See what our community is saying</p>
+
+        <div class="marquee-wrapper">
+            <div class="marquee-track scroll-left">
+                <div class="review-img-card"><img src="images/review1.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review2.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review3.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review4.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review5.png" alt="Review"></div>
+
+                <div class="review-img-card"><img src="images/review6.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review7.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review8.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review9.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review10.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review11.png" alt="Review"></div>
+            </div>
+        </div>
+
+        <div class="marquee-wrapper">
+            <div class="marquee-track scroll-right">
+                <div class="review-img-card"><img src="images/review11.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review10.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review9.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review8.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review7.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review6.png" alt="Review"></div>
+
+                <div class="review-img-card"><img src="images/review5.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review4.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review3.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review2.png" alt="Review"></div>
+                <div class="review-img-card"><img src="images/review1.png" alt="Review"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section reveal">
+        <div class="gallery-header">
+            <h2 class="section-heading">Visual <span class="script-font">Evidence</span></h2>
+            <p>Real results from our signature treatments.</p>
+        </div>
+        
+        <div class="ba-grid">
+            <a href="NecklineSculpting.html" class="ba-card">
+                <div class="ba-image">
+                    <img src="images/treatment1.png" alt="Neck Line Result"> 
+                    <span class="ba-badge">Neck Line</span>
+                </div>
+            </a>
+
+            <a href="ThinBack.html" class="ba-card">
+                <div class="ba-image">
+                    <img src="images/treatment1.png" alt="Thin Back Result"> 
+                    <span class="ba-badge">Thin Back</span>
+                </div>
+            </a>
+
+            <a href="LegSculpting.html" class="ba-card">
+                <div class="ba-image">
+                    <img src="images/treatment1.png" alt="Slim Legs Result"> 
+                    <span class="ba-badge">Leg Sculpting</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="cta-wrapper">
+             <a href="Services.html" class="btn-book-now">Start Your Transformation</a>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+     <section class="faq-section reveal">
+        
+        <div style="margin-bottom: 40px;">
+            <p style="color: #D34836; font-weight: 700; letter-spacing: 3px; font-size: 1.2rem; margin-bottom: 5px; text-transform: uppercase;">
+                FAQ
+            </p>
+            <h2 class="section-heading" style="margin-top: 0;">
+                Curious <span class="script-font">Minds</span>
+            </h2>
+        </div>
+
+        <div class="faq-flip-grid">
+            <div class="flip-card-container">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span class="flip-number">01</span>
+                        <h3>How to contact us?</h3>
+                        <i class="fab fa-whatsapp front-icon"></i>
+                        <span class="flip-hint">Hover/Click to see answer</span>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Feel free to get in touch with us through our 
+                            <a href="https://wa.me/60102353737" target="_blank" style="text-decoration: none; color: #25D366; font-weight: bold;">
+                                WhatsApp
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card-container">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span class="flip-number">02</span>
+                        <h3>Is Slim Paris a Slimming Center?</h3>
+                        <i class="fas fa-shapes front-icon"></i>
+                        <span class="flip-hint">Hover/Click to see answer</span>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>No. We are a body sculpting and posture realignment facility. We focus on fixing your shape and curves, not just weight loss.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card-container">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span class="flip-number">03</span>
+                        <h3>Do we need to book an appointment?</h3>
+                        <i class="fas fa-calendar-check front-icon"></i>
+                        <span class="flip-hint">Hover/Click to see answer</span>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Yes, please book via WhatsApp to reserve your slot. We operate by appointment to ensure every client gets 1-on-1 attention.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card-container">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span class="flip-number">04</span>
+                        <h3>How many treatments should I have?</h3>
+                        <i class="fas fa-arrow-rotate-right front-icon"></i>
+                        <span class="flip-hint">Hover/Click to see answer</span>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>It depends on your body goals. Some clients maintain with 1 session a month, while others may need a course to achieve their ideal figure.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card-container">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span class="flip-number">05</span>
+                        <h3>Are the treatments guaranteed?</h3>
+                        <i class="fas fa-shield-heart front-icon"></i>
+                        <span class="flip-hint">Hover/Click to see answer</span>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Yes. Our treatments are safe, non-invasive, and effective. No injections, no drugs, no pain, no downtime, and no side effects.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card-container">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span class="flip-number">06</span>
+                        <h3>Who do we serve?</h3>
+                        <i class="fas fa-venus front-icon"></i>
+                        <span class="flip-hint">Hover/Click to see answer</span>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>We are a female-exclusive center. We only serve female customers to ensure maximum privacy and comfort.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card-container">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span class="flip-number">07</span>
+                        <h3>How do I choose a treatment?</h3>
+                        <i class="fas fa-clipboard-user front-icon"></i>
+                        <span class="flip-hint">Hover/Click to see answer</span>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Don't worry! Our therapist will conduct a 1-on-1 consultation to analyze your body type and suggest the perfect plan for you.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card-container">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span class="flip-number">08</span>
+                        <h3>How fast will I see results?</h3>
+                        <i class="fas fa-wand-magic-sparkles front-icon"></i>
+                        <span class="flip-hint">Hover/Click to see answer</span>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Immediately. Whether it is Traditional or Modern treatment, you can see visible changes in your silhouette after just one session.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card-container">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span class="flip-number">09</span>
+                        <h3>Do I need to go on a diet?</h3>
+                        <i class="fas fa-utensils front-icon"></i>
+                        <span class="flip-hint">Hover/Click to see answer</span>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>No strict dieting is required! We simply suggest you follow a normal, healthy routine with 3 meals a day.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card-container">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span class="flip-number">10</span>
+                        <h3>How long does one session take?</h3>
+                        <i class="fas fa-clock front-icon"></i>
+                        <span class="flip-hint">Hover/Click to see answer</span>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Most treatments take about 1 hour. However, if you combine multiple treatments (e.g., Waist + Back), it will take longer.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card-container">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span class="flip-number">11</span>
+                        <h3>What payment methods do you accept?</h3>
+                        <i class="fas fa-credit-card front-icon"></i>
+                        <span class="flip-hint">Hover/Click to see answer</span>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>We accept Cash, Credit Cards, Debit Cards, and QR Pay / E-Wallets for your convenience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card-container">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span class="flip-number">12</span>
+                        <h3>Is it safe for Post-Partum Moms?</h3>
+                        <i class="fas fa-baby front-icon"></i>
+                        <span class="flip-hint">Hover to see answer</span>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Absolutely. In fact, we specialize in fixing "Mummy Tummy" and Diastasis Recti. It is safe, non-invasive, and highly recommended for recovery.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </section>
 
 
-
-
-
-
-
-
-
-
-
-        <!-- FOOTER -->
-            <footer>
+    <footer>
         <div class="footer-container">
             <div class="footer-col logo-col"><h3 class="footer-heading">Contact Us</h3><img src="images/slimparislogo.png" alt="SlimParis" class="footer-logo"></div>
             <div class="footer-col">
@@ -97,76 +371,147 @@
         <div class="footer-bottom"><p>SPG WELLNESS CODE SDN. BHD. 20231101012 (1504501X)</p><p style="margin-top: 5px; font-weight: bold;">&copy; 2026 Slim Paris. All right reserved.</p></div>
     </footer>
 
-        <!-- SOCIAL MEDIA ICON -->
-        <div class="sticky-social-menu">
+    <div class="sticky-social-menu">
         <div class="social-list">
-            <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-bubble tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099?xhsshare=CopyLink&appuid=62f739c0000000001f016ec3&apptime=1707273346" class="social-bubble xhs" title="Xiaohongshu"><span style="font-weight:bold; font-size:14px;">小红书</span></a>
-            <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="social-bubble fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="social-bubble insta" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/60102353737" target="_blank" class="social-bubble whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+             <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-bubble tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+             <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099?xhsshare=CopyLink&appuid=62f739c0000000001f016ec3&apptime=1707273346" class="social-bubble xhs" title="Xiaohongshu"><span style="font-weight:bold; font-size:14px;">小红书</span></a>
+             <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="social-bubble fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+             <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="social-bubble insta" title="Instagram"><i class="fab fa-instagram"></i></a>
+             <a href="https://wa.me/60102353737" target="_blank" class="social-bubble whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <div class="social-trigger">
-            <i class="fas fa-comment-dots"></i>
-            <span class="pulse-ring"></span>
-        </div>
+        <div class="social-trigger"><i class="fas fa-comment-dots"></i><span class="pulse-ring"></span></div>
     </div>
 
     <!-- JAVASCRIPT -->
     <script>
-        
-        function toggleMobileMenu(element) {
-        // Prevent the click from bubbling up
-        event.stopPropagation();
-        
-        // Find the parent <li> and toggle the class
-        const parentLi = element.closest('.dropdown');
-        parentLi.classList.toggle('show-menu');
-    }
-    
-        function toggleSearch() {
-            const sb = document.getElementById('search-box');
-            sb.style.display = sb.style.display === 'block' ? 'none' : 'block';
-            if (sb.style.display === 'block') sb.focus();
-        }
-        
-        document.getElementById('search-box').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                if (window.find && e.target.value.length > 0) {
-                    if (!window.find(e.target.value)) alert("Text not found.");
+    document.addEventListener("DOMContentLoaded", function() {
+
+        // --- 1. MOBILE SERVICES DROPDOWN (The "Link + Arrow" Logic) ---
+        const dropdownItem = document.querySelector('.dropdown');
+        if (dropdownItem) {
+            const dropdownLink = dropdownItem.querySelector('a'); // The word "Services"
+            const arrowTrigger = dropdownItem.querySelector('.arrow-trigger'); // The Button
+
+            function toggleDropdown(e) {
+                // Only activate on mobile screens (768px or less)
+                if (window.innerWidth <= 768) {
+                    e.preventDefault(); 
+                    e.stopPropagation();
+                    dropdownItem.classList.toggle('active'); // Matches your CSS
+                    
+                    // Optional: Also toggle 'show-menu' if you kept that old CSS class
+                    dropdownItem.classList.toggle('show-menu'); 
                 }
             }
-        });
 
-        function toggleMenu() {
-            document.querySelector('.nav-menu').classList.toggle('active');
+            // Apply to both the Text Link and the Arrow Button
+            if(dropdownLink) dropdownLink.addEventListener('click', toggleDropdown);
+            if(arrowTrigger) arrowTrigger.addEventListener('click', toggleDropdown);
+        }
+
+        // --- 2. CAROUSEL SLIDER (Homepage) ---
+        const slides = document.querySelectorAll('.slide');
+        if (slides.length > 0) {
+            let currentSlide = 0;
+            
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+            
+            // Auto-scroll every 5 seconds
+            setInterval(nextSlide, 5000);
+        }
+
+        // --- 3. SEARCH BOX TOGGLE ---
+        const searchIcon = document.querySelector('.nav-search-icon');
+        const searchBox = document.getElementById('search-box');
+
+        if (searchIcon && searchBox) {
+            // Toggle Open/Close
+            searchIcon.addEventListener('click', function() {
+                const isHidden = (window.getComputedStyle(searchBox).display === 'none');
+                searchBox.style.display = isHidden ? 'block' : 'none';
+                if (isHidden) searchBox.focus();
+            });
+
+            // "Enter" Key Logic
+            searchBox.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    // Basic browser search (Ctrl+F behavior)
+                    if (window.find && e.target.value.length > 0) {
+                        const found = window.find(e.target.value);
+                        if (!found) alert("Text not found on this page.");
+                    }
+                }
+            });
+        }
+
+        // --- 4. HAMBURGER MENU (Main Mobile Menu) ---
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // --- 5. SCROLL REVEAL ANIMATION (Fade Up) ---
+        const reveals = document.querySelectorAll('.reveal');
+        if (reveals.length > 0) {
+            function reveal() {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 150;
+
+                reveals.forEach((revealItem) => {
+                    const elementTop = revealItem.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        revealItem.classList.add('active');
+                    } else {
+                        revealItem.classList.remove('active');
+                    }
+                });
+            }
+            // Listen to scroll
+            window.addEventListener('scroll', reveal);
+            // Trigger once on load in case elements are already visible
+            reveal();
+        }
+
+        // --- 6. FAQ ACCORDION (Testimonial Page) ---
+        const faqButtons = document.querySelectorAll('.faq-btn');
+        if (faqButtons.length > 0) {
+            faqButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = btn.parentElement;
+                    
+                    // Optional: Close other items (Auto-collapse)
+                    // Remove this loop if you want to allow multiple open at once
+                    document.querySelectorAll('.faq-item').forEach(otherItem => {
+                        if (otherItem !== item) otherItem.classList.remove('active');
+                    });
+
+                    // Toggle the clicked one
+                    item.classList.toggle('active');
+                });
+            });
         }
         
-        // Add scroll reveal for animations on new pages
-        window.addEventListener('scroll', reveal);
-        function reveal() {
-            var reveals = document.querySelectorAll('.reveal');
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add('active');
-                } else {
-                    reveals[i].classList.remove('active');
-                }
+        // --- 7. NAVIGATION "ACTIVE" LINK HIGHLIGHTER ---
+        // (Optional: Automatically highlights the link of the current page)
+        const currentLocation = location.href;
+        const menuItem = document.querySelectorAll('.nav-link');
+        const menuLength = menuItem.length;
+        for (let i = 0; i < menuLength; i++) {
+            if (menuItem[i].href === currentLocation) {
+                menuItem[i].className = "nav-link active";
             }
         }
 
-        function toggleSearch() { const sb = document.getElementById('search-box'); sb.style.display = sb.style.display==='block'?'none':'block'; if(sb.style.display==='block') sb.focus(); }
-        document.getElementById('search-box').addEventListener('keypress', function (e) { if (e.key === 'Enter') { e.preventDefault(); if (window.find && e.target.value.length > 0) { if (!window.find(e.target.value)) alert("Text not found."); }}});
-        function toggleMenu() { document.querySelector('.nav-menu').classList.toggle('active'); }
-        let currentSlide = 0; const slides = document.querySelectorAll('.slide');
-        function nextSlide() { if(slides.length>0){ slides[currentSlide].classList.remove('active'); currentSlide = (currentSlide + 1) % slides.length; slides[currentSlide].classList.add('active'); }}
-        setInterval(nextSlide, 5000);
-        window.addEventListener('scroll', reveal);
-        function reveal() { var reveals = document.querySelectorAll('.reveal'); for (var i = 0; i < reveals.length; i++) { if (reveals[i].getBoundingClientRect().top < window.innerHeight - 150) reveals[i].classList.add('active'); else reveals[i].classList.remove('active'); } }
+    });
     </script>
 </body>
 </html>

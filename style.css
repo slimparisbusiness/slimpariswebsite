@@ -461,3 +461,76 @@ footer {
     }
 }
 
+/* =========================================
+   FINAL GLOBAL FIXES (Add to bottom of style.css)
+   ========================================= */
+
+/* 1. FIX PURPLE LINKS (Make them dark grey everywhere) */
+.nav-menu a,
+.nav-link, 
+.nav-link:visited, 
+.nav-link:active,
+.nav-link:focus {
+    color: #333 !important; 
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+/* Keep Hover Red */
+.nav-menu a:hover,
+.nav-link:hover {
+    color: #D34836 !important;
+}
+
+/* Keep Active Page Red */
+.nav-link.active {
+    color: #D34836 !important;
+    font-weight: 700;
+}
+
+/* 2. FIX MOBILE DROPDOWN (Make it open on click) */
+@media (max-width: 768px) {
+    /* Hide sub-menu by default */
+    .dropdown .services-grid,
+    .dropdown-content {
+        display: none !important; /* Force hide */
+        background-color: #f9f9f9;
+        padding-left: 20px;
+        border-left: 3px solid #D34836;
+        position: static; /* Stack naturally */
+        box-shadow: none;
+        width: 100%;
+    }
+
+    /* Show it ONLY when the 'show-menu' class is added by JS */
+    .dropdown.show-menu .services-grid,
+    .dropdown.show-menu .dropdown-content {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    /* Rotate arrow when open */
+    .dropdown.show-menu .arrow-icon {
+        transform: rotate(180deg);
+        transition: 0.3s;
+    }
+}
+
+/* 3. FIX STATS BAR (Stack Vertically on Mobile) */
+/* This fixes it on Blog AND Testimonial page */
+@media (max-width: 768px) {
+    .stats-bar {
+        flex-direction: column !important; 
+        height: auto !important;
+        width: 90% !important;
+        padding: 30px 20px !important;
+        gap: 20px !important;
+    }
+
+    .stat-divider {
+        width: 100px !important;
+        height: 1px !important;
+        background: #eee !important;
+        margin: 10px auto !important;
+    }
+}

@@ -1,61 +1,450 @@
 /* =========================================
-   1. GLOBAL VARIABLES & RESET
+   Testimonial.css - SUCCESS STORIES
    ========================================= */
-:root {
-    --bg-cream: #FFF8F0;
-    --accent-gold: #D4A373;
-    --primary-red: #D34836;
-    --text-dark: #333;
-    --text-light: #555;
-    --burgundy: #560319;
+
+/* --- 1. HERO SECTION (Parallax Vibe) --- */
+.testimonial-hero {
+    position: relative;
+    height: 60vh; /* Takes up 60% of screen height */
+    background-image: url('images/testing.png'); /* Replace with a happy client or clinic image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0;
 }
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+.hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Darkens image so text pops */
 }
 
-body { 
-    background-color: var(--bg-cream); 
-    font-family: 'Lato', sans-serif;
-    color: var(--text-dark);
-    line-height: 1.6;
-    overflow-x: hidden; 
+.hero-content {
+    position: relative; z-index: 2; color: white;
+    max-width: 800px; padding: 20px;
 }
 
-h1, h2, h3, h4 { 
-    color: var(--primary-red); 
-    font-family: 'Playfair Display', serif; 
-    font-weight: 700; 
+.hero-content h1 {
+    font-size: 4rem; margin-bottom: 20px; color: white;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 1.2rem; font-weight: 300; letter-spacing: 1px;
+}
+
+/* --- 2. STATS BAR (Credibility) --- */
+.stats-bar {
+    display: flex; justify-content: center; align-items: center;
+    gap: 50px; background: white;
+    padding: 40px 20px;
+    margin-top: -50px; /* Overlaps the hero image slightly */
+    position: relative; z-index: 5;
+    max-width: 1000px; margin-left: auto; margin-right: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.stat-item { text-align: center; }
+.stat-number { display: block; font-size: 2.5rem; font-family: 'Playfair Display', serif; color: #D34836; font-weight: 700; }
+.stat-label { font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 2px; }
+.stat-divider { width: 1px; height: 50px; background: #eee; }
+
+/* =========================================
+   3. INFINITE REVIEWS WALL (MARQUEE)
+   ========================================= */
+.reviews-section {
+    padding: 80px 0; /* Full width */
+    background-color: var(--bg-cream);
+    overflow: hidden; /* Hide the scrollbars */
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    margin-top: -30px;
+}
+
+/* THE CONTAINER */
+.marquee-wrapper {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 30px; /* Space between rows */
+    position: relative;
+}
+
+/* Fade Effect on sides to look premium */
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+    content: "";
+    position: absolute; top: 0; width: 100px; height: 100%;
+    z-index: 2;
+}
+.marquee-wrapper::before { left: 0; background: linear-gradient(to right, var(--bg-cream), transparent); }
+.marquee-wrapper::after { right: 0; background: linear-gradient(to left, var(--bg-cream), transparent); }
+
+/* THE TRACK (Where images live) */
+.marquee-track {
+    display: flex;
+    gap: 20px;
+    width: max-content; /* Force it to be wide */
+}
+
+/* THE INDIVIDUAL IMAGE CARD */
+.review-img-card {
+    width: 300px; /* Set a fixed width for uniformity */
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border: 4px solid white;
+    transition: transform 0.3s ease;
+}
+
+.review-img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images don't stretch weirdly */
+    display: block;
+}
+
+/* Hover Effect: Pause on hover so people can read */
+.marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+}
+.review-img-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+    border-color: #D34836;
+}
+
+/* --- ANIMATIONS --- */
+
+/* Scroll Left Animation */
+.scroll-left {
+    animation: scrollLeft 40s linear infinite;
+}
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Moves halfway because we duplicated images */
+}
+
+/* Scroll Right Animation */
+.scroll-right {
+    animation: scrollRight 45s linear infinite; /* Slightly slower for natural feel */
+}
+@keyframes scrollRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+    .review-img-card { width: 220px; } /* Smaller cards on phone */
+    .marquee-wrapper::before, .marquee-wrapper::after { width: 50px; } /* Smaller fade */
 }
 
 /* =========================================
-   2. GLOBAL ANIMATIONS
+   RESTORE THE FONT STYLING
    ========================================= */
-.reveal { 
-    opacity: 0; 
-    transform: translateY(30px); 
-    transition: all 1s ease; 
+
+/* 1. The Main Title ("Client") */
+.section-heading {
+    text-align: center; 
+    font-size: 3.5rem; 
+    color: #333; 
+    margin-bottom: 10px; 
+    font-family: 'Playfair Display', serif; /* This makes it look fancy/bold */
+    font-weight: 700;
 }
 
-.reveal.active { 
-    opacity: 1; 
-    transform: translateY(0); 
+/* 2. The Cursive Text ("Love Notes") */
+.script-font {
+    font-family: 'Great Vibes', cursive; /* This is the curly font */
+    color: #D34836; /* The Red/Pink color */
+    font-weight: 400; 
+    margin-left: 10px;
 }
 
-@keyframes zoomEffect { 
-    0% { transform: scale(1); } 
-    100% { transform: scale(1.1); } 
+/* 3. The Subtitle ("See what our community...") */
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 50px;
+    margin-top: 0;
 }
 
-@keyframes fadeInUp { 
-    from { opacity: 0; transform: translateY(20px); } 
-    to { opacity: 1; transform: translateY(0); } 
+/* --- 4. GALLERY (Before/After) --- */
+.gallery-section { padding: 80px 5%; background: white; text-align: center; }
+
+.ba-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; max-width: 1200px; margin: 40px auto;
 }
 
-@keyframes iconPulse { 
-    0% { transform: scale(1); }
-    50% { transform: scale(1.15); color: var(--primary-red); background: #fff0f0; box-shadow: 0 0 15px rgba(211, 72, 54, 0.2); }
-    100% { transform: scale(1); }
+.ba-card {
+    height: 400px; border-radius: 15px; overflow: hidden;
+    position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.ba-image img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.ba-card:hover img { transform: scale(1.05); }
+
+.ba-badge {
+    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: white; padding: 8px 25px; border-radius: 30px;
+    color: #D34836; font-weight: 700; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-book-now {
+    display: inline-block; background: #D34836; color: white;
+    padding: 15px 40px; border-radius: 50px; text-decoration: none;
+    font-weight: 700; margin-top: 30px; transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(211, 72, 54, 0.3);
+}
+.btn-book-now:hover { background: #b03525; transform: translateY(-3px); }
+
+/* =========================================
+   5. UNIQUE FAQ (MAGIC FLIP CARDS)
+   ========================================= */
+.faq-section {
+    padding: 100px 5%;
+    background-color: var(--bg-cream);
+    text-align: center;
+}
+
+.faq-flip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* THE CONTAINER (Sets the 3D space) */
+.flip-card-container {
+    background-color: transparent;
+    height: 350px; /* Fixed height for consistency */
+    perspective: 1000px; /* Creates the 3D depth */
+    cursor: pointer;
+}
+
+/* THE INNER CARD (The thing that actually spins) */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy spin */
+    transform-style: preserve-3d;
+}
+
+/* DO THE FLIP ON HOVER */
+.flip-card-container:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* FRONT AND BACK SHARED STYLES */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Hides the back when facing front */
+    backface-visibility: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- THE FRONT STYLE (White & Clean) --- */
+.flip-card-front {
+    background-color: white;
+    border: 2px solid white;
+}
+
+.flip-number {
+    font-family: 'Great Vibes', cursive;
+    color: #D34836;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.flip-card-front h3 {
+    color: #333;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.front-icon {
+    font-size: 2rem;
+    color: #ffd1d1; /* Very light pink */
+    margin-bottom: 20px;
+}
+
+.flip-hint {
+    font-size: 0.8rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: auto; /* Pushes it to bottom */
+}
+
+/* --- THE BACK STYLE (Pink & Pop) --- */
+.flip-card-back {
+    background: linear-gradient(135deg, #D34836 0%, #ff9a9e 100%);
+    color: white;
+    transform: rotateY(180deg); /* Starts flipped */
+    border: 2px solid #D34836;
+}
+
+.flip-card-back p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-family: 'Lato', sans-serif;
+}
+
+/* =========================================
+   4. GALLERY (VISUAL EVIDENCE) - FINAL
+   ========================================= */
+.gallery-section { 
+    padding: 80px 5%; 
+    background: white; 
+    text-align: center; 
+}
+
+.gallery-header {
+    margin-bottom: 40px;
+}
+
+.ba-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; 
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+/* --- THE CARD (Structure + Link Reset) --- */
+.ba-card {
+    display: block; /* Makes the <a> tag act like a box */
+    height: 400px; 
+    border-radius: 20px; 
+    overflow: hidden; /* Clips the image when it zooms */
+    position: relative; 
+    text-decoration: none; /* Removes blue underline */
+    color: inherit;
+    
+    /* Base Shadow & Transition */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.ba-image {
+    width: 100%;
+    height: 100%;
+}
+
+/* --- THE IMAGE (Zoom Logic) --- */
+.ba-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease; /* Smooth slow zoom */
+}
+
+/* --- THE BADGE (Label) --- */
+.ba-badge {
+    position: absolute; 
+    bottom: 25px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    
+    background: white; 
+    padding: 12px 35px; 
+    border-radius: 50px;
+    
+    color: #D34836; 
+    font-weight: 700; 
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease; 
+    z-index: 2;
+    white-space: nowrap;
+}
+
+/* =========================================
+   HOVER EFFECTS (THE MAGIC)
+   ========================================= */
+
+/* 1. Lift the card up */
+.ba-card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 25px 50px rgba(211, 72, 54, 0.25); /* Pink Glow Shadow */
+}
+
+/* 2. Zoom the image */
+.ba-card:hover img {
+    transform: scale(1.1); 
+}
+
+/* 3. Turn Badge Pink & Move it Up */
+.ba-card:hover .ba-badge {
+    background-color: #D34836; 
+    color: white; 
+    bottom: 35px; /* Floats up slightly */
+    box-shadow: 0 5px 15px rgba(211, 72, 54, 0.4);
+}
+
+/* =========================================
+   MOBILE FIX FOR STATS BAR
+   ========================================= */
+@media (max-width: 768px) {
+    .stats-bar {
+        /* 1. Make them stack vertically instead of side-by-side */
+        flex-direction: column !important;
+        
+        /* 2. Fix the width so it doesn't overflow the screen */
+        width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        /* 3. Adjust spacing */
+        gap: 15px !important;
+        padding: 30px 20px !important;
+        
+        /* 4. Keep the overlap but make it safe */
+        margin-top: -40px !important;
+    }
+
+    /* 5. Change the vertical divider line to a horizontal line */
+    .stat-divider {
+        width: 80px !important; /* Make it a short line */
+        height: 1px !important;
+        background: #eee !important;
+        margin: 5px auto !important; /* Center it */
+    }
+    
+    /* 6. Slightly smaller numbers so they don't scream at you */
+    .stat-number {
+        font-size: 2rem !important;
+    }
 }
