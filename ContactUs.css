@@ -568,3 +568,72 @@ h1, h2, h3, h4 {
         gap: 10px;
     }
 }
+
+/* =========================================
+   3.6. PREMIUM BENEFITS BANNER
+   ========================================= */
+.benefits-banner {
+    background-color: var(--bg-cream); /* Soft luxury background */
+    padding: 35px 5%;
+    border-top: 1px solid rgba(212, 163, 115, 0.2); /* Subtle gold border */
+    border-bottom: 1px solid rgba(212, 163, 115, 0.2);
+}
+
+.benefits-container {
+    display: flex;
+    justify-content: space-between; /* Spreads items evenly */
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allows stacking on mobile */
+    gap: 20px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+}
+
+.benefit-icon {
+    font-size: 1.2rem;
+    color: var(--burgundy); /* Gold icons for luxury feel */
+}
+
+.benefit-text {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--burgundy); 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* The vertical gold lines between items */
+.benefit-divider {
+    width: 1px;
+    height: 25px;
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .benefit-divider { display: none; } /* Hide lines on tablet/mobile */
+    .benefits-container {
+        justify-content: center; /* Center items in a grid */
+        gap: 30px;
+    }
+    .benefit-item {
+        width: 45%; /* 2 items per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .benefit-item {
+        width: 100%; /* 1 item per row */
+        justify-content: flex-start;
+        padding-left: 20%;
+    }
+}

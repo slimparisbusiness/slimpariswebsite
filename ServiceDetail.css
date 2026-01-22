@@ -6,8 +6,6 @@
     --accent-gold: #D4A373;
     --primary-red: #D34836;
     --text-dark: #333;
-    --text-light: #555;
-    --burgundy: #560319;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -18,6 +16,10 @@ body {
     color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden; 
+    overflow-y: auto !important; 
+    -webkit-overflow-scrolling: touch; 
+    height: auto !important;
+    min-height: 100vh;
 }
 
 h1, h2, h3, h4 { 
@@ -26,630 +28,368 @@ h1, h2, h3, h4 {
     font-weight: 700; 
 }
 
-/* --- MOBILE NAVIGATION STYLES --- */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block; /* Show hamburger on mobile */
-    }
-
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px; /* Adjust based on navbar height */
-        flex-direction: column;
-        background-color: white;
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        padding: 20px 0;
-        gap: 20px;
-    }
-
-    .nav-menu.active {
-        left: 0; /* Slide in menu */
-    }
-
-    .nav-item {
-        margin: 10px 0;
-    }
-}
-
 /* ==========================================================================
    2. HERO SECTION
    ========================================================================== */
 .page-hero {
-    position: relative;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-top: 0;
+    position: relative; height: 400px; display: flex;
+    align-items: center; justify-content: center;
+    background-size: cover; background-position: center;
+    background-repeat: no-repeat; margin-top: 0;
 }
 
 .hero-overlay {
-    position: absolute;
-    top: 0; left: 0; 
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
+    position: absolute; top: 0; left: 0; 
+    width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 1;
 }
 
-.hero-title-container {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-}
+.hero-title-container { position: relative; z-index: 2; text-align: center; }
 
 .page-title {
-    color: white !important;
-    font-size: 3.5rem;
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 2px;
+    color: white !important; font-size: 3.5rem;
+    font-family: 'Playfair Display', serif; letter-spacing: 2px;
     text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .script-font {
-    font-family: 'Great Vibes', cursive;
-    color: #D34836;
-    font-weight: 400;
-    margin-left: 10px;
+    font-family: 'Great Vibes', cursive; color: #D34836;
+    font-weight: 400; margin-left: 10px;
 }
 
 /* ==========================================================================
-   3. MAIN LAYOUT
+   3. LAYOUT & SIDEBAR (DESKTOP DEFAULT)
    ========================================================================== */
 .service-detail-container {
-    display: flex;
-    max-width: 1300px;
-    margin: 60px auto;
-    padding: 0 5%;
-    gap: 60px;
-    align-items: flex-start;
+    display: flex; max-width: 1300px; margin: 60px auto;
+    padding: 0 5%; gap: 60px; align-items: flex-start;
 }
 
-/* ==========================================================================
-   4. LEFT SIDEBAR (With Line Icons)
-   ========================================================================== */
 .service-sidebar {
-    flex: 0 0 280px;
-    position: sticky;
-    top: 120px;
-    border: 1px solid #f0f0f0;
-    padding: 25px 0;
-    background: white;
-    border-radius: 15px;
-    z-index: 10;
+    flex: 0 0 280px; position: sticky; top: 120px;
+    border: 1px solid #f0f0f0; padding: 25px 0;
+    background: white; border-radius: 15px; z-index: 10;
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
 
 .sidebar-title {
-    text-align: center;
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.5rem;
-    color: #D34836;
-    margin-bottom: 25px;
+    text-align: center; font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem; color: #D34836; margin-bottom: 25px;
 }
 
 .service-list { list-style: none; padding: 0 15px; }
 .service-list li { margin-bottom: 5px; }
 
 .service-list li a {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 12px 20px;
-    text-decoration: none;
-    color: #555;
-    font-family: 'Lato', sans-serif;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    border-bottom: none;
+    display: flex; align-items: center; gap: 15px; padding: 12px 20px;
+    text-decoration: none; color: #555; font-family: 'Lato', sans-serif;
+    font-weight: 600; font-size: 0.95rem; border-radius: 10px;
+    transition: all 0.3s ease; border-bottom: none;
 }
 
 .nav-icon {
-    width: 30px;
-    text-align: center;
-    font-size: 1.4rem;
-    color: #D4A373;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 30px; text-align: center; font-size: 1.4rem; color: #D4A373;
+    transition: all 0.3s ease; display: flex; align-items: center; justify-content: center;
 }
 
-.service-list li a:hover {
-    background-color: #FFF8F0;
-    color: #D34836;
-    transform: translateX(5px);
-}
-
-.service-list li a:hover .nav-icon {
-    color: #D34836;
-    transform: scale(1.1);
-}
-
-.service-list li a.active {
-    background-color: #FFC0CB;
-    color: #560319;
-    font-weight: 700;
-    box-shadow: 0 4px 10px rgba(255, 192, 203, 0.4);
-}
-
+.service-list li a:hover { background-color: #FFF8F0; color: #D34836; transform: translateX(5px); }
+.service-list li a:hover .nav-icon { color: #D34836; transform: scale(1.1); }
+.service-list li a.active { background-color: #FFC0CB; color: #560319; font-weight: 700; box-shadow: 0 4px 10px rgba(255, 192, 203, 0.4); }
 .service-list li a.active .nav-icon { color: #560319; }
 
 /* ==========================================================================
-   5. RIGHT CONTENT & CAROUSEL
+   4. CONTENT & CAROUSEL
    ========================================================================== */
-.service-content-stage { 
-    flex: 1;
-    min-width: 0;
-    width: 0;
-    overflow: hidden;
- }
+.service-content-stage { flex: 1; min-width: 0; width: 0; overflow: hidden; }
 
 .service-intro h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: #D34836;
-    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif; font-size: 3rem;
+    color: #D34836; margin-bottom: 20px;
 }
 
 .service-intro p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #444;
-    margin-bottom: 40px;
-    background: #FFF8F0;
-    padding: 20px;
-    border-left: 4px solid #D34836;
+    font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 40px;
+    background: #FFF8F0; padding: 20px; border-left: 4px solid #D34836;
 }
 
-/* ==========================================================================
-   WATER CAROUSEL (Final Style)
-   ========================================================================== */
 .water-carousel {
-    position: relative;
-    height: 350px; /* Adjust height here */
-    width: 100%;
-    margin: 0 auto 50px auto; 
-    overflow: hidden; /* Hides images waiting off-screen */
-    border-radius: 12px;
+    position: relative; height: 350px; width: 100%;
+    margin: 0 auto 50px auto; overflow: hidden; border-radius: 12px;
 }
+.carousel-track-container { height: 100%; position: relative; width: 100%; overflow: hidden; }
+.carousel-track { padding: 0; margin: 0; list-style: none; position: relative; height: 100%; width: 100%; transition: transform 0.5s ease-in-out; }
+.carousel-slide { position: absolute; top: 0; bottom: 0; width: 100%; height: 100%; }
+.carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-.carousel-track-container {
-    height: 100%;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.carousel-track {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
-}
-
-.carousel-slide {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* --- BUTTONS --- */
 .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.7); /* See-through white */
-    color: #D34836;
-    border: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7); color: #D34836; border: none;
+    width: 45px; height: 45px; border-radius: 50%; cursor: pointer; z-index: 10;
+    font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-
-.carousel-button:hover {
-    background: #D34836;
-    color: white;
-}
-
+.carousel-button:hover { background: #D34836; color: white; }
 .btn-left { left: 20px; }
 .btn-right { right: 20px; }
 
+/* ==========================================================================
+   5. NAVBAR DROPDOWN (DESKTOP)
+   ========================================================================== */
+.services-grid {
+    position: absolute !important;
+    top: 100%; left: 50%; transform: translateX(-50%); z-index: 9999;
+    min-width: 600px;
+    background: linear-gradient(to bottom, #D34836 4px, white 4px) !important;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    border-top: none !important;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 40px; padding: 30px; margin-top: 10px;
+}
+.dropdown:hover .services-grid { display: grid; }
+.services-grid a {
+    display: block; padding: 12px 15px; color: #333;
+    font-weight: 700 !important; text-decoration: none; border-radius: 5px;
+}
+.services-grid a.active, .services-grid a.active-link {
+    background-color: #FFF8F0 !important; color: #D34836 !important;
+}
+.services-grid a:hover { background-color: #f9f9f9; color: #D34836; }
 
 /* ==========================================================================
-   6. MODERN DROPDOWNS (Accordion)
+   6. PAGE FAQ ACCORDION
    ========================================================================== */
 .service-dropdowns {
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    margin-bottom: 50px; display: flex; flex-direction: column; gap: 15px;
 }
-
 .dropdown-item {
-    background: white;
-    border: 1px solid #f0f0f0;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-    transition: all 0.3s ease;
-    overflow: hidden;
+    background: white; border: 1px solid #f0f0f0; border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02); transition: all 0.3s ease; overflow: hidden;
 }
-
 .dropdown-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     border-color: rgba(212, 163, 115, 0.3);
 }
-
 .dropdown-btn {
-    width: 100%;
-    padding: 20px 25px;
-    background: white;
-    border: none;
-    text-align: left;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #333;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%; padding: 20px 25px; background: white; border: none;
+    text-align: left; font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-weight: 700; color: #333;
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center;
 }
-
-.dropdown-btn i {
-    width: 32px;
-    height: 32px;
-    background: #FFF8F0;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    color: #D34836;
-    transition: all 0.3s ease;
+.dropdown-item .dropdown-content {
+    position: static !important; transform: none !important; min-width: 0 !important;
+    background: transparent !important; box-shadow: none !important;
+    display: none; padding: 0 25px 25px 25px; border-top: 1px solid #f9f9f9;
 }
-
-.dropdown-content {
-    display: block;            /* Use block, but hide with opacity/visibility */
-    position: absolute;
-    
-    /* PART 1: CENTER IT PERMANENTLY */
-    /* Move these lines here so it is ALWAYS centered, even when invisible */
-    left: 50%;
-    transform: translateX(-50%);
-    
-    /* PART 2: THE ANIMATION */
-    /* Only animate the fading, NOT the moving */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Do NOT use 'transition: all' */
-    
-    /* Other styles (background, width, etc.) */
-    background-color: white;
-    width: 600px; /* Adjust as needed */
-    z-index: 100;
-}
-
-.dropdown-content-inner {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    padding-top: 15px;
-}
-
+.dropdown-content-inner { display: flex; gap: 20px; align-items: flex-start; padding-top: 15px; }
 .content-icon {
-    font-size: 2rem;
-    color: #D34836;
-    background: #FFF8F0;
-    width: 50px; height: 50px;
-    line-height: 50px;
-    text-align: center;
-    border-radius: 50%;
-    flex-shrink: 0;
+    font-size: 2rem; color: #D34836; background: #FFF8F0;
+    width: 50px; height: 50px; line-height: 50px; text-align: center;
+    border-radius: 50%; flex-shrink: 0;
 }
-
-.dropdown-content p {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.6;
-    margin: 0;
-    padding-top: 5px;
+.dropdown-item p {
+    font-size: 1rem; color: #666; line-height: 1.6; margin: 0; padding-top: 5px;
 }
-
-.dropdown:hover .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* ACTIVE STATE */
-.dropdown-item.active {
-    border-color: #D34836;
-    box-shadow: 0 10px 25px rgba(211, 72, 54, 0.1);
-}
-.dropdown-item.active { display: block; }
+.dropdown-item.active .dropdown-content { display: block; }
+.dropdown-item.active { border-color: #D34836; }
 .dropdown-item.active .dropdown-btn { color: #D34836; }
-.dropdown-item.active .dropdown-btn i {
-    transform: rotate(180deg);
-    background: #D34836;
-    color: white;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+.dropdown-item.active .dropdown-btn i { transform: rotate(180deg); color: #D34836; }
+.dropdown-btn i {
+    width: 32px; height: 32px; background: #FFF8F0; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; color: #D34836; transition: all 0.3s ease;
 }
 
 /* ==========================================================================
-   NEW RESULTS LAYOUT (Before & After Grid)
+   7. RESULTS SECTION
    ========================================================================== */
 .results-wrapper {
-    background: #fff;
-    border-radius: 20px;
-    padding: 50px;
-    margin-bottom: 80px;
-    box-shadow: 0 20px 40px rgba(212, 163, 115, 0.1); /* Soft Gold Shadow */
-    border: 1px solid #FFF8F0;
-    text-align: center; /* Center everything */
+    background: #fff; border-radius: 20px; padding: 50px; margin-bottom: 80px;
+    box-shadow: 0 20px 40px rgba(212, 163, 115, 0.1);
+    border: 1px solid #FFF8F0; text-align: center;
 }
+.results-header h3 { font-size: 3rem; font-family: 'Playfair Display', serif; color: #333; margin-bottom: 15px; }
+.results-header h3 span { font-family: 'Great Vibes', cursive; color: #D34836; font-size: 3.5rem; font-weight: 400; margin-left: 10px; }
+.results-header p { max-width: 700px; margin: 0 auto 40px auto; color: #666; font-size: 1.1rem; line-height: 1.7; }
 
-/* 1. Header Area */
-.results-header h3 {
-    font-size: 3rem;
-    font-family: 'Playfair Display', serif;
-    color: #333;
-    margin-bottom: 15px;
-}
+.before-after-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+.result-card { position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); height: 350px; }
+.result-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.result-card:hover img { transform: scale(1.05); }
 
-.results-header h3 span {
-    font-family: 'Great Vibes', cursive;
-    color: #D34836;
-    font-size: 3.5rem;
-    font-weight: 400;
-    margin-left: 10px;
-}
-
-.results-header p {
-    max-width: 700px;
-    margin: 0 auto 40px auto; /* Centers text block */
-    color: #666;
-    font-size: 1.1rem;
-    line-height: 1.7;
-}
-
-/* 2. Before/After Grid */
-.before-after-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.result-card {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    height: 350px; /* Fixed height for uniformity */
-}
-
-.result-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.result-card:hover img {
-    transform: scale(1.05); /* Subtle zoom on hover */
-}
-
-/* Labels (The little tags on top) */
 .label-badge {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 8px 20px;
-    border-radius: 30px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    z-index: 2;
-    text-transform: uppercase;
+    position: absolute; top: 20px; left: 20px; padding: 8px 20px;
+    border-radius: 30px; font-size: 0.85rem; font-weight: 700;
+    letter-spacing: 1px; z-index: 2; text-transform: uppercase;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+.label-badge.before { background-color: rgba(255, 255, 255, 0.9); color: #666; }
+.label-badge.after { background-color: #D34836; color: white; }
 
-.label-badge.before {
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #666;
-}
-
-.label-badge.after {
-    background-color: #D34836;
-    color: white;
-}
-
-/* 3. Note Box */
 .results-note {
-    background: #FFF8F0;
-    padding: 20px;
-    border-radius: 12px;
-    display: inline-flex; /* Shrinks box to fit text */
-    align-items: center;
-    gap: 15px;
-    text-align: left;
-    max-width: 800px;
-    border-left: 4px solid #D34836;
+    background: #FFF8F0; padding: 20px; border-radius: 12px;
+    display: inline-flex; align-items: center; gap: 15px;
+    text-align: left; max-width: 800px; border-left: 4px solid #D34836;
 }
+.results-note i { font-size: 1.5rem; color: #D34836; }
 
-.results-note i {
-    font-size: 1.5rem;
-    color: #D34836;
-}
-
-/* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
-    .results-wrapper {
-        padding: 30px 20px;
-    }
-
-    .before-after-grid {
-        grid-template-columns: 1fr; /* Stack vertically on phone */
-        gap: 20px;
-    }
-
-    .result-card {
-        height: 250px; /* Smaller height on mobile */
-    }
-    
-    .results-header h3 { font-size: 2.2rem; }
-    .results-header h3 span { font-size: 2.5rem; }
-}
-
-/* ==========================================================================
-   MOBILE FIX (Fixes the blank space issue)
-   ========================================================================== */
-@media (max-width: 1024px) {
-    .service-detail-container { 
-        flex-direction: column; 
-    }
-    
-    .service-sidebar { 
-        width: 100%; 
-        position: relative; 
-        top: 0; 
-        margin-bottom: 30px; /* Adds space between navigation and content */
-    }
-
-    /* THIS IS THE KEY FIX BELOW */
-    .service-content-stage {
-        width: 100% !important;  /* Force it back to full width */
-        min-width: auto;         /* Reset the restriction */
-        overflow: visible;       /* Let content breathe */
-    }
-    
-    /* Adjust results section for mobile stacking */
-    .results-section { 
-        flex-direction: column; 
-        gap: 30px; 
-        padding: 25px; 
-    }
-    
-    .results-img { 
-        max-width: 100%; 
-    }
-}
-
-/* ==========================================================================
-   CUTE BUTTON DESIGN
-   ========================================================================== */
-.cta-container { 
-    text-align: center; 
-    margin-top: 60px; 
-    padding-bottom: 20px;
-}
-
+.cta-container { text-align: center; margin-top: 60px; padding-bottom: 20px; }
 .btn-book-now {
-    display: inline-flex; /* Keeps icon & text centered */
-    align-items: center;
-    justify-content: center;
-    gap: 12px; /* Space between icon and text */
-    
-    /* Cute Gradient */
+    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
     background: linear-gradient(135deg, #D34836 0%, #ff6b5b 100%);
-    color: white;
-    
-    /* Size & Shape */
-    padding: 20px 50px;
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    
-    /* The "Cute" Factor: Full rounded corners */
-    border-radius: 50px; 
-    
-    /* Soft, dreamy shadow */
-    box-shadow: 0 10px 30px rgba(211, 72, 54, 0.3);
-    
-    /* White border makes it look like a sticker */
-    border: 3px solid #fff; 
-    
-    /* Bouncy Animation Setting */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: white; padding: 20px 50px; font-size: 1.3rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
+    border-radius: 50px; box-shadow: 0 10px 30px rgba(211, 72, 54, 0.3);
+    border: 3px solid #fff; transition: all 0.4s ease;
 }
-
-/* Hover Effect: It bounces up! */
 .btn-book-now:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 20px 40px rgba(211, 72, 54, 0.4);
     background: linear-gradient(135deg, #ff6b5b 0%, #D34836 100%);
 }
 
-/* Icon adjustment */
-.btn-book-now i {
-    font-size: 1.6rem;
-}
+/* ==========================================================================
+   8. MOBILE RESPONSIVE FIXES (NAVBAR LOGIC + GAP FIX)
+   ========================================================================== */
+@media (max-width: 1024px) {
 
-/* Mobile Adjustment */
-@media (max-width: 768px) {
-    .btn-book-now {
-        width: 90%; /* Fit screen nicely on phone */
-        padding: 18px 20px;
-        font-size: 1.1rem;
+    /* --- THE GAP FIX: Negative Margin Pulls Text UP --- */
+    .service-detail-container {
+        display: block !important;
+        padding: 0 20px !important;
+        margin-top: 30px !important; 
     }
+    .service-content-stage { 
+        width: 100% !important; 
+        /* 👇 NEGATIVE 30px = Pulls text UP to fix the gap 👇 */
+        margin-top: -30px !important; 
+        position: relative; 
+        z-index: 5;
+    }
+
+    /* --- SIDEBAR: White Box + Sticky Logic --- */
+    .service-sidebar {
+        width: 100% !important;
+        /* Sticky Logic: Follows you as you scroll */
+        position: sticky !important; 
+        top: 70px; 
+        z-index: 99;
+        
+        background: #fff !important;         
+        border: 2px solid #FFF0F0 !important; 
+        border-radius: 20px !important;      
+        padding: 15px 0 10px 0 !important; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important; 
+        margin-bottom: 0 !important;
+    }
+
+    /* --- NAVIGATION TITLE --- */
+    .sidebar-title {
+        display: block !important;
+        font-family: 'Great Vibes', cursive !important;
+        font-size: 2.2rem !important; 
+        color: #D34836 !important;
+        text-align: center !important;
+        margin-bottom: 10px !important; 
+        margin-top: 0 !important;
+        line-height: 1 !important;
+    }
+    
+    /* --- SCROLLABLE BUTTONS (Horizontal) --- */
+    .service-list {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        padding: 5px 15px 10px 15px !important; 
+        gap: 10px !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; 
+        -ms-overflow-style: none;
+    }
+    .service-list::-webkit-scrollbar { display: none; }
+    .service-list li { flex-shrink: 0 !important; margin: 0 !important; }
+    
+    /* --- PILL BUTTONS --- */
+    .service-list li a {
+        display: flex !important; align-items: center; gap: 8px;
+        padding: 10px 18px !important;
+        background: #fff !important;
+        border: 1px solid #eee !important;
+        border-radius: 50px !important; 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+        white-space: nowrap !important;
+        font-size: 0.9rem !important; color: #555 !important;
+        font-weight: 600 !important;
+    }
+    .service-list li a.active {
+        background-color: #FFF0F0 !important;
+        color: #D34836 !important;
+        border: 1px solid #ffdede !important;
+        box-shadow: 0 4px 10px rgba(211, 72, 54, 0.15) !important;
+    }
+    .service-list li a.active .nav-icon { color: #D34836 !important; }
+
+    /* --- OTHER MOBILE FIXES --- */
+    .service-intro h2 { margin-top: 60px !important; padding-top: 0 !important; }
+    .hero-title-container { width: 95%; margin: 0 auto; }
+    .page-title { font-size: 2.2rem !important; line-height: 1.2 !important; white-space: normal; }
+    .script-font { font-size: 2.5rem !important; display: block; margin-top: 5px; }
 }
 
-/* --- 1. Top Nav "Red Line" & Active State --- */
-.nav-menu .nav-link.active {
-    color: #D32F2F; /* Makes the text "Services" Red */
-    position: relative; /* Needed to position the line */
-}
+/* =========================================================
+   9. MAIN MENU FIX (Compatible with your Current HTML)
+   ========================================================= */
+@media (max-width: 768px) {
+    /* 1. Main Slide-out Menu */
+    .nav-menu {
+        position: fixed; left: -100%; top: 70px;
+        flex-direction: column; background-color: white;
+        width: 100%; height: calc(100vh - 70px);
+        overflow-y: auto; text-align: center; transition: 0.3s;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1); padding: 0; 
+        z-index: 10000;
+    }
+    .nav-menu.active { left: 0; }
+    .nav-item { margin: 0; display: block; width: 100%; }
+    
+    /* 2. Services Dropdown */
+    .services-grid {
+        position: static !important; 
+        transform: none !important;
+        display: none; /* Hidden by default */
+        grid-template-columns: 1fr !important;
+        width: 100% !important; 
+        background-color: #FFF8F0 !important;
+        box-shadow: none !important; 
+        border: none !important; 
+        margin: 0 !important;
+    }
+    
+    /* 3. THE FIX: We add .show-menu here so your HTML works! */
+    .dropdown:hover .services-grid, 
+    .dropdown.active .services-grid,
+    .dropdown.show-menu .services-grid {  /* <--- THIS MAKES IT WORK */
+        display: grid !important; 
+    }
+    
+    /* 4. Rotate the arrow when open */
+    .dropdown.show-menu .arrow-icon,
+    .dropdown.active .arrow-icon {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
+    }
 
-/* This creates the Red Line above the text */
-.nav-menu .nav-link.active::before {
-    content: "";
-    position: absolute;
-    top: -30px;      /* Adjust this number to move the line higher or lower */
-    left: 0;
-    width: 100%;     /* Spans the full width of the text */
-    height: 4px;     /* Thickness of the red line */
-    background-color: #D32F2F; 
-}
-
-/* --- 2. Dropdown "Highlight Name" --- */
-/* This targets the specific link inside the dropdown */
-.dropdown-content a.active {
-    color: #D32F2F !important;  /* Turns text Red */
-    font-weight: bold;          /* Makes text Bold */
-    background-color: #ffebeb;  /* Adds a faint pink background (Optional) */
+    /* 5. Dropdown Links Styling */
+    .services-grid a {
+        text-align: center !important; 
+        padding: 15px !important;
+        border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+        display: block !important;
+        color: #555 !important;
+    }
+    
+    /* 6. Before/After Results - Stacked */
+    .before-after-grid { display: flex !important; flex-direction: column !important; gap: 20px !important; }
+    .result-card { width: 100% !important; height: 350px !important; }
 }
