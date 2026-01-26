@@ -198,11 +198,12 @@ section { padding: 3rem 5%; }
 /* =========================================
    13. MOBILE RESPONSIVE (HIGH-END STYLE)
    ========================================= */
-/* Tablet */
+/* Tablet & Smaller Laptops */
 @media (max-width: 1024px) {
     .founder-layout { flex-direction: column; gap: 2rem; }
     .founder-center-info { order: 2; margin: 1rem 0; }
     .founder-img-side { max-width: 60%; margin: 0 auto; }
+    
     .founder-img-side:first-child { order: 1; transform: rotate(-3deg); margin-bottom: -10px; }
     .founder-img-side:last-child { order: 3; transform: rotate(3deg); margin-top: -10px; }
     .founder-img-side img { border: 4px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
@@ -211,13 +212,26 @@ section { padding: 3rem 5%; }
     .media-row { flex-direction: column; gap: 1.5rem; }
     .media-video { width: 100%; }
     .media-text { width: 100%; text-align: center; }
+
+    /* STACK THE GRIDS ON TABLET */
+    /* I added .services-grid2 here */
+    .about-grid, .mv-container, .services-grid, .services-grid2, .values-grid { 
+        grid-template-columns: 1fr; 
+    }
 }
 
 /* Phones */
 @media (max-width: 768px) {
     /* General */
     .hero h1 { font-size: 2.2rem; }
-    .about-grid, .mv-container, .services-grid, .values-grid { grid-template-columns: 1fr; gap: 4rem; }
+    
+    /* STACK THE GRIDS ON PHONE */
+    /* I added .services-grid2 here too */
+    .about-grid, .mv-container, .services-grid, .services-grid2, .values-grid { 
+        grid-template-columns: 1fr; 
+        gap: 4rem; 
+    }
+
     .about-text p { text-align: center; }
     .section-title { font-size: 2.2rem; }
     
