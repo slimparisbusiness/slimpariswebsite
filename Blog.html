@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Journal | Slim Paris</title>
+    <title>The Blog | Slim Paris</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,6 +13,7 @@
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <nav class="navbar">
         <a href="Homepage.html" class="nav-logo">
             <img src="images/slimparislogo.png" alt="SlimParis">
@@ -21,12 +22,12 @@
         <ul class="nav-menu">
             <li><a href="Homepage.html" class="nav-link">Home</a></li>
             <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
-            
             <li class="dropdown">
                 <a href="Services.html" class="nav-link">Services</a>
-                <span class="arrow-trigger">
+                <span class="arrow-trigger" onclick="toggleMobileMenu(this)">
                     <i class="fas fa-chevron-down arrow-icon"></i>
                 </span>
+                
                 <div class="dropdown-content services-grid">
                     <a href="NecklineSculpting.html">Neck Line Sculpting</a>
                     <a href="ThinBack.html">Thin Back</a>
@@ -41,9 +42,9 @@
                     <a href="Face.html">Face</a>
                     <a href="Whitening.html">Whitening Treatment</a>
                 </div>
-            </li>
 
-            <li><a href="Testimonial.html">Testimonial</a></li>
+            </li>
+            <li><a href="Testimonial.html" class="nav-link">Testimonial</a></li>
             <li><a href="ContactUs.html" class="nav-link">Contact Us</a></li>
             <li><a href="Blog.html" class="nav-link">Blog</a></li>
         </ul>
@@ -196,7 +197,7 @@
         <a href="ContactUs.html" class="btn-book-now">Book Appointment Now</a>
     </section>
 
-
+    <!-- FOOTER -->
     <footer>
         <div class="footer-container">
             <div class="footer-col logo-col"><h3 class="footer-heading">Contact Us</h3><img src="images/slimparislogo.png" alt="SlimParis" class="footer-logo"></div>
@@ -205,9 +206,11 @@
                 <ul class="footer-links">
                     <li><a href="AboutUs.html">About Us</a></li>
                     <li><a href="Services.html">Services</a></li>
-                    <li><a href="Traditional.html">Traditional Treatments</a></li>
-                    <li><a href="Modern.html">Modern Treatments</a></li>
+                    
+                    <li><a href="Promotional.html">Happenings</a></li>
+                    
                     <li><a href="ContactUs.html">Location</a></li>
+                    <li><a href="Blog.html" style="color: #D34836; font-weight: bold;">Blog</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -215,7 +218,7 @@
                 <ul class="footer-links">
                     <li><a href="ContactUs.html">Booking</a></li>
                     <li><a href="Testimonial.html">Testimonial</a></li>
-                    <li><a href="FAQ.html">FAQs</a></li>
+                    <li><a href="Testimonial.html#faq">FAQs</a></li>                
                 </ul>
             </div>
             <div class="footer-col social-col"><h3 class="footer-heading">Social Media</h3><div class="social-links">
@@ -227,7 +230,8 @@
         </div>
         <div class="footer-bottom"><p>SPG WELLNESS CODE SDN. BHD. 20231101012 (1504501X)</p><p style="margin-top: 5px; font-weight: bold;">&copy; 2026 Slim Paris. All right reserved.</p></div>
     </footer>
-
+    
+    <!-- STICKY SOCIAL MENU -->
     <div class="sticky-social-menu">
         <div class="social-list">
              <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-bubble tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>

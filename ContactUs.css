@@ -137,7 +137,7 @@ h1, h2, h3, h4 {
 }
 
 /* =========================================
-   4. REAL SOCIAL BUBBLES
+   4. REAL SOCIAL BUBBLES (FILLED STYLE)
    ========================================= */
 .social-list-flex {
     display: flex;
@@ -148,24 +148,45 @@ h1, h2, h3, h4 {
 .real-social-icon {
     width: 45px;
     height: 45px;
-    background: white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Slightly stronger shadow for depth */
     text-decoration: none;
-    font-size: 1.2rem;
-    transition: 0.3s ease;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    
+    /* FORCE WHITE ICON inside the color bubble */
+    color: #ffffff !important; 
 }
 
-.insta-bg { color: #E4405F; }
-.fb-bg { color: #1877F2; }
-.tiktok-bg { color: #000; }
-.xhs-official { background: #FF2442; color: white; }
+/* --- BRAND COLORS --- */
 
+/* Instagram: The official gradient */
+.insta-bg { 
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+/* Facebook: Official Blue */
+.fb-bg { 
+    background-color: #1877F2; 
+}
+
+/* TikTok: Official Black */
+.tiktok-bg { 
+    background-color: #000000; 
+}
+
+/* Xiaohongshu: Official Red */
+.xhs-official { 
+    background-color: #FF2442; 
+}
+
+/* HOVER EFFECT: Pop up */
 .real-social-icon:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 10px 20px var(--primary-red);
 }
 
 /* =========================================

@@ -1,0 +1,334 @@
+/* =========================================
+   Promotional.css - HAPPENINGS PAGE (FINAL)
+   ========================================= */
+
+/* =========================================
+   HERO SECTION (IMAGE BACKGROUND)
+   ========================================= */
+.promo-hero {
+    position: relative;
+    width: 100%;
+    /* Make it tall enough to look premium */
+    height: 60vh; 
+    min-height: 450px;
+    
+    /* THE IMAGE */
+    background-image: url('images/testing.png'); /* <--- YOUR IMAGE HERE */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax Effect: Image stays still when scrolling */
+    
+    /* Centering the text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    margin-top: 0 !important; /* Removes gap from navbar */
+    margin-bottom: 50px;
+}
+
+/* Dark Overlay (So white text is readable) */
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 40% Darkness */
+    z-index: 1;
+}
+
+/* The Text Container */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Sits on top of the overlay */
+    padding: 0 20px;
+}
+
+/* Force Text Colors to White */
+.promo-hero .page-title {
+    color: #ffffff !important;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Soft shadow for depth */
+}
+
+.promo-hero .script-font {
+    color: #D34836; /* Gold looks great on dark photos (or keep it #D34836 Red) */
+    font-size: 2.5rem;
+}
+
+.promo-hero .hero-desc {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-size: 1.3rem;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .promo-hero {
+        height: 50vh; /* Shorter on phone */
+        background-attachment: scroll; /* Disable parallax on mobile for smooth scrolling */
+    }
+    .promo-hero .page-title { font-size: 2.5rem; }
+}
+
+/* =========================================
+   1. VOUCHERS SECTION (TICKET STYLE)
+   ========================================= */
+.vouchers-section {
+    padding: 60px 5%;
+    background: white;
+    text-align: center;
+}
+.section-title { font-size: 2.5rem; margin-bottom: 50px; color: #333; }
+
+.voucher-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1000px; margin: 0 auto;
+}
+
+.voucher-card {
+    display: flex;
+    background: white;
+    border: 2px dashed #D34836;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    text-align: left;
+}
+.voucher-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(211, 72, 54, 0.15); }
+
+.voucher-left {
+    flex: 2;
+    padding: 25px;
+    background: #FFF8F0;
+    border-right: 2px dashed #D34836;
+    position: relative;
+}
+.voucher-right {
+    flex: 1;
+    padding: 25px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    background: white;
+}
+
+.voucher-tag {
+    background: #D34836; color: white; padding: 4px 10px; border-radius: 4px;
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;
+}
+.voucher-left h3 { font-size: 1.5rem; margin: 10px 0; color: #333; font-family: 'Playfair Display', serif; }
+.price { font-size: 1.3rem; color: #D34836; font-weight: 700; margin-bottom: 5px; }
+.old-price { text-decoration: line-through; color: #999; font-size: 0.9rem; font-weight: 400; margin-left: 5px; }
+.desc { font-size: 0.9rem; color: #666; }
+
+.claim-btn {
+    background: #333; color: white; text-decoration: none;
+    padding: 10px 20px; border-radius: 30px; font-size: 0.85rem; font-weight: 700;
+    transition: 0.3s;
+}
+.claim-btn:hover { background: #D34836; }
+.terms { font-size: 0.6rem; color: #999; margin-top: 10px; }
+
+/* Gold Tier Variant */
+.voucher-card.gold-tier { border-color: #D4A373; }
+.voucher-card.gold-tier .voucher-left { background: #fffcf8; border-right-color: #D4A373; }
+.voucher-card.gold-tier .voucher-tag { background: #D4A373; }
+.voucher-card.gold-tier .price { color: #D4A373; }
+
+/* =========================================
+   2. PACKAGES (BUNDLES) SECTION
+   ========================================= */
+.packages-section {
+    padding: 80px 5%;
+    background-color: white; 
+    text-align: center;
+}
+
+.section-subtitle { font-size: 1.1rem; color: #666; margin-bottom: 50px; margin-top: -30px; }
+
+.package-grid {
+    display: flex; justify-content: center; gap: 30px;
+    flex-wrap: wrap; max-width: 1200px; margin: 0 auto; align-items: center; 
+}
+
+.package-card {
+    background: white; border: 1px solid #eee; border-radius: 20px;
+    padding: 40px 30px; width: 350px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.3s; position: relative; text-align: left;
+}
+.package-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(211, 72, 54, 0.15); border-color: #ffd1d1; }
+
+.package-card.popular { border: 2px solid #D34836; transform: scale(1.05); z-index: 2; box-shadow: 0 20px 40px rgba(211, 72, 54, 0.1); }
+.package-card.popular:hover { transform: scale(1.05) translateY(-10px); }
+
+.popular-badge {
+    position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+    background: #D34836; color: white; padding: 5px 20px; border-radius: 20px;
+    font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+}
+
+.package-header { text-align: center; }
+.package-header h3 { font-size: 1.8rem; color: #333; margin-bottom: 5px; font-family: 'Playfair Display', serif; }
+.package-target { font-size: 0.9rem; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+
+.package-price { font-size: 2.5rem; color: #D34836; font-weight: 700; font-family: 'Lato', sans-serif; margin-bottom: 30px; text-align: center; }
+.package-price .currency { font-size: 1rem; vertical-align: super; }
+.package-price .old-price { font-size: 1.2rem; color: #ccc; text-decoration: line-through; margin-left: 10px; font-weight: 400; }
+
+.package-list { list-style: none; text-align: left; margin-bottom: 40px; padding: 0 10px; }
+.package-list li { margin-bottom: 15px; color: #555; font-size: 1rem; display: flex; align-items: center; gap: 10px; }
+.package-list li i { color: #D34836; }
+
+.package-btn {
+    display: block; width: 100%; text-align: center; padding: 15px 0; border: 1px solid #333; border-radius: 50px;
+    text-decoration: none; color: #333; font-weight: 700; transition: 0.3s;
+}
+.package-btn:hover { background: #333; color: white; }
+.package-btn.solid-btn { background: #D34836; border-color: #D34836; color: white; }
+.package-btn.solid-btn:hover { background: #b03525; }
+
+/* =========================================
+   3. VISUAL PROMO (POSTERS) SECTION
+   ========================================= */
+.visual-promo-section {
+    padding: 80px 5%;
+    background-color: var(--bg-cream);
+    text-align: center;
+}
+
+.visual-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; max-width: 1200px; margin: 0 auto;
+}
+
+.visual-card {
+    background: white; border-radius: 15px; overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.05);
+}
+.visual-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(211, 72, 54, 0.2); }
+
+.visual-img-wrapper { width: 100%; height: 400px; position: relative; overflow: hidden; background-color: #eee; }
+.visual-img-wrapper img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s ease; }
+.visual-card:hover .visual-img-wrapper img { transform: scale(1.05); }
+
+.visual-overlay {
+    position: absolute; top: 15px; right: 15px;
+    background: rgba(255, 255, 255, 0.9); padding: 5px 15px; border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.overlay-text { font-size: 0.75rem; font-weight: 700; color: #D34836; text-transform: uppercase; letter-spacing: 1px; }
+
+.visual-footer { padding: 25px; text-align: center; }
+.visual-footer h3 { font-size: 1.4rem; color: #333; margin-bottom: 15px; font-family: 'Playfair Display', serif; }
+
+.visual-btn {
+    display: inline-block; background-color: #25D366; color: white;
+    text-decoration: none; padding: 12px 30px; border-radius: 50px;
+    font-weight: 700; font-size: 0.9rem; transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+.visual-btn:hover { background-color: #1ebc57; transform: translateY(-2px); }
+.visual-btn i { margin-right: 8px; font-size: 1.1rem; }
+
+/* =========================================
+   4. ANIMATED TIMELINE (LASER BEAM EFFECT)
+   ========================================= */
+.timeline-section {
+    padding: 80px 5%; background: var(--bg-cream); position: relative;
+    /* Ensure background matches visual promo if you want them seamless, or keep alternate */
+    background: white; 
+}
+.timeline-header { text-align: center; margin-bottom: 60px; }
+
+/* The Line Container */
+.timeline-container { position: relative; max-width: 1000px; margin: 0 auto; min-height: 100px; }
+
+/* THE LINE (Starts Empty -> Grows) */
+.timeline-container::after {
+    content: ''; position: absolute;
+    width: 2px; background-color: #D34836;
+    top: 0; left: 50%; margin-left: -1px;
+    height: 0%; /* Start Hidden */
+    transition: height 2.5s ease-out; /* The Laser Effect */
+}
+
+/* Trigger Line Growth when section is active */
+.timeline-section.active .timeline-container::after { height: 100%; }
+
+/* Timeline Items */
+.timeline-item { padding: 10px 40px; position: relative; width: 50%; margin-bottom: 30px; }
+.timeline-item:nth-child(odd) { left: 0; text-align: right; }
+.timeline-item:nth-child(even) { left: 50%; text-align: left; }
+
+/* THE DOTS (Pop Animation) */
+.timeline-dot {
+    width: 20px; height: 20px; background-color: white;
+    border: 4px solid #D34836; border-radius: 50%;
+    position: absolute; top: 20px; z-index: 2;
+    transform: scale(0); /* Start Tiny */
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy Pop */
+}
+.timeline-item:nth-child(odd) .timeline-dot { right: -10px; }
+.timeline-item:nth-child(even) .timeline-dot { left: -10px; }
+
+/* The Dot Delays (Pop 1-by-1) */
+.timeline-section.active .timeline-item:nth-child(1) .timeline-dot { transform: scale(1); transition-delay: 0.5s; }
+.timeline-section.active .timeline-item:nth-child(2) .timeline-dot { transform: scale(1); transition-delay: 1.2s; }
+.timeline-section.active .timeline-item:nth-child(3) .timeline-dot { transform: scale(1); transition-delay: 1.9s; }
+.timeline-section.active .timeline-item:nth-child(4) .timeline-dot { transform: scale(1); transition-delay: 2.6s; }
+
+/* The Date */
+.timeline-date { position: absolute; top: 20px; font-weight: 700; color: #D34836; font-size: 0.9rem; }
+.timeline-item:nth-child(odd) .timeline-date { right: -120px; text-align: left; width: 100px; }
+.timeline-item:nth-child(even) .timeline-date { left: -120px; text-align: right; width: 100px; }
+
+/* Content Card Fade In */
+.timeline-content {
+    padding: 20px; background-color: white; border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative;
+    opacity: 0; transform: translateY(20px); transition: all 0.6s ease;
+}
+.timeline-section.active .timeline-item:nth-child(1) .timeline-content { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }
+.timeline-section.active .timeline-item:nth-child(2) .timeline-content { opacity: 1; transform: translateY(0); transition-delay: 1.3s; }
+.timeline-section.active .timeline-item:nth-child(3) .timeline-content { opacity: 1; transform: translateY(0); transition-delay: 2.0s; }
+.timeline-section.active .timeline-item:nth-child(4) .timeline-content { opacity: 1; transform: translateY(0); transition-delay: 2.7s; }
+
+.event-img { width: 100%; height: 180px; overflow: hidden; border-radius: 8px; margin-bottom: 15px; background: #eee; }
+.event-img img { width: 100%; height: 100%; object-fit: cover; }
+.timeline-content h3 { font-size: 1.3rem; margin-bottom: 5px; color: #333; font-family: 'Playfair Display', serif; }
+.timeline-content .location { font-size: 0.85rem; color: #888; margin-bottom: 10px; }
+.timeline-content .details { font-size: 0.95rem; color: #555; line-height: 1.5; margin-bottom: 15px; }
+
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+.status-badge.upcoming { background: #e3fcef; color: #00a86b; }
+.status-badge.past { background: #f0f0f0; color: #999; }
+
+/* =========================================
+   RESPONSIVE (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    .promo-hero { padding-top: 100px; }
+    
+    /* Vouchers */
+    .voucher-card { flex-direction: column; }
+    .voucher-left { border-right: none; border-bottom: 2px dashed #D34836; }
+    
+    /* Packages */
+    .package-card.popular { transform: scale(1); } 
+    .package-card { width: 100%; max-width: 400px; margin-bottom: 20px; }
+    .package-grid { flex-direction: column; }
+    
+    /* Visual Promo */
+    .visual-img-wrapper { height: 350px; }
+    
+    /* Timeline - Stack to the Left */
+    .timeline-container::after { left: 30px; }
+    .timeline-item { width: 100%; padding-left: 70px; padding-right: 20px; }
+    
+    .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { left: 0; text-align: left; }
+    .timeline-item:nth-child(odd) .timeline-dot, .timeline-item:nth-child(even) .timeline-dot { left: 20px; right: auto; }
+    
+    .timeline-date { position: static; display: block; margin-bottom: 5px; width: auto !important; text-align: left !important; }
+}

@@ -1202,7 +1202,7 @@ h1, h2, h3, h4 {
 .trial-title {
     font-family: 'Playfair Display', serif;
     font-size: 3.2rem;
-    color: black; 
+    color: var(--burgundy); 
     font-style: italic;
     font-weight: 700;
     margin-bottom: 30px;

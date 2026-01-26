@@ -67,12 +67,12 @@ section { padding: 3rem 5%; }
 /* =========================================
    6. ABOUT US SECTION
    ========================================= */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: center; }
 .about-image-container { display: flex; justify-content: center; }
-.about-img { width: 100%; max-width: 500px; height: auto; border-radius: 20px; box-shadow: 20px 20px 0px var(--accent-gold); transition: transform 0.3s ease; }
+.about-img { width: 100%; max-width: 500px; height: auto; border-radius: 20px; box-shadow: 20px 20px 0px var(--accent-gold); transition: transform 0.3s ease; filter: sepia(10%) contrast(105%) saturate(110%);}
 .about-img:hover { transform: scale(1.02); }
-.about-text p { font-size: 1.2rem; color: var(--text-light); line-height: 1.9; text-align: justify; margin-bottom: 1.5rem; }
-.about-text strong { color: var(--primary-red); font-weight: 700; }
+.about-text p { font-size: 1.3rem; color: var(--text-light); line-height: 1.9; text-align: justify; margin-bottom: 1.5rem; }
+.about-text strong { color: var(--primary-red); font-weight: 800; }
 
 /* =========================================
    7. FOUNDER SECTION (MAGAZINE STYLE)

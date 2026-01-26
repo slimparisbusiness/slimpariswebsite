@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happenings | Slim Paris</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Promotional.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="Homepage.html" class="nav-logo">
+            <img src="images/slimparislogo.png" alt="SlimParis">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <ul class="nav-menu">
+            <li><a href="Homepage.html" class="nav-link">Home</a></li>
+            <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
+            <li class="dropdown">
+                <a href="Services.html" class="nav-link">Services</a>
+                <span class="arrow-trigger" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </span>
+
+                <div class="dropdown-content services-grid">
+                    <a href="NecklineSculpting.html">Neck Line Sculpting</a>
+                    <a href="ThinBack.html">Thin Back</a>
+                    <a href="FeminineCareRejuvenation.html">Feminine Care Rejuvenation</a>
+                    <a href="HipContouringTreatment.html">Hip Contouring Treatment</a>
+                    <a href="ByeByeBelly.html">Bye Bye Belly</a>
+                    <a href="PeachButt.html">Peach Butt</a>
+                    <a href="SLineBody.html">S-Line Body Contouring</a>
+                    <a href="CoreWaist.html">Core & Waist Contouring Treatment</a>
+                    <a href="HunchBack.html">Rounded Shoulder Hunch Back</a>
+                    <a href="LegSculpting.html">Leg Sculpting</a>
+                    <a href="Face.html">Face</a>
+                    <a href="Whitening.html">Whitening Treatment</a>
+                </div>
+
+            </li>
+            <li><a href="Testimonial.html" class="nav-link">Testimonial</a></li>
+            <li><a href="ContactUs.html" class="nav-link">Contact Us</a></li>
+            <li><a href="Blog.html" class="nav-link">Blog</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" id="search-box" placeholder="Type and hit Enter...">
+            <div class="nav-search-icon" onclick="toggleSearch()"><i class="fas fa-search"></i></div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="promo-hero reveal">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1 class="page-title">Current <span class="script-font">Happenings</span></h1>
+            <p class="hero-desc">Exclusive limited-time offers and our upcoming event appearances.</p>
+        </div>
+    </section>
+
+    <section class="packages-section reveal">
+        <h2 class="section-title">Curated <span class="script-font">Value Bundles</span></h2>
+        <p class="section-subtitle">Complete body transformation solutions at a special price.</p>
+        
+        <!-- GRID FOR BUNDLES -->
+        <div class="package-grid">
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>The Bridal Glow</h3>
+                    <p class="package-target">For Brides-to-Be</p>
+                </div>
+                <div class="package-price">
+                    <span class="currency">RM</span>1,XXX <span class="old-price">RM 2,XXX</span>
+                </div>
+                <ul class="package-list">
+                    <li><i class="fas fa-check"></i> 5x Neckline Sculpting</li>
+                    <li><i class="fas fa-check"></i> 5x Thin Back Treatment</li>
+                    <li><i class="fas fa-check"></i> 2x Arm Toning</li>
+                    <li><i class="fas fa-gift"></i> <strong>FREE:</strong> 1x Full Body Analysis</li>
+                </ul>
+                <a href="https://wa.me/60102353737?text=Hi,%20I%20am%20interested%20in%20the%20Bridal%20Glow%20Package" target="_blank" class="package-btn">Inquire Now</a>
+            </div>
+
+            <div class="package-card popular">
+                <div class="popular-badge">Most Popular</div>
+                <div class="package-header">
+                    <h3>Mummy Makeover</h3>
+                    <p class="package-target">Post-Partum Recovery</p>
+                </div>
+                <div class="package-price">
+                    <span class="currency">RM</span>2,XXX <span class="old-price">RM 3,XXX</span>
+                </div>
+                <ul class="package-list">
+                    <li><i class="fas fa-check"></i> 10x Diastasis Recti Repair</li>
+                    <li><i class="fas fa-check"></i> 5x Pelvic Floor Strengthening</li>
+                    <li><i class="fas fa-check"></i> 5x Bye Bye Belly</li>
+                    <li><i class="fas fa-gift"></i> <strong>FREE:</strong> Posture Alignment</li>
+                </ul>
+                <a href="https://wa.me/60102353737?text=Hi,%20I%20am%20interested%20in%20the%20Mummy%20Makeover%20Package" target="_blank" class="package-btn solid-btn">Inquire Now</a>
+            </div>
+
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Total S-Line</h3>
+                    <p class="package-target">Full Body Sculpting</p>
+                </div>
+                <div class="package-price">
+                    <span class="currency">RM</span>3,XXX <span class="old-price">RM 5,XXX</span>
+                </div>
+                <ul class="package-list">
+                    <li><i class="fas fa-check"></i> 10x Waist Sculpting</li>
+                    <li><i class="fas fa-check"></i> 10x Peach Butt Lift</li>
+                    <li><i class="fas fa-check"></i> 5x Leg Slimming</li>
+                    <li><i class="fas fa-gift"></i> <strong>FREE:</strong> Maintenance Guide</li>
+                </ul>
+                <a href="https://wa.me/60102353737?text=Hi,%20I%20am%20interested%20in%20the%20Total%20S-Line%20Package" target="_blank" class="package-btn">Inquire Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PICTURE PROMOTIONAL -->
+    <section class="visual-promo-section reveal">
+        <h2 class="section-title">Featured <span class="script-font">Campaigns</span></h2>
+        <p class="section-subtitle">Tap on a poster to book the deal via WhatsApp.</p>
+        
+        <div class="visual-grid">
+            
+            <div class="visual-card">
+                <div class="visual-img-wrapper">
+                    <img src="images/review1.png" alt="Bridal Ready Poster">
+                    <div class="visual-overlay">
+                        <span class="overlay-text">RM 1,288 Promo</span>
+                    </div>
+                </div>
+                <div class="visual-footer">
+                    <h3>The Bridal Series</h3>
+                    <a href="https://wa.me/60102353737?text=Hi,%20I%20saw%20the%20Bridal%20Poster%20and%20want%20to%20book!" target="_blank" class="visual-btn">
+                        <i class="fab fa-whatsapp"></i> Book This Deal
+                    </a>
+                </div>
+            </div>
+
+            <div class="visual-card">
+                <div class="visual-img-wrapper">
+                    <img src="images/testing.png" alt="Gong Xi Fa Cai Poster">
+                    <div class="visual-overlay">
+                        <span class="overlay-text">Limited Time</span>
+                    </div>
+                </div>
+                <div class="visual-footer">
+                    <h3>CNY Slimming Set</h3>
+                    <a href="https://wa.me/60102353737?text=Hi,%20I%20want%20the%20CNY%20Slimming%20Set" target="_blank" class="visual-btn">
+                        <i class="fab fa-whatsapp"></i> Book This Deal
+                    </a>
+                </div>
+            </div>
+
+            <div class="visual-card">
+                <div class="visual-img-wrapper">
+                    <img src="images/hero2.png" alt="Experience the Difference Poster">
+                    <div class="visual-overlay">
+                        <span class="overlay-text">First Trial</span>
+                    </div>
+                </div>
+                <div class="visual-footer">
+                    <h3>New Client Intro</h3>
+                    <a href="https://wa.me/60102353737?text=Hi,%20I%20want%20to%20claim%20the%20New%20Client%20Promo" target="_blank" class="visual-btn">
+                        <i class="fab fa-whatsapp"></i> Book This Deal
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- UPCOMING EVENT -->
+    <section class="timeline-section reveal">
+        <div class="timeline-header">
+            <h2 class="section-title">Event <span class="script-font">Calendar</span></h2>
+            <p>Catch Slim Paris at these upcoming locations.</p>
+        </div>
+
+        <div class="timeline-container">
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">JAN 2026</div> <div class="timeline-content">
+                    <div class="event-img"><img src="images/testing.png" alt="KLPJ Fair"></div> <h3>KLPJ Wedding Fair</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> KLCC | Kuala Lumpur Convention Center</p>
+                    <p class="details">Visit Booth A23 for a free body analysis. Don't miss Dr. Sttanny's talk on "Posture & Poise" at 2 PM.</p>
+                    <span class="status-badge upcoming">Upcoming</span>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">MAR 2026</div>
+                <div class="timeline-content">
+                    <div class="event-img"><img src="images/testing.png" alt="Workshop"></div>
+                    <h3>FAIR </h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Mid Valley Convention Center</p>
+                    <p class="details">Blah Blah Blah </p>
+                    <span class="status-badge upcoming">Upcoming</span>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">SEPT 2026</div>
+                <div class="timeline-content">
+                    <div class="event-img"><img src="images/testing.png" alt="Workshop"></div>
+                    <h3>FAIR </h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Mid Valley Convention Center</p>
+                    <p class="details">Blah Blah Blah</p>
+                    <span class="status-badge upcoming">Upcoming</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col logo-col"><h3 class="footer-heading">Contact Us</h3><img src="images/slimparislogo.png" alt="SlimParis" class="footer-logo"></div>
+            <div class="footer-col">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    
+                    <li><a href="Promotional.html" style="color: #D34836; font-weight: bold;">Happenings</a></li>
+                    
+                    <li><a href="ContactUs.html">Location</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-heading">Support</h3>
+                <ul class="footer-links">
+                    <li><a href="ContactUs.html">Booking</a></li>
+                    <li><a href="Testimonial.html">Testimonial</a></li>
+                    <li><a href="Testimonial.html#faq">FAQs</a></li>                
+                </ul>
+            </div>
+            <div class="footer-col social-col"><h3 class="footer-heading">Social Media</h3><div class="social-links">
+                <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="social-item"><i class="fab fa-instagram icon-insta"></i> <span>Instagram</span></a>
+                <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="social-item"><i class="fab fa-facebook icon-fb"></i> <span>Facebook</span></a>
+                <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099" class="social-item"><span class="icon-xhs">小</span> <span>XHS</span></a>
+                <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-item"><i class="fab fa-tiktok icon-tiktok"></i> <span>TikTok</span></a>
+            </div></div>
+        </div>
+        <div class="footer-bottom"><p>SPG WELLNESS CODE SDN. BHD. 20231101012 (1504501X)</p><p style="margin-top: 5px; font-weight: bold;">&copy; 2026 Slim Paris. All right reserved.</p></div>
+    </footer>
+
+    <div class="sticky-social-menu">
+        <div class="social-list">
+            <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-bubble tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099" class="social-bubble xhs" title="Xiaohongshu"><span style="font-weight:bold; font-size:14px;">小红书</span></a>
+            <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="social-bubble fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="social-bubble insta" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/60102353737" target="_blank" class="social-bubble whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="social-trigger">
+            <i class="fas fa-comment-dots"></i>
+            <span class="pulse-ring"></span>
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileMenu(element) {
+            event.stopPropagation();
+            const parentLi = element.closest('.dropdown');
+            parentLi.classList.toggle('show-menu');
+        }
+        function toggleSearch() {
+            const sb = document.getElementById('search-box');
+            sb.style.display = sb.style.display === 'block' ? 'none' : 'block';
+            if (sb.style.display === 'block') sb.focus();
+        }
+        document.getElementById('search-box').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                if (window.find && e.target.value.length > 0) {
+                    if (!window.find(e.target.value)) alert("Text not found.");
+                }
+            }
+        });
+        function toggleMenu() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        }
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                } else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+        // Force reveal once on load
+        reveal();
+    </script>
+</body>
+</html>
