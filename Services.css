@@ -67,7 +67,7 @@ h1, h2, h3, h4 {
 .page-hero {
     position: relative;
     height: 450px; /* Shorter than the homepage hero */
-    background-image: url('images/testing.png'); /* You can change this image */
+    background-image: url('images/Serviceshero.png'); /* You can change this image */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -205,49 +205,51 @@ h1, h2, h3, h4 {
 }
 
 /* =========================================
-   6. SERVICES SECTION DIVIDER
+   6. SERVICES SECTION DIVIDER (BURGUNDY BLOCK)
    ========================================= */
 .services-divider-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px 10% 40px 10%;
-    background-color: var(--bg-cream); /* Matches the homepage and traditional feel */
+    padding: 100px 5%;
+    background-color: var(--burgundy); /* Full burgundy background */
     text-align: center;
+    width: 100%;
 }
 
-.divider-line {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--accent-gold), transparent);
-    opacity: 0.5;
+.divider-content {
+    max-width: 800px;
 }
 
-.divider-badge {
-    padding: 0 40px;
-}
-
-.badge-text {
+.services-divider-container .badge-text {
     display: block;
     font-family: 'Lato', sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 4px;
-    color: var(--text-light);
-    margin-bottom: 5px;
+    font-size: 1rem;
+    letter-spacing: 5px;
+    color: var(--accent-gold); /* Gold looks best on burgundy */
+    margin-bottom: 15px;
     text-transform: uppercase;
 }
 
-.divider-heading {
+.services-divider-container .divider-heading {
     font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    color: var(--burgundy); /* Darker tone for a premium look */
+    font-size: 4rem; /* Larger for a premium look */
+    color: #ffffff !important; /* Force white text */
     margin: 0;
+}
+
+.services-divider-container .highlight-script {
+    font-family: 'Great Vibes', cursive;
+    color: var(--accent-gold); /* Makes "Sculpting" pop in gold */
+    font-size: 5rem;
+    margin-left: 10px;
 }
 
 /* Mobile responsive */
 @media (max-width: 768px) {
-    .divider-heading { font-size: 2rem; }
-    .divider-line { display: none; } /* Simpler look on small screens */
+    .services-divider-container { padding: 60px 5%; }
+    .services-divider-container .divider-heading { font-size: 2.8rem; }
+    .services-divider-container .highlight-script { font-size: 3.5rem; }
 }
 
 /* =========================================
@@ -517,4 +519,94 @@ h1, h2, h3, h4 {
         justify-content: flex-start;
         padding-left: 20%;
     }
+}
+
+/* =========================================
+   SERVICES WRAPPER SECTION
+   ========================================= */
+.services-wrapper {
+    background-color: var(--burgundy); /* Full burgundy block */
+    padding: 80px 0;
+    width: 100%;
+    margin-top: -4px;
+    margin-bottom: 0;
+    display: block;      
+    overflow: hidden;
+}
+
+/* Neutralize the section immediately before the burgundy wrapper */
+section + .services-wrapper {
+    margin-top: 0;
+}
+
+/* Ensure the hero or previous section doesn't have a bottom margin */
+.page-hero, 
+.modern-clinical-section {
+    margin-bottom: 0 !important;
+}
+
+/* Header Text Colors */
+.services-divider-container {
+    background: transparent;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.divider-heading {
+    color: #ffffff !important;
+    font-size: 3.5rem;
+}
+
+.badge-text {
+    color: var(--accent-gold);
+    letter-spacing: 5px;
+}
+
+/* =========================================
+   CARDS WITH WHITE HOVER GLOW
+   ========================================= */
+.services-grid-section {
+    background: transparent;
+    padding-top: 30;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 4500px;
+    margin: 0 auto;
+    padding: 0 3%;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    width: 100%;
+}
+
+/* THE WHITE SHADOW HOVER EFFECT */
+.service-card:hover {
+    transform: translateY(-10px);
+    /* White glow shadow for burgundy background */
+    box-shadow: 0 25px 40px rgba(255, 255, 255, 0.593); 
+}
+
+.card-info h3 {
+    color: var(--burgundy);
+    font-size: 1.2rem;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+    .services-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .services-container { grid-template-columns: 1fr; }
+    .divider-heading { font-size: 2.5rem; }
 }

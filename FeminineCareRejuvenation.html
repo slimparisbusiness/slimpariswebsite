@@ -92,7 +92,7 @@
             </div>
 
             <!-- IMAGE SLIDER -->
-            <div class="water-carousel">
+            <!-- <div class="water-carousel">
                 <div class="carousel-track-container">
                     <ul class="carousel-track">
                         <li class="carousel-slide current-slide">
@@ -110,7 +110,7 @@
                 <button class="carousel-button btn-right">
                     <i class="fas fa-chevron-right"></i>
                 </button>
-            </div>
+            </div> -->
 
             <!-- DROPDOWN -->
             <div class="service-dropdowns">
@@ -175,28 +175,22 @@
                 </div>
             </div>
 
-            <!-- REAL RESULTS -->
-            <div class="results-wrapper">
-                <div class="results-header">
-                    <h3>Real <span class="script-font">Results</span></h3>
-                    <p>NOT YET</p>
+            <!-- customer feedback -->
+            <div class="results-wrapper privacy-focus">
+                <div class="review-carousel-wrapper">
+                    <div class="review-track-container">
+                        <ul class="review-track" id="feminine-review-track">
+                            <li class="review-slide current-slide"><img src="images/review1.png" alt="Review 1"></li>
+                            <li class="review-slide"><img src="images/review2.png" alt="Review 2"></li>
+                        </ul>
+                    </div>
+                    <button class="review-btn btn-left" id="fem-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="review-btn btn-right" id="fem-next"><i class="fas fa-chevron-right"></i></button>
                 </div>
 
-                <div class="before-after-grid">
-                    <div class="result-card">
-                        <span class="label-badge before">BEFORE</span>
-                        <img src="images/testing.png" alt="Before Treatment">
-                    </div>
-
-                    <div class="result-card">
-                        <span class="label-badge after">AFTER</span>
-                        <img src="images/hero1.png" alt="After Treatment">
-                    </div>
-                </div>
-
-                <div class="results-note">
+                <div class="results-note privacy-note-box">
                     <i class="fas fa-info-circle"></i> 
-                    <span><strong>Note:</strong> The temporary redness is a normal response to increased blood circulation. It indicates the treatment is actively stimulating the area.</span>
+                    <span><strong>Note:</strong> These testimonials are shared with client consent. While individual results vary, these reviews represent the typical comfort and satisfaction levels reported after our sessions.</span>
                 </div>
             </div>
     </div>
@@ -221,7 +215,7 @@
                     
                     <li><a href="Promotional.html">Happenings</a></li>
                     
-                    <li><a href="ContactUs.html">Location</a></li>
+                    <li><a href="ContactUs.html#location">Location</a></li>
                     <li><a href="Blog.html">Blog</a></li>
                 </ul>
             </div>
@@ -401,6 +395,32 @@
                 }
             }
             reveal();
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const femTrack = document.getElementById('feminine-review-track');
+            const femNext = document.getElementById('fem-next');
+            const femPrev = document.getElementById('fem-prev');
+
+            if (femTrack && femNext && femPrev) {
+                const slides = Array.from(femTrack.children);
+                let currentIndex = 0;
+
+                const moveFemSlide = (index) => {
+                    femTrack.style.transform = `translateX(-${index * 100}%)`;
+                    currentIndex = index;
+                };
+
+                femNext.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    moveFemSlide(currentIndex);
+                });
+
+                femPrev.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    moveFemSlide(currentIndex);
+                });
+            }
         });
     </script>
 </body>

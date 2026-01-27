@@ -214,7 +214,12 @@ h1, h2, h3, h4 {
 .results-header p { max-width: 700px; margin: 0 auto 40px auto; color: #666; font-size: 1.1rem; line-height: 1.7; }
 
 .before-after-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; }
-.result-card { position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); height: 350px; }
+.result-card { 
+    position: relative; 
+    border-radius: 15px; 
+    overflow: hidden; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
+    height: 350px; }
 .result-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 .result-card:hover img { transform: scale(1.05); }
 
@@ -390,6 +395,103 @@ h1, h2, h3, h4 {
     }
     
     /* 6. Before/After Results - Stacked */
-    .before-after-grid { display: flex !important; flex-direction: column !important; gap: 20px !important; }
+    .before-after-grid { 
+        display: flex !important; 
+        flex-direction: column !important; 
+        gap: 20px !important; }
+        
     .result-card { width: 100% !important; height: 350px !important; }
+}
+
+/* ==========================================================================
+   SPECIAL: PRIVACY SLIDER (ONLY FOR FEMININE CARE PAGE)
+   ========================================================================== */
+
+/* This targets the wrapper only when it has the .privacy-focus class */
+.results-wrapper.privacy-focus {
+    border: 2px dashed var(--accent-gold); /* Gold dashed border for luxury feel */
+    background: #fff;
+    padding: 40px 20px;
+}
+
+/* The Liquid Container for the Review Pictures */
+.review-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Perfect size for MacBook view */
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+.review-track-container {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Keeps it a perfect square on all devices */
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.review-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.review-slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+.review-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures review text is never cut off */
+    background-color: #fdfdfd;
+}
+
+/* Arrows specifically for the Review Slider */
+.review-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-red);
+    border: none;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.review-btn.btn-left { left: -20px; }
+.review-btn.btn-right { right: -20px; }
+
+/* Privacy Text Styling */
+.privacy-notice i {
+    font-size: 3rem;
+    color: #560319; /* Your deep burgundy color */
+    margin-bottom: 15px;
+    display: block;
+}
+
+.privacy-note-box {
+    margin-top: 30px;
+    background: #FFF8F0;
+    border-left: 5px solid var(--primary-red); /* Matches image_f375f8.jpg style */
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.privacy-note-box i {
+    font-size: 1.5rem;
+    color: var(--primary-red);
 }
