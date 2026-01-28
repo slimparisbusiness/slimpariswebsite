@@ -61,23 +61,27 @@
         </div>
     </section>
 
-    <div class="stats-bar reveal">
+    <!-- STATUS -->
+    <section class="stats-section">
         <div class="stat-item">
-            <span class="stat-number">2,000+</span>
-            <span class="stat-label">Happy Clients</span>
+            <h2 class="stat-number">2000</h2><span class="plus-sign">+</span>
+            <p>HAPPY CLIENTS</p>
         </div>
-        <div class="stat-divider"></div>
         <div class="stat-item">
-            <span class="stat-number">98%</span>
-            <span class="stat-label">Success Rate</span>
+            <h2 class="stat-number">98</h2><span class="percent-sign">%</span>
+            <p>SUCCESS RATE</p>
         </div>
-        <div class="stat-divider"></div>
         <div class="stat-item">
-            <span class="stat-number">4.9</span>
-            <span class="stat-label">Average Rating</span>
+            <h2 class="stat-number">4.9</h2>
+            <p>AVERAGE RATING</p>
         </div>
-    </div>
-
+        <div class="stat-item">
+            <h2 class="stat-number">850</h2><span class="plus-sign">+</span>
+            <p>TOTAL REVIEWS</p>
+        </div>
+    </section>
+    
+    <!-- REVIEWS -->
     <section class="reviews-section reveal">
         <h2 class="section-heading">Client <span class="script-font">Love Notes</span></h2>
         <p class="section-subtitle">See what our community is saying</p>
@@ -126,21 +130,21 @@
         <div class="ba-grid">
             <a href="NecklineSculpting.html" class="ba-card">
                 <div class="ba-image">
-                    <img src="images/treatment1.png" alt="Neck Line Result"> 
+                    <img src="images/services_neckline.png" alt="Neck Line Result"> 
                     <span class="ba-badge">Neck Line</span>
                 </div>
             </a>
 
             <a href="ThinBack.html" class="ba-card">
                 <div class="ba-image">
-                    <img src="images/treatment1.png" alt="Thin Back Result"> 
+                    <img src="images/services_thinback.png" alt="Thin Back Result"> 
                     <span class="ba-badge">Thin Back</span>
                 </div>
             </a>
 
             <a href="LegSculpting.html" class="ba-card">
                 <div class="ba-image">
-                    <img src="images/treatment1.png" alt="Slim Legs Result"> 
+                    <img src="images/services_leg.png" alt="Slim Legs Result"> 
                     <span class="ba-badge">Leg Sculpting</span>
                 </div>
             </a>
@@ -515,6 +519,45 @@
         }
 
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const stats = document.querySelectorAll('.stat-number');
+
+    // --- NEW SETUP STEP ---
+    // This part reads your HTML number (e.g., 2000), remembers it, 
+    // and resets the text to "0" so it can animate up.
+    stats.forEach(stat => {
+        const startValue = stat.innerText; // Read "2000"
+        stat.setAttribute('data-target', startValue); // Save it to memory
+        stat.innerText = '0'; // Change screen to "0"
+    });
+
+    const countUp = (el) => {
+        const target = parseFloat(el.getAttribute('data-target'));
+        const count = parseFloat(el.innerText);
+        
+        // Smart speed logic (Fast for big numbers, Slow for decimals)
+        const increment = target < 10 ? target / 30 : target / 100; 
+
+        if (count < target) {
+            el.innerText = (count + increment).toFixed(target % 1 === 0 ? 0 : 1);
+            setTimeout(() => countUp(el), 20);
+        } else {
+            el.innerText = target;
+        }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                countUp(entry.target);
+                observer.unobserve(entry.target); 
+            }
+        });
+    }, { threshold: 0.5 });
+
+    stats.forEach(stat => observer.observe(stat));
+});
     </script>
 </body>
 </html>

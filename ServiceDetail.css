@@ -495,3 +495,32 @@ h1, h2, h3, h4 {
     font-size: 1.5rem;
     color: var(--primary-red);
 }
+
+/* ==========================================================================
+   MASTER CLASS: LONG PHOTOS (Use this on ANY page)
+   ========================================================================== */
+
+/* 1. Add class="long-results" to your HTML grid, and this activates! */
+.long-results {
+    gap: 20px;
+    align-items: start;
+}
+
+/* 2. Forces the card to be tall (Vertical) */
+.long-results .result-card {
+    height: 550px; 
+    aspect-ratio: auto; 
+}
+
+/* 3. Ensures the photo fits nicely inside */
+.long-results .result-card img {
+    object-fit: contain; 
+    background-color: #f9f9f9; 
+}
+
+/* 4. Mobile adjustment */
+@media (max-width: 768px) {
+    .long-results .result-card {
+        height: 500px; 
+    }
+}

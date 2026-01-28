@@ -6,7 +6,7 @@
 .testimonial-hero {
     position: relative;
     height: 60vh; /* Takes up 60% of screen height */
-    background-image: url('images/testing.png'); /* Replace with a happy client or clinic image */
+    background-image: url('images/hero_testimonial2.png'); /* Replace with a happy client or clinic image */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Parallax effect */
@@ -36,22 +36,66 @@
     font-size: 1.2rem; font-weight: 300; letter-spacing: 1px;
 }
 
-/* --- 2. STATS BAR (Credibility) --- */
-.stats-bar {
-    display: flex; justify-content: center; align-items: center;
-    gap: 50px; background: white;
-    padding: 40px 20px;
-    margin-top: -50px; /* Overlaps the hero image slightly */
-    position: relative; z-index: 5;
-    max-width: 1000px; margin-left: auto; margin-right: auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+/* --- 2. STATS SECTION (Fixed Layout) --- */
+.stats-section {  
+    display: flex; 
+    justify-content: space-between; /* Spreads items evenly */
+    align-items: center;
+    gap: 0; /* Remove gap, we use padding inside items now */
+    background: white;
+    padding: 50px 0;
+    margin-top: -60px; 
+    position: relative; 
+    z-index: 5;
+    max-width: 1200px; 
+    margin-left: auto; 
+    margin-right: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
-.stat-item { text-align: center; }
-.stat-number { display: block; font-size: 2.5rem; font-family: 'Playfair Display', serif; color: #D34836; font-weight: 700; }
-.stat-label { font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 2px; }
-.stat-divider { width: 1px; height: 50px; background: #eee; }
+.stat-item { 
+    text-align: center; 
+    flex: 1; /* Makes all 4 boxes equal width */
+    position: relative;
+    border-right: 1px solid #eee; /* Adds the vertical divider line */
+}
+
+/* Removes the line from the very last item */
+.stat-item:last-child {
+    border-right: none;
+}
+
+/* This forces the H2 to sit on the same line as the span */
+.stat-number { 
+    display: inline-block !important; 
+    font-size: 3.5rem; 
+    font-family: 'Playfair Display', serif; 
+    color: #D34836; 
+    font-weight: 700; 
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+/* Styles the + and % signs */
+.plus-sign, .percent-sign {
+    display: inline-block !important;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem; 
+    color: #D34836; 
+    vertical-align: top;
+    margin-left: 5px;
+}
+
+.stat-item p {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-top: 5px;
+}
 
 /* =========================================
    3. INFINITE REVIEWS WALL (MARQUEE)
@@ -418,33 +462,26 @@
    MOBILE FIX FOR STATS BAR
    ========================================= */
 @media (max-width: 768px) {
-    .stats-bar {
-        /* 1. Make them stack vertically instead of side-by-side */
-        flex-direction: column !important;
-        
-        /* 2. Fix the width so it doesn't overflow the screen */
-        width: 90% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        
-        /* 3. Adjust spacing */
-        gap: 15px !important;
-        padding: 30px 20px !important;
-        
-        /* 4. Keep the overlap but make it safe */
-        margin-top: -40px !important;
+    .stats-section {
+        flex-direction: column;
+        width: 90%;
+        margin-top: -40px;
+        padding: 30px 0;
+        gap: 30px;
     }
 
-    /* 5. Change the vertical divider line to a horizontal line */
-    .stat-divider {
-        width: 80px !important; /* Make it a short line */
-        height: 1px !important;
-        background: #eee !important;
-        margin: 5px auto !important; /* Center it */
+    .stat-item {
+        width: 100%;
+        border-right: none; /* No side lines on mobile */
+        border-bottom: 1px solid #eee; /* Horizontal lines instead */
+        padding-bottom: 20px;
     }
     
-    /* 6. Slightly smaller numbers so they don't scream at you */
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+
     .stat-number {
-        font-size: 2rem !important;
+        font-size: 2.5rem; /* Smaller numbers for phone */
     }
 }
