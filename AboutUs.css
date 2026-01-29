@@ -355,3 +355,153 @@ section { padding: 3rem 5%; }
         text-align: center;
     }
 }
+/* =========================================
+   1-TO-1 CONSULTATION (FINAL PREFERRED DESIGN)
+   ========================================= */
+#consultation {
+    background-color: #FFFFFF; /* Clean White Background */
+    padding: 6rem 5%;
+}
+
+.consult-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* Vertically centers text with image */
+    gap: 5rem; 
+}
+
+/* --- IMAGE SIDE --- */
+.consult-visual {
+    flex: 1;
+    position: relative;
+}
+
+.image-frame-gold {
+    padding: 15px; /* The white gap between image and frame */
+    border: 1px solid var(--accent-gold); /* The Gold Border */
+    border-radius: 4px;
+}
+
+.image-frame-gold img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1); /* Luxury Shadow */
+}
+
+/* --- TEXT SIDE --- */
+.consult-content {
+    flex: 1.2; 
+}
+
+.badge-small {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--primary-red);
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.consult-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: var(--burgundy); /* Dark elegant text */
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+.gold-divider-left {
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-gold);
+    margin-bottom: 25px;
+}
+
+.consult-desc {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* --- THE LUXURY LIST --- */
+.consult-list {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.consult-list li {
+    display: flex;
+    align-items: flex-start; /* Aligns icon to top of text block */
+    margin-bottom: 25px;
+}
+
+/* The Icons */
+.consult-list li i {
+    color: var(--primary-red);
+    margin-right: 20px;
+    font-size: 1.4rem;
+    margin-top: 5px; /* Pushes icon down slightly to align with first line */
+    background: #FFF0F0;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/* The Text block next to icon */
+.consult-list li span {
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.consult-list li strong {
+    color: var(--burgundy);
+    font-size: 1.1rem;
+}
+
+/* --- BUTTON --- */
+.btn-consult {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--burgundy);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(86, 3, 25, 0.2);
+    font-size: 0.9rem;
+}
+
+.btn-consult:hover {
+    background-color: var(--primary-red);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(211, 72, 54, 0.3);
+}
+
+.btn-consult i { margin-left: 10px; }
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 900px) {
+    .consult-wrapper {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    .consult-title { font-size: 2rem; text-align: center; }
+    .gold-divider-left { margin: 0 auto 25px auto; }
+    .consult-desc { text-align: center; }
+    
+    .btn-consult { 
+        display: block; 
+        text-align: center; 
+        width: 100%; 
+    }
+    
+    .image-frame-gold { max-width: 500px; margin: 0 auto; }
+}

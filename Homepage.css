@@ -178,7 +178,7 @@ h1, h2, h3, h4 {
    ========================================= */
 .cta-strip {
     background: linear-gradient(135deg, var(--burgundy) 0%, var(--primary-red) 100%);
-    padding: 35px 20px;
+    padding: 15px 5px;
     text-align: center; 
     color: white; 
     position: relative;
@@ -566,11 +566,11 @@ h1, h2, h3, h4 {
 }
 
 .banner-script {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes';
     font-size: 4rem;
     color: rgba(255,255,255,0.9);
     font-weight: 400;
-    transform: rotate(-2deg); 
+    /* transform: rotate(-2deg);  */
 }
 
 /* =========================================
@@ -891,7 +891,7 @@ h1, h2, h3, h4 {
 
 .partners-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
+    font-size: 2.6rem;
     color: var(--primary-red);
     margin-top: 15px;
     font-weight: 700;
@@ -999,7 +999,7 @@ h1, h2, h3, h4 {
 
 .awards-title-deco {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
+    font-size: 2.6rem;
     color: var(--primary-red);
     margin-top: 20px;
     text-transform: uppercase;
@@ -1077,7 +1077,7 @@ h1, h2, h3, h4 {
 
 .award-name-deco {
     font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--burgundy); /* Darker red for sophistication */
     line-height: 1.5;
     font-weight: 700;
@@ -1106,41 +1106,102 @@ h1, h2, h3, h4 {
 }
 
 /* =========================================
-   16 & 18. UNIFIED RED BANNERS (CONSISTENCY FIX)
+   NEW SIGNATURE SECTION (GOLD FRAME)
    ========================================= */
-/* This class replaces all previous specific banner classes to ensure they look identical */
-.global-red-banner {
-    background: linear-gradient(90deg, var(--burgundy) 0%, var(--primary-red) 100%);
-    padding: 35px 20px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.95);
+.signature-luxury-frame {
+    padding: 100px 5%;
+    background-color: white; /* Clean background */
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
-/* Typography for the banners */
-.banner-text-wide {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    letter-spacing: 2px;
+.luxury-frame-container {
+    max-width: 900px;
+    width: 100%;
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    
+    /* THE GOLD FRAME */
+    border: 1px solid #D4A373; /* Thin Gold Border */
+    outline: 1px solid #D4A373; /* Second line for "Double Border" effect */
+    outline-offset: 10px;       /* Spacing between lines */
+    
+    background-color: #FFFCF9; /* Very faint warm white inside the box */
+}
+
+/* Floating Crown Icon at Top */
+.crown-icon {
+    font-size: 2rem;
+    color: #D34836;
+    background: #FFFCF9; /* Covers the border line */
+    padding: 0 30px;
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.tiny-gold-title {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: #D4A373;
+    font-weight: 700;
     text-transform: uppercase;
-    font-weight: 500;
-    line-height: 1.4;
-    margin: 0;
-    color: white !important;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
-.text-white-bold {
-    color: white;
+.signature-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #333;
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+.text-burgundy-italic {
+    color: #560319;
+    font-style: italic;
     font-weight: 700;
 }
 
-.link-icon-white {
-    font-size: 1.4rem;
-    margin-left: 15px;
-    color: white;
-    opacity: 0.8;
+/* Small divider line */
+.divider-line-gold {
+    width: 80px;
+    height: 3px;
+    background-color: #D34836; /* Red Accent */
+    margin: 0 auto 30px auto;
+}
+
+.signature-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+.signature-footer-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: #D4A373;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .luxury-frame-container {
+        padding: 40px 20px;
+        outline-offset: 6px; /* Smaller frame gap on phone */
+    }
+    .signature-heading { font-size: 2rem; }
 }
 
 /* =========================================
@@ -1362,4 +1423,72 @@ h1, h2, h3, h4 {
 .slide-content-wrapper {
     z-index: 20; /* Button sits higher than background */
     position: relative;
+}
+
+/* =========================================
+   PROMO POP-UP (MODAL)
+   ========================================= */
+
+/* The Dark Background Overlay */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 9999; /* Sit on top of EVERYTHING */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.7); /* Black with transparency */
+    backdrop-filter: blur(5px); /* Makes the background blurry (Premium look) */
+    align-items: center;
+    justify-content: center;
+}
+
+/* The White Box */
+.modal-content {
+    position: relative;
+    background-color: white;
+    padding: 5px;
+    border-radius: 15px;
+    max-width: 600px; /* Maximum width on laptop */
+    width: 90%; /* Width on phone */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    animation: zoomIn 0.4s ease-out; /* Pop animation */
+}
+
+/* The Image inside */
+.modal-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* The "X" Close Button */
+.close-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: #D34836;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.close-btn:hover {
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* Animation to make it pop */
+@keyframes zoomIn {
+    from {transform: scale(0.5); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
 }

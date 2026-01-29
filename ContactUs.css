@@ -20,29 +20,68 @@ h1, h2, h3, h4 {
 /* =========================================
    2. HERO & CTA SNAP-TO
    ========================================= */
-.contact-hero {
+.page-hero {
     position: relative;
-    width: 100%;
-    height: 450px;
-    background: url('images/testing.png') no-repeat center center;
+    height: 450px; /* Shorter than the homepage hero */
+    background-image: url('images/hero_contactus.png'); /* You can change this image */
     background-size: cover;
+    background-position: center;
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-top: 0 !important;
-    padding-top: 80px; /* offset for navbar */
+    align-items: center;
+    text-align: center;
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    letter-spacing: 5px;
-    color: var(--primary-red);
-    text-transform: uppercase;
+.hero-bg-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Darkens image slightly for text contrast */
+    z-index: 1;
 }
+
+.hero-title-container {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    letter-spacing: 5px;
+    margin: 10px 0;
+    color: white !important;
+}
+
+.italic-red {
+    font-style: italic;
+    color: var(--primary-red);
+}
+
+.title-divider {
+    width: 80px;
+    height: 3px;
+    background: var(--accent-gold);
+    margin: 20px auto;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .page-hero { height: 350px; }
+    .page-title { font-size: 3rem; }
+}
+
 
 .cta-strip {
     background: linear-gradient(135deg, var(--burgundy) 0%, var(--primary-red) 100%);
-    padding: 35px 20px;
+    padding: 10px 20px;
     text-align: center; 
     color: white; 
     position: relative;
@@ -635,7 +674,7 @@ h1, h2, h3, h4 {
 .benefit-divider {
     width: 1px;
     height: 25px;
-    background-color: #ffffff;
+    background-color: var(--burgundy);
     opacity: 0.5;
 }
 
