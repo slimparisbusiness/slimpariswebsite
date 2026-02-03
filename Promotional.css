@@ -46,7 +46,8 @@
 /* Force Text Colors to White */
 .promo-hero .page-title {
     color: #ffffff !important;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Soft shadow for depth */
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+    
 }
 
 .promo-hero .script-font {
@@ -295,8 +296,22 @@
 .timeline-section.active .timeline-item:nth-child(3) .timeline-content { opacity: 1; transform: translateY(0); transition-delay: 2.0s; }
 .timeline-section.active .timeline-item:nth-child(4) .timeline-content { opacity: 1; transform: translateY(0); transition-delay: 2.7s; }
 
-.event-img { width: 100%; height: 180px; overflow: hidden; border-radius: 8px; margin-bottom: 15px; background: #eee; }
-.event-img img { width: 100%; height: 100%; object-fit: cover; }
+.event-img { 
+    width: 100%; 
+    height: 400px; 
+    overflow: hidden; 
+    border-radius: 8px; 
+    margin-bottom: 15px; 
+    background: #eee; }
+
+.event-img img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
 .timeline-content h3 { font-size: 1.3rem; margin-bottom: 5px; color: #333; font-family: 'Playfair Display', serif; }
 .timeline-content .location { font-size: 0.85rem; color: #888; margin-bottom: 10px; }
 .timeline-content .details { font-size: 0.95rem; color: #555; line-height: 1.5; margin-bottom: 15px; }
@@ -331,4 +346,65 @@
     .timeline-item:nth-child(odd) .timeline-dot, .timeline-item:nth-child(even) .timeline-dot { left: 20px; right: auto; }
     
     .timeline-date { position: static; display: block; margin-bottom: 5px; width: auto !important; text-align: left !important; }
+}
+
+/* =========================================
+   3. HERO SECTION 
+   ========================================= */
+.page-hero {
+    position: relative;
+    height: 450px; /* Shorter than the homepage hero */
+    background-image: url('images/Serviceshero.png'); /* You can change this image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Darkens image slightly for text contrast */
+    z-index: 1;
+}
+
+.hero-title-container {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    letter-spacing: 5px;
+    margin: 10px 0;
+    color: white !important;
+}
+
+.italic-red {
+    font-style: italic;
+    color: var(--primary-red);
+}
+
+.title-divider {
+    width: 80px;
+    height: 3px;
+    background: var(--accent-gold);
+    margin: 20px auto;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .page-hero { height: 350px; }
+    .page-title { font-size: 3rem; }
 }

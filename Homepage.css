@@ -90,7 +90,9 @@ h1, h2, h3, h4 {
     position: absolute;
     top: 0; left: 0; 
     width: 100%; height: 100%;
-    background-size: cover; 
+    /* background-size: cover;  */
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     opacity: 0; 
     transition: opacity 0.8s ease-in-out;
@@ -152,7 +154,9 @@ h1, h2, h3, h4 {
     font-weight: 700;        /* Bold weight for emphasis */
     color: var(--burgundy);  /* Your brand dark red/purple */
     text-transform: uppercase;
-    text-decoration: none;   /* Remove default link underline */
+    letter-spacing: 3px;
+    text-decoration: none;  
+    margin-top: 30px;
     
     /* The Thick Underline */
     border-bottom: 3px solid var(--burgundy); 
@@ -170,7 +174,57 @@ h1, h2, h3, h4 {
 .btn-text-style:hover {
     color: var(--primary-red);      /* Brighter red on hover */
     border-bottom-color: var(--primary-red);
-    letter-spacing: 2px;            /* Slight expansion effect */
+    letter-spacing: 4px;            /* Slight expansion effect */
+}
+
+/* Keeps Slider 3 in the same "Safe Zone" as the others */
+.services-slide .slider-promo-container {
+    left: 8%; /* Matches the consistent flow of the other slides */
+    bottom: 12%;
+}
+
+/* Specifically for the Centered Services Slide */
+/* Slider 3: Perfectly Centered Professional Services */
+.services-slide-center .slider-promo-container {
+    /* 1. Force the container to the dead center */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto; 
+    transform: translate(-50%, -50%); /* This is the ONLY way to center it perfectly */
+
+    /* 2. Fix the sizing so it doesn't look 'cacat' */
+    max-width: 500px; 
+    width: 85%;      
+    padding: 40px;
+    
+    /* 3. Luxury Glass Look */
+    background: rgba(255, 252, 249, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 15px;
+    border: 1px solid var(--accent-gold);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    
+    /* 4. Center all content inside the box */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure the wrapper inside is also centered */
+.services-slide-center .brand-essence-wrapper {
+    text-align: center;
+    width: 100%;
+}
+
+/* Ensure the button also centers within the box */
+.services-slide-center .brand-essence-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* =========================================
@@ -961,148 +1015,120 @@ h1, h2, h3, h4 {
 }
 
 /* =========================================
-   15. AWARDS SECTION (NEW DECO DESIGN)
+   AWARDS SECTION (RESTORED LUXURY LOOK)
    ========================================= */
 .awards-section-deco {
     padding: 120px 10%;
     background-color: var(--bg-cream);
-    position: relative; /* Needed for watermark */
+    position: relative; 
     overflow: hidden;
 }
 
-/* Giant Watermark Background */
 .watermark-awards {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%) rotate(-25deg);
     font-family: 'Great Vibes', cursive;
     font-size: 18rem;
     color: var(--primary-red);
-    opacity: 0.1; /* Very faint */
+    opacity: 0.05; 
     z-index: 0;
     pointer-events: none;
 }
 
 .awards-container-deco {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
+    position: relative; z-index: 1; max-width: 1100px; margin: 0 auto;
 }
 
-/* Header Styling */
-.awards-header-deco {
-    text-align: center;
-    margin-bottom: 80px;
-}
+.awards-header-deco { text-align: center; margin-bottom: 80px; }
 
 .awards-title-deco {
     font-family: 'Playfair Display', serif;
-    font-size: 2.6rem;
-    color: var(--primary-red);
-    margin-top: 20px;
-    text-transform: uppercase;
-    line-height: 1.2;
+    font-size: 2.6rem; color: var(--primary-red);
+    margin-top: 20px; text-transform: uppercase; line-height: 1.2;
 }
 
 .gold-divider-short {
-    width: 50px;
-    height: 2px;
-    background-color: var(--accent-gold);
+    width: 50px; height: 2px; background-color: var(--accent-gold);
     margin: 25px auto 0 auto;
 }
 
-/* --- THE ASYMMETRICAL GRID --- */
+/* --- THE STAGGERED LAYOUT --- */
 .awards-grid-deco {
-    display: flex;
-    justify-content: space-between;
-    gap: 60px; /* Gap between the two main columns */
+    display: flex; justify-content: space-between; gap: 60px;
+    margin-bottom: 20px; /* Space before button */
 }
 
 .awards-col-left, .awards-col-right {
-    flex: 1; /* Both columns take equal width */
-    display: flex;
-    flex-direction: column;
-    gap: 60px; /* Gap between awards vertically */
+    flex: 1; display: flex; flex-direction: column; gap: 80px;
 }
 
-/* This is the magic sauce for the staggered look */
-.margin-top-stagger {
-    margin-top: 100px; /* Pushes the right column down */
-}
+/* The Magic Stagger (Pushes right column down) */
+.margin-top-stagger { margin-top: 100px; }
 
-/* --- THE LUXURY CARD DESIGN --- */
-.award-card-deco {
-    text-align: center;
-    transition: transform 0.3s ease;
-}
+/* --- CARD DESIGN --- */
+.award-card-deco { text-align: center; transition: transform 0.3s ease; }
+.award-card-deco:hover { transform: translateY(-10px); }
 
-.award-card-deco:hover {
-    transform: translateY(-10px); /* Floating effect on hover */
-}
-
-/* The White Frame around the image */
 .img-frame {
-    background: white;
-    padding: 25px; /* Thickness of the white frame */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Soft luxury shadow */
-    border: 1px solid rgba(212, 163, 115, 0.2); /* Subtle Gold Border */
-    border-radius: 4px;
-    margin-bottom: 30px;
-    position: relative;
+    background: white; padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid rgba(212, 163, 115, 0.2);
+    border-radius: 4px; margin-bottom: 30px; position: relative;
 }
 
-/* Optional: A second thin gold line offset for extra luxury feel */
+/* The Double Border Effect (Makes it look expensive) */
 .img-frame::after {
-    content: '';
-    position: absolute;
+    content: ''; position: absolute;
     top: -10px; left: -10px;
     width: 100%; height: 100%;
-    border: 1px solid rgba(212, 163, 115, 0.3); /* Gold offset border */
-    z-index: -1;
-    transition: all 0.3s ease;
+    border: 1px solid rgba(212, 163, 115, 0.3);
+    z-index: -1; transition: all 0.3s ease;
 }
 
 .award-card-deco:hover .img-frame::after {
-    top: -15px; left: -15px; /* Expands slightly on hover */
-    border-color: var(--accent-gold);
+    top: -15px; left: -15px; border-color: var(--accent-gold);
 }
 
-.img-frame img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+.img-frame img { width: 100%; height: auto; display: block; }
 
 .award-name-deco {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    color: var(--burgundy); /* Darker red for sophistication */
-    line-height: 1.5;
-    font-weight: 700;
+    font-family: 'Playfair Display', serif; font-size: 1.4rem;
+    color: var(--burgundy); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px;
+    max-width: 80%; margin: 0 auto;
+}
+
+/* --- VIEW MORE BUTTON --- */
+.view-more-container { text-align: center; margin-top: 60px; }
+
+.btn-text-gold {
+    background: none; border: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--accent-gold);
+    cursor: pointer; letter-spacing: 2px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    max-width: 80%;
-    margin: 0 auto;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
 }
 
-/* --- RESPONSIVE DESIGN --- */
-@media (max-width: 1024px) {
-    /* On Tablets, reduce the stagger so it fits better */
-    .margin-top-stagger { margin-top: 50px; }
-    .watermark-awards { font-size: 12rem; top: 20%; }
+.btn-text-gold:hover {
+    color: var(--primary-red);
+    border-bottom: 2px solid var(--primary-red);
+    letter-spacing: 3px;
 }
 
+.btn-text-gold i { margin-left: 10px; transition: transform 0.3s ease; }
+.btn-text-gold.open i { transform: rotate(180deg); }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) { .margin-top-stagger { margin-top: 50px; } }
 @media (max-width: 768px) {
-    /* On Mobile, stack everything vertically */
     .awards-grid-deco { flex-direction: column; gap: 50px; }
-    /* Remove the stagger on mobile so it's a neat straight list */
     .margin-top-stagger { margin-top: 0; }
-    
-    .awards-title-deco { font-size: 2.2rem; }
-    .img-frame { padding: 15px; } /* Thinner frame on mobile */
-    .img-frame::after { display: none; } /* Hide the offset border on mobile for simplicity */
+    .img-frame::after { display: none; } /* Hide complex border on phone */
 }
 
 /* =========================================
@@ -1491,4 +1517,149 @@ h1, h2, h3, h4 {
 @keyframes zoomIn {
     from {transform: scale(0.5); opacity: 0;}
     to {transform: scale(1); opacity: 1;}
+}
+
+/* Container positioning */
+.slider-promo-container {
+    position: absolute;
+    bottom: 90px;
+    left: 10%;
+    z-index: 30;
+}
+
+/* THE CUTE LUXURY BUTTON */
+.btn-luxury-cute {
+    position: relative;
+    display: inline-block;
+    padding: 16px 35px;
+    
+    /* Rose Gold Gradient */
+    background: linear-gradient(135deg, #e5b2a4 0%, #d18e82 50%, #b57367 100%);
+    
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Glassy border */
+    
+    /* Luxury Glow & Shadow */
+    box-shadow: 0 8px 20px rgba(181, 115, 103, 0.4), 
+                inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+/* The Glossy Reflection Sweep */
+.btn-luxury-cute::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.6s;
+}
+
+.btn-luxury-cute:hover::before {
+    left: 100%;
+}
+
+.btn-luxury-cute:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(181, 115, 103, 0.6);
+    background: linear-gradient(135deg, #e5765b 0%, #d18e82 100%);
+}
+
+/* Sparkle Animation Effect */
+.sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: luxurySparkle 2s infinite;
+}
+
+/* Specifically nudge Slider 2 to the right */
+.promo-slide .slider-promo-container {
+    left: 19%; /* Increased from 6% to push it further right */
+    /* Adjust this percentage until it sits perfectly next to your collage */
+}
+
+/* Optional: If it feels too low, you can also adjust the bottom position here */
+.promo-slide .slider-promo-container {
+    bottom: 15%; 
+}
+
+@keyframes luxurySparkle {
+    0% { transform: scale(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Mobile: Center the Luxury */
+@media (max-width: 768px) {
+    .slider-promo-container {
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 85%;
+        text-align: center;
+    }
+    .btn-luxury-cute {
+        font-size: 0.7rem;
+        padding: 14px 20px;
+        width: 100%;
+    }
+}
+
+/* SLIDER 1  */
+.brand-essence-wrapper {
+    position: absolute;
+    bottom: 40px; /* Move it away from the 'Hello Gorgeous' center */
+    left: 5%;
+    background: rgba(255, 252, 249, 0.7); /* Light cream semi-transparent box */
+    padding: 25px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px); /* Makes it look luxury/glassy */
+    border: 1px solid var(--accent-gold);
+}
+
+.luxury-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem; /* Big and bold */
+    color: var(--burgundy);
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.highlight-script {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5.5rem; /* Large flowing script */
+    color: var(--primary-red);
+    text-transform: none; /* Keep script in natural case */
+    display: block;
+    margin-top: -10px;
+}
+
+/* Mobile Adjustment for the new title */
+@media (max-width: 768px) {
+    .luxury-hero-title {
+        font-size: 2.5rem;
+    }
+    .highlight-script {
+        font-size: 3.5rem;
+    }
+    .brand-essence-wrapper {
+        text-align: center;
+    }
 }

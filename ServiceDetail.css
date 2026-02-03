@@ -103,13 +103,20 @@ h1, h2, h3, h4 {
 .service-content-stage { flex: 1; min-width: 0; width: 0; overflow: hidden; }
 
 .service-intro h2 {
-    font-family: 'Playfair Display', serif; font-size: 3rem;
-    color: #D34836; margin-bottom: 20px;
+    font-family: 'Playfair Display', 
+    serif; font-size: 3rem;
+    color: #D34836; 
+    margin-bottom: 10px;
 }
 
 .service-intro p {
-    font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 40px;
-    background: #FFF8F0; padding: 20px; border-left: 4px solid #D34836;
+    font-size: 1.1rem; 
+    line-height: 1.8; 
+    color: #444; 
+    margin-bottom: 40px;
+    background: #FFF8F0; 
+    padding: 20px; 
+    border-left: 4px solid #D34836;
 }
 
 .water-carousel {
@@ -220,8 +227,16 @@ h1, h2, h3, h4 {
     border-radius: 15px; 
     overflow: hidden; 
     box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
-    height: 350px; }
-.result-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    height: 350px; 
+}
+    
+.result-card img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.5s ease; 
+}
+
 .result-card:hover img { transform: scale(1.05); }
 
 .label-badge {
@@ -240,23 +255,73 @@ h1, h2, h3, h4 {
 }
 .results-note i { font-size: 1.5rem; color: #D34836; }
 
-.cta-container { text-align: center; margin-top: 60px; padding-bottom: 20px; }
-.btn-book-now {
-    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
-    background: linear-gradient(135deg, #D34836 0%, #ff6b5b 100%);
-    color: white; padding: 20px 50px; font-size: 1.3rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
-    border-radius: 50px; box-shadow: 0 10px 30px rgba(211, 72, 54, 0.3);
-    border: 3px solid #fff; transition: all 0.4s ease;
+/* ==========================================================================
+   8. CTA BUTTON STYLES (MAIN BOOKING BUTTON)
+   ========================================================================== */
+.cta-container { 
+    text-align: center; 
+    margin-top: -55px; 
+    padding-bottom: 20px; 
 }
+
+/* FIXED RED BUTTON (VISIBLE) */
+.btn-book-now {
+    /* RED GRADIENT BACKGROUND */
+    background: linear-gradient(135deg, #D34836 0%, #ff6b5b 100%);
+    color: white !important;
+    box-shadow: 0 10px 30px rgba(211, 72, 54, 0.3);
+    border: 3px solid #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+
+    /* LAYOUT FOR 2 LINES */
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    text-align: left;
+    padding: 12px 40px; 
+    margin-bottom: 5px;
+}
+
 .btn-book-now:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 20px 40px rgba(211, 72, 54, 0.4);
     background: linear-gradient(135deg, #ff6b5b 0%, #D34836 100%);
 }
 
+.btn-book-now i {
+    font-size: 2rem; 
+}
+
+/* 2-LINE TEXT GROUPS */
+.btn-text-group {
+    display: flex;
+    flex-direction: column; 
+    line-height: 1.1; 
+}
+
+.btn-text-group small {
+    font-size: 1.1rem; 
+    font-weight: 400;
+    text-transform: none; 
+    opacity: 0.9;
+    color: white;
+}
+
+.btn-text-group strong {
+    font-size: 1.5rem; 
+    font-weight: 900; 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 2;
+    display: block;
+    color: white;
+}
+
 /* ==========================================================================
-   8. 1-TO-1 CONSULTATION SECTION (NEW)
+   9. 1-TO-1 CONSULTATION SECTION (NEW)
    ========================================================================== */
 .consultation-wrapper {
     display: flex;
@@ -344,10 +409,8 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
-   9. FEMININE CARE REVIEWS SLIDER (FIXED & COMPLETE)
+   10. FEMININE CARE REVIEWS SLIDER
    ========================================================================== */
-
-/* 1. The Main Wrapper (Holds buttons + images) */
 .review-slider-wrapper {
     max-width: 800px; 
     margin: 30px auto;
@@ -355,14 +418,11 @@ h1, h2, h3, h4 {
     align-items: center;
     justify-content: center;
     position: relative;
-    /* PADDING IS CRITICAL: Creates space for the buttons so they don't cover the image */
     padding: 0 70px; 
 }
 
-/* 2. The Window (Hides the overflow) */
 .review-track-container {
     width: 100%;
-    /* Sets the height of the slider window */
     height: 500px; 
     overflow: hidden;
     position: relative;
@@ -372,17 +432,14 @@ h1, h2, h3, h4 {
     border: 1px solid #f0f0f0;
 }
 
-/* 3. The Track (The moving part) */
 .review-track {
     display: flex;
-    /* transition: transform 0.5s ease-in-out; */
     list-style: none;
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
-/* 4. The Slide (Individual Item) */
 .review-slide {
     min-width: 100%;
     height: 100%;
@@ -392,7 +449,6 @@ h1, h2, h3, h4 {
     background: #fff;
 }
 
-/* 5. The Image inside the slide */
 .review-slide img {
     width: 100%;
     height: 100%;
@@ -400,7 +456,6 @@ h1, h2, h3, h4 {
     display: block;
 }
 
-/* 6. Navigation Buttons */
 .review-btn {
     position: absolute;
     top: 50%;
@@ -418,11 +473,9 @@ h1, h2, h3, h4 {
     z-index: 20;
 }
 
-/* Button Positioning */
 #fem-prev { left: 10px; } 
 #fem-next { right: 10px; }
 
-/* Hover Effects */
 .review-btn:hover {
     background: #D34836;
     color: white;
@@ -431,16 +484,15 @@ h1, h2, h3, h4 {
 }
 
 /* PRIVACY */
-
 .privacy-notice-container {
     max-width: 700px;
-    margin: 0 auto 40px auto; /* Centers it and adds space below */
-    background-color: #FFF8F0; /* Cream Background */
-    border: 1px solid #D4A373; /* Thin Gold Border */
+    margin: 0 auto 40px auto;
+    background-color: #FFF8F0;
+    border: 1px solid #D4A373;
     border-radius: 12px;
     padding: 25px;
     display: flex;
-    align-items: flex-start; /* Aligns icon to top */
+    align-items: flex-start;
     gap: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.03);
 }
@@ -454,15 +506,15 @@ h1, h2, h3, h4 {
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    color: #D34836; /* Red Icon */
-    flex-shrink: 0; /* Prevents icon from squishing */
+    color: #D34836;
+    flex-shrink: 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .privacy-text-content h4 {
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
-    color: #560319; /* Burgundy Title */
+    color: #560319;
     margin-bottom: 8px;
     margin-top: 0;
 }
@@ -475,18 +527,8 @@ h1, h2, h3, h4 {
     margin: 0;
 }
 
-/* Mobile Adjustment */
-@media (max-width: 768px) {
-    .privacy-notice-container {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        width: 90%;
-    }
-}
-
 /* ==========================================================================
-   10. PREMIUM BENEFITS BANNER
+   11. PREMIUM BENEFITS BANNER
    ========================================================================== */
 .benefits-banner {
     background-color: var(--burgundy); 
@@ -526,7 +568,6 @@ h1, h2, h3, h4 {
     letter-spacing: 1px;
 }
 
-/* The vertical gold lines between items */
 .benefit-divider {
     width: 1px;
     height: 25px;
@@ -535,7 +576,7 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
-   11. MASTER CLASS: LONG PHOTOS
+   12. MASTER CLASS: LONG PHOTOS
    ========================================================================== */
 .long-results {
     gap: 20px;
@@ -553,9 +594,18 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
-   12. MOBILE RESPONSIVE & FIXES
+   13. MOBILE RESPONSIVE & FIXES
    ========================================================================== */
+
+/* 1024PX - Tablet Landscape */
 @media (max-width: 1024px) {
+    .service-intro h2 { 
+        margin-top: 70px !important; /* Pushes text down below the menu */
+        padding-top: 0 !important; 
+        position: relative;
+        z-index: 1;
+    }
+
     /* --- SIDEBAR & LAYOUT FIX --- */
     .service-detail-container {
         display: block !important;
@@ -617,6 +667,7 @@ h1, h2, h3, h4 {
     .benefit-item { width: 45%; }
 }
 
+/* 900PX - Medium Screens */
 @media (max-width: 900px) {
     /* Consultation Section Mobile */
     .consultation-wrapper {
@@ -628,7 +679,17 @@ h1, h2, h3, h4 {
     .privacy-box { text-align: left; }
 }
 
+/* 768PX - Tablets / Large Phones */
+/* 768PX - Tablets / Large Phones */
 @media (max-width: 768px) {
+    /* Privacy Notice Fix */
+    .privacy-notice-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        width: 90%;
+    }
+
     /* --- MENU FIX --- */
     .nav-menu {
         position: fixed; left: -100%; top: 70px;
@@ -656,11 +717,126 @@ h1, h2, h3, h4 {
     .review-track-container { height: 350px; }
     
     .before-after-grid { display: flex !important; flex-direction: column !important; gap: 20px !important; }
+    
+    /* FIX: Show Full Image on Mobile */
     .result-card { width: 100% !important; height: 350px !important; }
+    .result-card img { object-fit: contain !important; background-color: #f8f8f8; } /* <--- THIS WAS MISSING */
+    
     .long-results .result-card { height: 500px; }
 }
 
+/* =========================================
+   FIX FOR THE "NOTE" SECTION ON MOBILE
+   ========================================= */
 @media (max-width: 600px) {
-    .benefit-item { width: 100%; justify-content: flex-start; padding-left: 20%; }
+    
+    /* 1. Reduce the huge padding on the white box */
+    /* Before it was 50px, which squashed everything. Now it's 20px. */
+    .results-wrapper {
+        padding: 30px 20px !important; 
+    }
+
+    /* 2. Fix the Note Box Layout */
+    .results-note {
+        display: flex !important;       /* Makes it fill the width */
+        align-items: flex-start !important; /* Aligns icon to the TOP (not middle) */
+        width: 100% !important;
+        padding: 15px !important;      /* Comfortable padding */
+        gap: 15px !important;          /* Space between icon and text */
+    }
+
+    /* 3. Fix the Icon so it doesn't get squashed */
+    .results-note i {
+        min-width: 24px !important;    /* Keeps icon shape perfect */
+        margin-top: 4px !important;    /* Aligns perfectly with the first line of text */
+    }
 }
 
+/* 500PX - Small Phones (SLEEK BUTTON FIX) */
+@media (max-width: 500px) {
+    .btn-book-now {
+        width: 80% !important;       /* Full width of the screen */
+        padding: 12px 15px !important; /* Less padding so it fits */
+        gap: 12px !important;         /* Closer together */
+        border-radius: 22px !important; /* Slightly less round to save space */
+        margin-top: 10px !important;
+        align-items: center !important;
+    }
+
+    /* Make the Icon Smaller */
+    .btn-book-now i {
+        font-size: 1.8rem !important; 
+    }
+
+    /* Make the Big Text Smaller so it fits on 1 line (or 2 clean lines) */
+    .btn-text-group strong {
+        font-size: 1rem !important;   /* Reduced from 1.4rem */
+        line-height: 1.1 !important;
+    }
+
+    /* Make the Small Text Smaller */
+    .btn-text-group small {
+        font-size: 0.75rem !important;
+        margin-bottom: 2px !important;
+    }
+}
+
+/* 768PX - Tablets / Large Phones */
+@media (max-width: 768px) {
+    /* Privacy Notice Fix */
+    .privacy-notice-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        width: 90%;
+    }
+
+    /* --- MENU FIX --- */
+    .nav-menu {
+        position: fixed; left: -100%; top: 70px;
+        flex-direction: column; background-color: white;
+        width: 100%; height: calc(100vh - 70px);
+        overflow-y: auto; text-align: center; transition: 0.3s;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1); padding: 0; 
+        z-index: 10000;
+    }
+    .nav-menu.active { left: 0; }
+    .dropdown.show-menu .services-grid { display: grid !important; }
+    
+    .services-grid {
+        position: static !important; transform: none !important;
+        display: none; grid-template-columns: 1fr !important;
+        width: 100% !important; background-color: #FFF8F0 !important;
+        box-shadow: none !important; border: none !important; margin: 0 !important;
+    }
+    .services-grid a { text-align: center !important; padding: 15px !important; border-bottom: 1px solid rgba(0,0,0,0.05) !important; }
+
+    /* --- FEMININE SLIDER FIX (MAKE IT TALLER!) --- */
+    .review-slider-wrapper { 
+        padding: 0 40px !important; /* Slightly less padding to give image width */
+        width: 100%; 
+    }
+    
+    #fem-prev { left: 0; } 
+    #fem-next { right: 0; }
+    
+    .review-track-container { 
+        height: 550px !important; /* <--- CHANGED FROM 350px TO 550px */
+        /* This gives the tall screenshot room to expand */
+    }
+    
+    /* --- RESULTS PICTURE FIX (SHOW FULL IMAGE) --- */
+    .before-after-grid { display: flex !important; flex-direction: column !important; gap: 20px !important; }
+    
+    .result-card { 
+        width: 100% !important; 
+        height: 400px !important; /* Taller box for results too */
+    }
+    
+    .result-card img { 
+        object-fit: contain !important; /* <--- SHOWS FULL IMAGE NO CROP */
+        background-color: #f8f8f8; /* Nice background for empty space */
+    }
+    
+    .long-results .result-card { height: 550px; }
+}
