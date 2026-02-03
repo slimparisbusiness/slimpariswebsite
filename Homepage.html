@@ -706,9 +706,8 @@
 
     <!-- JAVASCRIPT -->
     <script>
-
         // ============================================
-        // 1. SEARCH FUNCTIONALITY (Exactly like About Us)
+        // 1. SEARCH FUNCTIONALITY
         // ============================================
         function toggleSearch() {
             const sb = document.getElementById('search-box');
@@ -728,175 +727,122 @@
         });
 
         // ============================================
-        // 2. MOBILE MENU (Exactly like About Us)
+        // 2. MOBILE MENU
         // ============================================
         function toggleMenu() {
             document.querySelector('.nav-menu').classList.toggle('active');
         }
 
+        function toggleMobileMenu(element) {
+            const menu = element.parentElement.querySelector('.services-grid');
+            menu.style.display = (menu.style.display === 'grid') ? 'none' : 'grid';
+        }
+
         // ============================================
-        // SLIDER WITH PAUSE ON HOVER
+        // 3. SLIDER LOGIC (With Pause on Hover)
         // ============================================
-        // 1. Setup variables
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const heroSection = document.querySelector('.hero'); 
-        let slideInterval; // Declare it here so it's accessible everywhere
-
-        // 2. Function to start the timer
-        function startAutoSlide() {
-            // Clear any existing timer first to prevent "double speed" bugs
-            clearInterval(slideInterval); 
-            slideInterval = setInterval(autoSlide, 2500); //2.5 seconds 
-        }
-
-        // 3. Start it for the first time
-        startAutoSlide();
+        let slideInterval;
 
         function showSlide(index) {
+            // Loop around logic
             if (index >= slides.length) currentSlide = 0;
             else if (index < 0) currentSlide = slides.length - 1;
             else currentSlide = index;
 
+            // Toggle classes
             slides.forEach(slide => slide.classList.remove('active'));
             slides[currentSlide].classList.add('active');
         }
 
-        function autoSlide() {
-            showSlide(currentSlide + 1);
+        function startAutoSlide() {
+            clearInterval(slideInterval); 
+            // Set to 5000 (5 seconds) so people can actually read the magazine text
+            slideInterval = setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, 3000); 
         }
 
-        // 4. THE HOVER LOGIC (Fixed & Reliable)
+        // Manual Control
+        function moveSlide(direction) {
+            showSlide(currentSlide + direction);
+            startAutoSlide(); // Reset timer on click
+        }
+
+        // HOVER PAUSE
         heroSection.addEventListener('mouseenter', () => {
-            console.log("Slider Paused"); // You can check this in your F12 console
             clearInterval(slideInterval);
         });
 
         heroSection.addEventListener('mouseleave', () => {
-            console.log("Slider Resumed");
-            startAutoSlide(); // Restarts the timer
+            startAutoSlide();
         });
 
-        // 5. Manual Arrow Controls
-        function moveSlide(direction) {
-            showSlide(currentSlide + direction);
-            // Restart timer so it doesn't jump immediately after a click
-            startAutoSlide(); 
-        }
+        // Start on Load
+        startAutoSlide();
 
         // ============================================
-        // 4. SCROLL REVEAL (Exactly like About Us)
+        // 4. SCROLL REVEAL
         // ============================================
-        // This makes elements fade in when you scroll down
         window.addEventListener('scroll', reveal);
-
         function reveal() {
             var reveals = document.querySelectorAll('.reveal');
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
                 var elementVisible = 150;
-
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add('active');
-                } else {
-                    reveals[i].classList.remove('active');
                 }
             }
         }
 
         // ============================================
-        // 5. ACCORDION (Homepage Exclusive)
+        // 5. ACCORDION & AWARDS
         // ============================================
         const accordions = document.querySelectorAll('.accordion-header');
         accordions.forEach(acc => {
             acc.addEventListener('click', function() {
-                // Close others
                 accordions.forEach(item => {
                     if (item !== this) {
                         item.classList.remove('active');
                         item.nextElementSibling.style.maxHeight = null;
                     }
                 });
-                // Toggle current
                 this.classList.toggle('active');
                 const panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
+                panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
             });
         });
 
-    function toggleMobileMenu(element) {
-        // This finds the menu next to the arrow and toggles it
-        const menu = element.parentElement.querySelector('.services-grid');
-        
-        if (menu.style.display === 'grid') {
-            menu.style.display = 'none';
-        } else {
-            menu.style.display = 'grid';
-        }
-    }
-
-        // --- PROMO POP-UP LOGIC ---
-        document.addEventListener("DOMContentLoaded", function() {
-            
-            // 1. Select the modal
-            const modal = document.getElementById('promoModal');
-
-            // 2. Show it automatically after 1 second (1000ms)
-            setTimeout(() => {
-                // Optional: Check if user already saw it this session
-                // if (!sessionStorage.getItem('promoSeen')) { 
-                    modal.style.display = 'flex';
-                // }
-            }, 300); 
-
-        });
-
-        // 3. Function to Close it
-        function closePromo() {
-            const modal = document.getElementById('promoModal');
-            modal.style.display = 'none';
-            
-            // Optional: Remember they closed it so it doesn't annoy them again
-            // sessionStorage.setItem('promoSeen', 'true');
-        }
-
-        // 4. Close if they click outside the picture (on the black background)
-        window.onclick = function(event) {
-            const modal = document.getElementById('promoModal');
-            if (event.target == modal) {
-                modal.style.display = "none";
+        function toggleAwards() {
+            var moreAwards = document.getElementById("more-awards-section");
+            var btn = document.getElementById("viewMoreBtn");
+            if (moreAwards.style.display === "none" || moreAwards.style.display === "") {
+                moreAwards.style.display = "flex";
+                btn.innerHTML = 'View Less <i class="fas fa-chevron-up"></i>';
+            } else {
+                moreAwards.style.display = "none";
+                btn.innerHTML = 'View More Achievements <i class="fas fa-chevron-down"></i>';
             }
         }
 
-        function toggleAwards() {
-        var moreAwards = document.getElementById("more-awards-section");
-        var btn = document.getElementById("viewMoreBtn");
-        
-        if (moreAwards.style.display === "none") {
-            moreAwards.style.display = "flex"; // Show the hidden awards
-            btn.innerHTML = 'View Less <i class="fas fa-chevron-up"></i>'; // Change text
-            btn.classList.add("open");
-        } else {
-            moreAwards.style.display = "none"; // Hide them again
-            btn.innerHTML = 'View More Achievements <i class="fas fa-chevron-down"></i>'; // Reset text
-            btn.classList.remove("open");
-            
-            // Optional: Scroll back up slightly so they don't get lost
-            document.querySelector('.awards-section-deco').scrollIntoView({behavior: 'smooth'});
-        }
+        // PROMO POP-UP
+        document.addEventListener("DOMContentLoaded", function() {
+            const modal = document.getElementById('promoModal');
+            setTimeout(() => { modal.style.display = 'flex'; }, 800); 
+        });
+
+        function closePromo() {
+            document.getElementById('promoModal').style.display = 'none';
         }
 
-        // 5. Manual Arrow Controls
-        function moveSlide(direction) {
-            showSlide(currentSlide + direction);
-            startAutoSlide(); // Resets the timer so it doesn't jump immediately
+        window.onclick = function(event) {
+            const modal = document.getElementById('promoModal');
+            if (event.target == modal) modal.style.display = "none";
         }
-
     
     </script>
 </body>
