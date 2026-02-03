@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage | Slim Paris</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Great+Vibes&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* =========================================
+           CSS STYLES START HERE
+           ========================================= */
+        :root {
+            --bg-cream: #FFF8F0;
+            --accent-gold: #D4A373;
+            --primary-red: #D34836;
+            --text-dark: #333;
+            --text-light: #555;
+            --burgundy: #560319;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body, html { 
+            background-color: var(--bg-cream); 
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            width: 100%;
+            overflow-x: hidden; 
+        }
+
+        h1, h2, h3, h4 { color: var(--primary-red); font-family: 'Playfair Display', serif; font-weight: 700; }
+        a { text-decoration: none; }
+
+        /* HERO SECTION (THE FIX) */
+        .hero {
+            position: relative;
+            height: 100vh; /* STRICT 100% HEIGHT */
+            width: 100%;
+            overflow: hidden; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFF8F0;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover; 
+            background-position: center top;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.0s ease-in-out;
+            z-index: 0;
+        }
+
+        .slide.active { opacity: 1; z-index: 1; }
+
+        /* SLIDER ARROWS */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.3);
+            color: var(--text-dark);
+            border: none;
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 100; 
+            transition: all 0.3s ease;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .slider-arrow:hover { background-color: var(--primary-red); color: white; }
+        .prev { left: 20px; }
+        .next { right: 20px; }
+
+        /* SLIDER BOX DESIGNS */
+        /* Slide 1: Left Side, Glass Effect */
+        .slide-1-box {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            width: 450px;
+            padding: 40px;
+            background: rgba(255, 252, 249, 0.6);
+            backdrop-filter: blur(10px); 
+            border-radius: 10px;
+            border: 1px solid rgba(212, 163, 115, 0.5);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        /* Slide 2: Left Side, Clean White Paper */
+        .slide-2-box {
+            position: absolute;
+            top: 50%;
+            left: 15%;
+            transform: translateY(-50%);
+            width: 400px;
+            padding: 50px 40px;
+            background-color: #FFF8F0;
+            border: 1px solid #D4A373;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Slide 3: Center, Torn Paper Vibe */
+        .slide-3-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 550px;
+            padding: 40px 60px;
+            background-color: rgba(255, 252, 249, 0.9);
+            border-radius: 15px;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Slide 4: Right Side, Dark Burgundy */
+        .slide-4-box {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            left: auto;
+            transform: translateY(-50%);
+            width: 450px;
+            padding: 60px 40px;
+            text-align: center;
+            background-color: rgba(86, 3, 25, 0.85);
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        /* TYPOGRAPHY */
+        .luxury-hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--burgundy);
+            line-height: 1.1;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .highlight-script {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: var(--primary-red);
+            text-transform: none;
+            display: block;
+            margin-top: -10px;
+        }
+        .tiny-gold-title {
+            display: block;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: #D4A373;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .magazine-desc {
+            color: rgba(255, 255, 255, 0.9);
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 20px 0 30px;
+            letter-spacing: 1px;
+        }
+
+        /* LINK OVERLAY & BUTTON */
+        .full-slide-link { display: block; width: 100%; height: 100%; z-index: 10; position: relative; }
+
+        .btn-luxury-cute {
+            position: relative; display: inline-block; padding: 16px 35px;
+            background: linear-gradient(135deg, #e5b2a4 0%, #d18e82 50%, #b57367 100%);
+            color: white; font-family: 'Lato', sans-serif; font-weight: 700;
+            font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
+            text-decoration: none; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 20px rgba(181, 115, 103, 0.4);
+            transition: all 0.4s ease; overflow: hidden;
+        }
+        .btn-luxury-cute:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(181, 115, 103, 0.6);
+        }
+
+        /* CTA STRIP */
+        .cta-strip {
+            width: 100%; height: 60px;
+            background: linear-gradient(90deg, #560319 0%, #D34836 100%);
+            display: flex; align-items: center; justify-content: center;
+            position: relative; z-index: 10;
+        }
+        .cta-text { color: white; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; letter-spacing: 2px; margin: 0; }
+        
+        /* NAVBAR (Basic Style for Context) */
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: white; position: fixed; width: 100%; top: 0; z-index: 999; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .nav-logo img { height: 50px; }
+        .nav-menu { display: flex; list-style: none; gap: 20px; }
+        .nav-link { color: #333; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
+        .search-container { display: flex; align-items: center; }
+        #search-box { display: none; padding: 5px; border: 1px solid #ccc; }
+        
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero { height: 100vh; }
+            .slide-1-box, .slide-2-box, .slide-3-box, .slide-4-box {
+                width: 90% !important;
+                left: 50% !important;
+                right: auto !important;
+                top: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                padding: 30px 20px !important;
+                text-align: center !important;
+            }
+            .luxury-hero-title { font-size: 2.2rem; }
+            .highlight-script { font-size: 3.5rem; }
+            .nav-menu { display: none; } /* Simplified menu hiding for demo */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="Homepage.html" class="nav-logo">
+            <img src="images/slimparislogo.png" alt="SlimParis">
+        </a>
+        <ul class="nav-menu">
+            <li><a href="#" class="nav-link">Home</a></li>
+            <li><a href="#" class="nav-link">About Us</a></li>
+            <li><a href="#" class="nav-link">Services</a></li>
+            <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="search-container">
+            <i class="fas fa-search" style="cursor:pointer;" onclick="alert('Search clicked')"></i>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-slider">
+
+            <div class="slide active" style="background-image: url('images/slider33.png');">
+                <div class="slide-1-box">
+                    <span class="tiny-gold-title">WELCOME TO SLIM PARIS</span>
+                    <h1 class="luxury-hero-title">Sculpt Your <br><span class="highlight-script">Confidence</span></h1>
+                    <a href="#" class="btn-luxury-cute">DISCOVER OUR STORY</a>
+                </div>
+            </div>
+            
+            <div class="slide" style="background-image: url('images/slider_promo.png');">
+                <div class="slide-2-box">
+                    <span class="tiny-gold-title">SPECIAL OFFERS</span>
+                    <h2 class="luxury-hero-title" style="font-size: 2.5rem;">Exclusive <br><span class="highlight-script">Promotion</span></h2>
+                    <a href="#" class="btn-luxury-cute">CLICK HERE TO KNOW MORE</a>
+                </div>
+            </div>
+
+            <div class="slide" style="background-image: url('images/hero_servicesdetail2.png');">
+                <div class="slide-3-box">
+                    <span class="tiny-gold-title">OUR TREATMENTS</span>
+                    <h2 class="luxury-hero-title">Professional <br><span class="highlight-script">Services</span></h2>
+                    <a href="#" class="btn-luxury-cute">EXPLORE ALL SERVICES</a>
+                </div>
+            </div>
+
+            <div class="slide" style="background-image: url('images/slider4.png');">
+                <div class="slide-4-box">
+                    <span class="tiny-gold-title" style="color: #D4A373;">THE SLIM PARIS DIFFERENCE</span>
+                    <h2 class="luxury-hero-title" style="color: white;">Visible <br><span class="highlight-script" style="color: #D4A373;">Proof</span></h2>
+                    <p class="magazine-desc">Experience professional body realignment and sculpting results that speak for themselves.</p>
+                    <a href="#" class="btn-luxury-cute">EXPLORE TRANSFORMATIONS</a>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="slider-arrow prev" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-arrow next" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
+    </section>
+
+    <section class="cta-strip">
+        <h3 class="cta-text">"MORE THAN JUST A PLACE FOR SLIMMING"</h3>
+    </section>
+
+    <script>
+        // SLIDER LOGIC
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const heroSection = document.querySelector('.hero'); 
+        let slideInterval; 
+
+        function startAutoSlide() {
+            clearInterval(slideInterval); 
+            slideInterval = setInterval(autoSlide, 6000); // 6 Seconds
+        }
+
+        startAutoSlide();
+
+        function showSlide(index) {
+            if (index >= slides.length) currentSlide = 0;
+            else if (index < 0) currentSlide = slides.length - 1;
+            else currentSlide = index;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide].classList.add('active');
+        }
+
+        function autoSlide() { showSlide(currentSlide + 1); }
+
+        // Pause on hover
+        heroSection.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        heroSection.addEventListener('mouseleave', () => startAutoSlide());
+
+        // Manual Navigation
+        function moveSlide(direction) {
+            showSlide(currentSlide + direction);
+            startAutoSlide(); 
+        }
+    </script>
+</body>
+</html>

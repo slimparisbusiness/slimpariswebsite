@@ -69,7 +69,6 @@
     <!-- SLIDER -->
     <section class="hero">
         <div class="hero-slider">
-
             <!-- SLIDER 1 - ABOUT US -->
             <div class="slide active" style="background-image: url('images/slider33.png');">
                 <div class="slider-promo-container">
@@ -104,25 +103,25 @@
 
             <!-- SLIDER 3 - SERVICES -->
             <div class="slide services-slide-center" style="background-image: url('images/hero_servicesdetail2.png');">
-                <div class="slider-promo-container">
-                    <div class="brand-essence-wrapper">
-                        <span class="tiny-gold-title">OUR TREATMENTS</span>
-                        <h2 class="luxury-hero-title">Professional <br><span class="highlight-script">Services</span></h2>
-                        <a href="Services.html" class="btn-luxury-cute">
-                            <span class="sparkle"></span>
-                            EXPLORE ALL SERVICES
-                            <span class="sparkle"></span>
-                        </a>
-                    </div>
+                <div class="slider-promo-container s3-rectangular">
+                    <span class="tiny-gold-title">OUR TREATMENTS</span>
+                    <h2 class="luxury-hero-title">Professional <br><span class="highlight-script">Services</span></h2>
+                    <a href="Services.html" class="btn-luxury-cute">EXPLORE ALL SERVICES</a>
                 </div>
                 <a href="Services.html" class="full-slide-link"></a>
             </div>
 
-            <!-- SLIDER 4 - NO IDEA  -->
-            <div class="slide" style="background-image: url('images/hero4.png');"></div>
-        
+            <!-- SLIDER 4 - TESTIMONIAL  -->
+            <div class="slide" style="background-image: url('images/slider4.png');">
+                <div class="slider-promo-container s4-magazine-pos">
+                    <span class="tiny-gold-title">THE SLIM PARIS DIFFERENCE</span>
+                    <h2 class="luxury-hero-title">Visible <br><span class="highlight-script">Proof</span></h2>
+                    <p class="magazine-desc">Experience professional body realignment and sculpting results that speak for themselves.</p>
+                    <a href="Testimonial.html" class="btn-luxury-cute">EXPLORE TRANSFORMATIONS</a>
+                </div>
+                <a href="Testimonial.html" class="full-slide-link"></a>
+            </div>
         </div>
-
         <button class="slider-arrow prev" onclick="moveSlide(-1)">
             <i class="fas fa-chevron-left"></i>
         </button>
@@ -134,7 +133,6 @@
     <!-- BANNER -->
     <section class="cta-strip">
         <h3 class="cta-text">"MORE THAN JUST A PLACE FOR SLIMMING"</h3>
-        <!-- <a href="https://wa.me/60102353737" target="_blank" class="btn-white">Book Appointment Now</a> -->
     </section>
 
     <!-- MALAYSIA NO1 -->
@@ -663,7 +661,7 @@
                 <div class="social-icons-row">
                     <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="sc-icon"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="sc-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="sc-icon"><span style="font-weight:bold; font-size: 0.8em;">小</span></a> <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="sc-icon"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099?xhsshare=CopyLink&appuid=62f739c0000000001f016ec3&apptime=1707273346" target="_blank"  class="sc-icon"><span style="font-weight:bold; font-size: 0.8em;">小</span></a> <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="sc-icon"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
         </div>
@@ -891,7 +889,15 @@
             // Optional: Scroll back up slightly so they don't get lost
             document.querySelector('.awards-section-deco').scrollIntoView({behavior: 'smooth'});
         }
-    }
+        }
+
+        // 5. Manual Arrow Controls
+        function moveSlide(direction) {
+            showSlide(currentSlide + direction);
+            startAutoSlide(); // Resets the timer so it doesn't jump immediately
+        }
+
+    
     </script>
 </body>
 </html>
