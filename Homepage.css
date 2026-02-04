@@ -63,13 +63,12 @@ h1, h2, h3, h4 {
 /* =========================================
    3. HERO SECTION (Main Slider) - ENHANCED
    ========================================= */
-
 .hero {
     position: relative;
     height: 86vh;
     width: 100%;
     overflow: hidden;
-    background-color: #FFF8F0;
+    background-color: var(--burgundy); /* The "Frame" color */
     z-index: 1;
 }
 
@@ -87,12 +86,14 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
+    /* WEBSITE ONLY: Show full photo, no zoom */
+    background-size: contain; 
     background-position: center;
     background-repeat: no-repeat;
+    background-color: var(--burgundy); 
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
     z-index: 1;
 }
 
@@ -333,32 +334,43 @@ h1, h2, h3, h4 {
     margin-top: -15px;
 }
 
-/* SLIDER 4: Magazine Layout */
+/* SLIDER 4: Magazine Layout - SMALLER & CENTERED */
 .s4-magazine-pos {
     position: absolute !important;
-    right: 8% !important;
-    left: auto !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    max-width: 450px !important;
-    padding: 50px !important;
+    left: 50% !important;
+    top: 45% !important; 
+    transform: translate(-50%, -50%) !important;
+    
+    /* 1. SMALLER WIDTH: Reduced from 700px to 550px */
+    max-width: 550px !important; 
+    width: 60% !important;
+    
+    /* 2. SMALLER PADDING: Reduced from 30px 60px to 20px 40px */
+    padding: 20px 40px !important; 
+    
     text-align: center !important;
-    background: rgba(255, 252, 249, 0.15) !important;
+    background: rgba(255, 252, 249, 0.2) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
 
+/* 3. BUTTON FIX: Keep the lower margin so it still clears the photos */
+.s4-magazine-pos .btn-luxury-cute {
+    margin-top: 30px !important; /* Reduced slightly to match smaller box */
+    display: inline-block;
+}
+
 .s4-magazine-pos .luxury-hero-title {
     color: white !important;
-    font-size: 3.5rem !important;
+    font-size: 2.5rem !important; /* Reduced font size to fit smaller box */
     text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
 }
 
 .s4-magazine-pos .highlight-script {
     color: var(--accent-gold) !important;
-    font-size: 5rem !important;
-    margin-top: -20px;
+    font-size: 3.8rem !important; /* Reduced script size */
+    margin-top: -10px;
 }
 
 .magazine-desc {
@@ -368,6 +380,21 @@ h1, h2, h3, h4 {
     line-height: 1.7;
     margin: 20px 0 30px;
     letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    /* 1. Keep your existing solid color rule for all slides */
+    .slide {
+        background-image: none !important; 
+        background-color: var(--burgundy) !important; 
+    }
+
+    /* 2. ADD THIS: Force Slider 1 to show the image on mobile */
+    .slide:nth-child(1) {
+        background-image: url('images/slider1.png') !important;
+        background-size: cover !important; /* This keeps it full screen/zoomed */
+        background-position: center !important;
+    }
 }
 
 /* Mobile Adjustments */
@@ -1517,3 +1544,236 @@ h1, h2, h3, h4 {
         font-size: 3.5rem !important; /* Smaller script font */
     }
 }
+
+/* =========================================
+   MOBILE REDESIGN: SLIDE 1 (BRAND ESSENCE)
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. Center the box perfectly */
+    .slide.active .slider-promo-container {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 85% !important;
+        max-width: 350px !important;
+        display: block !important;
+        z-index: 100;
+    }
+
+    /* 2. Style the Slide 1 Box */
+    .brand-essence-wrapper {
+        position: relative !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        padding: 35px 20px !important;
+        background: rgba(255, 252, 249, 0.95) !important; /* Brighter for mobile */
+        border: 1px solid var(--accent-gold) !important;
+        border-radius: 15px !important;
+        text-align: center !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    /* 3. Text Scaling */
+    .brand-essence-wrapper .tiny-gold-title {
+        font-size: 0.75rem !important;
+        letter-spacing: 2px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .brand-essence-wrapper .luxury-hero-title {
+        font-size: 1.8rem !important;
+        color: var(--burgundy) !important;
+        line-height: 1.2 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .brand-essence-wrapper .highlight-script {
+        font-size: 2.8rem !important;
+        display: block !important;
+        margin-top: 5px !important;
+    }
+
+    /* 4. Button Scaling */
+    .brand-essence-wrapper .btn-luxury-cute {
+        padding: 14px 25px !important;
+        font-size: 0.8rem !important;
+        display: inline-block !important;
+        width: 100% !important;
+    }
+}
+
+/*  =========================================
+    MOBILE REDESIGN: SLIDER 2 (PROMOTION)
+    ========================================= */
+    @media (max-width: 768px) {
+    /* 1. Ensure the Slide container fills the height properly */
+    .promo-slide {
+        background-image: none !important;
+        background-color: var(--burgundy) !important;
+        height: 500px !important; /* Matches your hero height */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* 2. Center the content box and fix bottom-heavy spacing */
+    .promo-slide .brand-essence-wrapper {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important; /* Reset these so Flexbox can center it */
+        width: 100% !important;
+        padding: 45px !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        text-align: center !important;
+    }
+
+    /* 3. Tighten the text spacing */
+    .promo-slide .luxury-hero-title {
+        color: white !important;
+        font-size: 2.2rem !important;
+        line-height: 1.1 !important;
+        margin: 10px 0 !important; /* Smaller margin to lift the button up */
+    }
+
+    .promo-slide .highlight-script {
+        font-size: 3.5rem !important;
+        margin-bottom: 20px !important; /* Space between text and button */
+    }
+
+    /* 4. Fix Button positioning */
+    .promo-slide .btn-luxury-cute {
+        display: inline-block !important;
+        background: white !important;
+        color: var(--burgundy) !important;
+        padding: 14px 30px !important;
+        border-radius: 50px !important; /* Rounded pill style looks cleaner here */
+        width: auto !important;
+        min-width: 200px;
+    }
+}
+    /* =========================================
+       MOBILE REDESIGN: SLIDER 3 (SOLID BG)
+       ========================================= */
+    @media (max-width: 768px){
+    /* 1. Remove the messy background photo */
+    .services-slide-center {
+        background-image: none !important;
+        background-color: var(--bg-cream) !important; /* Elegant Cream background */
+        height: 500px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* 2. Style the Slide 3 Box */
+    .services-slide-center .slider-promo-container.s3-rectangular {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        padding: 50px 30px !important;
+        text-align: center !important;
+    }
+
+    /* 3. Text Colors (Dark Burgundy on Cream) */
+    .s3-rectangular .tiny-gold-title {
+        color: var(--accent-gold) !important;
+        font-size: 0.8rem !important;
+        letter-spacing: 3px !important;
+    }
+
+    .s3-rectangular .luxury-hero-title {
+        color: var(--burgundy) !important;
+        font-size: 2.2rem !important;
+        line-height: 1.1 !important;
+        margin: 10px 0 !important;
+    }
+
+    .s3-rectangular .highlight-script {
+        color: var(--primary-red) !important;
+        font-size: 3.5rem !important;
+        margin-top: 0 !important;
+        display: block !important;
+    }
+
+    /* 4. Button Fix */
+    .s3-rectangular .btn-luxury-cute {
+        display: inline-block !important;
+        background: var(--burgundy) !important; /* Burgundy button pops on Cream */
+        color: white !important;
+        border-radius: 50px !important;
+        width: auto !important;
+        min-width: 220px;
+        margin-top: 20px;
+    }
+}
+
+/* =========================================
+   SLIDE 4: THE "TARIK ATAS" NUCLEAR FIX
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. Force Slide 4 to align everything to the TOP */
+    .hero-slider .slide:nth-child(4) {
+        background-image: none !important; 
+        background-color: var(--burgundy) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important; /* Pulls content to the top */
+        align-items: center !important;
+        height: 550px !important;
+        /* Increase this number to move it down, decrease to move it UP */
+        padding-top: 150px !important; 
+    }
+
+    /* 2. Reset the box so it stops following the desktop "Center" rules */
+    .hero-slider .slide:nth-child(4) .s4-magazine-pos {
+        position: relative !important;
+        top: 0 !important;            /* Kills the desktop 50% drop */
+        transform: none !important;    /* Kills the desktop centering shift */
+        left: 0 !important;
+        right: auto !important;
+        margin: 0 auto !important;
+        width: 90% !important;
+        max-width: 320px !important;
+        background: transparent !important;
+        border: none !important;
+        text-align: center !important;
+        padding: 0 !important;
+    }
+
+    /* 3. Spacing for Slide 4 text */
+    .s4-magazine-pos .luxury-hero-title {
+        font-size: 1.8rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    .s4-magazine-pos .highlight-script {
+        font-size: 3rem !important;
+        margin-top: -5px !important;
+    }
+
+    .s4-magazine-pos .magazine-desc {
+        margin: 10px auto 20px !important;
+        line-height: 1.4 !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* 4. Ensure button is visible and not cut off */
+    .s4-magazine-pos .btn-luxury-cute {
+        display: inline-block !important;
+        width: 100% !important;
+        max-width: 240px !important;
+        padding: 12px 20px !important;
+    }
+}
+

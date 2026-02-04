@@ -267,7 +267,7 @@ h1, h2, h3, h4 {
 /* FIXED RED BUTTON (VISIBLE) */
 .btn-book-now {
     /* RED GRADIENT BACKGROUND */
-    background: linear-gradient(135deg, #D34836 0%, #ff6b5b 100%);
+    background: linear-gradient(135deg, #25D366 0%, #04a226 100%);
     color: white !important;
     box-shadow: 0 10px 30px rgba(211, 72, 54, 0.3);
     border: 3px solid #fff;
@@ -287,8 +287,8 @@ h1, h2, h3, h4 {
 
 .btn-book-now:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(211, 72, 54, 0.4);
-    background: linear-gradient(135deg, #ff6b5b 0%, #D34836 100%);
+    box-shadow: 0 20px 40px #04a226;
+    background: linear-gradient(135deg, #128c43 0%, #25D366 100%);
 }
 
 .btn-book-now i {
@@ -840,3 +840,4 @@ h1, h2, h3, h4 {
     
     .long-results .result-card { height: 550px; }
 }
+

@@ -72,7 +72,7 @@
             <p>SUCCESS RATE</p>
         </div>
         <div class="stat-item">
-            <h2 class="stat-number">4.9</h2>
+            <h2 class="stat-number">5.0</h2>
             <p>AVERAGE RATING</p>
         </div>
         <div class="stat-item">
@@ -556,43 +556,50 @@
     });
 
     document.addEventListener('DOMContentLoaded', () => {
-    const stats = document.querySelectorAll('.stat-number');
+        const stats = document.querySelectorAll('.stat-number');
 
-    // --- NEW SETUP STEP ---
-    // This part reads your HTML number (e.g., 2000), remembers it, 
-    // and resets the text to "0" so it can animate up.
-    stats.forEach(stat => {
-        const startValue = stat.innerText; // Read "2000"
-        stat.setAttribute('data-target', startValue); // Save it to memory
-        stat.innerText = '0'; // Change screen to "0"
-    });
-
-    const countUp = (el) => {
-        const target = parseFloat(el.getAttribute('data-target'));
-        const count = parseFloat(el.innerText);
-        
-        // Smart speed logic (Fast for big numbers, Slow for decimals)
-        const increment = target < 10 ? target / 30 : target / 100; 
-
-        if (count < target) {
-            el.innerText = (count + increment).toFixed(target % 1 === 0 ? 0 : 1);
-            setTimeout(() => countUp(el), 20);
-        } else {
-            el.innerText = target;
-        }
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                countUp(entry.target);
-                observer.unobserve(entry.target); 
-            }
+        stats.forEach(stat => {
+            // We capture the string exactly as you wrote it: "5.0"
+            const originalValue = stat.innerText; 
+            stat.setAttribute('data-target', originalValue);
+            
+            // We check if it has a decimal point so we know how to format it later
+            const hasDecimal = originalValue.includes('.');
+            stat.setAttribute('data-is-decimal', hasDecimal);
+            
+            stat.innerText = '0';
         });
-    }, { threshold: 0.5 });
 
-    stats.forEach(stat => observer.observe(stat));
-});
+        const countUp = (el) => {
+            const target = parseFloat(el.getAttribute('data-target'));
+            const isDecimal = el.getAttribute('data-is-decimal') === 'true';
+            const count = parseFloat(el.innerText);
+            
+            // Speed logic
+            const increment = target < 10 ? target / 40 : target / 100; 
+
+            if (count < target) {
+                // While counting, if it's a decimal type, use toFixed(1)
+                el.innerText = (count + increment).toFixed(isDecimal ? 1 : 0);
+                setTimeout(() => countUp(el), 20);
+            } else {
+                // FINAL STEP: If it's a decimal type, force the .0 back on
+                el.innerText = isDecimal ? target.toFixed(1) : target;
+            }
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    countUp(entry.target);
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, { threshold: 0.5 });
+
+        stats.forEach(stat => observer.observe(stat));
+    });
+    
     </script>
 </body>
 </html>
