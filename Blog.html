@@ -54,148 +54,407 @@
         </div>
     </nav>
 
+    <!-- Floating date badge -->
+    <div class="floating-date">
+        <div class="date-circle">
+            <span class="date-day">06</span>
+            <span class="date-month">FEB</span>
+        </div>
+    </div>
+
+    <!-- HERO -->
     <section class="blog-header reveal">
-        <p class="subtitle">Welcome to</p>
-        <h1 class="page-title">The Slim Paris <span class="script-font">Journal</span></h1>
-        <p class="desc">Expert advice on body sculpting, wellness myths, and the elegant Parisian lifestyle.</p>
+        <div class="hero-container">
+            <div class="hero-left">
+                <div class="vertical-text">JOURNAL</div>
+                <div class="decorative-shape shape-1"></div>
+            </div>
+            
+            <div class="hero-center">
+                <div class="logo-mark">
+                    <img src="images/slimparislogo.png" alt="SlimParis Logo" class="sp-logo-img">
+                </div>
+                
+                <p class="subtitle">Welcome to</p>
+                <h1 class="page-title">
+                    <span class="title-main">The Slim Paris</span>
+                    <span class="title-script">Journal</span>
+                </h1>
+                <p class="desc">Expert advice on body sculpting, wellness myths,<br>and the elegant lifestyle.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="total-articles">12</span>
+                        <span class="stat-label">Articles</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">2026</span>
+                        <span class="stat-label">Edition</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-right">
+                <div class="decorative-shape shape-2"></div>
+                <div class="year-badge">2026</div>
+            </div>
+        </div>
     </section>
 
-    <section class="netflix-section reveal">
-        <div class="section-top">
-            <h2 class="section-title">Trending <span class="highlight">Now</span></h2>
-            <div class="scroll-arrows">
-                <button class="arrow-btn left" onclick="scrollNetflix('left')"><i class="fas fa-chevron-left"></i></button>
-                <button class="arrow-btn right" onclick="scrollNetflix('right')"><i class="fas fa-chevron-right"></i></button>
+    <!-- FILTER BAR -->
+    <section class="filter-section reveal">
+        <div class="filter-container">
+            <div class="filter-left">
+                <h3 class="filter-title">Browse by Category</h3>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Stories</button>
+                <button class="filter-btn" data-category="media">Media Talk</button>
+                <button class="filter-btn" data-category="founder">Founder Story</button>
+                <button class="filter-btn" data-category="problem">Problem Solver</button>
+                <button class="filter-btn" data-category="lifestyle">Lifestyle</button>
+                <button class="filter-btn" data-category="health">Health</button>
+                <!-- <button class="filter-btn" data-category="myth">Myth Busting</button> -->
+                <button class="filter-btn" data-category="events">Events</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED STORY -->
+    <section class="featured-section reveal">
+        <div class="section-label">
+            <span class="label-line"></span>
+            <span class="label-text">Featured This Month</span>
+            <span class="label-line"></span>
+        </div>
+        
+        <div class="featured-card" data-category="media">
+            <div class="featured-grid">
+                <div class="featured-image">
+                    <img src="images/SP2.png" alt="CITYPlus Interview">
+                    <div class="featured-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Featured</span>
+                    </div>
+                </div>
+                <div class="featured-content">
+                    <div class="featured-meta">
+                        <span class="featured-cat">Media Talk</span>
+                        <span class="featured-date">February 2026</span>
+                    </div>
+                    <h2 class="featured-headline">Redefining The Ideal Body: Curve Beauty vs. Scale Numbers</h2>
+                    <p class="featured-excerpt">An in-depth conversation about modern beauty standards and the shift from weight-focused thinking to celebrating natural curves. Dr. Sttanny shares her expert perspective on how true beauty transcends numbers on a scale.</p>
+                    <div class="featured-tags">
+                        <span class="tag">Body Positivity</span>
+                        <span class="tag">Expert Insight</span>
+                        <span class="tag">Media</span>
+                    </div>
+                    
+                    <div class="featured-actions">
+                        <a href="artical-mediatalk.html" class="featured-btn read-btn">
+                            <i class="fas fa-book-open"></i>
+                            <span>Read Article</span>
+                        </a>
+                        
+                        <a href="https://www.youtube.com/watch?v=VikzZ303l3E" target="_blank" class="featured-btn watch-btn">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Watch Interview</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALL ARTICLES GRID (Scalable) -->
+    <section class="articles-section reveal">
+        <div class="section-header">
+            <h2 class="section-title">All <span class="title-script">Articles</span></h2>
+            <div class="view-toggle">
+                <!-- <button class="toggle-btn active" data-view="grid" title="Grid View">
+                    <i class="fas fa-th"></i>
+                </button> -->
+                <!-- <button class="toggle-btn" data-view="list" title="List View">
+                    <i class="fas fa-list"></i>
+                </button> -->
             </div>
         </div>
 
-        <!-- NETFLIX SCROLLER -->
-        <div class="netflix-scroller" id="netflixScroller">
-    
-            <a href="https://www.youtube.com/watch?v=VikzZ303l3E" target="_blank" class="netflix-card">
-                <div class="netflix-img"><img src="images/SP2.png" alt="CITYPlus Interview"></div> 
-                <div class="netflix-info">
-                    <span class="tag">Media Talk</span>
-                    <h3>Redefining The Ideal Body: Curve Beauty vs. Scale Numbers</h3>
-                </div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=-NAI5XkstDw" target="_blank" class="netflix-card">
-                <div class="netflix-img"><img src="images/SP1.png" alt="Dr. Sttanny Journey"></div> 
-                <div class="netflix-info">
-                    <span class="tag">Founder Story</span>
-                    <h3>20 Years in the Making: How a Car Accident Inspired Slim Paris</h3>
-                </div>
-            </a>
-
-            <a href="ByeByeBelly.html" class="netflix-card">
-                <div class="netflix-img"><img src="images/testing.png" alt="Mummy Tummy"></div> 
-                <div class="netflix-info">
-                    <span class="tag">Problem Solver</span>
-                    <h3>Mummy Tummy: Why Mothers Shouldn't Just 'Eat Less' to Bounce Back</h3>
-                </div>
-            </a>
-
-            <a href="NecklineSculpting.html" class="netflix-card">
-                <div class="netflix-img"><img src="images/testing.png" alt="Tech Neck"></div> 
-                <div class="netflix-info">
-                    <span class="tag">Problem Solver</span>
-                    <h3>The Hunchback Cure: Improving Presence and气场 (Aura)</h3>
-                </div>
-            </a>
-
-            <a href="NecklineSculpting.html" class="netflix-card">
-                <div class="netflix-img"><img src="images/testing.png" alt="Tech Neck"></div> 
-                <div class="netflix-info">
-                    <span class="tag">DUPLICATION</span>
-                    <h3>DUP DUP DUP</h3>
-                </div>
-            </a>
-
-            <a href="NecklineSculpting.html" class="netflix-card">
-                <div class="netflix-img"><img src="images/testing.png" alt="Tech Neck"></div> 
-                <div class="netflix-info">
-                    <span class="tag">DUPLICATION</span>
-                    <h3>DUP DUP DUP</h3>
-                </div>
-            </a>
-
-            <a href="NecklineSculpting.html" class="netflix-card">
-                <div class="netflix-img"><img src="images/testing.png" alt="Tech Neck"></div> 
-                <div class="netflix-info">
-                    <span class="tag">DUPLICATION</span>
-                    <h3>DUP DUP DUP</h3>
-                </div>
-            </a>
+        <div class="articles-grid" id="articlesGrid">
             
+            <!-- Article 1 -->
+            <article class="article-card" data-category="founder">
+                <a href="artical-shanghaitalk.html" class="card-link">
+                    <div class="card-image">
+                        <img src="images/SP1.png" alt="Dr. Sttanny Journey">
+                        <div class="image-overlay">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Founder Story</span>
+                        <h3 class="card-title">20 Years in the Making: How a Car Accident Inspired Slim Paris</h3>
+                        <p class="card-excerpt">The remarkable journey of Dr. Sttanny and how a life-changing accident led to the creation of Slim Paris.</p>
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 8 min read</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i> Feb 2026</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- ARTICLE 2 -->
+            <article class="article-card" data-category="health">
+                <a href="blog1.html" class="card-link">
+                    <div class="card-image">
+                        <img src="imagesSP/fatvsmuscle2.png" alt="Fat vs Muscle Volume">
+                        <div class="image-overlay">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Health</span>
+                        <h3 class="card-title">减肥不是减重，是减脂 (Fat Loss vs. Weight Loss)</h3>
+                        <p class="card-excerpt">Discover why the scale is lying to you and why body dimensions are the ultimate secret to a Parisian silhouette.</p>
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 4 min read</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i> Feb 2026</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="article-card" data-category="problem">
+                <a href="ByeByeBelly.html" class="card-link">
+                    <div class="card-image">
+                        <img src="images/testing.png" alt="Mummy Tummy">
+                        <div class="image-overlay">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Problem Solver</span>
+                        <h3 class="card-title">Mummy Tummy: Why Mothers Shouldn't Just 'Eat Less'</h3>
+                        <p class="card-excerpt">Understanding postpartum bodies and why traditional weight loss advice fails new mothers.</p>
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 6 min read</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i> Feb 2026</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="article-card" data-category="problem">
+                <a href="NecklineSculpting.html" class="card-link">
+                    <div class="card-image">
+                        <img src="images/testing.png" alt="Tech Neck">
+                        <div class="image-overlay">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Problem Solver</span>
+                        <h3 class="card-title">The Hunchback Cure: Improving Presence and Aura (气场)</h3>
+                        <p class="card-excerpt">How posture affects your confidence and the treatments that can help restore your natural elegance.</p>
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 7 min read</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i> Jan 2026</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="article-card" data-category="lifestyle">
+                <a href="Article.html" class="card-link">
+                    <div class="card-image">
+                        <img src="images/hero1.png" alt="Parisian Diet">
+                        <div class="image-overlay">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Lifestyle</span>
+                        <h3 class="card-title">The Art of the Parisian Diet</h3>
+                        <p class="card-excerpt">How French women maintain their figure while embracing the café culture and joie de vivre.</p>
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 5 min read</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i> Jan 2026</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="article-card" data-category="health">
+                <a href="Article.html" class="card-link">
+                    <div class="card-image">
+                        <img src="images/hero1.png" alt="Bloating">
+                        <div class="image-overlay">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Health</span>
+                        <h3 class="card-title">Bloating vs. Fat: Understanding Water Retention</h3>
+                        <p class="card-excerpt">How to identify water retention and drain it for immediate visible results.</p>
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 8 min read</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i> Jan 2026</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 7 -->
+            <article class="article-card" data-category="myth">
+                <a href="Article.html" class="card-link">
+                    <div class="card-image">
+                        <img src="images/hero1.png" alt="Cellulite">
+                        <div class="image-overlay">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Myth Busting</span>
+                        <h3 class="card-title">The Truth About Cellulite</h3>
+                        <p class="card-excerpt">It's not fat, it's fascia. Discover the real science behind cellulite and effective treatments.</p>
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 6 min read</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i> Dec 2025</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 8 -->
+            <article class="article-card" data-category="events">
+                <a href="Article.html" class="card-link">
+                    <div class="card-image">
+                        <img src="images/hero1.png" alt="Wedding">
+                        <div class="image-overlay">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Events</span>
+                        <h3 class="card-title">The Bride-To-Be Guide</h3>
+                        <p class="card-excerpt">Your 3-month timeline for achieving perfect wedding day arms and back definition.</p>
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 10 min read</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i> Dec 2025</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 8  -->
+            <article class="article-card" data-category="events">
+                <a href="Article.html" class="card-link">
+                    <div class="card-image">
+                        <img src="images/hero1.png" alt="Wedding">
+                        <div class="image-overlay">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Events</span>
+                        <h3 class="card-title">The Bride-To-Be Guide</h3>
+                        <p class="card-excerpt">Your 3-month timeline for achieving perfect wedding day arms and back definition.</p>
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 10 min read</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i> Dec 2025</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
         </div>
 
+        <!-- Results Counter -->
+        <div class="results-counter">
+            <p>Showing <span id="showing-count">8</span> of <span id="total-count">8</span> articles</p>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-section" id="loadMoreSection" style="display: none;">
+            <button class="load-more-btn" id="loadMoreBtn">
+                <span>Load More Articles</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+
+        <!-- Pagination (Alternative to Load More) -->
+        <div class="pagination" id="pagination" style="display: none;">
+            <button class="page-btn" data-page="prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="page-num active" data-page="1">1</button>
+            <button class="page-num" data-page="2">2</button>
+            <button class="page-num" data-page="3">3</button>
+            <span class="page-dots">...</span>
+            <button class="page-num" data-page="10">10</button>
+            <button class="page-btn" data-page="next"><i class="fas fa-chevron-right"></i></button>
+        </div>
     </section>
 
-    <section class="pinterest-section reveal">
-        <div class="pinterest-header">
-            <h2 class="section-title">Explore <span class="script-font">The Collection</span></h2>
+    <!-- Artistic Divider -->
+    <div class="artistic-divider reveal">
+        <div class="divider-content">
+            <div class="divider-ornament">
+                <div class="ornament-circle"></div>
+                <div class="ornament-lines">
+                    <span class="orn-line"></span>
+                    <span class="orn-line"></span>
+                    <span class="orn-line"></span>
+                </div>
+            </div>
+            <!-- <h2 class="divider-text">L'Art de la Silhouette</h2> -->
+            <h2 class="divider-text">Sculpting Confidence</h2>
+            <div class="divider-ornament">
+                <div class="ornament-lines">
+                    <span class="orn-line"></span>
+                    <span class="orn-line"></span>
+                    <span class="orn-line"></span>
+                </div>
+                <div class="ornament-circle"></div>
+            </div>
         </div>
-        
-        <div class="pinterest-grid">
-            
-            <a href="#" class="pin-card">
-                <img src="images/hero1.png" alt="Parisian Diet">
-                <div class="pin-content">
-                    <span class="pin-cat">Lifestyle</span>
-                    <h4>小红书</h4>
-                    <p>How French women maintain their figure while enjoying croissants.</p>
-                    <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
+    </div>
 
-            <a href="#" class="pin-card">
-                <img src="images/hero1.png" alt="Cellulite">
-                <div class="pin-content">
-                    <span class="pin-cat">Myth Busting</span>
-                    <h4>The Truth About Cellulite</h4>
-                    <p>It’s not fat, it’s fascia. Here is why that matters for your treatment.</p>
-                    <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
-
-            <a href="#" class="pin-card">
-                <img src="images/hero1.png" alt="Water Retention">
-                <div class="pin-content">
-                    <span class="pin-cat">Health</span>
-                    <h4>Bloating vs. Fat</h4>
-                    <p>How to tell the difference and drain water retention fast.</p>
-                    <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
-
-            <a href="#" class="pin-card">
-                <img src="images/hero1.png" alt="Wedding Prep">
-                <div class="pin-content">
-                    <span class="pin-cat">Events</span>
-                    <h4>The Bride-To-Be Guide</h4>
-                    <p>The 3-month timeline for perfect wedding day arms and back.</p>
-                    <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
-
-            <a href="#" class="pin-card">
-                <img src="images/hero1.png" alt="Sleep">
-                <div class="pin-content">
-                    <span class="pin-cat">Wellness</span>
-                    <h4>Sleep & Slimming</h4>
-                    <p>Why insomnia is stalling your weight loss progress.</p>
-                    <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
-
-        </div>
-    </section>
-    
+    <!-- CALL TO ACTION -->
     <section class="blog-cta reveal">
-        <h2>Ready to start your own story?</h2>
-        <a href="ContactUs.html" class="btn-book-now">Book Appointment Now</a>
+        <div class="cta-container">
+            <div class="cta-decorative-bg">
+                <div class="bg-circle circle-1"></div>
+                <div class="bg-circle circle-2"></div>
+                <div class="bg-circle circle-3"></div>
+            </div>
+            
+            <div class="cta-content">
+                <div class="cta-icon">
+                    <svg viewBox="0 0 60 60" class="icon-svg">
+                        <path d="M30 5 L55 30 L30 55 L5 30 Z" fill="none" stroke="#D34836" stroke-width="1"/>
+                    </svg>
+                </div>
+                <h2>Ready to start your own story?</h2>
+                <p class="cta-tagline">Transform your silhouette with Parisian elegance</p>
+                <a href="ContactUs.html" class="btn-book-now">
+                    <span class="btn-bg"></span>
+                    <span class="btn-text">Book Appointment Now</span>
+                    <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                </a>
+                <!-- <p class="cta-note">Complimentary consultation available</p> -->
+            </div>
+        </div>
     </section>
+
 
     <!-- FOOTER -->
     <footer class="luxury-footer">
@@ -278,98 +537,6 @@
         <div class="social-trigger"><i class="fas fa-comment-dots"></i><span class="pulse-ring"></span></div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-
-            // --- 1. NETFLIX SCROLL LOGIC (Blog Specific) ---
-            // This allows the left/right arrows to scroll the Trending section
-            window.scrollNetflix = function(direction) {
-                const container = document.getElementById('netflixScroller');
-                if (container) {
-                    const scrollAmount = 320; // Width of card + gap
-                    if (direction === 'left') {
-                        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                    } else {
-                        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                    }
-                }
-            };
-
-            // --- 2. MOBILE SERVICES DROPDOWN (Link + Arrow Logic) ---
-            const dropdownItem = document.querySelector('.dropdown');
-            if (dropdownItem) {
-                const dropdownLink = dropdownItem.querySelector('a'); // The word "Services"
-                const arrowTrigger = dropdownItem.querySelector('.arrow-trigger'); // The Button
-
-                function toggleDropdown(e) {
-                    // Only activate on mobile screens (768px or less)
-                    if (window.innerWidth <= 768) {
-                        e.preventDefault(); 
-                        e.stopPropagation();
-                        // Toggle both classes to be safe
-                        dropdownItem.classList.toggle('active'); 
-                        dropdownItem.classList.toggle('show-menu'); 
-                    }
-                }
-
-                // Apply to both the Text Link and the Arrow Button
-                if(dropdownLink) dropdownLink.addEventListener('click', toggleDropdown);
-                if(arrowTrigger) arrowTrigger.addEventListener('click', toggleDropdown);
-            }
-
-            // --- 3. HAMBURGER MENU (Main Mobile Menu) ---
-            window.toggleMenu = function() { // Expose to global scope for onclick="toggleMenu()"
-                const navMenu = document.querySelector('.nav-menu');
-                if(navMenu) navMenu.classList.toggle('active');
-            }
-
-            // --- 4. SEARCH BOX TOGGLE ---
-            window.toggleSearch = function() {
-                const sb = document.getElementById('search-box');
-                if(sb) {
-                    sb.style.display = sb.style.display === 'block' ? 'none' : 'block';
-                    if(sb.style.display === 'block') sb.focus();
-                }
-            }
-            
-            // Search "Enter" Key Logic
-            const searchBox = document.getElementById('search-box');
-            if(searchBox) {
-                searchBox.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        e.preventDefault();
-                        if (window.find && e.target.value.length > 0) {
-                            if (!window.find(e.target.value)) alert("Text not found.");
-                        }
-                    }
-                });
-            }
-
-            // --- 5. SCROLL REVEAL ANIMATION ---
-            function reveal() {
-                var reveals = document.querySelectorAll('.reveal');
-                for (var i = 0; i < reveals.length; i++) {
-                    var windowHeight = window.innerHeight;
-                    var elementTop = reveals[i].getBoundingClientRect().top;
-                    var elementVisible = 150;
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveals[i].classList.add('active');
-                    }
-                }
-            }
-            window.addEventListener('scroll', reveal);
-            reveal(); // Trigger once on load
-            
-            // --- 6. NAVIGATION ACTIVE LINK HIGHLIGHTER ---
-            // Automatically highlights "Blog" in red when on this page
-            const currentLocation = location.href;
-            const menuItem = document.querySelectorAll('.nav-link');
-            for (let i = 0; i < menuItem.length; i++) {
-                if (menuItem[i].href === currentLocation) {
-                    menuItem[i].classList.add('active');
-                }
-            }
-        });
-    </script>
+    <script src="Blog.js"></script>
 </body>
 </html>

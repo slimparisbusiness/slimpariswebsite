@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Invisible Curve | Slim Paris Journal</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Article1.css">
+</head>
+<body>
+
+    <header class="article-header reveal">
+        <div class="header-left">
+            <span class="breadcrumb">Slim Paris / Wellness Journal</span>
+            <h1 class="entry-title">The <span class="script-font">Invisible</span> Curve</h1>
+        </div>
+        <div class="header-right">
+            <p class="quote-small">"True beauty isn't just a number on a scale; it's the elegance of a silhouette that moves with confidence."</p>
+            <p><strong>— Dr. Sttanny Phong</strong></p>
+        </div>
+    </header>
+
+    <section class="hero-wrapper reveal">
+        <div class="featured-media">
+            <img src="images/hero1.png" alt="Luxury Body Sculpting">
+        </div>
+        <div class="image-accent-box">
+            L'Art de la Silhouette
+        </div>
+    </section>
+
+    <main class="article-grid">
+        <div class="vertical-brand">SLIM PARIS</div>
+
+        <div class="article-content reveal">
+            <p class="dropcap">S</p>
+            <p>Since the dawn of Parisian fashion, the curve has been the ultimate symbol of femininity. But at Slim Paris, we believe that the "perfect" curve isn't something you buy—it's something we help you reveal. Our treatments are designed not to change who you are, but to refine the masterpiece that is already there.</p>
+            
+            <p>From the delicate lines of <strong>Neckline Sculpting</strong> to the structural balance of our <strong>Thin Back</strong> treatments, every procedure follows a philosophy of 气场 (Aura). It is about the presence you command when you walk into a room.</p>
+
+            <div class="pull-quote">
+                "We don't just sculpt bodies; we restore the art of elegance."
+            </div>
+
+            <p>In this digital age of "Tech Neck" and sedentary lifestyles, our bodies often lose their natural alignment. Our job is to drain the retention, sculpt the fascia, and bring back the S-Line that defines your personal grace.</p>
+        </div>
+
+        <aside class="sidebar reveal">
+            <div class="sidebar-item">
+                <div class="sidebar-card">
+                    <h4>Next Story</h4>
+                    <p>The Secret to Lasting Lymphatic Drainage.</p>
+                    <a href="#" class="btn-luxury">Read More</a>
+                </div>
+                <div class="sidebar-card" style="background: var(--dark); color: white;">
+                    <h4 style="color: var(--gold);">Sculpt Your Story</h4>
+                    <p>Join the 20-year journey of Dr. Sttanny Phong.</p>
+                    <a href="ContactUs.html" class="btn-luxury" style="border-color: var(--gold); color: var(--gold);">Book Now</a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script>
+        // Simple Reveal Logic
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Run once on load
+    </script>
+
+</body>
+</html>

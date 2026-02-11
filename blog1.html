@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Blog | Slim Paris</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog1.css">
+</head>
+<body>
+
+     <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="Homepage.html" class="nav-logo">
+            <img src="images/slimparislogo.png" alt="SlimParis">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <ul class="nav-menu">
+            <li><a href="Homepage.html" class="nav-link">Home</a></li>
+            <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
+            <li class="dropdown">
+                <a href="Services.html" class="nav-link">Services</a>
+                <span class="arrow-trigger" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </span>
+                
+                <div class="dropdown-content services-grid">
+                    <a href="NecklineSculpting.html">Neck Line Sculpting</a>
+                    <a href="ThinBack.html">Thin Back</a>
+                    <a href="FeminineCareRejuvenation.html">Feminine Care Rejuvenation</a>
+                    <a href="HipContouringTreatment.html">Hip Contouring Treatment</a>
+                    <a href="ByeByeBelly.html">Bye Bye Belly</a>
+                    <a href="PeachButt.html">Peach Butt</a>
+                    <a href="SLineBody.html">S-Line Body Contouring</a>
+                    <a href="CoreWaist.html">Core & Waist Contouring Treatment</a>
+                    <a href="HunchBack.html">Rounded Shoulder Hunch Back</a>
+                    <a href="LegSculpting.html">Leg Sculpting</a>
+                    <a href="Face.html">Face Sculpting</a>
+                    <a href="Whitening.html">Whitening Treatment</a>
+                </div>
+
+            </li>
+            <li><a href="Testimonial.html" class="nav-link">Testimonial</a></li>
+            <li><a href="ContactUs.html" class="nav-link">Contact Us</a></li>
+            <li><a href="Blog.html" class="nav-link">Blog</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" id="search-box" placeholder="Type and hit Enter...">
+            <div class="nav-search-icon" onclick="toggleSearch()"><i class="fas fa-search"></i></div>
+        </div>
+    </nav>
+
+    <!-- BACK BUTTON -->
+    <main class="blog-container">
+        <!-- BACK BUTTON -->
+        <div class="blog-navigation">
+            <a href="Blog.html" class="btn-back">
+                <i class="fas fa-chevron-left"></i> Back to Journal
+            </a>
+            
+            <!-- ENGLISH BUTTON -->
+            <div class="lang-switcher">
+                <button id="langToggle" class="btn-luxury" onclick="toggleLanguage()">English Version</button>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <header class="blog-hero">
+            <h1 id="title-zh">减肥不是减重，是减脂</h1>
+            <h1 id="title-en" style="display:none;">Weight Loss is Fat Loss, Not Just Weight</h1>
+            <div class="meta-info">
+                <span><i class="far fa-calendar-alt"></i> February 9, 2026</span>
+                <span><i class="fas fa-video"></i> Source: WeChat Video</span>
+            </div>
+        </header>
+
+        <div class="visual-impact">
+            <div class="comparison-card">
+                <div class="img-wrapper">
+                    <img src="imagesSP/fatvsmuscle.png" alt="Fat vs Muscle Volume">
+                    <div class="overlay-text">Volume Matters</div>
+                </div>
+                <p class="caption">Same weight, different volume. Fat takes up 3x more space!</p>
+            </div>
+        </div>
+
+        <article class="blog-article">
+            <div id="content-zh" class="lang-content">
+                <div class="intro-lead">
+                    减肥它不是减重，肥它就是<strong>油</strong>，是<strong>脂肪</strong>。
+                </div>
+                
+                <div class="content-grid">
+                    <div class="text-col">
+                        <p>脂肪很轻，不压秤，但是它体积非常大，占地方。体重不变了，不代表你没有瘦，所以不要对体重太过执着。</p>
+                        <p>关键还是得看身体的维度和体质率的变化。如果你的维度变小了，说明你瘦了。</p>
+                    </div>
+                    <div class="img-col">
+                        <img src="imagesSP/iSP_tb2.png" alt="Thin Back Result" class="side-img">
+                    </div>
+                </div>
+
+                <blockquote class="fancy-quote">
+                    “我的体重真的没有明显下降，但是我的裤子肥了，我的背薄了，别人看见我都说瘦了。” — <span class="highlight">那才是真的瘦了。</span>
+                </blockquote>
+
+                <div class="pro-tip">
+                    <h4>内行人看维度，外行人看斤数</h4>
+                    <p><strong>平衡期：</strong> 它的基数是不会减的，甚至还有可能往上涨。但是你的体积缩小了，说明你是真的瘦了，皮肤收紧了。</p>
+                </div>
+            </div>
+
+            <div id="content-en" class="lang-content" style="display: none;">
+                <div class="intro-lead">
+                    Weight loss is not about the scale; "Fat" is essentially <strong>oil</strong> and <strong>lipids</strong>.
+                </div>
+
+                <div class="content-grid">
+                    <div class="text-col">
+                        <p>Fat is light and doesn't weigh much, but it has a massive volume. If your weight stays the same, it doesn't mean you haven't gotten thinner. Stop obsessing over the scale.</p>
+                        <p>The key is your body measurements and fat percentage. If your dimensions are shrinking, you are winning.</p>
+                    </div>
+                    <div class="img-col">
+                        <img src="imagesSP/iSP_tb2.png" alt="Slimming Result" class="side-img">
+                    </div>
+                </div>
+
+                <blockquote class="fancy-quote">
+                    "My weight hasn't dropped, but my pants are loose, my back is thinner, and everyone says I look slim." — <span class="highlight">That is true success.</span>
+                </blockquote>
+
+                <div class="pro-tip">
+                    <h4>Experts watch inches; Amateurs watch pounds.</h4>
+                    <p><strong>Plateau Phase:</strong> Your weight might stagnate or even rise slightly. But if your volume is shrinking, your body is tightening and fat is melting away.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script>
+    function toggleLanguage() {
+        const zh = document.getElementById('content-zh');
+        const en = document.getElementById('content-en');
+        const zhTitle = document.getElementById('title-zh');
+        const enTitle = document.getElementById('title-en');
+        const btn = document.getElementById('langToggle');
+
+        if (zh.style.display === "none") {
+            zh.style.display = "block";
+            en.style.display = "none";
+            zhTitle.style.display = "block";
+            enTitle.style.display = "none";
+            btn.innerText = "English Version";
+        } else {
+            zh.style.display = "none";
+            en.style.display = "block";
+            zhTitle.style.display = "none";
+            enTitle.style.display = "block";
+            btn.innerText = "切换至中文";
+        }
+    }
+    </script>
+
+
+
+    <!-- FOOTER -->
+    <footer class="luxury-footer">
+        <div class="footer-content">
+            
+            <div class="footer-col brand-col">
+                <img src="images/slimparislogo.png" alt="Slim Paris" class="footer-logo-white">
+                <p class="brand-desc">
+                    Where Parisian elegance meets modern body sculpting technology. Redefine your curves, empower your confidence.
+                </p>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="AboutUs.html">Our Story</a></li>
+                    <li><a href="Services.html">Treatments</a></li>
+                    <li><a href="Promotional.html">Happenings</a></li>
+                    <li><a href="Blog.html">Wellness Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Visit Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Puchong, Selangor</li>
+                    
+                    <li><i class="fas fa-phone-alt"></i> +60 10-235 3737</li>
+                    
+                    <li><i class="fas fa-envelope"></i> info@slimparis.com.my</li>
+                    
+                    <li style="margin-top: 15px; display: block;">
+                        
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 5px;">
+                            <span style="font-weight: 700; color: #333; width: 100px;">Mon — Fri</span>
+                            <span>10am – 7pm</span>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 5px;">
+                            <span style="font-weight: 700; color: #D34836; width: 100px;">Sat / P.Hol</span>
+                            <span style="color: #D34836; font-weight: 700;">11am – 7pm</span>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="font-weight: 700; color: #333; width: 100px;">Sunday</span>
+                            <span>11am – 6pm</span>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-col social-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons-row">
+                    <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="sc-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="sc-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099?xhsshare=CopyLink&appuid=62f739c0000000001f016ec3&apptime=1707273346" target="_blank"  class="sc-icon"><span style="font-weight:bold; font-size: 0.8em;">小</span></a> <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="sc-icon"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright-text">
+                <p>SPG WELLNESS CODE SDN. BHD. 20231101012 (1504501X)</p>
+                <p>&copy; 2026 Slim Paris. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY SOCIAL MENU -->
+    <div class="sticky-social-menu">
+        <div class="social-list">
+            <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-bubble tiktok" title="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+
+            <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099?xhsshare=CopyLink&appuid=62f739c0000000001f016ec3&apptime=1707273346" class="social-bubble xhs" title="Xiaohongshu">
+                <span style="font-weight:bold; font-size:14px;">小红书</span>
+            </a>
+
+            <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="social-bubble fb" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="social-bubble insta" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+            <a href="https://wa.me/60102353737" target="_blank" class="social-bubble whatsapp" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+        <div class="social-trigger">
+            <i class="fas fa-comment-dots"></i>
+            <span class="pulse-ring"></span>
+        </div>
+    </div>
+    
+</body>
+</html>

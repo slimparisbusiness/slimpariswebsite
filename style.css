@@ -396,7 +396,16 @@ footer {
     display: flex;
     flex-direction: column; /* List on Top, Button on Bottom */
     align-items: center;    
-    gap: 15px;             
+    gap: 15px;   
+    height: fit-content;  
+    pointer-events: none;        
+}
+
+/* This makes the actual icons clickable again */
+.sticky-social-menu a, 
+.sticky-social-menu i,
+.sticky-social-menu img { 
+    pointer-events: auto; 
 }
 
 .social-trigger {

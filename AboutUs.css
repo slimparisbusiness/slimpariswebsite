@@ -48,6 +48,662 @@ h1, h2, h3, h4 { color: var(--primary-red); font-family: 'Playfair Display', ser
 .btn:hover { background-color: white; color: var(--primary-red); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
 /* =========================================
+   3. HERO SECTION (VIDEO VERSION) version1 
+   ========================================= */
+/* .hero { 
+    position: relative; 
+    height: 85vh; 
+    overflow: hidden; 
+    background-color: var(--burgundy); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1; 
+}
+
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--burgundy);
+    z-index: 1;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    z-index: 1;
+}
+
+.hero-video-container::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.1); 
+    z-index: 2;
+}
+
+.hero-content { 
+    position: relative; 
+    z-index: 10; 
+    width: 100%;
+}
+
+.brand-essence-wrapper {
+    background: rgba(255, 252, 249, 0.15) !important; 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 50px 70px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 15px;
+    display: inline-block;
+    text-align: center;
+}
+
+.luxury-hero-title {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 3.5rem !important;
+    color: white !important;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.highlight-script {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 5rem !important;
+    color: var(--accent-gold) !important; 
+    display: block;
+    margin-top: -10px;
+    text-transform: none;
+}
+
+.tiny-gold-title {
+    font-family: 'Lato', sans-serif !important;
+    color: var(--accent-gold) !important;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.btn-luxury-cute {
+    display: inline-block !important;
+    margin-top: 30px;
+    padding: 16px 35px !important;
+    background: var(--burgundy) !important;
+    color: white !important;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    border: 1px solid var(--accent-gold) !important;
+    transition: all 0.4s ease;
+}
+
+.btn-luxury-cute:hover {
+    background: var(--primary-red) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+} */
+
+/* option2 - split */
+/* --- THE LUXURY SPLIT HERO --- */
+/* .hero-split {
+    display: flex;
+    height: 90vh; 
+    width: 100%;
+    background-color: var(--burgundy);
+    align-items: center;
+    padding: 0 8%; 
+}
+
+.hero-video-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-video {
+    height: 80vh; 
+    width: auto;
+    border: 1px solid var(--accent-gold); 
+    padding: 10px; 
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.hero-text-side {
+    flex: 1.2;
+    padding-left: 10%;
+    text-align: left; 
+}
+
+.hero-split {
+    display: flex;
+    height: 85vh;
+    background-color: var(--burgundy);
+    align-items: center;
+    padding: 0 10%; 
+}
+
+.hero-video-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.side-video {
+    height: 75vh;
+    width: auto;
+    border: 8px solid white; 
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.hero-text-side {
+    position: relative;
+    flex: 1.2;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; 
+    background-color: var(--burgundy);
+    background: radial-gradient(circle at center, #6b0420 0%, #560319 100%);
+    overflow: hidden;
+}
+
+.hero-text-side::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--accent-gold), transparent);
+    opacity: 0.5;
+}
+
+.hero-text-side::before {
+    content: "SLIM PARIS"; 
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 15rem; 
+    color: rgba(255, 255, 255, 0.02); 
+    font-weight: 900;
+    white-space: nowrap;
+    z-index: 0;
+}
+
+.luxury-hero-title {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 4.5rem !important; 
+    color: white !important;
+    line-height: 1;
+    margin: 10px 0 !important;
+    text-align: left;
+}
+
+.highlight-script {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 6rem !important; 
+    color: var(--accent-gold) !important;
+    margin-top: -20px;
+    margin-left: 20px; 
+}
+
+.tiny-gold-title {
+    color: var(--accent-gold) !important;
+    letter-spacing: 6px; 
+    font-size: 1.1rem !important;
+    border-left: 3px solid var(--accent-gold);
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-luxury-cute {
+    margin-top: 50px !important;
+    padding: 20px 50px !important;
+    border: 1px solid var(--accent-gold) !important;
+    background: transparent !important;
+    color: white !important;
+    border-radius: 0 !important; 
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.4s ease;
+}
+
+.btn-luxury-cute:hover {
+    background: var(--accent-gold) !important;
+    color: var(--burgundy) !important;
+}
+
+.brand-essence-wrapper-split {
+    padding-left: 15%;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .hero { height: 500px; }
+
+    .hero-video {
+        display: none !important; 
+    }
+
+    .hero-video-container {
+        background-color: var(--burgundy) !important; 
+    }
+} */
+
+
+/* ============================================
+        OPTION 3: SPLIT REVEAL OVERLAY
+        Video revealed through split opening
+    ============================================ */
+    .hero-split {
+        position: relative;
+        height: 85vh;
+        overflow: hidden;
+    }
+
+    .split-video-center {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        width: auto;
+        z-index: 0;
+    }
+
+    .split-video {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+    }
+
+    /* Align Logo Side to the Left */
+    .split-panel-left {
+        left: 0;
+        justify-content: flex-start;
+        padding-left: 8%;
+        background: linear-gradient(to right, var(--burgundy) 0%, var(--burgundy) 70%, transparent 90%);
+    }
+
+    /* Align Description Side to the Right */
+    .split-panel-right {
+        right: 0;
+        justify-content: flex-end;
+        padding-right: 8%;
+        background: linear-gradient(to left, var(--burgundy) 0%, var(--burgundy) 70%, transparent 90%);
+    }
+
+    .hero-split:hover .split-panel-left {
+        transform: translateX(-25%);
+    }
+
+    .hero-split:hover .split-panel-right {
+        transform: translateX(25%);
+    }
+
+    .split-content-wrapper {
+        position: relative;
+        z-index: 2;
+        height: 85vh; /* Match the section height */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1400px; /* Narrowed slightly to bring text inward */
+        margin: 0 auto;
+        padding: 0 10%; /* Increased padding to nudge text towards the center */
+        color: white;
+        pointer-events: none;
+    }
+
+    .split-title {
+        margin-bottom: 1.5rem;
+        line-height: 1;
+    }
+
+    /* Update the panels to be Flex containers */
+    .split-panel-left,
+    .split-panel-right {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        z-index: 2;
+        transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        align-items: center; /* Centers text vertically */
+    }
+
+    .split-panel-left {
+        left: 0;
+        justify-content: flex-start; /* Pushes content to the left */
+        padding-left: 5%;
+        background: linear-gradient(to right, var(--burgundy) 0%, var(--burgundy) 75%, transparent 100%);
+    }
+
+    .split-panel-right {
+        right: 0;
+        justify-content: flex-end; /* Pushes content to the right */
+        padding-right: 5%;
+        background: linear-gradient(to left, var(--burgundy) 0%, var(--burgundy) 75%, transparent 100%);
+    }
+
+    /* Text Box Controls */
+    .split-text-left,
+    .split-text-right {
+        max-width: 400px;
+        color: white;
+        pointer-events: all;
+    }
+
+    /* Style the subtitle on the left as you requested */
+    .left-subtitle {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
+
+    /* Hover effects - text now stays in the burgundy! */
+    .hero-split:hover .split-panel-left {
+        transform: translateX(-25%);
+    }
+
+    .hero-split:hover .split-panel-right {
+        transform: translateX(25%);
+    }
+
+    /* Keep the text boxes a fixed size so they don't stretch */
+    .split-text-left,
+    .split-text-right {
+        max-width: 400px;
+        color: white;
+    }
+
+    .hero-logo {
+        max-width: 280px;
+        height: auto;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    /* Font change for the left subtitle */
+    .left-subtitle {
+        font-family: 'Playfair Display', serif; /* Elegant font */
+        font-size: 1.1rem;
+        font-style: italic;
+        letter-spacing: 1px;
+        opacity: 0.9;
+    }
+
+    .split-title {
+        font-family: 'Cinzel', serif;
+        font-size: 5rem;
+        line-height: 0.9;
+        margin-bottom: 2rem;
+        font-weight: 400;
+        letter-spacing: 3px;
+    }
+
+    .split-text-right {
+        max-width: 400px;
+        pointer-events: all;
+        
+        /* This is the magic line to move it left */
+        margin-right: 8%;  /* Pushes it away from the right edge */
+        
+        /* Optional: If it's still not enough, use this: */
+        /* transform: translateX(-50px); */ 
+    }
+
+    /* Let's make the "Experience..." text font look nicer like you asked */
+    .split-text-right .split-subtitle {
+        font-family: 'Playfair Display', serif; /* Matching the left side */
+        font-size: 1.1rem;
+        line-height: 1.6;
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+
+    /* The Button Styling */
+    .btn-primary {
+        display: inline-block;
+        padding: 12px 32px;
+        background-color: transparent;
+        color: #f5e6d3; /* Cream color */
+        border: 1px solid #f5e6d3;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+
+    .btn-primary:hover {
+        background-color: #f5e6d3;
+        color: var(--burgundy);
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+    .hero-split {
+        height: 100vh; /* Full screen for mobile impact */
+    }
+
+    /* 1. Make the video fill the background */
+    .split-video-center {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* 2. Reposition Panels for Vertical Split */
+    .split-panel-left,
+    .split-panel-right {
+        width: 100%;
+        height: 50%;
+        left: 0;
+        right: 0;
+    }
+
+    /* Top Panel (was Left) */
+    .split-panel-left {
+        top: 0;
+        background: linear-gradient(to bottom, var(--burgundy) 70%, transparent 100%);
+        justify-content: center;
+        align-items: flex-end; /* Sits at the bottom of the top half */
+        padding-bottom: 20px;
+        padding-left: 0; /* Reset desktop padding */
+    }
+
+    /* Bottom Panel (was Right) */
+    .split-panel-right {
+        top: 50%;
+        background: linear-gradient(to top, var(--burgundy) 70%, transparent 100%);
+        justify-content: center;
+        align-items: flex-start; /* Sits at the top of the bottom half */
+        padding-top: 20px;
+        padding-right: 0; /* Reset desktop padding */
+    }
+
+    /* 3. The Vertical Movement */
+    .hero-split:hover .split-panel-left,
+    .hero-split:active .split-panel-left {
+        transform: translateY(-40%); /* Slides UP */
+    }
+
+    .hero-split:hover .split-panel-right,
+    .hero-split:active .split-panel-right {
+        transform: translateY(40%); /* Slides DOWN */
+    }
+
+    /* 4. Text Adjustments for mobile */
+    .split-text-left, 
+    .split-text-right {
+        text-align: center;
+        max-width: 90%;
+    }
+
+    .hero-logo {
+        max-width: 180px;
+        margin: 0 auto;
+    }
+
+    .split-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+}
+    /* ============================================
+           OPTION 4: RADIAL REVEAL OVERLAY
+           Circular masks revealing vertical video
+        ============================================ */
+        .hero-radial {
+            position: relative;
+            height: 100vh;
+            background: var(--burgundy);
+            overflow: hidden;
+        }
+
+        .radial-video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 100%;
+            width: auto;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .radial-mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                circle at 50% 50%,
+                transparent 0%,
+                transparent 25%,
+                var(--burgundy) 50%,
+                var(--burgundy) 100%
+            );
+            z-index: 1;
+        }
+
+        .radial-circles {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .circle-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(212, 163, 115, 0.3);
+            border-radius: 50%;
+            animation: pulse-ring 3s ease-in-out infinite;
+        }
+
+        .circle-ring:nth-child(1) {
+            width: 400px;
+            height: 400px;
+            animation-delay: 0s;
+        }
+
+        .circle-ring:nth-child(2) {
+            width: 600px;
+            height: 600px;
+            animation-delay: 0.5s;
+        }
+
+        .circle-ring:nth-child(3) {
+            width: 800px;
+            height: 800px;
+            animation-delay: 1s;
+        }
+
+        @keyframes pulse-ring {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+                opacity: 0.3;
+            }
+        }
+
+        .radial-content {
+            position: relative;
+            z-index: 3;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 5%;
+        }
+
+        .radial-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .radial-title {
+            font-family: 'Cinzel', serif;
+            font-size: 8rem;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 5px;
+            text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .radial-script {
+            font-family: 'Tangerine', cursive;
+            font-size: 9rem;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 2rem;
+            text-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+
+
+/* =========================================
    4. AWARDS BAR
    ========================================= */
 .awards-bar { background-color: var(--primary-red); color: white; overflow: hidden; white-space: nowrap; padding: 1.5rem 0; width: 100%; border-bottom: 4px solid var(--accent-gold); }
@@ -166,8 +822,8 @@ section { padding: 3rem 5%; }
 .service-card:hover::after { left: 150%; }
 
 /* Card Images */
-.traditional-card { background: linear-gradient(to top, rgba(60, 40, 20, 0.9), rgba(140, 107, 74, 0.4)), url('images/treatment1.png'); background-size: cover; background-position: center; border: 1px solid rgba(255,255,255,0.3); }
-.modern-card { background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(44, 62, 80, 0.5)), url('images/treatment2.png'); background-size: cover; background-position: center; border: 1px solid rgba(255,255,255,0.1); }
+.traditional-card { background: linear-gradient(to top, rgba(60, 40, 20, 0.9), rgba(140, 107, 74, 0.4)), url('imagesSP/iSP_trad.png'); background-size: cover; background-position: center; border: 1px solid rgba(255,255,255,0.3); }
+.modern-card { background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(44, 62, 80, 0.5)), url('imagesSP/iSP_mod.png'); background-size: cover; background-position: center; border: 1px solid rgba(255,255,255,0.1); }
 
 /* =========================================
    11. MEDIA SECTION (BURGUNDY STYLE)

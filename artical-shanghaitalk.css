@@ -1,0 +1,162 @@
+/* --- LAYOUT --- */
+.blog-container {
+    max-width: 900px;
+    margin: 120px auto 60px; /* Space for fixed navbar */
+    padding: 0 20px;
+}
+
+.blog-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-back {
+    text-decoration: none;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.btn-back:hover { color: #D34836; }
+
+.btn-luxury {
+    background: transparent;
+    border: 1px solid #1a1a1a;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: 'Lato';
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-luxury:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+#langToggle {
+    min-width: 130px;
+    background-color: #fdfaf5;
+}
+
+/* --- HERO & VISUAL --- */
+.blog-hero { text-align: center; margin-bottom: 40px; }
+
+.category-badge {
+    background: #D34836;
+    color: #fff;
+    padding: 4px 12px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.blog-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.meta-info { color: #888; font-size: 0.85rem; margin-top: 15px; }
+.meta-info span { margin: 0 10px; }
+
+.hero-visual {
+    max-width: 50%; /* Makes the whole unit half as wide */
+    margin: 0 auto 50px;
+}
+
+.img-wrapper {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    height: 500px;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the image to fill the 500px area beautifully */
+    object-position: top; /* Ensures Dr. Sttanny's face stays in frame */
+}
+
+.visual-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-trigger {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: 0.4s;
+}
+
+.play-trigger i { font-size: 4rem; opacity: 0.9; }
+.play-trigger span { font-family: 'Lato'; letter-spacing: 2px; text-transform: uppercase; font-size: 12px; }
+.play-trigger:hover { transform: scale(1.1); }
+
+/* --- TYPOGRAPHY --- */
+.intro-lead {
+    font-family: 'Playfair Display';
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #D4A373; /* Gold accent */
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.post-body h3 { font-family: 'Playfair Display'; font-size: 1.8rem; margin: 30px 0 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 5px; }
+.post-body p { font-family: 'Lato'; line-height: 1.8; color: #444; margin-bottom: 20px; font-size: 1.1rem; }
+
+/* Chinese Specific Text Style */
+#content-zh p {
+    font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+    letter-spacing: 0.5px;
+}
+#content-zh .intro-lead { font-style: normal; font-weight: 500; }
+
+.fancy-quote {
+    border-left: 4px solid #D34836;
+    padding: 30px;
+    background: #fdfaf5;
+    font-family: 'Playfair Display';
+    font-size: 1.3rem;
+    margin: 40px 0;
+    color: #1a1a1a;
+    line-height: 1.5;
+}
+
+/* --- MOBILE TWEAKS --- */
+@media (max-width: 768px) {
+    .blog-container { margin-top: 90px; }
+    .blog-hero h1 { font-size: 1.8rem; }
+    .play-trigger i { font-size: 3rem; }
+    .post-body p { font-size: 1rem; }
+}
