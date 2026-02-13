@@ -16,11 +16,12 @@
 </head>
 <body>
 
+    <!-- POP UP PROMOTION -->
     <div id="promoModal" class="modal-overlay">
         <div class="modal-content">
             <span class="close-btn" onclick="closePromo()">&times;</span>
             
-            <a href="Promotional.html"> <img src="images/Promotional_CNY.png" alt="Special Promotion">
+            <a href="Promotional.html"> <img src="imagesSP/march_promo.png" alt="Special Promotion">
             </a>
         </div>
     </div>
@@ -577,11 +578,12 @@
 
             </div>
 
-            <div class="view-more-container">
+            <!-- IF GOT MORE AWARDS PIC THEN UNHIDE AND REPLACE THOSE PIC + NAME -->
+            <!-- <div class="view-more-container">
                 <button id="viewMoreBtn" onclick="toggleAwards()" class="btn-text-gold">
                     View More Achievements <i class="fas fa-chevron-down"></i>
                 </button>
-            </div>
+            </div> -->
 
         </div>
     </section>
@@ -699,7 +701,7 @@
                 <i class="fab fa-instagram"></i>
             </a>
             
-            <a href="https://wa.me/60102353737" target="_blank" class="social-bubble whatsapp" title="WhatsApp">
+            <a href="https://wa.link/1rrri8" target="_blank" class="social-bubble whatsapp" title="WhatsApp">
                 <i class="fab fa-whatsapp"></i>
             </a>
         </div>
@@ -842,19 +844,29 @@
             }
         }
 
-        // PROMO POP-UP
+        // ============================================
+        // 6. SMART PROMO POP-UP (Only shows once)
+        // ============================================
         document.addEventListener("DOMContentLoaded", function() {
             const modal = document.getElementById('promoModal');
-            setTimeout(() => { modal.style.display = 'flex'; }, 800); 
+            
+            // Check if the user has seen the popup before
+            const hasSeenPopup = localStorage.getItem('slimParisPromoSeen');
+
+            if (!hasSeenPopup) {
+                // Show the popup after a short delay
+                setTimeout(() => { 
+                    modal.style.display = 'flex'; 
+                }, 1500); 
+
+                // Set the flag so it doesn't show again next time
+                // Use sessionStorage instead of localStorage if you want it to reappear after they close the tab
+                localStorage.setItem('slimParisPromoSeen', 'true');
+            }
         });
 
         function closePromo() {
             document.getElementById('promoModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('promoModal');
-            if (event.target == modal) modal.style.display = "none";
         }
     
     </script>

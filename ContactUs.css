@@ -175,6 +175,14 @@ h1, h2, h3, h4 {
     transition: 0.3s;
 }
 
+.method-val-ws{
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: green;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
 /* =========================================
    4. REAL SOCIAL BUBBLES (FILLED STYLE)
    ========================================= */

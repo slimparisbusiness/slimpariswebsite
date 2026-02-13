@@ -18,16 +18,19 @@
         <a href="Homepage.html" class="nav-logo">
             <img src="images/slimparislogo.png" alt="SlimParis">
         </a>
+        
         <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        
         <ul class="nav-menu">
             <li><a href="Homepage.html" class="nav-link">Home</a></li>
             <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
             <li class="dropdown">
                 <a href="Services.html" class="nav-link">Services</a>
+                
                 <span class="arrow-trigger" onclick="toggleMobileMenu(this)">
                     <i class="fas fa-chevron-down arrow-icon"></i>
                 </span>
-                
+
                 <div class="dropdown-content services-grid">
                     <a href="NecklineSculpting.html">Neck Line Sculpting</a>
                     <a href="ThinBack.html">Thin Back</a>
@@ -42,11 +45,10 @@
                     <a href="Face.html">Face Sculpting</a>
                     <a href="Whitening.html">Whitening Treatment</a>
                 </div>
-
             </li>
             <li><a href="Testimonial.html" class="nav-link">Testimonial</a></li>
             <li><a href="ContactUs.html" class="nav-link">Contact Us</a></li>
-            <li><a href="Blog.html" class="nav-link">Blog</a></li>
+            <li><a href="Blog.html" class="nav-link active">Blog</a></li>
         </ul>
         <div class="search-container">
             <input type="text" id="search-box" placeholder="Type and hit Enter...">
@@ -63,16 +65,17 @@
     </div>
 
     <!-- HERO -->
-    <section class="blog-header reveal">
+    <section class="blog-header">
         <div class="hero-container">
             <div class="hero-left">
                 <div class="vertical-text">JOURNAL</div>
-                <div class="decorative-shape shape-1"></div>
+                <div class="rotating-circle">
+                    <div class="decorative-shape shape-1"></div>
+                </div>
             </div>
-            
             <div class="hero-center">
                 <div class="logo-mark">
-                    <img src="images/slimparislogo.png" alt="SlimParis Logo" class="sp-logo-img">
+                        <img src="images/slimparislogo.png" alt="SlimParis Logo" class="sp-logo-img">
                 </div>
                 
                 <p class="subtitle">Welcome to</p>
@@ -84,12 +87,12 @@
                 
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number" id="total-articles">12</span>
+                        <span class="stat-number" id="total-articles-hero">0</span>
                         <span class="stat-label">Articles</span>
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat-item">
-                        <span class="stat-number">4</span>
+                        <span class="stat-number" id="total-categories-hero">0</span>
                         <span class="stat-label">Categories</span>
                     </div>
                     <div class="stat-divider"></div>
@@ -116,9 +119,9 @@
             <div class="filter-buttons">
                 <button class="filter-btn active" data-category="all">All Stories</button>
                 <button class="filter-btn" data-category="media">Media Talk</button>
-                <button class="filter-btn" data-category="founder">Founder Story</button>
+                <!-- <button class="filter-btn" data-category="founder">Founder Story</button> -->
                 <button class="filter-btn" data-category="problem">Problem Solver</button>
-                <button class="filter-btn" data-category="lifestyle">Lifestyle</button>
+                <!-- <button class="filter-btn" data-category="lifestyle">Lifestyle</button> -->
                 <button class="filter-btn" data-category="health">Health</button>
                 <!-- <button class="filter-btn" data-category="myth">Myth Busting</button> -->
                 <button class="filter-btn" data-category="events">Events</button>
@@ -130,10 +133,11 @@
     <section class="featured-section reveal">
         <div class="section-label">
             <span class="label-line"></span>
-            <span class="label-text">Featured This Month</span>
+            <span class="label-text">Featured</span>
             <span class="label-line"></span>
         </div>
         
+        <!-- FEATURED -->
         <div class="featured-card" data-category="media">
             <div class="featured-grid">
                 <div class="featured-image">
@@ -146,7 +150,7 @@
                 <div class="featured-content">
                     <div class="featured-meta">
                         <span class="featured-cat">Media Talk</span>
-                        <span class="featured-date">February 2026</span>
+                        <span class="featured-date">25th March 2025</span>
                     </div>
                     <h2 class="featured-headline">Redefining The Ideal Body: Curve Beauty vs. Scale Numbers</h2>
                     <p class="featured-excerpt">An in-depth conversation about modern beauty standards and the shift from weight-focused thinking to celebrating natural curves. Dr. Sttanny shares her expert perspective on how true beauty transcends numbers on a scale.</p>
@@ -176,20 +180,11 @@
     <section class="articles-section reveal">
         <div class="section-header">
             <h2 class="section-title">All <span class="title-script">Articles</span></h2>
-            <div class="view-toggle">
-                <!-- <button class="toggle-btn active" data-view="grid" title="Grid View">
-                    <i class="fas fa-th"></i>
-                </button> -->
-                <!-- <button class="toggle-btn" data-view="list" title="List View">
-                    <i class="fas fa-list"></i>
-                </button> -->
-            </div>
         </div>
 
         <div class="articles-grid" id="articlesGrid">
-            
             <!-- Article 1 -->
-            <article class="article-card" data-category="founder">
+            <article class="article-card" data-category="media">
                 <a href="artical-shanghaitalk.html" class="card-link">
                     <div class="card-image">
                         <img src="images/SP1.png" alt="Dr. Sttanny Journey">
@@ -213,7 +208,7 @@
             <article class="article-card" data-category="health">
                 <a href="blog1.html" class="card-link">
                     <div class="card-image">
-                        <img src="imagesSP/fatvsmuscle2.png" alt="Fat vs Muscle Volume">
+                        <img src="imagesSP/blog1_fatvsmuscle2.png" alt="Fat vs Muscle Volume">
                         <div class="image-overlay">
                             <i class="fas fa-arrow-right"></i>
                         </div>
@@ -231,6 +226,31 @@
             </article>
 
             <!-- Article 3 -->
+            <article class="article-card" data-category="health">
+                <a href="blog2.html" class="card-link">
+                    <div class="card-image">
+                        <img src="imagesSP/blog2_weightloss.png" alt="Fat vs Muscle Volume Comparison">
+                        <div class="image-overlay">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Health</span>
+                        <h3 class="card-title">体重没减不代表没瘦 (Weight Loss is Fat Loss)</h3>
+                        
+                        <p class="card-excerpt">
+                            Discover why your scale isn't moving even though your clothes feel loose. Learn how fat takes up 3x more space than muscle and why measurements matter more than numbers.
+                        </p>
+                        
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 4 min read</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i> Feb 2026</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 33 -->
             <article class="article-card" data-category="problem">
                 <a href="ByeByeBelly.html" class="card-link">
                     <div class="card-image">
@@ -273,7 +293,7 @@
             </article>
 
             <!-- Article 5 -->
-            <article class="article-card" data-category="lifestyle">
+            <article class="article-card" data-category="health">
                 <a href="Article.html" class="card-link">
                     <div class="card-image">
                         <img src="images/hero1.png" alt="Parisian Diet">
@@ -315,7 +335,7 @@
             </article>
 
             <!-- Article 7 -->
-            <article class="article-card" data-category="myth">
+            <article class="article-card" data-category="problem">
                 <a href="Article.html" class="card-link">
                     <div class="card-image">
                         <img src="images/hero1.png" alt="Cellulite">
@@ -335,74 +355,27 @@
                 </a>
             </article>
 
-            <!-- Article 8 -->
-            <article class="article-card" data-category="events">
-                <a href="Article.html" class="card-link">
-                    <div class="card-image">
-                        <img src="images/hero1.png" alt="Wedding">
-                        <div class="image-overlay">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <span class="card-category">Events</span>
-                        <h3 class="card-title">The Bride-To-Be Guide</h3>
-                        <p class="card-excerpt">Your 3-month timeline for achieving perfect wedding day arms and back definition.</p>
-                        <div class="card-meta">
-                            <span class="meta-item"><i class="far fa-clock"></i> 10 min read</span>
-                            <span class="meta-item"><i class="far fa-calendar"></i> Dec 2025</span>
-                        </div>
-                    </div>
-                </a>
-            </article>
+            <div class="load-more-section" id="loadMoreSection" style="display: none;">
+                <button class="load-more-btn" id="loadMoreBtn">
+                    <span>Load More Articles</span>
+                </button>
+            </div>
+    </section>
 
-            <!-- Article 8  -->
-            <article class="article-card" data-category="events">
-                <a href="Article.html" class="card-link">
-                    <div class="card-image">
-                        <img src="images/hero1.png" alt="Wedding">
-                        <div class="image-overlay">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <span class="card-category">Events</span>
-                        <h3 class="card-title">The Bride-To-Be Guide</h3>
-                        <p class="card-excerpt">Your 3-month timeline for achieving perfect wedding day arms and back definition.</p>
-                        <div class="card-meta">
-                            <span class="meta-item"><i class="far fa-clock"></i> 10 min read</span>
-                            <span class="meta-item"><i class="far fa-calendar"></i> Dec 2025</span>
-                        </div>
-                    </div>
-                </a>
-            </article>
-
-        </div>
-
-        <!-- Results Counter -->
+    <!-- LEFT RIGHT ARROW & PAGE NUMBER  -->
+    <div class="blog-pagination-wrapper">
         <div class="results-counter">
-            <p>Showing <span id="showing-count">8</span> of <span id="total-count">8</span> articles</p>
+            <p>Showing <span id="showing-count">0</span> of <span id="total-count">0</span> articles</p>
         </div>
-
-        <!-- Load More Button -->
-        <div class="load-more-section" id="loadMoreSection" style="display: none;">
-            <button class="load-more-btn" id="loadMoreBtn">
-                <span>Load More Articles</span>
-                <i class="fas fa-chevron-down"></i>
+        <div class="pagination" id="pagination">
+            <button class="page-btn" data-page="prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="page-btn" data-page="next">
+                <i class="fas fa-chevron-right"></i>
             </button>
         </div>
-
-        <!-- Pagination (Alternative to Load More) -->
-        <div class="pagination" id="pagination" style="display: none;">
-            <button class="page-btn" data-page="prev"><i class="fas fa-chevron-left"></i></button>
-            <button class="page-num active" data-page="1">1</button>
-            <button class="page-num" data-page="2">2</button>
-            <button class="page-num" data-page="3">3</button>
-            <span class="page-dots">...</span>
-            <button class="page-num" data-page="10">10</button>
-            <button class="page-btn" data-page="next"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </section>
+    </div>
 
     <!-- Artistic Divider -->
     <div class="artistic-divider reveal">
@@ -415,8 +388,7 @@
                     <span class="orn-line"></span>
                 </div>
             </div>
-            <!-- <h2 class="divider-text">L'Art de la Silhouette</h2> -->
-            <h2 class="divider-text">Sculpting Confidence</h2>
+            <h2 class="divider-text">Sculpt Your Confidence</h2>
             <div class="divider-ornament">
                 <div class="ornament-lines">
                     <span class="orn-line"></span>
@@ -445,16 +417,14 @@
                 </div>
                 <h2>Ready to start your own story?</h2>
                 <p class="cta-tagline">Transform your silhouette with Parisian elegance</p>
-                <a href="ContactUs.html" class="btn-book-now">
+                <a href="https://wa.link/1rrri8"target="_blank" class="btn-book-now">
                     <span class="btn-bg"></span>
                     <span class="btn-text">Book Appointment Now</span>
                     <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
                 </a>
-                <!-- <p class="cta-note">Complimentary consultation available</p> -->
             </div>
         </div>
     </section>
-
 
     <!-- FOOTER -->
     <footer class="luxury-footer">

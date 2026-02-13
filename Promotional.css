@@ -1,8 +1,4 @@
 /* =========================================
-   Promotional.css - HAPPENINGS PAGE (FINAL)
-   ========================================= */
-
-/* =========================================
    HERO SECTION (IMAGE BACKGROUND)
    ========================================= */
 .promo-hero {
@@ -138,58 +134,6 @@
 .voucher-card.gold-tier .price { color: #D4A373; }
 
 /* =========================================
-   2. PACKAGES (BUNDLES) SECTION
-   ========================================= */
-.packages-section {
-    padding: 80px 5%;
-    background-color: white; 
-    text-align: center;
-}
-
-.section-subtitle { font-size: 1.1rem; color: #666; margin-bottom: 50px; margin-top: -30px; }
-
-.package-grid {
-    display: flex; justify-content: center; gap: 30px;
-    flex-wrap: wrap; max-width: 1200px; margin: 0 auto; align-items: center; 
-}
-
-.package-card {
-    background: white; border: 1px solid #eee; border-radius: 20px;
-    padding: 40px 30px; width: 350px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: 0.3s; position: relative; text-align: left;
-}
-.package-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(211, 72, 54, 0.15); border-color: #ffd1d1; }
-
-.package-card.popular { border: 2px solid #D34836; transform: scale(1.05); z-index: 2; box-shadow: 0 20px 40px rgba(211, 72, 54, 0.1); }
-.package-card.popular:hover { transform: scale(1.05) translateY(-10px); }
-
-.popular-badge {
-    position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
-    background: #D34836; color: white; padding: 5px 20px; border-radius: 20px;
-    font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
-}
-
-.package-header { text-align: center; }
-.package-header h3 { font-size: 1.8rem; color: #333; margin-bottom: 5px; font-family: 'Playfair Display', serif; }
-.package-target { font-size: 0.9rem; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
-
-.package-price { font-size: 2.5rem; color: #D34836; font-weight: 700; font-family: 'Lato', sans-serif; margin-bottom: 30px; text-align: center; }
-.package-price .currency { font-size: 1rem; vertical-align: super; }
-.package-price .old-price { font-size: 1.2rem; color: #ccc; text-decoration: line-through; margin-left: 10px; font-weight: 400; }
-
-.package-list { list-style: none; text-align: left; margin-bottom: 40px; padding: 0 10px; }
-.package-list li { margin-bottom: 15px; color: #555; font-size: 1rem; display: flex; align-items: center; gap: 10px; }
-.package-list li i { color: #D34836; }
-
-.package-btn {
-    display: block; width: 100%; text-align: center; padding: 15px 0; border: 1px solid #333; border-radius: 50px;
-    text-decoration: none; color: #333; font-weight: 700; transition: 0.3s;
-}
-.package-btn:hover { background: #333; color: white; }
-.package-btn.solid-btn { background: #D34836; border-color: #D34836; color: white; }
-.package-btn.solid-btn:hover { background: #b03525; }
-
-/* =========================================
    3. VISUAL PROMO (POSTERS) SECTION
    ========================================= */
 .visual-promo-section {
@@ -210,8 +154,20 @@
 }
 .visual-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(211, 72, 54, 0.2); }
 
-.visual-img-wrapper { width: 100%; height: 400px; position: relative; overflow: hidden; background-color: #eee; }
-.visual-img-wrapper img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s ease; }
+.visual-img-wrapper { 
+    width: 100%; 
+    height: auto; 
+    aspect-ratio: 4 / 5;
+    position: relative; 
+    overflow: hidden; 
+    background-color: #f5f2ed; }
+
+.visual-img-wrapper img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
+    transition: transform 0.5s ease; }
+
 .visual-card:hover .visual-img-wrapper img { transform: scale(1.05); }
 
 .visual-overlay {
@@ -232,6 +188,77 @@
 }
 .visual-btn:hover { background-color: #1ebc57; transform: translateY(-2px); }
 .visual-btn i { margin-right: 8px; font-size: 1.1rem; }
+
+
+
+/* EXTRASSSS */
+/* Container for the Gallery */
+.visual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Narrower cards = less 'huge' look */
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.visual-card.luxury-style {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 420px; /* Constrained height so it stays 'nice' */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.visual-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /* Keeps the SlimParis logo visible */
+    transition: transform 0.8s ease;
+}
+
+/* The Invisible-to-Visible Overlay */
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(211, 72, 54, 0.9) 0%, rgba(0,0,0,0) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    opacity: 0; /* Hidden by default */
+    transition: all 0.4s ease;
+}
+
+.visual-card:hover .card-overlay {
+    opacity: 1; /* Shows on hover */
+}
+
+.visual-card:hover img {
+    transform: scale(1.1); /* Subtle zoom for that premium feel */
+}
+
+.overlay-content {
+    color: white;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.visual-card:hover .overlay-content {
+    transform: translateY(0);
+}
+
+.luxury-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: white;
+    color: #D34836;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
 /* =========================================
    4. ANIMATED TIMELINE (LASER BEAM EFFECT)

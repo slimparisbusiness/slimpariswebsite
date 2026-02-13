@@ -1,3 +1,8 @@
+:root {
+    --dark: #1a1a1a;
+    --accent: #D34836;
+}
+
 /* --- LAYOUT --- */
 .blog-container {
     max-width: 900px;
@@ -28,15 +33,26 @@
 
 .btn-back:hover { color: #D34836; }
 
+/* change language */
+.lang-switcher {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
 .btn-luxury {
     background: transparent;
-    border: 1px solid #1a1a1a;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-family: 'Lato';
+    border: 1px solid var(--dark);
+    padding: 10px 20px;
+    font-family: 'Lato', sans-serif;
     text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btn-luxury:hover {
+    background: var(--dark);
+    color: #fff;
 }
 
 /* --- HERO & VISUAL --- */
