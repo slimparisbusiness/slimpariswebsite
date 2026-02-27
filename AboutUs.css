@@ -10,6 +10,13 @@
     --burgundy: #560319; /* New Color */
 }
 
+/* Fix for invisible icons on Safari */
+.fas, .fab, .fa-brands, .fa-solid {
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    text-rendering: auto;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
@@ -47,292 +54,28 @@ h1, h2, h3, h4 { color: var(--primary-red); font-family: 'Playfair Display', ser
 .btn { padding: 15px 40px; background-color: var(--primary-red); color: white; text-decoration: none; border-radius: 50px; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(211, 72, 54, 0.4); font-weight: bold; letter-spacing: 1px; }
 .btn:hover { background-color: white; color: var(--primary-red); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-/* Add this wrapper fix for the "Open Up and Down" effect */
+/* Replace your existing hero-video-wrapper with this */
 .hero-video-wrapper {
     max-height: 0;
     overflow: hidden;
-    /* Safari support for smooth sliding */
     -webkit-transition: max-height 0.6s ease-out; 
     transition: max-height 0.6s ease-out;
-    /* This line "wakes up" Safari's video engine */
+    /* This line forces Safari's graphics card to play the video */
     -webkit-transform: translateZ(0); 
+    transform: translateZ(0);
 }
 
 .hero-video-wrapper.active {
     max-height: 1000px; 
 }
 
-/* Ensure your video tag inside has these basics */
 .hero-video-wrapper video {
     width: 100%;
     height: auto;
     display: block;
+    /* Prevents flickering on Safari */
+    -webkit-backface-visibility: hidden;
 }
-
-/* =========================================
-   3. HERO SECTION (VIDEO VERSION) version1 
-   ========================================= */
-/* .hero { 
-    position: relative; 
-    height: 85vh; 
-    overflow: hidden; 
-    background-color: var(--burgundy); 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    z-index: 1; 
-}
-
-.hero-video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--burgundy);
-    z-index: 1;
-}
-
-.hero-video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; 
-    z-index: 1;
-}
-
-.hero-video-container::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.1); 
-    z-index: 2;
-}
-
-.hero-content { 
-    position: relative; 
-    z-index: 10; 
-    width: 100%;
-}
-
-.brand-essence-wrapper {
-    background: rgba(255, 252, 249, 0.15) !important; 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 50px 70px !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    border-radius: 15px;
-    display: inline-block;
-    text-align: center;
-}
-
-.luxury-hero-title {
-    font-family: 'Playfair Display', serif !important;
-    font-size: 3.5rem !important;
-    color: white !important;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.highlight-script {
-    font-family: 'Great Vibes', cursive !important;
-    font-size: 5rem !important;
-    color: var(--accent-gold) !important; 
-    display: block;
-    margin-top: -10px;
-    text-transform: none;
-}
-
-.tiny-gold-title {
-    font-family: 'Lato', sans-serif !important;
-    color: var(--accent-gold) !important;
-    letter-spacing: 3px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.btn-luxury-cute {
-    display: inline-block !important;
-    margin-top: 30px;
-    padding: 16px 35px !important;
-    background: var(--burgundy) !important;
-    color: white !important;
-    text-decoration: none;
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-radius: 8px;
-    border: 1px solid var(--accent-gold) !important;
-    transition: all 0.4s ease;
-}
-
-.btn-luxury-cute:hover {
-    background: var(--primary-red) !important;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-} */
-
-/* option2 - split */
-/* --- THE LUXURY SPLIT HERO --- */
-/* .hero-split {
-    display: flex;
-    height: 90vh; 
-    width: 100%;
-    background-color: var(--burgundy);
-    align-items: center;
-    padding: 0 8%; 
-}
-
-.hero-video-side {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.side-video {
-    height: 80vh; 
-    width: auto;
-    border: 1px solid var(--accent-gold); 
-    padding: 10px; 
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-}
-
-.hero-text-side {
-    flex: 1.2;
-    padding-left: 10%;
-    text-align: left; 
-}
-
-.hero-split {
-    display: flex;
-    height: 85vh;
-    background-color: var(--burgundy);
-    align-items: center;
-    padding: 0 10%; 
-}
-
-.hero-video-side {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.side-video {
-    height: 75vh;
-    width: auto;
-    border: 8px solid white; 
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-}
-
-.hero-text-side {
-    position: relative;
-    flex: 1.2;
-    padding-left: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start; 
-    background-color: var(--burgundy);
-    background: radial-gradient(circle at center, #6b0420 0%, #560319 100%);
-    overflow: hidden;
-}
-
-.hero-text-side::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 20%;
-    height: 60%;
-    width: 1px;
-    background: linear-gradient(to bottom, transparent, var(--accent-gold), transparent);
-    opacity: 0.5;
-}
-
-.hero-text-side::before {
-    content: "SLIM PARIS"; 
-    position: absolute;
-    right: -10%;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: 'Playfair Display', serif;
-    font-size: 15rem; 
-    color: rgba(255, 255, 255, 0.02); 
-    font-weight: 900;
-    white-space: nowrap;
-    z-index: 0;
-}
-
-.luxury-hero-title {
-    font-family: 'Playfair Display', serif !important;
-    font-size: 4.5rem !important; 
-    color: white !important;
-    line-height: 1;
-    margin: 10px 0 !important;
-    text-align: left;
-}
-
-.highlight-script {
-    font-family: 'Great Vibes', cursive !important;
-    font-size: 6rem !important; 
-    color: var(--accent-gold) !important;
-    margin-top: -20px;
-    margin-left: 20px; 
-}
-
-.tiny-gold-title {
-    color: var(--accent-gold) !important;
-    letter-spacing: 6px; 
-    font-size: 1.1rem !important;
-    border-left: 3px solid var(--accent-gold);
-    padding-left: 15px;
-    margin-bottom: 20px;
-}
-
-.btn-luxury-cute {
-    margin-top: 50px !important;
-    padding: 20px 50px !important;
-    border: 1px solid var(--accent-gold) !important;
-    background: transparent !important;
-    color: white !important;
-    border-radius: 0 !important; 
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    transition: all 0.4s ease;
-}
-
-.btn-luxury-cute:hover {
-    background: var(--accent-gold) !important;
-    color: var(--burgundy) !important;
-}
-
-.brand-essence-wrapper-split {
-    padding-left: 15%;
-    z-index: 1;
-}
-
-@media (max-width: 768px) {
-    .hero { height: 500px; }
-
-    .hero-video {
-        display: none !important; 
-    }
-
-    .hero-video-container {
-        background-color: var(--burgundy) !important; 
-    }
-} */
-
 
 /* ============================================
         OPTION 3: SPLIT REVEAL OVERLAY
@@ -796,13 +539,19 @@ section { padding: 3rem 5%; }
     text-align: center; 
     border-radius: 20px; 
     border: 1px solid #eee; 
+    /* Safari specific transitions */
+    -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+    cursor: pointer; /* Critical for Safari hovers */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03); 
+}
 
 .value-card:hover { 
+    -webkit-transform: translateY(-10px);
     transform: translateY(-10px); 
     box-shadow: 0 20px 40px #e25947; 
-    border-color: var(--accent-gold); }
+    border-color: var(--accent-gold); 
+}
 
 .value-card .icon { 
     font-size: 2.5rem; 
