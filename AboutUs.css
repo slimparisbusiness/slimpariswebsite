@@ -47,6 +47,28 @@ h1, h2, h3, h4 { color: var(--primary-red); font-family: 'Playfair Display', ser
 .btn { padding: 15px 40px; background-color: var(--primary-red); color: white; text-decoration: none; border-radius: 50px; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(211, 72, 54, 0.4); font-weight: bold; letter-spacing: 1px; }
 .btn:hover { background-color: white; color: var(--primary-red); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
+/* Add this wrapper fix for the "Open Up and Down" effect */
+.hero-video-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    /* Safari support for smooth sliding */
+    -webkit-transition: max-height 0.6s ease-out; 
+    transition: max-height 0.6s ease-out;
+    /* This line "wakes up" Safari's video engine */
+    -webkit-transform: translateZ(0); 
+}
+
+.hero-video-wrapper.active {
+    max-height: 1000px; 
+}
+
+/* Ensure your video tag inside has these basics */
+.hero-video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* =========================================
    3. HERO SECTION (VIDEO VERSION) version1 
    ========================================= */
