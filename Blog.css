@@ -203,7 +203,28 @@
     }
 
     .title-main { font-size: 2.2rem; }
-    .title-script { font-size: 3.5rem; margin-top: -5px; }
+
+    .title-script {
+        font-family: 'Tangerine', cursive;
+        font-size: 3rem; 
+        color: var(--burgundy);
+        vertical-align: middle;
+        display: inline-block;
+        padding-top: 10px; /* Pushes script down to avoid cutting the top */
+    }
+}
+
+/* --- 2. Smooth Grid Transition --- */
+#articlesGrid {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#articlesGrid.ready {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .rotating-circle {
@@ -310,7 +331,9 @@
 
 /* Add a margin to the section below it so the first few articles aren't hidden */
 .articles-section {
-    margin-top: 20px; 
+    padding: 120px 5% 80px; /* Increased top padding to clear the sticky filter */
+    background: var(--bg-cream);
+    overflow: visible; /* CRITICAL: Allows script font loops to show */
 }
 
 .filter-container {
@@ -525,8 +548,9 @@
 
 /* --- ARTICLES SECTION (SCALABLE GRID) --- */
 .articles-section {
-    padding: 80px 5%;
+    padding: 200px 5% 80px; /* Increased top padding from 80px to 100px */
     background: var(--cream);
+    overflow: visible;      /* Ensure tall letters aren't clipped */
 }
 
 .section-header {
@@ -537,13 +561,15 @@
     align-items: center;
     padding-bottom: 30px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    overflow: visible; /* Allows the title-script to breathe */
 }
 
 .section-title {
     font-family: 'Bodoni Moda', serif;
-    font-size: 1.6rem;
+    font-size: 2rem; 
     font-weight: 300;
     color: var(--charcoal);
+    line-height: 1.6; /* Higher line-height gives script fonts vertical space */
 }
 
 .view-toggle {

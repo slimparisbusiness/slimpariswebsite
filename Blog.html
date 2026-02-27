@@ -183,7 +183,16 @@
         </div>
 
         <div class="articles-grid" id="articlesGrid">
-            <!-- Article 1 -->
+
+            <!-- NO ARTICLE SENTENCE?  -->
+            <div id="no-articles-message" style="display: none; grid-column: 1 / -1; text-align: center; padding: 50px 20px;">
+                <i class="fas fa-feather-alt" style="font-size: 3rem; color: #D34836; margin-bottom: 20px; display: block;"></i>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem;">Stories in Progress...</h3>
+                <p style="color: #666; font-style: italic;">We are currently crafting expert insights for this category. Stay tuned for our upcoming edition!</p>
+            </div>
+            
+            
+            <!-- MEDIA 1 -->
             <article class="article-card" data-category="media">
                 <a href="media1.html" class="card-link">
                     <div class="card-image">
@@ -204,7 +213,7 @@
                 </a>
             </article>
 
-            <!-- ARTICLE 2 -->
+            <!-- HEALTH 1 -->
             <article class="article-card" data-category="health">
                 <a href="health1.html" class="card-link">
                     <div class="card-image">
@@ -229,7 +238,7 @@
                 </a>
             </article>
 
-            <!-- Article 3 -->
+            <!-- HEALTH 2-->
             <article class="article-card" data-category="health">
                 <a href="health2.html" class="card-link">
                     <div class="card-image">
@@ -250,7 +259,28 @@
                 </a>
             </article>
 
-            <!-- Article 33 -->
+            <!-- HEALTH 3-->
+            <article class="article-card" data-category="health">
+                <a href="prob_sol_3.html" class="card-link">
+                    <div class="card-image">
+                        <img src="imagesSP/health3.png" alt="Posture and Silhouette">
+                        <div class="image-overlay">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Health</span>
+                        <h3 class="card-title">体态决定你的视觉体重 (Posture Defines Your Silhouette)</h3>
+                        <p class="card-excerpt">发现矫正“手机颈”如何瞬间拉长颈部线条，让你无需减重也能拥有更纤细、优雅的仪态。</p>
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 4 min read</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i> Feb 13, 2026</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- PROBLEM 1 -->
             <article class="article-card" data-category="problem">
                 <a href="prob_sol_1.html" class="card-link">
                     <div class="card-image">
@@ -271,7 +301,7 @@
                 </a>
             </article>
 
-            <!-- Article 4 -->
+            <!-- PROBLEM 2 -->
             <article class="article-card" data-category="problem">
                 <a href="prob_sol_2.html" class="card-link">
                     <div class="card-image">
@@ -292,11 +322,11 @@
                 </a>
             </article>
 
-            <!-- Article 44 -->
+            <!-- PROBLEM 3 -->
              <article class="article-card" data-category="problem">
                 <a href="prob_sol_3.html" class="card-link">
                     <div class="card-image">
-                        <img src="imagesSP/blogherohb.png" alt="Tech Neck">
+                        <img src="imagesSP/prob3.png" alt="Tech Neck">
                         <div class="image-overlay">
                             <i class="fas fa-arrow-right"></i>
                         </div>
@@ -313,8 +343,8 @@
                 </a>
             </article>
 
-            <!-- Article 5 -->
-            <article class="article-card" data-category="health">
+            <!-- EVENT 1 -->
+            <!-- <article class="article-card" data-category="events">
                 <a href="Article.html" class="card-link">
                     <div class="card-image">
                         <img src="images/hero1.png" alt="Parisian Diet">
@@ -332,10 +362,10 @@
                         </div>
                     </div>
                 </a>
-            </article>
+            </article> -->
 
-            <!-- Article 6 -->
-            <article class="article-card" data-category="health">
+            <!-- EVENT 2 -->
+            <!-- <article class="article-card" data-category="events">
                 <a href="Article.html" class="card-link">
                     <div class="card-image">
                         <img src="images/hero1.png" alt="Bloating">
@@ -353,10 +383,10 @@
                         </div>
                     </div>
                 </a>
-            </article>
+            </article> -->
 
-            <!-- Article 7 -->
-            <article class="article-card" data-category="problem">
+            <!-- EVENT 3 -->
+            <!-- <article class="article-card" data-category="events">
                 <a href="Article.html" class="card-link">
                     <div class="card-image">
                         <img src="images/hero1.png" alt="Cellulite">
@@ -374,7 +404,7 @@
                         </div>
                     </div>
                 </a>
-            </article>
+            </article> -->
 
             <div class="load-more-section" id="loadMoreSection" style="display: none;">
                 <button class="load-more-btn" id="loadMoreBtn">
