@@ -136,3 +136,22 @@ function toggleAwards() {
         document.querySelector('.awards-section-deco').scrollIntoView({behavior: 'smooth'});
     }
 }
+
+// 8. STICKY MENU HYBRID LOGIC
+const socialTrigger = document.querySelector('.social-trigger');
+const stickyMenu = document.querySelector('.sticky-social-menu');
+
+if (socialTrigger) {
+    socialTrigger.addEventListener('click', function(e) {
+        // Stop the click from closing immediately via the document listener below
+        e.stopPropagation(); 
+        stickyMenu.classList.toggle('active');
+    });
+}
+
+// Close the menu if the user taps anywhere else on the page
+document.addEventListener('click', function() {
+    if (stickyMenu && stickyMenu.classList.contains('active')) {
+        stickyMenu.classList.remove('active');
+    }
+});

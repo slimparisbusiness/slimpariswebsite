@@ -390,21 +390,28 @@ footer {
    ========================================= */
 .sticky-social-menu {
     position: fixed !important; 
-    bottom: 30px;
+    /* Combined Desktop & Safari logic */
     right: 30px;
+    bottom: calc(30px + env(safe-area-inset-bottom)); 
+    
     z-index: 99999; 
     display: flex;
-    flex-direction: column; /* List on Top, Button on Bottom */
+    flex-direction: column; 
     align-items: center;    
     gap: 15px;   
     height: fit-content;  
+    
+    /* Safari Flickering Fix */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
     pointer-events: none;        
 }
 
 /* This makes the actual icons clickable again */
 .sticky-social-menu a, 
 .sticky-social-menu i,
-.sticky-social-menu img { 
+.sticky-social-menu img,
+.social-trigger { 
     pointer-events: auto; 
 }
 
@@ -476,6 +483,14 @@ footer {
     opacity: 0;
     z-index: 1; 
     animation: pulse 2s infinite;
+}
+
+/* This ensures BOTH desktop hover and mobile tap work */
+.sticky-social-menu:hover .social-list,
+.sticky-social-menu.active .social-list {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
 }
 
 @keyframes pulse {
