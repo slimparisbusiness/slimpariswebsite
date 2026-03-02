@@ -72,24 +72,37 @@ accordions.forEach(acc => {
     });
 });
 
-// 5. PROMO MODAL
+// 5. PROMO MODAL (Session-Based & Safari Optimized)
 document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById('promoModal');
-    // Pop up after 0.3 second
-    if(modal) {
-        setTimeout(() => { modal.style.display = 'flex'; }, 300); 
+    
+    // Check if seen in this session
+    const hasSeenInThisSession = sessionStorage.getItem('slimParisSeen');
+
+    if (!hasSeenInThisSession && modal) {
+        setTimeout(() => { 
+            modal.style.display = 'flex'; 
+            sessionStorage.setItem('slimParisSeen', 'true');
+        }, 1500); 
     }
 });
 
+// The "Close" Function - Essential for your HTML onclick to work
 function closePromo() { 
-    document.getElementById('promoModal').style.display = 'none'; 
+    const modal = document.getElementById('promoModal');
+    if (modal) {
+        modal.style.display = 'none'; 
+    }
 }
 
-// Close if clicked outside
-window.onclick = function(event) {
+// Safari-friendly "Click Outside to Close" logic
+window.addEventListener('click', function(event) {
     const modal = document.getElementById('promoModal');
-    if (event.target == modal) modal.style.display = "none";
-}
+    // If the user clicks the dark background (the modal itself) and not the image
+    if (event.target === modal) {
+        closePromo();
+    }
+});
 
 // 6. SCROLL REVEAL
 window.addEventListener('scroll', reveal);

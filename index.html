@@ -328,7 +328,7 @@
         <div class="showcase-grid">
             <div class="showcase-card">
                 <div class="img-holder">
-                    <a href="Traditional.html">
+                    <a href="Services.html#traditional">
                         <img src="imagesSP/iSP_chooseTRAD.png" alt="Traditional Technique"> 
                     </a>
                 </div>
@@ -341,7 +341,7 @@
 
             <div class="showcase-card">
                 <div class="img-holder">
-                    <a href="Modern.html">
+                    <a href="Services.html#modern">
                         <img src="imagesSP/iSP_chooseMOD.png" alt="Modern Technology">
                     </a>
                 </div>
@@ -354,7 +354,9 @@
 
             <div class="showcase-card">
                 <div class="img-holder">
-                    <img src="imagesSP/iSP_chooseVISIBLE.png" alt="Visible Results">
+                    <a href="Testimonial.html">
+                        <img src="imagesSP/iSP_chooseVISIBLE.png" alt="Visible Results">
+                    </a>
                 </div>
                 <h3 class="card-title">Visible Transformation</h3>
                 <h4 class="card-question">Is it Effective?</h4>
@@ -479,21 +481,21 @@
                     <div class="partner-slide"><img src="images/partner3.png" alt="Partner 3"></div>
                     <div class="partner-slide"><img src="images/partner4.png" alt="Partner 4"></div>
                     <div class="partner-slide"><img src="images/partner5.png" alt="Partner 5"></div>
-                    <!-- <div class="partner-slide"><img src="images/partner6.png" alt="Partner 6"></div> -->
+                    <div class="partner-slide"><img src="images/partner6.png" alt="Partner 6"></div>
 
                     <div class="partner-slide"><img src="images/partner1.png" alt="Partner 1"></div>
                     <div class="partner-slide"><img src="images/partner2.png" alt="Partner 2"></div>
                     <div class="partner-slide"><img src="images/partner3.png" alt="Partner 3"></div>
                     <div class="partner-slide"><img src="images/partner4.png" alt="Partner 4"></div>
                     <div class="partner-slide"><img src="images/partner5.png" alt="Partner 5"></div>
-                    <!-- <div class="partner-slide"><img src="images/partner6.png" alt="Partner 6"></div> -->
+                    <div class="partner-slide"><img src="images/partner6.png" alt="Partner 6"></div>
 
                     <div class="partner-slide"><img src="images/partner1.png" alt="Partner 1"></div>
                     <div class="partner-slide"><img src="images/partner2.png" alt="Partner 2"></div>
                     <div class="partner-slide"><img src="images/partner3.png" alt="Partner 3"></div>
                     <div class="partner-slide"><img src="images/partner4.png" alt="Partner 4"></div>
                     <div class="partner-slide"><img src="images/partner5.png" alt="Partner 5"></div>
-                    <!-- <div class="partner-slide"><img src="images/partner6.png" alt="Partner 6"></div> -->
+                    <div class="partner-slide"><img src="images/partner6.png" alt="Partner 6"></div>
 
                 </div>
             </div>
@@ -713,162 +715,6 @@
     </div>
 
     <!-- JAVASCRIPT -->
-    <script>
-        // ============================================
-        // 1. SEARCH FUNCTIONALITY
-        // ============================================
-        function toggleSearch() {
-            const sb = document.getElementById('search-box');
-            sb.style.display = sb.style.display === 'block' ? 'none' : 'block';
-            if (sb.style.display === 'block') sb.focus();
-        }
-
-        document.getElementById('search-box').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                if (window.find && e.target.value.length > 0) {
-                    if (!window.find(e.target.value)) {
-                        alert("Text not found.");
-                    }
-                }
-            }
-        });
-
-        // ============================================
-        // 2. MOBILE MENU
-        // ============================================
-        function toggleMenu() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-        }
-
-        function toggleMobileMenu(element) {
-            const menu = element.parentElement.querySelector('.services-grid');
-            menu.style.display = (menu.style.display === 'grid') ? 'none' : 'grid';
-        }
-
-        // ============================================
-        // 3. SLIDER LOGIC (With Pause on Hover)
-        // ============================================
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const heroSection = document.querySelector('.hero'); 
-        let slideInterval;
-
-        function showSlide(index) {
-            // Loop around logic
-            if (index >= slides.length) currentSlide = 0;
-            else if (index < 0) currentSlide = slides.length - 1;
-            else currentSlide = index;
-
-            slides.forEach(slide => {
-                slide.classList.remove('active');
-                // This physically removes the inactive slides so they can't overlap
-                slide.style.display = "none"; 
-            });
-
-            slides[currentSlide].classList.add('active');
-            slides[currentSlide].style.display = "block";
-        }
-
-        function startAutoSlide() {
-            clearInterval(slideInterval); 
-            // Set to 5000 (5 seconds) so people can actually read the magazine text
-            slideInterval = setInterval(() => {
-                showSlide(currentSlide + 1);
-            }, 3000); 
-        }
-
-        // Manual Control
-        function moveSlide(direction) {
-            showSlide(currentSlide + direction);
-            startAutoSlide(); // Reset timer on click
-        }
-
-        // HOVER PAUSE - Refined Logic
-        heroSection.addEventListener('mouseenter', () => {
-            console.log("Slider Paused"); // Debugging
-            clearInterval(slideInterval);
-        });
-
-        heroSection.addEventListener('mouseleave', () => {
-            console.log("Slider Restarted"); // Debugging
-            startAutoSlide();
-        });
-
-        // Start on Load
-        startAutoSlide();
-
-        // ============================================
-        // 4. SCROLL REVEAL
-        // ============================================
-        window.addEventListener('scroll', reveal);
-        function reveal() {
-            var reveals = document.querySelectorAll('.reveal');
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add('active');
-                }
-            }
-        }
-
-        // ============================================
-        // 5. ACCORDION & AWARDS
-        // ============================================
-        const accordions = document.querySelectorAll('.accordion-header');
-        accordions.forEach(acc => {
-            acc.addEventListener('click', function() {
-                accordions.forEach(item => {
-                    if (item !== this) {
-                        item.classList.remove('active');
-                        item.nextElementSibling.style.maxHeight = null;
-                    }
-                });
-                this.classList.toggle('active');
-                const panel = this.nextElementSibling;
-                panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
-            });
-        });
-
-        function toggleAwards() {
-            var moreAwards = document.getElementById("more-awards-section");
-            var btn = document.getElementById("viewMoreBtn");
-            if (moreAwards.style.display === "none" || moreAwards.style.display === "") {
-                moreAwards.style.display = "flex";
-                btn.innerHTML = 'View Less <i class="fas fa-chevron-up"></i>';
-            } else {
-                moreAwards.style.display = "none";
-                btn.innerHTML = 'View More Achievements <i class="fas fa-chevron-down"></i>';
-            }
-        }
-
-        // ============================================
-        // 6. SMART PROMO POP-UP (Only shows once)
-        // ============================================
-        document.addEventListener("DOMContentLoaded", function() {
-            const modal = document.getElementById('promoModal');
-            
-            // Check if the user has seen the popup before
-            const hasSeenPopup = localStorage.getItem('slimParisPromoSeen');
-
-            if (!hasSeenPopup) {
-                // Show the popup after a short delay
-                setTimeout(() => { 
-                    modal.style.display = 'flex'; 
-                }, 1500); 
-
-                // Set the flag so it doesn't show again next time
-                // Use sessionStorage instead of localStorage if you want it to reappear after they close the tab
-                localStorage.setItem('slimParisPromoSeen', 'true');
-            }
-        });
-
-        function closePromo() {
-            document.getElementById('promoModal').style.display = 'none';
-        }
-    
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
