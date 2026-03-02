@@ -614,9 +614,13 @@ h1, h2, h3, h4 {
     }
     .service-content-stage { 
         width: 100% !important; 
+        /* ADD THIS LINE BELOW TO FIX THE DISAPPEARING TEXT */
+        overflow: visible !important; 
+        
         margin-top: -30px !important; 
         position: relative; 
         z-index: 5;
+        flex: none !important; /* Helps with layout stability */
     }
     .service-sidebar {
         width: 100% !important;
@@ -680,7 +684,6 @@ h1, h2, h3, h4 {
 }
 
 /* 768PX - Tablets / Large Phones */
-/* 768PX - Tablets / Large Phones */
 @media (max-width: 768px) {
     /* Privacy Notice Fix */
     .privacy-notice-container {
@@ -723,6 +726,12 @@ h1, h2, h3, h4 {
     .result-card img { object-fit: contain !important; background-color: #f8f8f8; } /* <--- THIS WAS MISSING */
     
     .long-results .result-card { height: 500px; }
+
+    .dropdown-item.active .dropdown-content {
+        display: block !important;
+        height: auto !important; /* Forces it to show all text */
+        visibility: visible !important;
+    }
 }
 
 /* =========================================
