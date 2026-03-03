@@ -1,31 +1,39 @@
-/* --- 1. HERO SECTION (With Safari Mobile Fix) --- */
+/* --- 1. HERO SECTION (Universal Mobile Fix) --- */
 .testimonial-hero {
     position: relative;
     height: 60vh; 
     background-image: url('images/hero_testimonial2.png');
     background-size: cover;
     background-position: center;
-    
-    /* KEEP THIS for Desktop Parallax */
-    background-attachment: fixed; 
-    
+    background-attachment: fixed; /* Keep for Desktop */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 0;
 }
 
-/* THE FIX: Disable fixed attachment on phones */
-@media (max-width: 768px) {
+/* FIX FOR ALL MOBILE DEVICES  */
+@media (max-width: 1024px) {
     .testimonial-hero {
-        background-attachment: scroll !important; /* Forces image to stay in its box */
-        height: 45vh !important; /* Slightly shorter for better mobile UI */
+        /* This stops the "Giant Zoom" bug on all mobile browsers */
+        background-attachment: scroll !important; 
+        
+        /* Adjust height so it fits nicely on a phone screen */
+        height: 50vh !important; 
+        
+        /* Ensures the focus stays on the middle of your image */
         background-position: center center !important;
     }
-    
+
     .hero-content h1 {
-        font-size: 2.2rem !important; /* Prevent text overlap on small screens */
+        /* Shrink the text so "Transformation" doesn't cut off */
+        font-size: 2.5rem !important;
+        padding: 0 15px;
+    }
+
+    .hero-content p {
+        font-size: 1rem !important;
+        padding: 0 20px;
     }
 }
 
