@@ -165,7 +165,9 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // === 4. SCROLL & HISTORY MANAGEMENT ===
+    // === 4. SAFARI-PROOF SCROLL & HISTORY MANAGEMENT ===
+    
+    // 1. Handle the scroll reveal and parallax as usual
     window.addEventListener('scroll', () => {
         document.querySelectorAll('.reveal').forEach(el => {
             if (el.getBoundingClientRect().top < window.innerHeight - 150) {
@@ -184,23 +186,33 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // 2. Tell the browser NOT to try its own scroll memory
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     
-    window.addEventListener('load', () => {
+    // 3. The "Safari Fix": Use pageshow instead of load
+    window.addEventListener('pageshow', (event) => {
         const scrollPos = sessionStorage.getItem('blogScrollPos');
         const savedCategory = sessionStorage.getItem('blogCategory') || 'all';
 
+        // Re-sync filter buttons
         filterButtons.forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-category') === savedCategory));
+        
+        // Apply the filter logic
         applyGroupFilter(savedCategory, true);
 
-        requestAnimationFrame(() => {
-            if (grid) grid.classList.add('ready');
-            if (scrollPos) {
-                window.scrollTo({ top: parseInt(scrollPos), behavior: 'instant' });
-            }
-        });
+        // Show the grid
+        if (grid) grid.classList.add('ready');
+
+        // The Scroll Jump
+        if (scrollPos) {
+            // Safari needs a tiny delay to calculate the height of the filtered grid
+            setTimeout(() => {
+                window.scrollTo(0, parseInt(scrollPos));
+            }, 50); 
+        }
     });
 
+    // 4. Save the position before leaving
     window.addEventListener('pagehide', () => {
         sessionStorage.setItem('blogScrollPos', window.scrollY);
     });
