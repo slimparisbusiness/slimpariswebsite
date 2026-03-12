@@ -1,0 +1,352 @@
+/* =========================================
+   HERO SECTION (IMAGE BACKGROUND)
+   ========================================= */
+.promo-hero {
+    position: relative;
+    width: 100%;
+    /* Make it tall enough to look premium */
+    height: 60vh; 
+    min-height: 450px;
+    
+    /* THE IMAGE */
+    background-image: url('images/testing.png'); /* <--- YOUR IMAGE HERE */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax Effect: Image stays still when scrolling */
+    
+    /* Centering the text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    margin-top: 0 !important; /* Removes gap from navbar */
+    margin-bottom: 50px;
+}
+
+/* Dark Overlay (So white text is readable) */
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 40% Darkness */
+    z-index: 1;
+}
+
+/* The Text Container */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Sits on top of the overlay */
+    padding: 0 20px;
+}
+
+/* Force Text Colors to White */
+.promo-hero .page-title {
+    color: #ffffff !important;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+    
+}
+
+.promo-hero .script-font {
+    color: #D34836; /* Gold looks great on dark photos (or keep it #D34836 Red) */
+    font-size: 2.5rem;
+}
+
+.promo-hero .hero-desc {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-size: 1.3rem;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .promo-hero {
+        height: 50vh; /* Shorter on phone */
+        background-attachment: scroll; /* Disable parallax on mobile for smooth scrolling */
+    }
+    .promo-hero .page-title { font-size: 2.5rem; }
+}
+
+
+/* =========================================
+   RESPONSIVE (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    .promo-hero { padding-top: 100px; }
+    
+    /* Vouchers */
+    .voucher-card { flex-direction: column; }
+    .voucher-left { border-right: none; border-bottom: 2px dashed #D34836; }
+    
+    /* Packages */
+    .package-card.popular { transform: scale(1); } 
+    .package-card { width: 100%; max-width: 400px; margin-bottom: 20px; }
+    .package-grid { flex-direction: column; }
+    
+    /* Visual Promo */
+    .visual-img-wrapper { height: 350px; }
+    
+    /* Timeline - Stack to the Left */
+    .timeline-container::after { left: 30px; }
+    .timeline-item { width: 100%; padding-left: 70px; padding-right: 20px; }
+    
+    .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { left: 0; text-align: left; }
+    .timeline-item:nth-child(odd) .timeline-dot, .timeline-item:nth-child(even) .timeline-dot { left: 20px; right: auto; }
+    
+    .timeline-date { position: static; display: block; margin-bottom: 5px; width: auto !important; text-align: left !important; }
+}
+
+/* =========================================
+   3. HERO SECTION 
+   ========================================= */
+.page-hero {
+    position: relative;
+    height: 450px; /* Shorter than the homepage hero */
+    background-image: url('images/Serviceshero.png'); /* You can change this image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Darkens image slightly for text contrast */
+    z-index: 1;
+}
+
+.hero-title-container {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    letter-spacing: 5px;
+    margin: 10px 0;
+    color: white !important;
+}
+
+.italic-red {
+    font-style: italic;
+    color: var(--primary-red);
+}
+
+.title-divider {
+    width: 80px;
+    height: 3px;
+    background: var(--accent-gold);
+    margin: 20px auto;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .page-hero { height: 350px; }
+    .page-title { font-size: 3rem; }
+}
+
+/* footer */
+@media (max-width: 768px) {
+    .brand-col {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* Centers the logo and text */
+        text-align: center !important;
+        margin-bottom: 30px;
+    }
+
+    .brand-desc {
+        max-width: 280px; /* Keeps the text in a nice narrow block */
+        margin: 0 auto !important; /* Centers the text block itself */
+        color: #555555 !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* FIXING THE LOGO COLOR */
+    .footer-logo-white {
+        /* This filter turns the white logo into a dark burgundy/black 
+           so it's clear on the white background */
+        filter: brightness(0) saturate(100%) invert(18%) sepia(50%) saturate(3475%) hue-rotate(331deg) brightness(88%) contrast(100%) !important;
+        max-width: 180px !important;
+        margin-bottom: 15px !important;
+    }
+}
+
+.careers-section { padding: 80px 5%; background: #fff; }
+.container { max-width: 1000px; margin: 0 auto; text-index: center; }
+
+.career-intro { 
+    text-align: center; 
+    margin-bottom: 60px; 
+}
+
+.career-lead { font-size: 1.2rem; color: #555; line-height: 1.8; max-width: 800px; margin: 20px auto; }
+
+.benefits-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px; 
+    margin-bottom: 80px; 
+}
+
+.benefit-item {
+    background: #fff;
+    padding: 40px 30px;
+    border: none; /* Remove the full border */
+    border-top: 3px solid #D34836; /* Add a brand accent at the top */
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Softer shadow */
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-10px); /* Subtle lift on hover */
+}
+
+.benefit-item i { font-size: 2rem; color: #D34836; margin-bottom: 15px; }
+
+.jobs-list {
+    margin-top: 50px;
+}
+
+.job-card {
+    display: flex;
+    justify-content: space-between; /* Pushes button to the right */
+    align-items: center; 
+    padding: 50px 0; /* More breathing room */
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.job-card:hover {
+    padding-left: 20px; /* Subtle slide effect on hover */
+    background: rgba(211, 72, 54, 0.02); /* Very faint tint */
+}
+
+/* Container for the text side */
+.job-main-content {
+    max-width: 60%;
+}
+
+.job-info h4 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.btn-apply {
+    text-decoration: none !important; /* This kills the underline */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Luxury styling */
+    background: transparent;
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    padding: 12px 30px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-apply:hover {
+    background: #1a1a1a;
+    color: #ffffff !important; /* Text stays white on black background */
+    text-decoration: none !important; /* Ensure it stays gone on hover */
+}
+
+.job-type { font-size: 0.8rem; color: #D34836; text-transform: uppercase; font-weight: 700; }
+
+.careers-section {
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, #fdfaf5 0%, #ffffff 100%);
+}
+
+/* Optional: Decorative "Figure First" text in the background */
+.careers-section::before {
+    content: "Figure First";
+    position: absolute;
+    top: 10%;
+    right: -5%;
+    font-family: 'Great Vibes', cursive;
+    font-size: 15rem;
+    color: rgba(211, 72, 54, 0.03); /* Very faint brand red */
+    z-index: 0;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .job-card { flex-direction: column; text-align: center; gap: 20px; }
+}
+
+.connect-invite {
+    padding: 100px 20px;
+    background-color: #fdfaf5; /* Very subtle warm tint */
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.connect-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.connect-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.connect-divider {
+    width: 50px;
+    height: 2px;
+    background: #D34836;
+    margin: 0 auto 30px;
+}
+
+.connect-text {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+}
+
+.connect-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #1a1a1a;
+    color: #fff !important; /* No more blue! */
+    text-decoration: none !important;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.connect-btn:hover {
+    background: #D34836;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(211, 72, 54, 0.2);
+}

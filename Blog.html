@@ -119,11 +119,8 @@
             <div class="filter-buttons">
                 <button class="filter-btn active" data-category="all">All Stories</button>
                 <button class="filter-btn" data-category="media">Media Talk</button>
-                <!-- <button class="filter-btn" data-category="founder">Founder Story</button> -->
                 <button class="filter-btn" data-category="problem">Problem Solver</button>
-                <!-- <button class="filter-btn" data-category="lifestyle">Lifestyle</button> -->
                 <button class="filter-btn" data-category="health">Health</button>
-                <!-- <button class="filter-btn" data-category="myth">Myth Busting</button> -->
                 <button class="filter-btn" data-category="events">Events</button>
             </div>
         </div>
@@ -131,17 +128,17 @@
 
     <!-- FEATURED STORY -->
     <section class="featured-section reveal">
-        <div class="section-label">
+        <div class="section-label" id="featured-anchor">
             <span class="label-line"></span>
             <span class="label-text">Featured</span>
             <span class="label-line"></span>
         </div>
         
         <!-- FEATURED -->
-        <div class="featured-card" data-category="media">
+        <div class="featured-card" id="dynamic-featured-card">
             <div class="featured-grid">
                 <div class="featured-image">
-                    <img src="images/SP2.png" alt="CITYPlus Interview">
+                    <img src="images/SP2.png" alt="Featured Article" id="feat-img"> 
                     <div class="featured-badge">
                         <i class="fas fa-star"></i>
                         <span>Featured</span>
@@ -149,24 +146,19 @@
                 </div>
                 <div class="featured-content">
                     <div class="featured-meta">
-                        <span class="featured-cat">Media Talk</span>
-                        <span class="featured-date">25th March 2025</span>
+                        <span class="featured-cat" id="feat-cat">Media Talk</span>
+                        <span class="featured-date" id="feat-date">10 min read | 25th March 2025</span>
                     </div>
-                    <h2 class="featured-headline">Redefining The Ideal Body: Curve Beauty vs. Scale Numbers</h2>
-                    <p class="featured-excerpt">An in-depth conversation about modern beauty standards and the shift from weight-focused thinking to celebrating natural curves. Dr. Sttanny shares her expert perspective on how true beauty transcends numbers on a scale.</p>
-                    <div class="featured-tags">
-                        <span class="tag">Body Positivity</span>
-                        <span class="tag">Expert Insight</span>
-                        <span class="tag">Media</span>
-                    </div>
+                    <h2 class="featured-headline" id="feat-title">Redefining The Ideal Body: Curve Beauty vs. Scale Numbers</h2>
+                    <p class="featured-excerpt" id="feat-desc">An in-depth conversation about modern beauty standards and the shift from weight-focused thinking to celebrating natural curves.</p>
                     
                     <div class="featured-actions">
-                        <a href="media2.html" class="featured-btn read-btn">
+                        <a href="media2.html" class="featured-btn read-btn" id="feat-link">
                             <i class="fas fa-book-open"></i>
                             <span>Read Article</span>
                         </a>
                         
-                        <a href="https://www.youtube.com/watch?v=VikzZ303l3E" target="_blank" class="featured-btn watch-btn">
+                        <a href="https://www.youtube.com/watch?v=VikzZ303l3E" target="_blank" class="featured-btn watch-btn" id="feat-watch-btn">
                             <i class="fas fa-play-circle"></i>
                             <span>Watch Interview</span>
                         </a>
@@ -191,12 +183,11 @@
                 <p style="color: #666; font-style: italic;">We are currently crafting expert insights for this category. Stay tuned for our upcoming edition!</p>
             </div>
             
-            
             <!-- MEDIA 1 -->
             <article class="article-card" data-category="media">
                 <a href="media1.html" class="card-link">
                     <div class="card-image">
-                        <img src="images/SP1.png" alt="Dr. Sttanny Journey">
+                        <img src="imagesSP/SP4.png" alt="Dr. Sttanny Journey">
                         <div class="image-overlay">
                             <i class="fas fa-arrow-right"></i>
                         </div>
@@ -212,6 +203,27 @@
                     </div>
                 </a>
             </article>
+
+            <!-- MEDIA 2 -->
+            <article class="article-card" data-category="media">
+            <a href="media2.html" class="card-link">
+                <div class="card-image">
+                    <img src="imagesSP/SP5.png" alt="Dr. Sttanny Journey">
+                    <div class="image-overlay">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="card-category">Media Talk</span>
+                    <h3 class="card-title">Redefining The Ideal Body: Curve Beauty vs. Scale Numbers</h3>
+                    <p class="card-excerpt">An in-depth conversation with CITYPlus about modern beauty standards and the shift from weight-focused thinking to celebrating natural curves.</p>
+                    <div class="card-meta">
+                        <span class="meta-item"><i class="far fa-clock"></i> 10 min read</span>
+                        <span class="meta-item"><i class="far fa-calendar"></i> Mar 2025</span>
+                    </div>
+                </div>
+            </a>
+        </article>
 
             <!-- HEALTH 1 -->
             <article class="article-card" data-category="health">
@@ -343,7 +355,7 @@
                 </a>
             </article>
 
-            <!-- EVENT 1 -->
+            <!-- EVENT 1 (JAN 2026)-->
             <article class="article-card" data-category="events">
                 <a href="event1.html" class="card-link">
                     <div class="card-image">
@@ -353,59 +365,102 @@
                         </div>
                     </div>
                     <div class="card-content">
-                        <span class="card-category">Event</span>
+                        <span class="card-category">Event Recap</span>
                         <h3 class="card-title">Slim Paris x KLPJ: Redefining Bridal Beauty</h3>
                         <p class="card-excerpt">Discover how Slim Paris helped brides-to-be at the KLPJ Bridal Fair redefine their silhouettes and gain the confidence to shine in their dream wedding gowns.</p>
                         <div class="card-meta">
                             <span class="meta-item"><i class="far fa-clock"></i> 5 min read</span>
-                            <span class="meta-item"><i class="far fa-calendar"></i>24 & 25 Jan 2026</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i>31 Jan 2026</span>
                         </div>
                     </div>
                 </a>
             </article>
 
-            <!-- EVENT 2 -->
-            <!-- <article class="article-card" data-category="events">
-                <a href="Article.html" class="card-link">
+            <!-- EVENT 2 (NOV 2025)-->
+            <article class="article-card" data-category="events">
+                <a href="event2.html" class="card-link">
                     <div class="card-image">
-                        <img src="images/hero1.png" alt="Bloating">
+                        <img src="imagesSP/2026-2.png" alt="TCE Wedding Expo Recap">
                         <div class="image-overlay">
-                            <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-play"></i>
                         </div>
                     </div>
                     <div class="card-content">
-                        <span class="card-category">Health</span>
-                        <h3 class="card-title">Bloating vs. Fat: Understanding Water Retention</h3>
-                        <p class="card-excerpt">How to identify water retention and drain it for immediate visible results.</p>
+                        <span class="card-category">Event Recap</span>
+                        <h3 class="card-title">TCE Wedding Expo: Sculpting Your Special Moment</h3>
+                        <p class="card-excerpt">Relive our vibrant days at the TCE Wedding Expo, where we helped brides-to-be discover their most confident silhouette for their big day.</p>
                         <div class="card-meta">
-                            <span class="meta-item"><i class="far fa-clock"></i> 8 min read</span>
-                            <span class="meta-item"><i class="far fa-calendar"></i> Jan 2026</span>
+                            <span class="meta-item"><i class="far fa-clock"></i> 4 min read</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i> 1 Dec 2025</span>
                         </div>
                     </div>
                 </a>
-            </article> -->
+            </article>
 
-            <!-- EVENT 3 -->
-            <!-- <article class="article-card" data-category="events">
-                <a href="Article.html" class="card-link">
+            <!-- EVENT 3 (FEB 2025)-->
+            <article class="article-card" data-category="events">
+                <a href="event3.html" class="card-link">
                     <div class="card-image">
-                        <img src="images/hero1.png" alt="Cellulite">
+                        <img src="imagesSP/2025-4.png" alt="TCE Wedding Expo">
                         <div class="image-overlay">
-                            <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-play"></i>
                         </div>
                     </div>
                     <div class="card-content">
-                        <span class="card-category">Myth Busting</span>
-                        <h3 class="card-title">The Truth About Cellulite</h3>
-                        <p class="card-excerpt">It's not fat, it's fascia. Discover the real science behind cellulite and effective treatments.</p>
+                        <span class="card-category">Event Recap</span>
+                        <h3 class="card-title">TCE Wedding Expo: The Bridal Glow</h3>
+                        <p class="card-excerpt">Discover how Slim Paris guided brides-to-be toward their most confident selves at the vibrant TCE Wedding Expo.</p>
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 4 min read</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i> 28 Feb 2025</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- EVENT 4 (SEPT 2024)-->
+            <article class="article-card" data-category="events">
+                <a href="event4.html" class="card-link">
+                    <div class="card-image">
+                        <img src="imagesSP/2024-2.png" alt="S-Shape Body Contouring">
+                        <div class="image-overlay">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Event Recap</span>
+                        <h3 class="card-title">S-Shape Masterclass: Figure First, Scale Second</h3>
+                        <p class="card-excerpt">A deep dive into our signature S-Shape sculpting technology. See how we redefine body curves using advanced contouring techniques.</p>
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 5 min read</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i> 1 Oct 2024</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- EVENT 5 (MAY 2024)-->
+            <article class="article-card" data-category="events">
+                <a href="event5.html" class="card-link">
+                    <div class="card-image">
+                        <img src="imagesSP/2024-1.png" alt="Slim Paris First Event">
+                        <div class="image-overlay">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Event Recap</span>
+                        <h3 class="card-title">The Grand Launch: Redefining the Curve</h3>
+                        <p class="card-excerpt">Our journey started here. A look back at the first-ever event where we introduced our "Figure First" sculpting philosophy to the world.</p>
                         <div class="card-meta">
                             <span class="meta-item"><i class="far fa-clock"></i> 6 min read</span>
-                            <span class="meta-item"><i class="far fa-calendar"></i> Dec 2025</span>
+                            <span class="meta-item"><i class="far fa-calendar"></i> 26 May 2024</span>
                         </div>
                     </div>
                 </a>
-            </article> -->
+            </article>
 
+            <!-- LOAD MORE BUTTON -->
             <div class="load-more-section" id="loadMoreSection" style="display: none;">
                 <button class="load-more-btn" id="loadMoreBtn">
                     <span>Load More Articles</span>
@@ -467,7 +522,7 @@
                     </svg>
                 </div>
                 <h2>Ready to start your own story?</h2>
-                <p class="cta-tagline">Transform your silhouette with Parisian elegance</p>
+                <p class="cta-tagline">Figure First , Scale Second</p>
                 <a href="https://wa.link/1rrri8"target="_blank" class="btn-book-now">
                     <span class="btn-bg"></span>
                     <span class="btn-text">Book Appointment Now</span>
@@ -484,7 +539,7 @@
             <div class="footer-col brand-col">
                 <img src="images/slimparislogo.png" alt="Slim Paris" class="footer-logo-white">
                 <p class="brand-desc">
-                    Where Parisian elegance meets modern body sculpting technology. Redefine your curves, empower your confidence.
+                    Redefining body standards through precision sculpting. Figure First, Scale Second. Empowering you to own your silhouette.
                 </p>
             </div>
 
@@ -493,7 +548,7 @@
                 <ul>
                     <li><a href="AboutUs.html">Our Story</a></li>
                     <li><a href="Services.html">Treatments</a></li>
-                    <li><a href="Promotional.html">Happenings</a></li>
+                    <li><a href="Promotional.html">Promotions</a></li>
                     <li><a href="Blog.html">Wellness Blog</a></li>
                 </ul>
             </div>
@@ -501,12 +556,36 @@
             <div class="footer-col contact-col">
                 <h4>Visit Us</h4>
                 <ul>
+                    <!-- map -->
                     <li><i class="fas fa-map-marker-alt"></i> Puchong, Selangor</li>
                     
+                    <!-- phone -->
                     <li><i class="fas fa-phone-alt"></i> +60 10-235 3737</li>
                     
-                    <li><i class="fas fa-envelope"></i> info@slimparis.com.my</li>
+                    <!-- email -->
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <div style="display: inline-block; vertical-align: top; margin-left: 10px;">
+                            <p style="margin: 0; font-size: 0.8rem; color: #D34836; font-weight: 700;">Customer Service</p>
+                            <a href="mailto:slimparisbooking@gmail.com" style="display: block; margin-bottom: 8px;">slimparisbooking@gmail.com</a>
+                            
+                            <p style="margin: 0; font-size: 0.8rem; color: #D34836; font-weight: 700;">DM for Collaboration</p>
+                            <a href="mailto:collab.slimparis@gmail.com">collab.slimparis@gmail.com</a>
+                        </div>
+                    </li> 
+
+                    <!-- hiring -->
+                    <li style="margin-top: 25px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-briefcase" style="color: #c5a47e; width: 20px; font-size: 14px;"></i>
+                        
+                        <a href="careers.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                            <span style="font-family: 'Lato', sans-serif; font-size: 1.2rem; color: #1a1a1a; font-weight: 400;">Join the Team</span>
+                            
+                            <span style="background: #D34836; color: #fff; font-size: 8px; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; line-height: 1;">Hiring</span>
+                        </a>
+                    </li>
                     
+                    <!-- Opening Hours -->
                     <li style="margin-top: 15px; display: block;">
                         
                         <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 5px;">

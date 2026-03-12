@@ -98,11 +98,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // 1. DYNAMIC FILTER LOGIC
+    // 1. DYNAMIC FILTER LOGIC
     function applyGroupFilter(category, isInitialLoad = false) {
         sessionStorage.setItem('blogCategory', category);
 
-        // Filter logic
-        filteredArticles = articleCards.filter(card => {
+        let currentFiltered = articleCards.filter(card => {
             const cardCat = card.getAttribute('data-category');
             if (category === 'all') return true;
             if (category === 'media') return cardCat === 'media' || cardCat === 'founder';
@@ -110,21 +111,57 @@ document.addEventListener("DOMContentLoaded", function() {
             return cardCat === category;
         });
 
-        // Toggle "Coming Soon" message
-        if (noArticlesMsg) {
-            noArticlesMsg.style.display = (filteredArticles.length === 0) ? 'block' : 'none';
+        const featuredSection = document.getElementById('dynamic-featured-card');
+        const watchBtn = document.getElementById('feat-watch-btn');
+
+        if (category === 'all') {
+            featuredSection.style.display = 'block';
+            if(watchBtn) watchBtn.style.display = 'flex';
+            
+            document.getElementById('feat-title').textContent = "Redefining The Ideal Body: Curve Beauty vs. Scale Numbers";
+            document.getElementById('feat-desc').textContent = "An in-depth conversation about modern beauty standards and the shift from weight-focused thinking to celebrating natural curves.";
+            document.getElementById('feat-img').src = "images/SP2.png";
+            document.getElementById('feat-cat').textContent = "Media Talk";
+            document.getElementById('feat-date').textContent = "10 min read | 25th March 2025"; // Hard-coded pipe for the main story
+            document.getElementById('feat-link').href = "media2.html";
+            
+            filteredArticles = currentFiltered;
+
+        } else if (currentFiltered.length > 0) {
+            featuredSection.style.display = 'block';
+            if(watchBtn) watchBtn.style.display = 'none';
+            
+            const topArticle = currentFiltered[0]; 
+
+            // 1. Format the metadata (Read time + Pipe + Date)
+            const readTime = topArticle.querySelector('.meta-item:nth-child(1)').textContent.trim();
+            const articleDate = topArticle.querySelector('.meta-item:nth-child(2)').textContent.trim();
+            const formattedMeta = `${readTime} | ${articleDate}`;
+
+            // 2. Extract other info
+            const title = topArticle.querySelector('.card-title').textContent;
+            const desc = topArticle.querySelector('.card-excerpt').textContent;
+            const imgSrc = topArticle.querySelector('img').src;
+            const catLabel = topArticle.querySelector('.card-category').textContent;
+            const link = topArticle.querySelector('.card-link').href;
+
+            // 3. Inject everything into the Featured Section
+            document.getElementById('feat-title').textContent = title;
+            document.getElementById('feat-desc').textContent = desc;
+            document.getElementById('feat-img').src = imgSrc;
+            document.getElementById('feat-cat').textContent = catLabel;
+            document.getElementById('feat-date').textContent = formattedMeta; // Use the piped version!
+            document.getElementById('feat-link').href = link;
+
+            filteredArticles = currentFiltered.slice(1);
+
+        } else {
+            featuredSection.style.display = 'none';
+            filteredArticles = [];
         }
 
-        // Handle Featured Card visibility
-        if (featuredCard) {
-            const featCat = featuredCard.getAttribute('data-category');
-            let shouldShowFeatured = false;
-            if (category === 'all') shouldShowFeatured = true;
-            else if (category === 'media' && (featCat === 'media' || featCat === 'founder')) shouldShowFeatured = true;
-            else if (category === 'health' && (featCat === 'health' || featCat === 'lifestyle')) shouldShowFeatured = true;
-            else if (featCat === category) shouldShowFeatured = true;
-            
-            featuredCard.style.display = shouldShowFeatured ? 'block' : 'none';
+        if (noArticlesMsg) {
+            noArticlesMsg.style.display = (currentFiltered.length === 0) ? 'block' : 'none';
         }
 
         createPagination();
@@ -137,11 +174,40 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // === 3. EVENT LISTENERS ===
+   // 2. BUTTON LISTENERS WITH DYNAMIC SCROLL
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // UI: Highlight the clicked button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // LOGIC: Swap the Featured content and Filter the Grid
+            const category = this.getAttribute('data-category');
+            applyGroupFilter(category);
+
+            // SCROLL: Move view to the "Featured" Label
+            const scrollTarget = document.getElementById('featured-anchor');
+            if (scrollTarget) {
+                // Increased from 160 to 185 to push the text further down
+                const navOffset = 185; 
+                
+                const elementPosition = scrollTarget.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - navOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // === 3. PAGINATION CLICK LISTENER ===
     if (paginationContainer) {
         paginationContainer.addEventListener('click', (e) => {
             const target = e.target.closest('button');
             if (!target) return;
+            
             const action = target.getAttribute('data-page');
             const totalPages = Math.ceil(filteredArticles.length / limit);
 
@@ -155,15 +221,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            const category = this.getAttribute('data-category');
-            applyGroupFilter(category);
-        });
-    });
 
     // === 4. SAFARI-PROOF SCROLL & HISTORY MANAGEMENT ===
     

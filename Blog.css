@@ -331,7 +331,7 @@
 
 /* Add a margin to the section below it so the first few articles aren't hidden */
 .articles-section {
-    padding: 120px 5% 80px; /* Increased top padding to clear the sticky filter */
+    padding: -200px 5% 80px; /* Increased top padding to clear the sticky filter */
     background: var(--bg-cream);
     overflow: visible; /* CRITICAL: Allows script font loops to show */
 }
@@ -489,7 +489,8 @@
 .featured-date {
     font-size: 0.85rem;
     color: var(--grey);
-    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
 .featured-headline {
@@ -548,7 +549,7 @@
 
 /* --- ARTICLES SECTION (SCALABLE GRID) --- */
 .articles-section {
-    padding: 200px 5% 80px; /* Increased top padding from 80px to 100px */
+    padding:50px 5% 80px !important; /* Increased top padding from 80px to 100px */
     background: var(--cream);
     overflow: visible;      /* Ensure tall letters aren't clipped */
 }
@@ -559,7 +560,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 30px;
+    padding-top: 40px; 
+    padding-bottom: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     overflow: visible; /* Allows the title-script to breathe */
 }
@@ -569,7 +571,8 @@
     font-size: 2rem; 
     font-weight: 300;
     color: var(--charcoal);
-    line-height: 1.6; /* Higher line-height gives script fonts vertical space */
+    line-height: 2.2 !important; /* Higher line-height gives script fonts vertical space */
+    margin-bottom: 10px;
 }
 
 .view-toggle {
@@ -1052,7 +1055,7 @@
 }
 
 .blog-pagination-wrapper {
-    margin: 60px 0 40px 0; /* Keeps top/bottom spacing */
+    margin: -40px 0 40px 0; /* Keeps top/bottom spacing */
     display: flex;
     flex-direction: column;
     align-items: center;    /* Centers children horizontally */
@@ -1199,7 +1202,7 @@
 @media (max-width: 768px) {
     /* --- FLOATING DATE --- */
     .floating-date {
-        top: 90px; /* Moves it down so it doesn't hit the navbar */
+        top: 90px; 
         right: 15px;
     }
     
@@ -1362,10 +1365,6 @@
    ========================================= */
 
 @media (max-width: 768px) {
-    /* 1. Fix the "Covering Stuff" Problem (Layers) */
-    .navbar { 
-        z-index: 1001 !important; 
-    }
     .floating-date { 
         z-index: 1000 !important; 
         top: 85px !important; 
@@ -1375,7 +1374,7 @@
     .filter-section { 
         z-index: 999 !important; 
         position: sticky !important;
-        top: 70px !important; /* This keeps it right under the navbar */
+        top: 70px !important; 
         background: #fff !important;
         padding: 10px 0 !important;
     }
@@ -1483,4 +1482,23 @@
         width: 100%;
         font-size: 0.8rem;
     }
+}
+
+.hiring-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.hiring-badge {
+    background: var(--accent); /* Your brand red */
+    color: #fff;
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
 }

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happenings | Slim Paris</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="careers.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="images/slimparislogo.png" alt="SlimParis">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
+            <li class="dropdown">
+                <a href="Services.html" class="nav-link">Services</a>
+                <span class="arrow-trigger" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </span>
+
+                <div class="dropdown-content services-grid">
+                    <a href="NecklineSculpting.html">Neck Line Sculpting</a>
+                    <a href="ThinBack.html">Thin Back</a>
+                    <a href="FeminineCareRejuvenation.html">Feminine Care Rejuvenation</a>
+                    <a href="HipContouringTreatment.html">Hip Contouring Treatment</a>
+                    <a href="ByeByeBelly.html">Bye Bye Belly</a>
+                    <a href="PeachButt.html">Peach Butt</a>
+                    <a href="SLineBody.html">S-Line Body Contouring</a>
+                    <a href="CoreWaist.html">Core & Waist Contouring Treatment</a>
+                    <a href="HunchBack.html">Rounded Shoulder Hunch Back</a>
+                    <a href="LegSculpting.html">Leg Sculpting</a>
+                    <a href="Face.html">Face Sculpting</a>
+                    <a href="Whitening.html">Whitening Treatment</a>
+                </div>
+
+            </li>
+            <li><a href="Testimonial.html" class="nav-link">Testimonial</a></li>
+            <li><a href="ContactUs.html" class="nav-link">Contact Us</a></li>
+            <li><a href="Blog.html" class="nav-link">Blog</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" id="search-box" placeholder="Type and hit Enter...">
+            <div class="nav-search-icon" onclick="toggleSearch()"><i class="fas fa-search"></i></div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+   <section class="page-hero reveal">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-title-container">
+            <span class="badge-gold"></span>
+            <h1 class="page-title">Hiring <span class="italic-red">Opportunities</span></h1>
+            <div class="title-divider"></div>
+            <p class="hero-subtitle">Join our team and be part of something amazing!</p>
+        </div>
+    </section>
+
+    <!-- content -->
+    <!-- <section class="careers-section reveal">
+        <div class="container">
+            
+            <div class="career-intro">
+                <h2 class="section-title">Why Join <span class="italic-red">SlimParis?</span></h2>
+                <p class="career-lead">
+                    At SlimParis, we don't just provide treatments; we provide transformations. We are looking for individuals who believe in our <strong>"Figure First, Scale Second"</strong> philosophy—experts who prioritize silhouette sculpting and client confidence over just numbers.
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Growth</h3>
+                    <p>Continuous training in the latest body sculpting technologies and techniques.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-gem"></i>
+                    <h3>Culture</h3>
+                    <p>A high-end, supportive environment that values precision and professionalism.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-heart"></i>
+                    <h3>Impact</h3>
+                    <p>Be part of a team that empowers clients to redefine their body standards.</p>
+                </div>
+            </div>
+
+            <div class="positions-header">
+                <h3>Current Openings</h3>
+                <div class="small-divider"></div>
+            </div>
+
+            <div class="jobs-list">
+                <div class="job-card">
+                    <div class="job-info">
+                        <h4>Body Sculpting Consultant</h4>
+                        <span class="job-type">Full-Time | Puchong</span>
+                    </div>
+                    <p>Seeking an expert to guide clients through their transformation journey and recommend custom sculpting plans.</p>
+                    <a href="mailto:collab.slimparis@gmail.com?subject=Application: Consultant" class="btn-apply">Apply Now</a>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-info">
+                        <h4>Beautician & Therapist</h4>
+                        <span class="job-type">Full-Time | Puchong</span>
+                    </div>
+                    <p>Must have experience in body contouring treatments and a passion for delivering visible results.</p>
+                    <a href="mailto:collab.slimparis@gmail.com?subject=Application: Therapist" class="btn-apply">Apply Now</a>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-info">
+                        <h4>Marketing / UIUX Intern</h4>
+                        <span class="job-type">Internship | Remote/Office</span>
+                    </div>
+                    <p>Help us digitally transform our brand experience and maintain our "Figure First" online presence.</p>
+                    <a href="mailto:collab.slimparis@gmail.com?subject=Application: Intern" class="btn-apply">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="connect-invite reveal">
+        <div class="connect-container">
+            <h2 class="connect-title">Let's <span class="italic-red">Connect</span></h2>
+            <div class="connect-divider"></div>
+            <p class="connect-text">
+                Don't see a position that matches your skill set? We are always looking for passionate individuals who live the <strong>"Figure First, Scale Second"</strong> lifestyle. If you have a unique talent that can help SlimParis grow, we want to hear from you.
+            </p>
+            <a href="mailto:collab.slimparis@gmail.com" class="connect-btn">
+                Drop us your CV <i class="fas fa-paper-plane"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="luxury-footer">
+        <div class="footer-content">
+            
+            <div class="footer-col brand-col">
+                <img src="images/slimparislogo.png" alt="Slim Paris" class="footer-logo-white">
+                <p class="brand-desc">
+                    Redefining body standards through precision sculpting. Figure First, Scale Second. Empowering you to own your silhouette.
+                </p>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="AboutUs.html">Our Story</a></li>
+                    <li><a href="Services.html">Treatments</a></li>
+                    <li><a href="Promotional.html">Promotions</a></li>
+                    <li><a href="Blog.html">Wellness Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Visit Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Puchong, Selangor</li>
+                    
+                    <li><i class="fas fa-phone-alt"></i> +60 10-235 3737</li>
+                    
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <div style="display: inline-block; vertical-align: top; margin-left: 10px;">
+                            <p style="margin: 0; font-size: 0.8rem; color: #D34836; font-weight: 700;">Customer Service</p>
+                            <a href="mailto:slimparisbooking@gmail.com" style="display: block; margin-bottom: 8px;">slimparisbooking@gmail.com</a>
+                            
+                            <p style="margin: 0; font-size: 0.8rem; color: #D34836; font-weight: 700;">DM for Collaboration</p>
+                            <a href="mailto:collab.slimparis@gmail.com">collab.slimparis@gmail.com</a>
+                        </div>
+                    </li> 
+
+                    <!-- hiring -->
+                    <li style="margin-top: 25px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-briefcase" style="color: #c5a47e; width: 20px; font-size: 14px;"></i>
+                        
+                        <a href="careers.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                            <span style="font-family: 'Lato', sans-serif; font-size: 1.2rem; color: #1a1a1a; font-weight: 400;">Join the Team</span>
+                            
+                            <span style="background: #D34836; color: #fff; font-size: 8px; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; line-height: 1;">Hiring</span>
+                        </a>
+                    </li>
+                    
+                    <li style="margin-top: 15px; display: block;">
+                        
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 5px;">
+                            <span style="font-weight: 700; color: #333; width: 100px;">Mon — Fri</span>
+                            <span>10am – 7pm</span>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 5px;">
+                            <span style="font-weight: 700; color: #D34836; width: 100px;">Sat / P.Hol</span>
+                            <span style="color: #D34836; font-weight: 700;">11am – 7pm</span>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="font-weight: 700; color: #333; width: 100px;">Sunday</span>
+                            <span>11am – 6pm</span>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-col social-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons-row">
+                    <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="sc-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="sc-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099?xhsshare=CopyLink&appuid=62f739c0000000001f016ec3&apptime=1707273346" target="_blank"  class="sc-icon"><span style="font-weight:bold; font-size: 0.8em;">小</span></a> <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="sc-icon"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright-text">
+                <p>SPG WELLNESS CODE SDN. BHD. 20231101012 (1504501X)</p>
+                <p>&copy; 2026 Slim Paris. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY SOCIAL MEDIA MENU -->
+    <div class="sticky-social-menu">
+        <div class="social-list">
+            <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-bubble tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099" class="social-bubble xhs" title="Xiaohongshu"><span style="font-weight:bold; font-size:14px;">小红书</span></a>
+            <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="social-bubble fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="social-bubble insta" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.link/1rrri8" target="_blank" class="social-bubble whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="social-trigger">
+            <i class="fas fa-comment-dots"></i>
+            <span class="pulse-ring"></span>
+        </div>
+    </div>
+
+    <script src="icon.js"></script>
+    <script>
+        function toggleMobileMenu(element) {
+            event.stopPropagation();
+            const parentLi = element.closest('.dropdown');
+            parentLi.classList.toggle('show-menu');
+        }
+        function toggleSearch() {
+            const sb = document.getElementById('search-box');
+            sb.style.display = sb.style.display === 'block' ? 'none' : 'block';
+            if (sb.style.display === 'block') sb.focus();
+        }
+        document.getElementById('search-box').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                if (window.find && e.target.value.length > 0) {
+                    if (!window.find(e.target.value)) alert("Text not found.");
+                }
+            }
+        });
+        function toggleMenu() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        }
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                } else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+        // Force reveal once on load
+        reveal();
+    </script>
+</body>
+</html>

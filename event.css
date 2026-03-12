@@ -1,0 +1,356 @@
+:root {
+  --black: #0f0f0f;
+  --white: #fafafa;
+  --grey-light: #f2f2f2;
+  --grey-mid: #e0e0e0;
+  --grey-text: #888;
+  --gold: #c5a059;
+  --red: #D34836;
+  --font-main: 'DM Sans', sans-serif;
+  --font-display: 'DM Serif Display', serif;
+  --nav-height: 72px;
+}
+
+/* 1. RESET & BASE */
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-main);
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 3. CORE LAYOUT */
+.page-grid {
+  display: grid;
+  grid-template-columns: 450px 1fr; /* Fixed sidebar for premium feel */
+  min-height: 100vh;
+  margin-top: var(--nav-height);
+}
+
+/* 4. LEFT PANEL (STICKY) */
+.left-panel {
+  position: sticky;
+  top: var(--nav-height);
+  height: calc(100vh - var(--nav-height));
+  padding: 80px 60px;
+  border-right: 1.5px solid var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--white);
+  z-index: 10;
+}
+
+.back-btn {
+  display: inline-flex; 
+  align-items: center;
+  text-decoration: none; 
+  color: var(--grey-text);
+  font-size: 20px; 
+  letter-spacing: 2px; 
+  text-transform: uppercase;
+  font-weight: 700; 
+  transition: 0.3s;
+  /* Ensure no top margin on the button itself */
+  margin-top: 0; 
+}
+
+.back-btn:hover { color: var(--black); transform: translateX(-5px); }
+
+.eyebrow {
+  display: block; font-size: 10px; letter-spacing: 5px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+}
+
+.display-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 1.1; color: var(--black); margin-bottom: 25px;
+}
+
+.display-title .accent { 
+  font-style: italic; 
+  color: var(--grey-text); 
+  font-weight: 400;
+}
+
+.date-tag {
+  display: inline-block;
+  border: 1.5px solid var(--black);
+  padding: 8px 16px;
+  font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; font-weight: 700;
+}
+
+.lang-btn {
+  background: var(--black); color: var(--white); border: none;
+  padding: 16px 30px; font-family: var(--font-main);
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  font-weight: 600; cursor: pointer; transition: 0.4s;
+  align-self: flex-start;
+}
+
+.lang-btn:hover { background: var(--gold); }
+
+/* 5. RIGHT PANEL (SCROLLABLE) */
+.right-panel {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.video-section { position: relative; overflow: hidden; }
+
+.video-img {
+  width: 100%;
+  height: 75vh;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-link:hover .video-img { transform: scale(1.05); }
+
+.play-overlay {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.15); transition: background 0.4s;
+}
+
+.video-link:hover .play-overlay { background: rgba(0,0,0,0.3); }
+
+.play-circle {
+  width: 80px; height: 80px; border: 1px solid var(--white);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  color: var(--white); font-size: 20px; margin-bottom: 15px;
+  backdrop-filter: blur(5px);
+}
+
+.video-label { 
+  font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--white); 
+}
+
+/* 6. CONTENT AREA */
+.content-area {
+  padding: 100px 15%;
+  position: relative;
+  border-top: 1.5px solid var(--black);
+}
+
+.section-number {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 25px; display: block;
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: 2.2rem; margin-bottom: 25px; font-style: italic;
+}
+
+.body-text {
+  font-size: 16px; line-height: 1.9; color: #444;
+  max-width: 550px; margin-bottom: 40px;
+}
+
+.content-divider {
+  border: none; border-top: 1px solid var(--grey-mid);
+  margin: 60px 0; width: 100px;
+}
+
+.ghost-num {
+  position: absolute; bottom: -20px; right: 20px;
+  font-family: var(--font-display); font-size: 22rem;
+  color: var(--grey-light); opacity: 0.5; z-index: -1;
+  pointer-events: none; user-select: none;
+}
+
+.panel-footer {
+  border-top: 1.5px solid var(--black);
+  padding: 40px 60px;
+  display: flex; justify-content: space-between;
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--grey-text);
+}
+
+/* 7. ANIMATIONS */
+.fade-in { 
+  opacity: 0; 
+  transform: translateY(30px); 
+  animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+}
+
+@keyframes reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.d1 { animation-delay: 0.2s; }
+.d2 { animation-delay: 0.4s; }
+.d3 { animation-delay: 0.6s; }
+
+/* 8. RESPONSIVE DESIGN */
+@media (max-width: 1100px) {
+  .page-grid { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .left-panel {
+    position: relative; 
+    top: 0; 
+    height: auto !important;
+    min-height: 0 !important; 
+    padding: 20px 40px 40px 40px; 
+    
+    border-right: none;
+    border-bottom: 1.5px solid var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    gap: 15px; 
+  }
+  .top-nav-meta {
+    margin: 0;
+    padding: 0;
+  }
+
+  .content-area { 
+    padding: 60px 24px; 
+  }
+  
+  .ghost-num { 
+    font-size: 8rem; 
+    bottom: -20px; 
+    opacity: 0.2; 
+  }
+  
+  .navbar { 
+    padding: 0 20px; 
+  }
+
+  .video-img {
+        height: 45vh !important; /* Changed from 75vh to 45vh */
+        width: 100%;
+        object-fit: cover; /* Keeps it filling the area without stretching */
+        object-position: center; /* Ensures the focus stays on the middle of the image */
+    }
+
+  /* Adjust the play button size for the smaller video */
+    .play-circle {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 16px !important;
+    }
+
+    /* Reduce the padding of the content area so it doesn't feel like a separate page */
+    .content-area {
+        padding: 40px 24px !important;
+    }
+}
+
+/* --- EXTRA HIGHLIGHTS SECTION --- */
+.extra-videos {
+    /* Space out from story text without using a border line */
+    margin-top: 50px; 
+    padding-top: 0; 
+}
+
+/* The grid that holds the square cards */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+    max-width: 450px; 
+}
+
+/* Individual Card Styling */
+.grid-card {
+    text-decoration: none;
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    /* Luxury smooth transition */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    width: 100%;
+}
+
+.grid-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Perfect Square Wrapper */
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    overflow: hidden;
+    background: var(--grey-light);
+}
+
+.card-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Soft editorial start */
+    filter: grayscale(10%); 
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.grid-card:hover .card-thumb {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.2);
+    color: var(--white);
+    font-size: 1.8rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.grid-card:hover .card-overlay {
+    opacity: 1;
+    background: rgba(0,0,0,0.4);
+}
+
+.card-caption {
+    padding: 18px 15px;
+    background: var(--black);
+    color: var(--white);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Responsive Fix: Stack on mobile and center */
+@media (max-width: 700px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .video-img {
+        height: 35vh !important; /* Even smaller for small phones */
+    }
+    
+    .display-title {
+        font-size: 1.8rem !important; /* Prevents text from pushing video too far down */
+    }
+}

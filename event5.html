@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLPJ Bridal Fair | Slim Paris</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="event.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="images/slimparislogo.png" alt="SlimParis">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
+            <li class="dropdown">
+                <a href="Services.html" class="nav-link">Services</a>
+                <span class="arrow-trigger" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </span>
+                
+                <div class="dropdown-content services-grid">
+                    <a href="NecklineSculpting.html">Neck Line Sculpting</a>
+                    <a href="ThinBack.html">Thin Back</a>
+                    <a href="FeminineCareRejuvenation.html">Feminine Care Rejuvenation</a>
+                    <a href="HipContouringTreatment.html">Hip Contouring Treatment</a>
+                    <a href="ByeByeBelly.html">Bye Bye Belly</a>
+                    <a href="PeachButt.html">Peach Butt</a>
+                    <a href="SLineBody.html">S-Line Body Contouring</a>
+                    <a href="CoreWaist.html">Core & Waist Contouring Treatment</a>
+                    <a href="HunchBack.html">Rounded Shoulder Hunch Back</a>
+                    <a href="LegSculpting.html">Leg Sculpting</a>
+                    <a href="Face.html">Face Sculpting</a>
+                    <a href="Whitening.html">Whitening Treatment</a>
+                </div>
+
+            </li>
+            <li><a href="Testimonial.html" class="nav-link">Testimonial</a></li>
+            <li><a href="ContactUs.html" class="nav-link">Contact Us</a></li>
+            <li><a href="Blog.html" class="nav-link active">Blog</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" id="search-box" placeholder="Type and hit Enter...">
+            <div class="nav-search-icon" onclick="toggleSearch()"><i class="fas fa-search"></i></div>
+        </div>
+    </nav>
+
+    <div class="page-grid">
+        <aside class="left-panel">
+            <div class="top-meta">
+                <a href="Blog.html" class="back-btn fade-in"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Blog</a>
+            </div>
+
+            <div class="title-block">
+                <span class="eyebrow fade-in d1">Event Recap // 2024</span>
+                
+                <div id="title-zh" class="lang-node">
+                    <h1 class="display-title fade-in d1">TCE<br>婚博会<br><span class="accent">开启蜕变之美</span></h1>
+                </div>
+                <div id="title-en" class="lang-node" style="display:none;">
+                    <h1 class="display-title fade-in d1">TCE<br>Wedding Expo<br><span class="accent">The Bridal Glow</span></h1>
+                </div>
+                
+                <div class="date-tag fade-in d2">17 — 19 May 2024</div>
+            </div>
+
+            <button id="langToggle" class="lang-btn fade-in d3" onclick="toggleLanguage()">
+                English Version
+            </button>
+        </aside>
+
+        <main class="right-panel">
+            <section class="video-section">
+                <a href="https://www.instagram.com/reel/C4se8f1LuCW/" target="_blank" class="video-link">
+                    <img src="imagesSP/2024-1.png" alt="TCE May Highlights" class="video-img">
+                    <div class="play-overlay">
+                        <div class="play-circle"><i class="fas fa-play"></i></div>
+                        <div id="video-zh" class="lang-node"><span class="video-label">点击观看花絮</span></div>
+                        <div id="video-en" class="lang-node" style="display:none;"><span class="video-label">Watch Highlight Reel</span></div>
+                    </div>
+                </a>
+            </section>
+
+            <article class="content-area">
+                <div id="content-zh" class="lang-node">
+                    <div class="story-segment">
+                        <span class="section-number">01 — Event</span>
+                        <p class="body-text">回顾 2024 年 5 月，Slim Paris 首次亮相 TCE 婚博会。这是我们这一年与准新娘们建立连接的起点，见证了无数关于美的期许与承诺。</p>
+                    </div>
+                    <hr class="content-divider">
+                    <div class="story-segment">
+                        <span class="section-number">02 — Story</span>
+                        <h3 class="section-heading">曲线美，胜过数字</h3>
+                        <p class="body-text">作为年度首场婚博会，我们带来了专业的法式体雕方案。通过对副乳、颈部与背部线条的细致分析，我们致力于让每位新娘都能在人生最重要的时刻，展现出独一无二的光芒。</p>
+                    </div>
+                </div>
+
+                <div id="content-en" class="lang-node" style="display:none;">
+                    <div class="story-segment">
+                        <span class="section-number">01 — Event</span>
+                        <p class="body-text">Looking back at May 2024, Slim Paris made its debut at the TCE Wedding Expo. This marked our first major connection with brides-to-be of the year, witnessing countless promises of beauty and elegance.</p>
+                    </div>
+                    <hr class="content-divider">
+                    <div class="story-segment">
+                        <span class="section-number">02 — Story</span>
+                        <h3 class="section-heading">Figure First, Scale Second</h3>
+                        <p class="body-text">As our first wedding expo of the year, we introduced professional Parisian body sculpting solutions. By focusing on refined contours for the neckline and back, we aimed to ensure every bride shines with her own unique radiance on her special day.</p>
+                    </div>
+                </div>
+                <hr class="content-divider">
+                <div class="extra-videos">
+                    <span class="section-number">03 — More Highlights</span>
+                    <div class="video-grid">
+                        <a href="https://www.instagram.com/reel/C4se8f1LuCW/" target="_blank" class="grid-card">
+                            <div class="card-image-wrapper">
+                                <img src="imagesSP/2024-3.png" alt="Booth Moments" class="card-thumb">
+                                <div class="card-overlay"><i class="fas fa-play"></i></div>
+                            </div>
+                            <div class="card-caption">Booth Highlights</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="ghost-num">05</div>
+            </article>
+        </main>
+    </div>
+
+    <!-- footer -->
+    <footer class="luxury-footer">
+        <div class="footer-content">
+            <div class="footer-col brand-col">
+                <img src="images/slimparislogo.png" alt="Slim Paris" class="footer-logo-white">
+                <p class="brand-desc">
+                    Redefining body standards through precision sculpting. Figure First, Scale Second. Empowering you to own your silhouette.
+                </p>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="AboutUs.html">Our Story</a></li>
+                    <li><a href="Services.html">Treatments</a></li>
+                    <li><a href="Promotional.html">Promotions</a></li>
+                    <li><a href="Blog.html">Wellness Blog</a></li>
+                </ul>x
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Visit Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Puchong, Selangor</li>
+                    
+                    <li><i class="fas fa-phone-alt"></i> +60 10-235 3737</li>
+                    
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <div style="display: inline-block; vertical-align: top; margin-left: 10px;">
+                            <p style="margin: 0; font-size: 0.8rem; color: #D34836; font-weight: 700;">Customer Service</p>
+                            <a href="mailto:slimparisbooking@gmail.com" style="display: block; margin-bottom: 8px;">slimparisbooking@gmail.com</a>
+                            
+                            <p style="margin: 0; font-size: 0.8rem; color: #D34836; font-weight: 700;">DM for Collaboration</p>
+                            <a href="mailto:collab.slimparis@gmail.com">collab.slimparis@gmail.com</a>
+                        </div>
+                    </li> 
+
+                    <!-- hiring -->
+                    <li style="margin-top: 25px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-briefcase" style="color: #c5a47e; width: 20px; font-size: 14px;"></i>
+                        
+                        <a href="careers.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                            <span style="font-family: 'Lato', sans-serif; font-size: 1.2rem; color: #1a1a1a; font-weight: 400;">Join the Team</span>
+                            
+                            <span style="background: #D34836; color: #fff; font-size: 8px; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; line-height: 1;">Hiring</span>
+                        </a>
+                    </li>
+                    
+                    <li style="margin-top: 15px; display: block;">
+                        
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 5px;">
+                            <span style="font-weight: 700; color: #333; width: 100px;">Mon — Fri</span>
+                            <span>10am – 7pm</span>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 5px;">
+                            <span style="font-weight: 700; color: #D34836; width: 100px;">Sat / P.Hol</span>
+                            <span style="color: #D34836; font-weight: 700;">11am – 7pm</span>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="font-weight: 700; color: #333; width: 100px;">Sunday</span>
+                            <span>11am – 6pm</span>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-col social-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons-row">
+                    <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="sc-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="sc-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099?xhsshare=CopyLink&appuid=62f739c0000000001f016ec3&apptime=1707273346" target="_blank"  class="sc-icon"><span style="font-weight:bold; font-size: 0.8em;">小</span></a> <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="sc-icon"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright-text">
+                <p>SPG WELLNESS CODE SDN. BHD. 20231101012 (1504501X)</p>
+                <p>&copy; 2026 Slim Paris. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY SOCIAL MENU -->
+    <div class="sticky-social-menu">
+        <div class="social-list">
+            <a href="https://www.tiktok.com/@slimparisofficial" target="_blank" class="social-bubble tiktok" title="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+
+            <a href="https://www.xiaohongshu.com/user/profile/6561f9be0000000008001099?xhsshare=CopyLink&appuid=62f739c0000000001f016ec3&apptime=1707273346" class="social-bubble xhs" title="Xiaohongshu">
+                <span style="font-weight:bold; font-size:14px;">小红书</span>
+            </a>
+
+            <a href="https://www.facebook.com/SlimParisPuchong/" target="_blank" class="social-bubble fb" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="https://www.instagram.com/slimparisofficial/" target="_blank" class="social-bubble insta" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+            <a href="https://wa.link/1rrri8" target="_blank" class="social-bubble whatsapp" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+        <div class="social-trigger">
+            <i class="fas fa-comment-dots"></i>
+            <span class="pulse-ring"></span>
+        </div>
+    </div>
+
+    <script>
+        function toggleLanguage() {
+            const zhNodes = document.querySelectorAll('[id$="-zh"]');
+            const enNodes = document.querySelectorAll('[id$="-en"]');
+            const btn = document.getElementById('langToggle');
+            const showingEn = enNodes[0].style.display === "block";
+
+            zhNodes.forEach(el => el.style.display = showingEn ? "block" : "none");
+            enNodes.forEach(el => el.style.display = showingEn ? "none" : "block");
+            
+            btn.innerText = showingEn ? "English Version" : "切换至中文";
+        }
+
+                // === NAVIGATION FUNCTIONS ===
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        function toggleMobileMenu(element) {
+            // Prevent the click from bubbling up
+            if (event) event.stopPropagation();
+            
+            // Find the parent <li> and toggle the class
+            const parentLi = element.closest('.dropdown');
+            parentLi.classList.toggle('show-menu');
+        }
+
+        function toggleSearch() {
+            const sb = document.getElementById('search-box');
+            if (sb) {
+                sb.style.display = (sb.style.display === 'block') ? 'none' : 'block';
+                if (sb.style.display === 'block') sb.focus();
+            }
+        }
+    </script>
+</body>
+</html>
