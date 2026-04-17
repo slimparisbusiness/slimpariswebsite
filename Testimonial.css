@@ -505,3 +505,64 @@
         font-size: 2.5rem; /* Smaller numbers for phone */
     }
 }
+/* =========================================
+   RESPONSIVE GADGET FIXES (Paste at Bottom)
+   ========================================= */
+
+/* TABLET LUXURY (iPads & Small Laptops) */
+@media (max-width: 1024px) {
+    .stats-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2x2 Grid for Tablet */
+        width: 92%;
+        gap: 0;
+        padding: 20px 0;
+    }
+
+    .stat-item:nth-child(2) {
+        border-right: none; /* Removes line on the 2nd item in 2x2 layout */
+    }
+
+    .faq-flip-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 FAQ cards per row */
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+/* MOBILE SHARP (Phones) */
+@media (max-width: 768px) {
+    .stats-section {
+        grid-template-columns: 1fr; /* Single column for Phones */
+        margin-top: -30px;
+    }
+
+    .stat-item {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 20px 0;
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+
+    .faq-flip-grid {
+        grid-template-columns: 1fr; /* Single column for FAQ */
+    }
+
+    .section-heading {
+        font-size: 2.5rem;
+    }
+
+    .script-font {
+        display: block; /* Moves "Love Notes" below "Client" for better fit */
+        margin-left: 0;
+    }
+    
+    .review-img-card {
+        width: 250px; /* Slimmer review cards for mobile */
+    }
+}
