@@ -12,31 +12,6 @@
     text-align: center;
 }
 
-/* FIX FOR ALL MOBILE DEVICES  */
-@media (max-width: 1024px) {
-    .testimonial-hero {
-        /* This stops the "Giant Zoom" bug on all mobile browsers */
-        background-attachment: scroll !important; 
-        
-        /* Adjust height so it fits nicely on a phone screen */
-        height: 50vh !important; 
-        
-        /* Ensures the focus stays on the middle of your image */
-        background-position: center center !important;
-    }
-
-    .hero-content h1 {
-        /* Shrink the text so "Transformation" doesn't cut off */
-        font-size: 2.5rem !important;
-        padding: 0 15px;
-    }
-
-    .hero-content p {
-        font-size: 1rem !important;
-        padding: 0 20px;
-    }
-}
-
 .hero-overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.4); /* Darkens image so text pops */
@@ -505,38 +480,23 @@
         font-size: 2.5rem; /* Smaller numbers for phone */
     }
 }
+
 /* =========================================
-   SUPER RESPONSIVE GADGET FIX
+   MASTER RESPONSIVE BLOCK (ONLY ONE!)
    ========================================= */
 
-/* TABLET FIX (iPads) */
 @media screen and (max-width: 1024px) {
-    /* 1. Force Stats to 2x2 Grid */
-    .stats-section {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        width: 90% !important;
-        max-width: 90% !important;
-        margin: -50px auto 0 auto !important;
-        padding: 30px 10px !important;
-        gap: 20px 0 !important;
+    /* 1. The Hero Fixes (Your original code + overlap fix) */
+    .testimonial-hero {
+        background-attachment: scroll !important; 
+        height: 50vh !important; 
+        background-position: center center !important;
     }
 
-    .stat-item {
-        border-right: 1px solid #eee !important;
-        border-bottom: none !important;
-    }
-
-    /* Remove vertical line from 2nd and 4th items */
-    .stat-item:nth-child(2), 
-    .stat-item:nth-child(4) {
-        border-right: none !important;
-    }
-
-    /* 2. Fix Hero Text Overlapping */
     .hero-content h1 {
-        font-size: 2.8rem !important; /* Smaller for iPad */
-        line-height: 1.2 !important;
+        font-size: 2.5rem !important;
+        padding: 0 15px;
+        line-height: 1.2 !important; /* Prevents text clashing */
     }
 
     .script-font {
@@ -544,39 +504,30 @@
         margin-top: 5px !important;
     }
 
-    /* 3. FAQ Grid */
-    .faq-flip-grid {
-        grid-template-columns: 1fr 1fr !important;
-    }
-}
-
-/* MOBILE FIX (Phones) */
-@media screen and (max-width: 768px) {
+    /* 2. The Stats Fix (Fixes the squashed row in your screenshot) */
     .stats-section {
-        grid-template-columns: 1fr !important;
-        margin-top: -40px !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* 2x2 Grid */
+        width: 90% !important;
+        margin: -50px auto 0 auto !important;
+        padding: 30px 10px !important;
+        gap: 20px 0 !important;
     }
 
     .stat-item {
-        border-right: none !important;
+        border-right: 1px solid #eee !important;
         border-bottom: 1px solid #eee !important;
-        padding: 15px 0 !important;
+        flex: none !important; 
     }
 
-    .stat-item:last-child {
-        border-bottom: none !important;
-    }
+    /* Hide extra lines for a clean 2x2 look */
+    .stat-item:nth-child(2), .stat-item:nth-child(4) { border-right: none !important; }
+    .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none !important; }
+}
 
-    .hero-content h1 {
-        font-size: 2.2rem !important;
-    }
-
-    .script-font {
-        display: block !important;
-        margin-left: 0 !important;
-    }
-    
-    .faq-flip-grid {
-        grid-template-columns: 1fr !important;
-    }
+/* 3. Small Phone Fixes */
+@media screen and (max-width: 600px) {
+    .stats-section { grid-template-columns: 1fr !important; }
+    .stat-item { border-right: none !important; }
+    .hero-content h1 { font-size: 2rem !important; }
 }
