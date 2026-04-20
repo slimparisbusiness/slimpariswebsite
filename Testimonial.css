@@ -486,9 +486,9 @@
    ========================================= */
 
 /* 1. UNIVERSAL TABLET FIX (Portrait & Landscape) */
-@media screen and (max-width: 1100px) { /* <--- NEED THIS BRACKET */
+@media screen and (max-width: 1100px) {
     .testimonial-hero {
-        height: 60vh !important; 
+        height: 60vh !important;
         background-attachment: scroll !important;
     }
 
@@ -496,16 +496,16 @@
         font-size: 2.8rem !important;
         line-height: 1.2 !important;
     }
-} /* <--- AND THIS ONE TO CLOSE */
+}
 
 /* 2. SPECIFIC LANDSCAPE TWEAK (sideways iPad) */
-@media screen and (max-width: 1100px) and (orientation: landscape) { /* <--- NEED THIS BRACKET */
+@media screen and (max-width: 1100px) and (orientation: landscape) {
     .testimonial-hero {
-        height: 75vh !important; 
+        height: 75vh !important;
     }
 
     .hero-content h1 {
-        font-size: 2.5rem !important; 
+        font-size: 2.5rem !important;
         margin-bottom: 10px !important;
     }
 
@@ -515,9 +515,46 @@
         margin: 0 auto !important;
     }
 
+    /* FIX 1: Keep stats in a row (2x2 grid) but fix the divider lines */
     .stats-section {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         margin-top: -60px !important;
+        width: 90% !important;         /* ADD: prevents it from overflowing */
+        gap: 0 !important;             /* ADD: remove gap so divider lines work */
+        padding: 20px 0 !important;    /* ADD: tighter padding in landscape */
     }
-} /* <--- AND THIS ONE TO CLOSE */
+
+    /* FIX 2: Fix divider lines for 2x2 grid layout */
+    .stat-item {
+        border-right: 1px solid #eee !important;  /* Side divider */
+        border-bottom: 1px solid #eee !important;  /* Bottom divider between rows */
+        padding: 20px 10px !important;
+    }
+
+    /* Remove right border from 2nd and 4th items (right column) */
+    .stat-item:nth-child(2n) {
+        border-right: none !important;
+    }
+
+    /* Remove bottom border from last 2 items (bottom row) */
+    .stat-item:nth-child(3),
+    .stat-item:nth-child(4) {
+        border-bottom: none !important;
+    }
+
+    /* FIX 3: Slightly smaller numbers so they don't overflow in 2-col */
+    .stat-number {
+        font-size: 2.8rem !important;
+    }
+
+    /* FIX 4: Reduce FAQ flip card height so they're not too tall in landscape */
+    .flip-card-container {
+        height: 280px !important;
+    }
+
+    /* FIX 5: Tighter gallery cards in landscape */
+    .ba-card {
+        height: 300px !important;
+    }
+}
