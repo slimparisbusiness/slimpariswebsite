@@ -506,63 +506,77 @@
     }
 }
 /* =========================================
-   RESPONSIVE GADGET FIXES (Paste at Bottom)
+   SUPER RESPONSIVE GADGET FIX
    ========================================= */
 
-/* TABLET LUXURY (iPads & Small Laptops) */
-@media (max-width: 1024px) {
+/* TABLET FIX (iPads) */
+@media screen and (max-width: 1024px) {
+    /* 1. Force Stats to 2x2 Grid */
     .stats-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* 2x2 Grid for Tablet */
-        width: 92%;
-        gap: 0;
-        padding: 20px 0;
-    }
-
-    .stat-item:nth-child(2) {
-        border-right: none; /* Removes line on the 2nd item in 2x2 layout */
-    }
-
-    .faq-flip-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 FAQ cards per row */
-    }
-
-    .hero-content h1 {
-        font-size: 3rem;
-    }
-}
-
-/* MOBILE SHARP (Phones) */
-@media (max-width: 768px) {
-    .stats-section {
-        grid-template-columns: 1fr; /* Single column for Phones */
-        margin-top: -30px;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        width: 90% !important;
+        max-width: 90% !important;
+        margin: -50px auto 0 auto !important;
+        padding: 30px 10px !important;
+        gap: 20px 0 !important;
     }
 
     .stat-item {
-        border-right: none;
-        border-bottom: 1px solid #eee;
-        padding: 20px 0;
+        border-right: 1px solid #eee !important;
+        border-bottom: none !important;
     }
 
-    .stat-item:last-child {
-        border-bottom: none;
+    /* Remove vertical line from 2nd and 4th items */
+    .stat-item:nth-child(2), 
+    .stat-item:nth-child(4) {
+        border-right: none !important;
     }
 
-    .faq-flip-grid {
-        grid-template-columns: 1fr; /* Single column for FAQ */
-    }
-
-    .section-heading {
-        font-size: 2.5rem;
+    /* 2. Fix Hero Text Overlapping */
+    .hero-content h1 {
+        font-size: 2.8rem !important; /* Smaller for iPad */
+        line-height: 1.2 !important;
     }
 
     .script-font {
-        display: block; /* Moves "Love Notes" below "Client" for better fit */
-        margin-left: 0;
+        display: inline-block !important;
+        margin-top: 5px !important;
+    }
+
+    /* 3. FAQ Grid */
+    .faq-flip-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+/* MOBILE FIX (Phones) */
+@media screen and (max-width: 768px) {
+    .stats-section {
+        grid-template-columns: 1fr !important;
+        margin-top: -40px !important;
+    }
+
+    .stat-item {
+        border-right: none !important;
+        border-bottom: 1px solid #eee !important;
+        padding: 15px 0 !important;
+    }
+
+    .stat-item:last-child {
+        border-bottom: none !important;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem !important;
+    }
+
+    .script-font {
+        display: block !important;
+        margin-left: 0 !important;
     }
     
-    .review-img-card {
-        width: 250px; /* Slimmer review cards for mobile */
+    .faq-flip-grid {
+        grid-template-columns: 1fr !important;
     }
 }
