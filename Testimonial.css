@@ -482,52 +482,42 @@
 }
 
 /* =========================================
-   MASTER RESPONSIVE BLOCK (ONLY ONE!)
+   LANDSCAPE & PORTRAIT HERO HARMONY
    ========================================= */
 
-@media screen and (max-width: 1024px) {
-    /* 1. The Hero Fixes (Your original code + overlap fix) */
+/* 1. UNIVERSAL TABLET FIX (Portrait & Landscape) */
+@media screen and (max-width: 1100px) {
     .testimonial-hero {
-        background-attachment: scroll !important; 
-        height: 50vh !important; 
-        background-position: center center !important;
+        height: 60vh !important; /* Give it more height to breathe */
+        background-attachment: scroll !important;
     }
 
     .hero-content h1 {
-        font-size: 2.5rem !important;
-        padding: 0 15px;
-        line-height: 1.2 !important; /* Prevents text clashing */
+        font-size: 2.8rem !important;
+        line-height: 1.2 !important;
     }
-
-    .script-font {
-        display: inline-block !important;
-        margin-top: 5px !important;
-    }
-
-    /* 2. The Stats Fix (Fixes the squashed row in your screenshot) */
-    .stats-section {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important; /* 2x2 Grid */
-        width: 90% !important;
-        margin: -50px auto 0 auto !important;
-        padding: 30px 10px !important;
-        gap: 20px 0 !important;
-    }
-
-    .stat-item {
-        border-right: 1px solid #eee !important;
-        border-bottom: 1px solid #eee !important;
-        flex: none !important; 
-    }
-
-    /* Hide extra lines for a clean 2x2 look */
-    .stat-item:nth-child(2), .stat-item:nth-child(4) { border-right: none !important; }
-    .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none !important; }
 }
 
-/* 3. Small Phone Fixes */
-@media screen and (max-width: 600px) {
-    .stats-section { grid-template-columns: 1fr !important; }
-    .stat-item { border-right: none !important; }
-    .hero-content h1 { font-size: 2rem !important; }
+/* 2. SPECIFIC LANDSCAPE TWEAK (sideways iPad) */
+@media screen and (max-width: 1100px) and (orientation: landscape) {
+    .testimonial-hero {
+        height: 75vh !important; /* Makes the hero taller so the image isn't cut off */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem !important; /* Slightly smaller so it stays on 2 lines */
+        margin-bottom: 10px !important;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem !important;
+        max-width: 80% !important;
+        margin: 0 auto !important;
+    }
+
+    /* Keep the stats 2x2 in Landscape */
+    .stats-section {
+        grid-template-columns: 1fr 1fr !important;
+        margin-top: -60px !important;
+    }
 }
