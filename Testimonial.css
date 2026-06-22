@@ -1,4 +1,6 @@
-/* --- 1. HERO SECTION (Universal Mobile Fix) --- */
+/* =========================================
+   1. HERO SECTION (Universal Mobile Fix)
+   ========================================= */
 .testimonial-hero {
     position: relative;
     height: 60vh; 
@@ -31,7 +33,9 @@
     font-size: 1.2rem; font-weight: 300; letter-spacing: 1px;
 }
 
-/* --- 2. STATS SECTION (Fixed Layout) --- */
+/* =========================================
+   2. STATS SECTION (Fixed Layout)
+   ========================================= */
 .stats-section {  
     display: flex; 
     justify-content: space-between; /* Spreads items evenly */
@@ -97,7 +101,7 @@
    ========================================= */
 .reviews-section {
     padding: 80px 0; /* Full width */
-    background-color: var(--bg-cream);
+    background-color: #FFF8F0;
     overflow: hidden; /* Hide the scrollbars */
 }
 
@@ -124,8 +128,8 @@
     position: absolute; top: 0; width: 100px; height: 100%;
     z-index: 2;
 }
-.marquee-wrapper::before { left: 0; background: linear-gradient(to right, var(--bg-cream), transparent); }
-.marquee-wrapper::after { right: 0; background: linear-gradient(to left, var(--bg-cream), transparent); }
+.marquee-wrapper::before { left: 0; background: linear-gradient(to right, #FFF8F0, transparent); }
+.marquee-wrapper::after { right: 0; background: linear-gradient(to left, #FFF8F0, transparent); }
 
 /* THE TRACK (Where images live) */
 .marquee-track {
@@ -184,7 +188,7 @@
 }
 
 /* =========================================
-   RESTORE THE FONT STYLING
+   4. RESTORE THE FONT STYLING
    ========================================= */
 
 /* 1. The Main Title ("Client") */
@@ -216,7 +220,7 @@
 }
 
 /* =========================================
-   4. GALLERY (VISUAL EVIDENCE) - FINAL
+   5. GALLERY (VISUAL EVIDENCE) - FINAL
    ========================================= */
 .gallery-section { 
     padding: 80px 5%; 
@@ -286,7 +290,7 @@
     white-space: nowrap;
 }
 
-/* --- HOVER EFFECTS (THE MAGIC) --- */
+/* --- HOVER EFFECTS --- */
 
 /* 1. Lift the card up */
 .ba-card:hover {
@@ -316,10 +320,10 @@
 .btn-book-now:hover { background: #b03525; transform: translateY(-3px); }
 
 /* =========================================
-   12 & 13. REASONS GRID & BANNERS
+   6. REASONS GRID & BANNERS (FAQ Section)
    ========================================= */
 .reasons-banner-top, .reasons-banner-bottom {
-    background: linear-gradient(90deg, var(--burgundy) 0%, var(--primary-red) 100%);
+    background: linear-gradient(90deg, #560319 0%, #D34836 100%);
     padding: 30px 20px;
     text-align: center;
     color: rgba(255, 255, 255, 0.9);
@@ -342,7 +346,7 @@
 }
 
 .reasons-grid-section {
-    background-color: var(--bg-cream);
+    background-color: #FFF8F0;
     padding: 80px 5%;
 }
 
@@ -354,7 +358,7 @@
 .reasons-title {
     font-family: 'Playfair Display', serif;
     font-size: 2.8rem;
-    color: var(--burgundy);
+    color: #560319;
     margin-top: 15px;
     line-height: 1.3;
 }
@@ -393,21 +397,21 @@
     align-items: center;
     margin: 0 auto 25px auto;
     font-size: 2.5rem;
-    color: var(--burgundy);
+    color: #560319;
     transition: all 0.3s ease;
 }
 
 .reason-card:hover .icon-circle {
-    background-color: var(--burgundy);
+    background-color: #560319;
     color: white;
-    border-color: var(--burgundy);
+    border-color: #560319;
     transform: scale(1.1);
 }
 
 .reason-title {
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
-    color: var(--text-dark);
+    color: #333;
     margin-bottom: 15px;
     font-weight: 700;
 }
@@ -415,9 +419,10 @@
 .reason-desc {
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
-    color: var(--text-light);
+    color: #555;
     line-height: 1.6;
 }
+
 .whatsapp-link {
     color: #25D366;
     text-decoration: none;
@@ -429,11 +434,11 @@
 }
 
 /* =========================================
-   5. UNIQUE FAQ (MAGIC FLIP CARDS)
+   7. UNIQUE FAQ (MAGIC FLIP CARDS)
    ========================================= */
 .faq-section {
     padding: 100px 5%;
-    background-color: var(--bg-cream);
+    background-color: #FFF8F0;
     text-align: center;
 }
 
@@ -539,8 +544,6 @@
 /* ---------------------------------------------------------
    TABLET / LANDSCAPE (max-width: 1100px)
    --------------------------------------------------------- */
-
-/* 1. UNIVERSAL TABLET FIX (Portrait & Landscape) */
 @media screen and (max-width: 1100px) {
     .testimonial-hero {
         height: 60vh !important;
@@ -553,7 +556,7 @@
     }
 }
 
-/* 2. SPECIFIC LANDSCAPE TWEAK (sideways iPad) */
+/* SPECIFIC LANDSCAPE TWEAK */
 @media screen and (max-width: 1100px) and (orientation: landscape) {
     .testimonial-hero {
         height: 75vh !important;
@@ -570,7 +573,6 @@
         margin: 0 auto !important;
     }
 
-    /* Keep stats in a row (2x2 grid) but fix the divider lines */
     .stats-section {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
@@ -609,7 +611,7 @@
 }
 
 /* ---------------------------------------------------------
-   TABLET PORTRAIT (max-width: 992px) — FAQ goes 2-column
+   TABLET PORTRAIT (max-width: 992px)
    --------------------------------------------------------- */
 @media (max-width: 992px) {
     .reasons-grid {
@@ -625,8 +627,6 @@
    PHONE (max-width: 768px)
    --------------------------------------------------------- */
 @media (max-width: 768px) {
-
-    /* --- STATS BAR: stack vertically --- */
     .stats-section {
         flex-direction: column;
         width: 90%;
@@ -637,8 +637,8 @@
 
     .stat-item {
         width: 100%;
-        border-right: none; /* No side lines on mobile */
-        border-bottom: 1px solid #eee; /* Horizontal lines instead */
+        border-right: none; 
+        border-bottom: 1px solid #eee; 
         padding-bottom: 20px;
     }
 
@@ -647,20 +647,17 @@
     }
 
     .stat-number {
-        font-size: 2.5rem; /* Smaller numbers for phone */
+        font-size: 2.5rem; 
     }
 
-    /* --- HEADINGS scale down --- */
     .section-heading {
         font-size: 2.4rem;
     }
 
-    /* --- REVIEWS MARQUEE: smaller cards --- */
     .review-img-card { width: 220px; }
     .marquee-wrapper::before,
     .marquee-wrapper::after { width: 50px; }
 
-    /* --- GALLERY: shorter cards, tighter padding --- */
     .gallery-section {
         padding: 50px 5%;
     }
@@ -668,19 +665,18 @@
         height: 320px;
     }
 
-    /* --- FAQ GRID: single column, full content visible --- */
     .reasons-grid-section {
         padding: 50px 5%;
     }
 
     .reasons-grid {
-        grid-template-columns: 1fr; /* one card per row */
+        grid-template-columns: 1fr; 
         gap: 20px;
-        max-width: 450px;           /* keeps cards from going too wide */
+        max-width: 450px;           
     }
 
     .reason-card {
-        padding: 30px 25px;         /* tighter padding on phone */
+        padding: 30px 25px;         
     }
 
     .reasons-header {
@@ -688,7 +684,7 @@
     }
 
     .reasons-title {
-        font-size: 2.2rem;          /* "Curious Minds" scales down */
+        font-size: 2.2rem;          
         line-height: 1.2;
     }
 
@@ -700,13 +696,11 @@
         font-size: 0.95rem;
     }
 
-    /* Disable hover-lift on touch devices (feels janky on phones) */
     .reason-card:hover {
         transform: none;
         box-shadow: 0 5px 20px rgba(0,0,0,0.03);
     }
 
-    /* --- FLIP CARDS (if you switch back to them): tap-friendly height --- */
     .flip-card-container {
         height: 300px;
     }
